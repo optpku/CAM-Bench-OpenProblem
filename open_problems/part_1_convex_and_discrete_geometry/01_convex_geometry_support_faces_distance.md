@@ -28,7 +28,7 @@ A **$k$-simplex** in $\mathbb{R}^d$ is the convex hull of $k+1$ affinely indepen
 
 #### 2.2 $k$-antipodal set of $k$-simplices
 
-Let $S^k=\{s_1^k,\dots,s_n^k\}$ be a finite set of $k$-simplices in $\mathbb{R}^d$, and let $P=\mathrm{conv}\left(\bigcup_{s\in S^k}s\right).$ The set $S^k$ is called **$k$-antipodal** if, for any $i\neq j$, there are different parallel supporting hyperplanes $H'$ and $H''$ of $P$ such that $s_i^k\subset H'$ and $s_j^k\subset H''$.
+Let $S^k=\{s_1^k,\dots,s_n^k\}$ be a finite set of $k$-simplices in $\mathbb{R}^d$, and let $P=\mathrm{conv}(\bigcup_{s\in S^k}s).$ The set $S^k$ is called **$k$-antipodal** if, for any $i\neq j$, there are different parallel supporting hyperplanes $H'$ and $H''$ of $P$ such that $s_i^k\subset H'$ and $s_j^k\subset H''$.
 
 **Source:** Makai--Martini [3].
 
@@ -47,11 +47,11 @@ Let $X \subset \mathbb{R}^d$ be a finite point set. Suppose that $X$ is an antip
 
 #### 4.2 The Three-Dimensional Segment Case
 
-Let $S$ be a family of line segments in $\mathbb{R}^3$. Define $P=\mathrm{conv}\left(\bigcup_{s\in S} s\right)$. Suppose that for every two distinct segments $s',s'' \in S$, there exist two distinct parallel supporting planes $H'$ and $H''$ of $P$ such that $s' \subset H'$ and $s'' \subset H''$. Then $|S| \le 4$. This is the case $d=3$ and $k=1$.
+Let $S$ be a family of line segments in $\mathbb{R}^3$. Define $P=\mathrm{conv}(\bigcup_{s\in S} s)$. Suppose that for every two distinct segments $s',s'' \in S$, there exist two distinct parallel supporting planes $H'$ and $H''$ of $P$ such that $s' \subset H'$ and $s'' \subset H''$. Then $|S| \le 4$. This is the case $d=3$ and $k=1$.
 
 #### 4.3 The Boundary Case $k=d-1$
 
-Let $S_{d-1}$ be a family of $(d-1)$-simplices in $\mathbb{R}^d$. Define $P=\mathrm{conv}\left(\bigcup_{s\in S_{d-1}} s\right)$. Suppose that for every two distinct $(d-1)$-simplices $s',s'' \in S_{d-1}$, there exist two distinct parallel supporting hyperplanes $H'$ and $H''$ of $P$ such that $s' \subset H'$ and $s'' \subset H''$. Then $|S_{d-1}| \le 2$. This agrees with the formula $2^{d-(d-1)}=2$.
+Let $S_{d-1}$ be a family of $(d-1)$-simplices in $\mathbb{R}^d$. Define $P=\mathrm{conv}(\bigcup_{s\in S_{d-1}} s)$. Suppose that for every two distinct $(d-1)$-simplices $s',s'' \in S_{d-1}$, there exist two distinct parallel supporting hyperplanes $H'$ and $H''$ of $P$ such that $s' \subset H'$ and $s'' \subset H''$. Then $|S_{d-1}| \le 2$. This agrees with the formula $2^{d-(d-1)}=2$.
 
 ### 5. References
 1. L. Danzer, B. Grünbaum, Über zwei Probleme bezüglich konvexer Körper von P. Erdős und V. L. Klee, Math. Z. 79 (1962), 95-99.
@@ -110,4 +110,7 @@ The condition $n_1+\cdots+n_s=n+1$ mirrors the dimension count in Carathéodory'
 In this problem, a face of $K$ may be an improper face, so $K$ itself is allowed as a face. This convention is needed for the trivial case $s=1$.
 
 ### 3. Open Problems
-**Conjecture 3.1.** If $K \subset \mathbb{R}^n$ is a compact convex set and $n_1, \ldots, n_s$ are positive integers with $n_1 + \cdots + n_s = n+1,$ then, for every point $z \in K$, do non-empty faces $F_1, \ldots, F_s$ of $K$ exist such that $z \in \mathrm{conv}(F_1 \cup \cdots \cup F_s)$ and $\dim F_i \le n_i - 1$ for all $i = 1, \ldots, s$?
+**Conjecture 3.1.** If $K \subset \mathbb{R}^n$ is a compact convex set and $n_1, \ldots, n_s$ are positive integers with $n_1 + \cdots + n_s = n+1,$ then, for every point $z \in K$, there exist non-empty faces $F_1, \ldots, F_s$ of $K$ such that $z \in \mathrm{conv}(F_1 \cup \cdots \cup F_s)$ and $\dim F_i \le n_i - 1$ for all $i = 1, \ldots, s$.
+
+### 4. Known Results
+For convex polytopes $K$, the conjecture is known to hold.

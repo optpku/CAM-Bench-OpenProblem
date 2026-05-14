@@ -76,7 +76,7 @@ Let $T$ be a triangle in $\mathbb{E}^2$. Let $C$ be its circumcenter, $S$ its ce
 
 Let $T$ be an $n$-dimensional orthocentric simplex in $\mathbb{E}^n$, with $n\ge 3$. Let $C$ be the circumcenter of $T$, let $S$ be its centroid, and let $I$ be its incenter.
 
-Then $C$, $S$, and $I$ are collinear if and only if $T$ is biregular.
+Then $C$, $S$, and $I$ are collinear if and only if $T$ is biregular, meaning that the vertex set of $T$ can be partitioned into two disjoint subsets whose convex hulls are regular simplices and such that all segments joining one subset to the other have the same length.
 
 ### 4. References
 1. A. E. Edmonds, M. Hajja, H. Martini, Orthocentric simplices and biregularity, Results Math. 52 (2008), 41-50.

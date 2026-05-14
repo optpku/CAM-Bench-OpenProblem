@@ -11,19 +11,19 @@ This file collects open problems in monotone operator theory and variational ana
 Contributors: Junyu Zhang
 
 ### 1. Problem Background
-Let $X$ be a real Banach space and let $A,B:X\rightrightarrows X^*$ be two maximal monotone operators. Their pointwise sum is defined by $(A+B)(x):=Ax+Bx=\{a^*+b^*:a^*\in Ax,\ b^*\in Bx\}.$
+Let $X$ be a real Banach space and let $A,B:X\to 2^{X^*}$ be two maximal monotone operators. Their pointwise sum is defined by $(A+B)(x):=Ax+Bx=\{a^*+b^*:a^*\in Ax,\ b^*\in Bx\}.$
 
 The sum $A+B$ is automatically monotone. Rockafellar's sum problem asks whether it remains maximal monotone under the classical interior-point constraint qualification $\mathrm{dom}A\cap \mathrm{int}\mathrm{dom}B\neq\varnothing.$ This question is central in monotone operator theory. The main difficulty in nonreflexive spaces is that duality and separation arguments can naturally produce objects in $X^{**}$ rather than in $X$ itself. Many special cases are known, for example when one operator has full domain, one operator is a subdifferential or normal cone operator in suitable settings, or stronger representability/type assumptions are available.
 
 ### 2. Open Problems
-**Question 1.1. Rockafellar Sum Problem in General Banach Spaces.** Let $X$ be a real Banach space, and let $A,B:X\rightrightarrows X^*$ be maximal monotone operators satisfying $\mathrm{dom}A\cap \mathrm{int}\mathrm{dom}B\neq\varnothing.$ Is the sum $A+B$ necessarily maximal monotone?
+**Question 1.1. Rockafellar Sum Problem in General Banach Spaces.** Let $X$ be a real Banach space, and let $A,B:X\to 2^{X^*}$ be maximal monotone operators satisfying $\mathrm{dom}A\cap \mathrm{int}\mathrm{dom}B\neq\varnothing.$ Is the sum $A+B$ necessarily maximal monotone?
 
 ### 3. Known Results
 #### 3.1 Rockafellar's sum theorem in reflexive Banach spaces
 
 **Source:** R. T. Rockafellar, *On the maximality of sums of nonlinear monotone operators*, Transactions of the American Mathematical Society, 1969.
 
-Let $X$ be a real reflexive Banach space, and let $A,B:X\rightrightarrows X^*$ be maximal monotone operators. Suppose that $\mathrm{dom}A\cap \mathrm{int}\mathrm{dom}B\neq\varnothing$. Then the pointwise sum $A+B:X\rightrightarrows X^*$, defined by $(A+B)(x)=Ax+Bx$, is maximal monotone.
+Let $X$ be a real reflexive Banach space, and let $A,B:X\to 2^{X^*}$ be maximal monotone operators. Suppose that $\mathrm{dom}A\cap \mathrm{int}\mathrm{dom}B\neq\varnothing$. Then the pointwise sum $A+B:X\to 2^{X^*}$, defined by $(A+B)(x)=Ax+Bx$, is maximal monotone.
 
 ### 4. References
 1. R. T. Rockafellar, **On the maximality of sums of nonlinear monotone operators**, Transactions of the American Mathematical Society, 1969.
