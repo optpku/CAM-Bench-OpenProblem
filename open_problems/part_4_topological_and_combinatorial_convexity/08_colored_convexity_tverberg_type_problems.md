@@ -1,4 +1,4 @@
-# 彩色凸性与拓扑组合几何
+# Colored Convexity and Tverberg-Type Problems
 
 This file discusses one open conjecture at the intersection of colored convexity and topological combinatorics. The conjecture can be viewed as a multicolored strengthening of Bárány's colored Carathéodory theorem and is closely related to extending colored Tverberg-type results beyond the prime case.
 

@@ -1,6 +1,6 @@
-# 图、矩阵与组合凸性参数
+# Semidefinite Graph Parameters and Euclidean Representations
 
-This file focuses on one open problem at the interface of graph theory, positive semidefinite matrix theory, and convex representations. The central question is how the graph parameters $ed(G)$, $gd(G)$, and $\nu^{=}(G)$ compare, and whether known one-sided inequalities can be upgraded to equalities.
+This file focuses on one open problem at the interface of graph theory, semidefinite geometry, and Euclidean representations. The central question is how the graph parameters $ed(G)$, $gd(G)$, and $\nu^{=}(G)$ compare, and whether known one-sided inequalities can be upgraded to equalities.
 
 ---
 

@@ -1,4 +1,4 @@
-# 凸几何：支撑、面结构与距离配置
+# Convex Geometry: Support, Face Structure, and Distance Configurations
 
 This file collects three open problems in convex geometry, centered on support hyperplanes, face structure, antipodal configurations, and distance constraints induced by centrally symmetric convex bodies. The problems concern bounds for antipodal families of segments and simplices, large-distance point sets in normed convex bodies, and face-based representations of points in compact convex sets.
 

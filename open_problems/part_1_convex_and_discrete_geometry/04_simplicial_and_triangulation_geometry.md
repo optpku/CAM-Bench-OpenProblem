@@ -1,6 +1,6 @@
-# 高维单纯形与三角剖分结构
+# Simplicial and Triangulation Geometry
 
-This file contains two problems on simplices and triangulations. The first asks for the extremal order of the number of tetrahedra in triangulations of special three-dimensional point sets; the second asks for a geometric characterization of higher-dimensional simplices whose incenter lies on the Euler line.
+This file contains open problems on simplicial geometry and triangulations. The first asks for the extremal order of the number of tetrahedra in triangulations of special three-dimensional point sets; the second asks for a geometric characterization of higher-dimensional simplices whose incenter lies on the Euler line.
 
 ---
 
