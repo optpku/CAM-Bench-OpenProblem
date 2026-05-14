@@ -8,7 +8,7 @@ This file focuses on one open problem at the interface of graph theory, positive
 
 ## 1. Euclidean, Gram, and $\nu^{=}$ Graph Parameters
 
-Contributors: 叶老师
+Contributors: Yinyu Ye
 
 ### 1. Problem Background
 This problem concerns three graph parameters: the Euclidean dimension parameter $ed(G)$, the Gram dimension parameter $gd(G)$, and the positive semidefinite corank parameter $\nu^{=}(G)$. These parameters compare partial Euclidean-distance data, partial Gram data, and semidefinite corank data associated with a graph.

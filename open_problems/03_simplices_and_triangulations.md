@@ -8,7 +8,7 @@ This file contains two problems on simplices and triangulations. The first asks 
 
 ## 1. Triangulations of Perturbed Grid-Squares
 
-Contributors: 叶老师
+Contributors: Yinyu Ye
 
 ### 1. Problem Background
 This problem concerns the combinatorial complexity of triangulations of finite point sets in three-dimensional space.
@@ -69,7 +69,7 @@ Related constructions in the three-dimensional triangulation literature also sho
 
 ## 2. Incenter on the Euler Line of an $n$-Simplex
 
-Contributors: 叶老师
+Contributors: Yinyu Ye
 
 ### 1. Problem Background
 This problem concerns the extension of the classical Euler-line geometry of triangles to higher-dimensional simplices.

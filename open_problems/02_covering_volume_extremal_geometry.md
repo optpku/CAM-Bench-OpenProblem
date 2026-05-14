@@ -8,7 +8,7 @@ This file collects open problems on covering, extremal volume, and volume estima
 
 ## 1. Planks Covering the Unit Ball
 
-Contributors: 叶老师
+Contributors: Yinyu Ye
 
 ### 1. Problem Background
 This problem belongs to the study of **plank covering problems** in convex and discrete geometry.
@@ -91,7 +91,7 @@ whose center of symmetry is the center $o$ of the unit ball.
 
 ## 2. Extremal Simplex Intersection in Spherical and Hyperbolic Space
 
-Contributors: 叶老师
+Contributors: Yinyu Ye
 
 ### 1. Problem Background
 In Euclidean space $\mathbb{E}^d$, the maximum volume of the intersection of a fixed ball and a variable simplex of given volume $V$ is attained when the simplex is regular and concentric with the ball. This follows easily by Steiner symmetrization. Apart from the two-dimensional case, it is open whether the same extremal statement remains true in spherical and hyperbolic spaces.
@@ -126,7 +126,7 @@ Let $B$ be a closed geodesic ball in the hyperbolic space $H^d$. Among all $d$-s
 
 ## 3. Covering a Unit Cube by Smaller Cubes
 
-Contributors: 叶老师
+Contributors: Yinyu Ye
 
 ### 1. Problem Background
 This problem asks how efficiently a unit cube in $\mathbb{R}^n$ can be covered by cubes whose edge lengths are all strictly smaller than $1$.
@@ -155,7 +155,7 @@ $q(n)\le n+1$.
 
 ## 4. Volume of the Boolean Quadric Polytope
 
-Contributors: 叶老师
+Contributors: Yinyu Ye
 
 ### 1. Problem Background
 The Boolean Quadric Polytope arises from the linearization of unconstrained quadratic $0$-$1$ optimization problems. Given binary variables $x_i\in\{0,1\}$, one introduces variables $y_{ij}$ to represent the quadratic products $x_i x_j$. The Boolean Quadric Polytope is the convex hull of all $0/1$ points satisfying these product equations.

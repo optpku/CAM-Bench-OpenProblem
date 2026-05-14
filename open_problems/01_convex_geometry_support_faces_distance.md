@@ -8,7 +8,7 @@ This file collects three open problems in convex geometry, centered on support h
 
 ## 1. Antipodal Segments and Simplices
 
-Contributors: 叶老师
+Contributors: Yinyu Ye
 
 ### 1. Problem Background
 This problem concerns a generalization of **antipodal sets** in convex geometry.
@@ -105,7 +105,7 @@ This agrees with the formula $2^{d-(d-1)}=2$.
 
 ## 2. Points in an $o$-symmetric Convex Body
 
-Contributors: 叶老师
+Contributors: Yinyu Ye
 
 ### 1. Problem Background
 This problem belongs to **Minkowski geometry** and the study of distance configurations in centrally symmetric convex bodies.
@@ -149,7 +149,7 @@ $\|p_i-p_j\|_C\ge \sqrt{2}$.
 
 ## 3. Faces of a Compact Convex Set
 
-Contributors: 叶老师
+Contributors: Yinyu Ye
 
 ### 1. Problem Background
 This problem asks for a face-decomposition principle for compact convex sets. It is close in spirit to Carathéodory-type theorems, but instead of representing a point by a small number of points, it asks whether the point can be represented using faces whose dimensions are prescribed in advance.

@@ -8,7 +8,7 @@ This file discusses one open conjecture at the intersection of colored convexity
 
 ## 1. A Multicolored Carathéodory Conjecture
 
-Contributors: 叶老师
+Contributors: Yinyu Ye
 
 ### 1. Problem Background
 This problem is a multicolored variant of Bárány’s colored Carathéodory theorem. The classical colored Carathéodory theorem says that if $X_1,\ldots,X_{d+1}\subset \mathbb{R}^d$ are point sets such that $0\in \operatorname{conv}(X_i)$ for every $i$, then one can choose one point from each $X_i$ whose convex hull still contains $0$.

@@ -8,7 +8,7 @@ This file collects three open problems in convex optimization and variational an
 
 ## 1. Composite $((L_0,L_1))$-Smooth Optimization
 
-Contributors: 张君宇
+Contributors: Junyu Zhang
 
 ### 1. Problem Background
 Recent works on convex $((L_0,L_1))$-smooth optimization have significantly improved upper bounds for smooth objectives. For smooth convex minimization
@@ -126,7 +126,7 @@ For every $L_0>0$ and $L_1\ge 0$, there exists a convex $((L_0,L_1))$-smooth fun
 
 ## 2. Silver Stepsize Optimality Conjecture
 
-Contributors: 张君宇
+Contributors: Junyu Zhang
 
 ### 1. Problem Background
 The Silver Stepsize Optimality Conjecture concerns the power and limitation of gradient descent when the only design freedom is the scalar stepsize sequence.
@@ -289,7 +289,7 @@ iterations.
 
 ## 3. Rockafellar Sum Problem
 
-Contributors: 张君宇
+Contributors: Junyu Zhang
 
 ### 1. Problem Background
 Let $X$ be a real Banach space and let
