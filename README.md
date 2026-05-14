@@ -1,14 +1,14 @@
 # Open Problems in Mathematics
 
-## About This Project
+This is an open problems project. It collects mathematical open problems and organizes them into a browseable set of thematic parts and chapter files.
 
-This repository collects open problems in mathematics. The project is organized as a browseable set of domain parts and chapter files, following the same broad navigation idea as the Stacks Project table of contents: high-level parts group related areas, and each chapter contains one thematic cluster of open problems.
-
-The full browse page is:
+The main entry point is the project overview:
 
 **[Open Problems Index](open_problems_index.md)**
 
-## Organization
+The index is the project overview. It records the table of contents, chapter links, problem anchors, and for each problem its contributor, open-problem labels, and brief summary.
+
+## Repository Layout
 
 ```text
 open_problems/
@@ -26,18 +26,14 @@ open_problems/
     08_colored_convexity_tverberg_type_problems.md
 ```
 
-## Parts
+## Thematic Parts
 
 * **Part 1: Convex, Discrete, and Polyhedral Geometry** covers convex-body structure, geometric covering, extremal volume, discrete covering, polyhedral volume, simplices, and triangulations.
 * **Part 2: Optimization and Variational Analysis** separates first-order convex optimization complexity from monotone operator theory and variational analysis.
 * **Part 3: Graphs and Semidefinite Geometry** covers graph parameters, Euclidean and Gram representations, and positive semidefinite matrix methods.
 * **Part 4: Topological and Combinatorial Convexity** covers colored convexity, Carathéodory-type conjectures, Tverberg-type problems, and related topological combinatorics.
 
-## Classification Notes
-
-The classification is by primary mathematical content rather than by superficial shared vocabulary. For example, the Boolean Quadric Polytope problem is grouped with polyhedral volume and combinatorial optimization, not with smooth extremal-volume geometry. Rockafellar's sum problem is separated from first-order algorithmic complexity because its primary home is maximal monotone operator theory. The graph-parameter problem is placed under semidefinite graph geometry because the core comparison involves Euclidean dimension, Gram dimension, and positive semidefinite corank.
-
-## Problem Template
+## Write-Up Structure
 
 Each problem write-up uses the following sections when applicable:
 
@@ -55,19 +51,3 @@ Each problem write-up uses the following sections when applicable:
 
 5. **References**  
    Full bibliographic entries for works cited in the write-up.
-
-## Linking Rules
-
-Each problem heading is preceded by a stable HTML anchor such as:
-
-```html
-<a id="problem-1"></a>
-```
-
-Links from the root index should include the complete relative path from the repository root, for example:
-
-```md
-[Antipodal Segments and Simplices](open_problems/part_1_convex_and_discrete_geometry/01_convex_geometry_support_faces_distance.md#problem-1)
-```
-
-This path format works on GitHub and keeps links stable even when the index is opened from the repository root.

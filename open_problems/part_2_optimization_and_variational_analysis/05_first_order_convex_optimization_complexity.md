@@ -11,43 +11,43 @@ This file collects open problems in first-order convex optimization. The common 
 Contributors: Junyu Zhang
 
 ### 1. Problem Background
-Recent works on convex $((L_0,L_1))$-smooth optimization have significantly improved upper bounds for smooth objectives. For smooth convex minimization $\min_x f(x),$ where $\|\nabla^2 f(x)\|\le L_0+L_1\|\nabla f(x)\|,$ accelerated methods can achieve a small-$\epsilon$ leading complexity term of order $O(\frac{\sqrt{L_0}R}{\sqrt{\epsilon}}).$ The key reason is that in the unconstrained smooth convex case, $\nabla f(x^*)=0$, so the local curvature near the solution is essentially controlled by $L_0$. The composite analogue is different. For $\min_x F(x):=f(x)+h(x),$ the first-order optimality condition is $0\in \nabla f(x^*)+\partial h(x^*).$ Thus $\nabla f(x^*)$ need not vanish. If $v^*\in\partial h(x^*)$ and $\nabla f(x^*)=-v^*$, then the local curvature may be governed by $L_0+L_1\|v^*\|$ rather than by $L_0$ alone.
+Recent works on convex $((L_0,L_1))$-smooth optimization have significantly improved upper bounds for smooth objectives. For smooth convex minimization $\min_x f(x),$ where $\|\nabla^2 f(x)\|\le L_0+L_1\|\nabla f(x)\|,$ accelerated methods can achieve a small-$\epsilon$ leading complexity term of order $O(\frac{\sqrt{L_0}R}{\sqrt{\epsilon}}).$ The key reason is that in the unconstrained smooth convex case, $\nabla f(x^\ast)=0$, so the local curvature near the solution is essentially controlled by $L_0$. The composite analogue is different. For $\min_x F(x):=f(x)+h(x),$ the first-order optimality condition is $0\in \nabla f(x^\ast)+\partial h(x^\ast).$ Thus $\nabla f(x^\ast)$ need not vanish. If $v^\ast\in\partial h(x^\ast)$ and $\nabla f(x^\ast)=-v^\ast$, then the local curvature may be governed by $L_0+L_1\|v^\ast\|$ rather than by $L_0$ alone.
 
-In the questions below, $F^*=\inf_x F(x)$, $R$ denotes an a priori bound on the initial distance to a minimizer, for example $R\ge \|x_0-x^*\|$, and $G_*$ denotes an a priori bound on the optimality-certificate scale; for example, one may take $G_*\ge \|v^*\|=\|\nabla f(x^*)\|$ for some $v^*\in\partial h(x^*)$ satisfying $\nabla f(x^*)+v^*=0$.
+In the questions below, $F^\ast=\inf_x F(x)$, $R$ denotes an a priori bound on the initial distance to a minimizer, for example $R\ge \|x_0-x^\ast\|$, and $G_\ast$ denotes an a priori bound on the optimality-certificate scale; for example, one may take $G_\ast\ge \|v^\ast\|=\|\nabla f(x^\ast)\|$ for some $v^\ast\in\partial h(x^\ast)$ satisfying $\nabla f(x^\ast)+v^\ast=0$.
 
 ### 2. Open Problems
-**Question 1.1. Tight composite oracle complexity.** Determine the tight proximal first-order oracle complexity for finding $x$ such that $F(x)-F^*\le \epsilon$ for convex composite optimization under $((L_0,L_1))$-smoothness.
+**Question 1.1. Tight composite oracle complexity.** Determine the tight proximal first-order oracle complexity for finding $x$ such that $F(x)-F^\ast\le \epsilon$ for convex composite optimization under $((L_0,L_1))$-smoothness.
 
-Is the optimal complexity $\Theta(\frac{R\sqrt{L_0+L_1G_*}}{\sqrt{\epsilon}})$, possibly up to logarithmic factors and lower-order warm-start terms?
+Is the optimal complexity $\Theta(\frac{R\sqrt{L_0+L_1G_\ast}}{\sqrt{\epsilon}})$, possibly up to logarithmic factors and lower-order warm-start terms?
 
-**Question 1.2. Matching lower bound.** Can one prove that every proximal first-order method requires $\Omega(\frac{R\sqrt{L_0+L_1G_*}}{\sqrt{\epsilon}})$ oracle calls in the worst case for this composite problem class?
+**Question 1.2. Matching lower bound.** Can one prove that every proximal first-order method requires $\Omega(\frac{R\sqrt{L_0+L_1G_\ast}}{\sqrt{\epsilon}})$ oracle calls in the worst case for this composite problem class?
 
-**Question 1.3. Optimal accelerated proximal method.** Can one design an accelerated proximal method that attains $O(\frac{R\sqrt{L_0+L_1G_*}}{\sqrt{\epsilon}})$ oracle complexity, up to logarithmic or lower-order terms?
+**Question 1.3. Optimal accelerated proximal method.** Can one design an accelerated proximal method that attains $O(\frac{R\sqrt{L_0+L_1G_\ast}}{\sqrt{\epsilon}})$ oracle complexity, up to logarithmic or lower-order terms?
 
 ### 3. Known Results
 #### 3.1 Accelerated convergence for smooth convex $((L_0,L_1))$-smooth optimization
 
-**Source:** E. Gorbunov, N. Tupitsa, S. Choudhury, A. Aliev, P. Richtárik, S. Horváth, and M. Takáč, *Methods for Convex $((L_0,L_1))$-Smooth Optimization: Clipping, Acceleration, and Adaptivity*, arXiv:2409.14989 / ICLR 2025, Theorem 5.2.
+**Source:** E. Gorbunov, N. Tupitsa, S. Choudhury, A. Aliev, P. Richtárik, S. Horváth, and M. Takáč, Methods for Convex $((L_0,L_1))$-Smooth Optimization: Clipping, Acceleration, and Adaptivity, arXiv:2409.14989 / ICLR 2025, Theorem 5.2.
 
-Let $f:\mathbb{R}^d\to\mathbb{R}$ be convex and differentiable, and suppose that $f$ satisfies symmetric $((L_0,L_1))$-smoothness, namely $\|\nabla f(x)-\nabla f(y)\|\le (L_0+L_1\sup_{u\in[x,y]}\|\nabla f(u)\|)\|x-y\|$ for all $x,y\in\mathbb{R}^d$. Let $x^*$ be a minimizer of $f$. Consider the iterates generated by the $((L_0,L_1))$-Similar Triangles Method with parameters $0<\eta\le \frac{\nu}{2}$, where $\nu$ is the positive solution of $\nu=e^{-\nu}$, and with $G_1=L_0+L_1\|\nabla f(x_0)\|$ and $G_{k+1}=\max\{G_k,L_0+L_1\|\nabla f(x_{k+1})\|\}$ for $k\ge 0$. Then, for every $N\ge 1$, one has $f(y_N)-f(x^*)\le \frac{2L_0(1+L_1\|x_0-x^*\|\exp(L_1\|x_0-x^*\|))\|x_0-x^*\|^2}{\eta N(N+3)}$.
+Let $f:\mathbb{R}^d\to\mathbb{R}$ be convex and differentiable, and suppose that $f$ satisfies symmetric $((L_0,L_1))$-smoothness, namely $\|\nabla f(x)-\nabla f(y)\|\le (L_0+L_1\sup_{u\in[x,y]}\|\nabla f(u)\|)\|x-y\|$ for all $x,y\in\mathbb{R}^d$. Let $x^\ast$ be a minimizer of $f$. Consider the iterates generated by the $((L_0,L_1))$-Similar Triangles Method with parameters $0<\eta\le \frac{\nu}{2}$, where $\nu$ is the positive solution of $\nu=e^{-\nu}$, and with $G_1=L_0+L_1\|\nabla f(x_0)\|$ and $G_{k+1}=\max\{G_k,L_0+L_1\|\nabla f(x_{k+1})\|\}$ for $k\ge 0$. Then, for every $N\ge 1$, one has $f(y_N)-f(x^\ast)\le \frac{2L_0(1+L_1\|x_0-x^\ast\|\exp(L_1\|x_0-x^\ast\|))\|x_0-x^\ast\|^2}{\eta N(N+3)}$.
 
 #### 3.2 Near-optimal accelerated rate under $((L_0,L_1))$-smoothness
 
-**Source:** A. Tyurin, *Near-Optimal Convergence of Accelerated Gradient Methods under Generalized and $((L_0,L_1))$-Smoothness*, arXiv:2508.06884, Theorem 4.3.
+**Source:** A. Tyurin, Near-Optimal Convergence of Accelerated Gradient Methods under Generalized and $((L_0,L_1))$-Smoothness, arXiv:2508.06884, Theorem 4.3.
 
-Let $f:\mathbb{R}^d\to\mathbb{R}\cup\{\infty\}$ be convex and attain its minimum at $x^*$. Let $R=\|x_0-x^*\|$. Assume that $f$ is $\ell$-smooth with $\ell(s)=L_0+L_1s$, that is, on its domain, $\|\nabla^2 f(x)\|\le L_0+L_1\|\nabla f(x)\|$. Let $\bar R\ge R$ and $\Gamma_0\ge \frac{2(f(x_0)-f(x^*))}{\|x_0-x^*\|^2}$. Then the accelerated method in Tyurin’s Theorem 4.3 finds an $\epsilon$-solution, that is, a point $\bar x$ satisfying $f(\bar x)-f(x^*)\le \epsilon$, using $O(\frac{\sqrt{L_0}R}{\sqrt{\epsilon}}+\max\{L_1\bar R\log(\min\{\frac{L_1^2\bar R^2\Gamma_0}{L_0},\frac{\Gamma_0R^2}{\epsilon}\}),0\}+\max\{\log(\frac{\Gamma_0}{L_0}),0\})$ gradient oracle calls.
+Let $f:\mathbb{R}^d\to\mathbb{R}\cup\{\infty\}$ be convex and attain its minimum at $x^\ast$. Let $R=\|x_0-x^\ast\|$. Assume that $f$ is $\ell$-smooth with $\ell(s)=L_0+L_1s$, that is, on its domain, $\|\nabla^2 f(x)\|\le L_0+L_1\|\nabla f(x)\|$. Let $\bar R\ge R$ and $\Gamma_0\ge \frac{2(f(x_0)-f(x^\ast))}{\|x_0-x^\ast\|^2}$. Then the accelerated method in Tyurin’s Theorem 4.3 finds an $\epsilon$-solution, that is, a point $\bar x$ satisfying $f(\bar x)-f(x^\ast)\le \epsilon$, using $O(\frac{\sqrt{L_0}R}{\sqrt{\epsilon}}+\max\{L_1\bar R\log(\min\{\frac{L_1^2\bar R^2\Gamma_0}{L_0},\frac{\Gamma_0R^2}{\epsilon}\}),0\}+\max\{\log(\frac{\Gamma_0}{L_0}),0\})$ gradient oracle calls.
 
 In particular, the small-$\epsilon$ leading term is $O(\frac{\sqrt{L_0}R}{\sqrt{\epsilon}})$.
 
 #### 3.3 Lower bound for smooth convex $((L_0,L_1))$-smooth optimization in the small-$\epsilon$ regime
 
-**Source:** A. Tyurin, *Near-Optimal Convergence of Accelerated Gradient Methods under Generalized and $((L_0,L_1))$-Smoothness*, arXiv:2508.06884.
+**Source:** A. Tyurin, Near-Optimal Convergence of Accelerated Gradient Methods under Generalized and $((L_0,L_1))$-Smoothness, arXiv:2508.06884.
 
-For every $L_0>0$ and $L_1\ge 0$, there exists a convex $((L_0,L_1))$-smooth function such that any first-order method requires $\Omega(\frac{\sqrt{L_0}R}{\sqrt{\epsilon}})$ oracle calls to find an $\epsilon$-solution in the small-$\epsilon$ regime, where $R=\|x_0-x^*\|$.
+For every $L_0>0$ and $L_1\ge 0$, there exists a convex $((L_0,L_1))$-smooth function such that any first-order method requires $\Omega(\frac{\sqrt{L_0}R}{\sqrt{\epsilon}})$ oracle calls to find an $\epsilon$-solution in the small-$\epsilon$ regime, where $R=\|x_0-x^\ast\|$.
 
 ### 4. References
-1. E. Gorbunov, N. Tupitsa, S. Choudhury, A. Aliev, P. Richtárik, S. Horváth, and M. Takáč, **Methods for Convex $((L_0,L_1))$-Smooth Optimization: Clipping, Acceleration, and Adaptivity**, arXiv:2409.14989 / ICLR 2025.
-2. A. Tyurin, **Near-Optimal Convergence of Accelerated Gradient Methods under Generalized and $((L_0,L_1))$-Smoothness**, arXiv:2508.06884.
+1. E. Gorbunov, N. Tupitsa, S. Choudhury, A. Aliev, P. Richtárik, S. Horváth, and M. Takáč, Methods for Convex $((L_0,L_1))$-Smooth Optimization: Clipping, Acceleration, and Adaptivity, arXiv:2409.14989 / ICLR 2025.
+2. A. Tyurin, Near-Optimal Convergence of Accelerated Gradient Methods under Generalized and $((L_0,L_1))$-Smoothness, arXiv:2508.06884.
 
 ---
 
@@ -67,7 +67,7 @@ The silver stepsize schedule is a special nonconstant scalar schedule based on t
 ### 2. Definitions and Conventions
 #### 2.1 Smooth convex objective class
 
-Let $\mathcal{F}_{L,D}$ denote the class of pairs $(f,x_0)$ where $f$ is convex and $L$-smooth, has at least one minimizer $x^*$, and the initial point satisfies $\|x_0-x^*\|\le D$ for at least one minimizer $x^*$.
+Let $\mathcal{F}_{L,D}$ denote the class of pairs $(f,x_0)$ where $f$ is convex and $L$-smooth, has at least one minimizer $x^\ast$, and the initial point satisfies $\|x_0-x^\ast\|\le D$ for at least one minimizer $x^\ast$.
 
 **Source:** Altschuler--Parrilo [1,2].
 
@@ -88,7 +88,7 @@ Let $\rho=1+\sqrt{2}.$ For lengths $n=2^k-1$, the silver schedule has the recurs
 
 Equivalently, does no scalar stepsize schedule without momentum, memory variables, auxiliary sequences, or adaptivity guarantee a worst-case objective-error decay exponent strictly larger than $\log_2\rho$ in the rate $O(n^{-\log_2\rho})?$
 
-**Question 2.2. General finite-horizon minimax optimality.** For arbitrary $n$, can one solve or characterize the minimax problem $\min_{h\in\mathbb{R}^n}\max_{(f,x_0)\in\mathcal{F}_{L,D}} f(x_n)-f(x^*)$?
+**Question 2.2. General finite-horizon minimax optimality.** For arbitrary $n$, can one solve or characterize the minimax problem $\min_{h\in\mathbb{R}^n}\max_{(f,x_0)\in\mathcal{F}_{L,D}} f(x_n)-f(x^\ast)$?
 
 In particular, is the silver schedule asymptotically optimal for this minimax problem as $n\to\infty$?
 
@@ -99,13 +99,13 @@ In particular, is the silver schedule asymptotically optimal for this minimax pr
 
 **Source:** Jason M. Altschuler and Pablo A. Parrilo, *Acceleration by Stepsize Hedging: Silver Stepsize Schedule for Smooth Convex Optimization*, Mathematical Programming 213, 1105--1118, 2025, Theorem 1.1.
 
-Let $n=2^k-1$ for some integer $k\ge 1$. Let $f:\mathbb{R}^d\to\mathbb{R}$ be an $M$-smooth convex function, let $x_0\in\mathbb{R}^d$, and let $x^*$ be a minimizer of $f$. Run gradient descent for $n$ steps with $x_{t+1}=x_t-\frac{\alpha_t}{M}\nabla f(x_t)$, using the silver stepsize schedule $\alpha_t=1+\rho^{\nu_2(t+1)-1}$, where $\rho=1+\sqrt{2}$ and $\nu_2(t+1)$ is the $2$-adic valuation of $t+1$. Then the final iterate satisfies $f(x_n)-f(x^*)\le r_k M\|x_0-x^*\|^2$, where $r_k=\frac{1}{1+\sqrt{4\rho^{2k}-3}}$. In particular, $r_k\le \frac{1}{2n^{\log_2\rho}}$. Consequently, to guarantee $f(x_n)-f(x^*)\le \epsilon$, it suffices to take $n$ at least a constant multiple of $(\frac{M\|x_0-x^*\|^2}{2\epsilon})^{\log_\rho 2}$ iterations.
+Let $n=2^k-1$ for some integer $k\ge 1$. Let $f:\mathbb{R}^d\to\mathbb{R}$ be an $M$-smooth convex function, let $x_0\in\mathbb{R}^d$, and let $x^\ast$ be a minimizer of $f$. Run gradient descent for $n$ steps with $x_{t+1}=x_t-\frac{\alpha_t}{M}\nabla f(x_t)$, using the silver stepsize schedule $\alpha_t=1+\rho^{\nu_2(t+1)-1}$, where $\rho=1+\sqrt{2}$ and $\nu_2(t+1)$ is the $2$-adic valuation of $t+1$. Then the final iterate satisfies $f(x_n)-f(x^\ast)\le r_k M\|x_0-x^\ast\|^2$, where $r_k=\frac{1}{1+\sqrt{4\rho^{2k}-3}}$. In particular, $r_k\le \frac{1}{2n^{\log_2\rho}}$. Consequently, to guarantee $f(x_n)-f(x^\ast)\le \epsilon$, it suffices to take $n$ at least a constant multiple of $(\frac{M\|x_0-x^\ast\|^2}{2\epsilon})^{\log_\rho 2}$ iterations.
 
 #### 4.2 Silver stepsize convergence for proximal gradient descent
 
 **Source:** Jinho Bok and Jason M. Altschuler, *Accelerating Proximal Gradient Descent via Silver Stepsizes*, Proceedings of Machine Learning Research 291:421--453, 2025, Theorem 1.1.
 
-Let $n=2^k-1$ for some integer $k\ge 1$. Let $f$ be an $M$-smooth convex function, let $h$ be a convex function, and define $F=f+h$. Let $x_0$ be an initial point, and let $x^*$ be a minimizer of $F$. Run proximal gradient descent for $n$ steps with the silver stepsize schedule. Then the final iterate $x_n$ satisfies $F(x_n)-F(x^*)\le \frac{\rho}{4\sqrt{2}\,n^{\log_2\rho}}M\|x_0-x^*\|^2$. Consequently, to guarantee $F(x_n)-F(x^*)\le \epsilon$, it suffices to take $n$ at least a constant multiple of $(\frac{M\|x_0-x^*\|^2}{\epsilon})^{\log_\rho 2}$ iterations.
+Let $n=2^k-1$ for some integer $k\ge 1$. Let $f$ be an $M$-smooth convex function, let $h$ be a convex function, and define $F=f+h$. Let $x_0$ be an initial point, and let $x^\ast$ be a minimizer of $F$. Run proximal gradient descent for $n$ steps with the silver stepsize schedule. Then the final iterate $x_n$ satisfies $F(x_n)-F(x^\ast)\le \frac{\rho}{4\sqrt{2}\,n^{\log_2\rho}}M\|x_0-x^\ast\|^2$. Consequently, to guarantee $F(x_n)-F(x^\ast)\le \epsilon$, it suffices to take $n$ at least a constant multiple of $(\frac{M\|x_0-x^\ast\|^2}{\epsilon})^{\log_\rho 2}$ iterations.
 
 ### 5. References
 1. Jason M. Altschuler and Pablo A. Parrilo, *Acceleration by stepsize hedging: Silver Stepsize Schedule for smooth convex optimization*, Mathematical Programming 213, 1105-1118, 2025.
