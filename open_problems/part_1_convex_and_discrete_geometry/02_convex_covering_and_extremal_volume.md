@@ -27,27 +27,13 @@ For the unit ball $B^d$, the minimal width is $2$. Therefore, the condition that
 
 **Source:** Bang's plank theorem; also discussed in Bezdek, *Tarski's Plank Problem Revisited*.
 
-Let $C$ be a convex body in $\mathbb{E}^d$, and let $w(C)$ denote its minimal width. Suppose that $C$ is covered by planks $P_1,P_2,\dots,P_n$, that is,
-
-$C\subset P_1\cup P_2\cup\cdots\cup P_n$.
-
-Then
-
-$\sum_{i=1}^n w(P_i)\ge w(C)$,
-
-where $w(P_i)$ denotes the width of the plank $P_i$.
-
-In particular, if $C$ is the unit ball in $\mathbb{E}^d$, then $w(C)=2$. Hence any family of planks that completely covers the unit ball must have total width at least $2$. This explains why, in the present problem, a family of planks with total width smaller than $2$ can only cover the unit ball partially.
+Let $C$ be a convex body in $\mathbb{E}^d$, and let $w(C)$ denote its minimal width. Suppose that $C$ is covered by planks $P_1,P_2,\dots,P_n$, that is, $C\subset P_1\cup P_2\cup\cdots\cup P_n$. Then $\sum_{i=1}^n w(P_i)\ge w(C)$, where $w(P_i)$ denotes the width of the plank $P_i$. In particular, if $C$ is the unit ball in $\mathbb{E}^d$, then $w(C)=2$. Hence any family of planks that completely covers the unit ball must have total width at least $2$. This explains why, in the present problem, a family of planks with total width smaller than $2$ can only cover the unit ball partially.
 
 #### 3.2 The Case of Two Planks in Arbitrary Dimension
 
 **Source:** Bezdek, *Tarski's Plank Problem Revisited*, Theorem 5.2.
 
-Let $P_1$ and $P_2$ be two planks in $\mathbb{E}^d$, where $d\ge 2$. Suppose that their widths are $w_1$ and $w_2$, respectively, and that
-
-$0<w_1+w_2<2$.
-
-Then $P_1\cup P_2$ covers a subset of the unit ball $B^d$ of maximum volume if and only if $P_1\cup P_2$ itself is a plank of width $w_1+w_2$ whose center of symmetry is the center $o$ of the unit ball.
+Let $P_1$ and $P_2$ be two planks in $\mathbb{E}^d$, where $d\ge 2$. Suppose that their widths are $w_1$ and $w_2$, respectively, and that $0<w_1+w_2<2$. Then $P_1\cup P_2$ covers a subset of the unit ball $B^d$ of maximum volume if and only if $P_1\cup P_2$ itself is a plank of width $w_1+w_2$ whose center of symmetry is the center $o$ of the unit ball.
 
 Thus, for two planks, the optimal configuration is obtained by combining them, without overlap, into a single plank centered at the center of the ball.
 
@@ -55,15 +41,7 @@ Thus, for two planks, the optimal configuration is obtained by combining them, w
 
 **Source:** Bezdek, *Classical Topics in Discrete Geometry*, Theorem 4.5.2; also appearing as Theorem 5.3 in Bezdek, *Tarski's Plank Problem Revisited*.
 
-Let $w_1,w_2,\dots,w_n$ be positive real numbers satisfying
-
-$w_1+w_2+\cdots+w_n<2$.
-
-Let $P_1,P_2,\dots,P_n$ be planks in $\mathbb{E}^3$ with widths $w_1,w_2,\dots,w_n$, respectively. Then $P_1\cup P_2\cup\cdots\cup P_n$ covers a subset of the three-dimensional unit ball $B^3$ of maximum volume if and only if $P_1\cup P_2\cup\cdots\cup P_n$ itself is a plank of width
-
-$w_1+w_2+\cdots+w_n$
-
-whose center of symmetry is the center $o$ of the unit ball.
+Let $w_1,w_2,\dots,w_n$ be positive real numbers satisfying $w_1+w_2+\cdots+w_n<2$. Let $P_1,P_2,\dots,P_n$ be planks in $\mathbb{E}^3$ with widths $w_1,w_2,\dots,w_n$, respectively. Then $P_1\cup P_2\cup\cdots\cup P_n$ covers a subset of the three-dimensional unit ball $B^3$ of maximum volume if and only if $P_1\cup P_2\cup\cdots\cup P_n$ itself is a plank of width $w_1+w_2+\cdots+w_n$ whose center of symmetry is the center $o$ of the unit ball.
 
 This is the three-dimensional case in which the expected extremal configuration is known to be correct.
 
@@ -71,15 +49,7 @@ This is the three-dimensional case in which the expected extremal configuration 
 
 **Source:** Bezdek, *Tarski's Plank Problem Revisited*, Corollary 5.4.
 
-Let $P_1,P_2,P_3$ be three planks in $\mathbb{E}^d$, where $d\ge 3$. Suppose that their widths are $w_1,w_2,w_3$, respectively, and that
-
-$0<w_1+w_2+w_3<2$.
-
-Then $P_1\cup P_2\cup P_3$ covers a subset of the unit ball $B^d$ of maximum volume if and only if $P_1\cup P_2\cup P_3$ itself is a plank of width
-
-$w_1+w_2+w_3$
-
-whose center of symmetry is the center $o$ of the unit ball.
+Let $P_1,P_2,P_3$ be three planks in $\mathbb{E}^d$, where $d\ge 3$. Suppose that their widths are $w_1,w_2,w_3$, respectively, and that $0<w_1+w_2+w_3<2$. Then $P_1\cup P_2\cup P_3$ covers a subset of the unit ball $B^d$ of maximum volume if and only if $P_1\cup P_2\cup P_3$ itself is a plank of width $w_1+w_2+w_3$ whose center of symmetry is the center $o$ of the unit ball.
 
 ### 4. References
 1. K. Bezdek, Classical Topics in Discrete Geometry, CMS Books in Mathematics, Springer, New York, 2010.
