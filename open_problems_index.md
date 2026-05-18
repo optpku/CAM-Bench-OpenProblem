@@ -16,6 +16,8 @@ This index is organized in a Stacks-style hierarchy: broad mathematical domains 
   * [Chapter 7: Semidefinite Graph Parameters and Euclidean Representations](open_problems/part_3_graphs_and_semidefinite_geometry/07_semidefinite_graph_parameters.md)
 * Part 4: Topological and Combinatorial Convexity
   * [Chapter 8: Colored Convexity and Tverberg-Type Problems](open_problems/part_4_topological_and_combinatorial_convexity/08_colored_convexity_tverberg_type_problems.md)
+* Part 5: Markov Decision and Game Processes
+  * [Chapter 9: Algorithmic Markov Decision and Game Processes](open_problems/part_5_markov_decision_and_game_processes/09_algorithmic_mdp_and_game_processes.md)
 
 ---
 
@@ -31,6 +33,7 @@ This index is organized in a Stacks-style hierarchy: broad mathematical domains 
 | Part 2: Optimization and Variational Analysis | [Chapter 6: Monotone Operator Theory and Variational Analysis](open_problems/part_2_optimization_and_variational_analysis/06_monotone_operator_theory.md) | [1. Rockafellar Sum Problem](open_problems/part_2_optimization_and_variational_analysis/06_monotone_operator_theory.md#problem-1) |
 | Part 3: Graphs and Semidefinite Geometry | [Chapter 7: Semidefinite Graph Parameters and Euclidean Representations](open_problems/part_3_graphs_and_semidefinite_geometry/07_semidefinite_graph_parameters.md) | [1. Euclidean, Gram, and $\nu^{=}$ Graph Parameters](open_problems/part_3_graphs_and_semidefinite_geometry/07_semidefinite_graph_parameters.md#problem-1) |
 | Part 4: Topological and Combinatorial Convexity | [Chapter 8: Colored Convexity and Tverberg-Type Problems](open_problems/part_4_topological_and_combinatorial_convexity/08_colored_convexity_tverberg_type_problems.md) | [1. A Multicolored Carathéodory Conjecture](open_problems/part_4_topological_and_combinatorial_convexity/08_colored_convexity_tverberg_type_problems.md#problem-1) |
+| Part 5: Markov Decision and Game Processes | [Chapter 9: Algorithmic Markov Decision and Game Processes](open_problems/part_5_markov_decision_and_game_processes/09_algorithmic_mdp_and_game_processes.md) | [1. Howard's Policy Iteration Complexity for Deterministic MDPs](open_problems/part_5_markov_decision_and_game_processes/09_algorithmic_mdp_and_game_processes.md#problem-1), [2. Strategy Iteration Complexity for Deterministic Turn-Based Zero-Sum Games](open_problems/part_5_markov_decision_and_game_processes/09_algorithmic_mdp_and_game_processes.md#problem-2), [3. Interior-Point Method for Discounted MGPs with Logarithmic Discount Dependence](open_problems/part_5_markov_decision_and_game_processes/09_algorithmic_mdp_and_game_processes.md#problem-3), [4. Strongly Polynomial Algorithm for General Discounted MDPs](open_problems/part_5_markov_decision_and_game_processes/09_algorithmic_mdp_and_game_processes.md#problem-4), [5. Polynomial Algorithm for General Discounted MDPs with Variable Discount Factor](open_problems/part_5_markov_decision_and_game_processes/09_algorithmic_mdp_and_game_processes.md#problem-5) |
 
 ---
 
@@ -143,3 +146,37 @@ This index is organized in a Stacks-style hierarchy: broad mathematical domains 
 - **Contributor:** Yinyu Ye
 - **Open problem labels:** Conjecture 1.1 (A Multicolored Carathéodory Conjecture)
 - **Open problem summary:** Asks for a multicolored Carathéodory-type selection satisfying a rainbow constraint and preserving containment of $0$ in the convex hull.
+
+### Part 5: Markov Decision and Game Processes
+
+#### [Chapter 9: Algorithmic Markov Decision and Game Processes](open_problems/part_5_markov_decision_and_game_processes/09_algorithmic_mdp_and_game_processes.md)
+
+##### [1. Howard's Policy Iteration Complexity for Deterministic MDPs](open_problems/part_5_markov_decision_and_game_processes/09_algorithmic_mdp_and_game_processes.md#problem-1)
+
+- **Contributor:** Yinyu Ye
+- **Open problem labels:** Question 1.1
+- **Open problem summary:** Asks whether Howard's policy-iteration method is strongly polynomial for deterministic discounted MDPs, independent of the discount factor.
+
+##### [2. Strategy Iteration Complexity for Deterministic Turn-Based Zero-Sum Games](open_problems/part_5_markov_decision_and_game_processes/09_algorithmic_mdp_and_game_processes.md#problem-2)
+
+- **Contributor:** Yinyu Ye
+- **Open problem labels:** Question 2.1
+- **Open problem summary:** Asks whether the simple strategy-iteration method is polynomial or strongly polynomial for deterministic turn-based two-person zero-sum MGPs, analogous to the Post–Ye simplex bounds for deterministic MDPs.
+
+##### [3. Interior-Point Method for Discounted MGPs with Logarithmic Discount Dependence](open_problems/part_5_markov_decision_and_game_processes/09_algorithmic_mdp_and_game_processes.md#problem-3)
+
+- **Contributor:** Yinyu Ye
+- **Open problem labels:** Question 3.1
+- **Open problem summary:** Asks whether there exists a polynomial-time interior-point method for discounted Markov Game Processes whose dependence on the discount factor is only logarithmic in $\frac{1}{1-\gamma}$.
+
+##### [4. Strongly Polynomial Algorithm for General Discounted MDPs](open_problems/part_5_markov_decision_and_game_processes/09_algorithmic_mdp_and_game_processes.md#problem-4)
+
+- **Contributor:** Yinyu Ye
+- **Open problem labels:** Question 4.1
+- **Open problem summary:** Asks whether a strongly polynomial-time algorithm exists for general (stochastic) discounted MDPs, with complexity independent of the discount factor $\gamma$.
+
+##### [5. Polynomial Algorithm for General Discounted MDPs with Variable Discount Factor](open_problems/part_5_markov_decision_and_game_processes/09_algorithmic_mdp_and_game_processes.md#problem-5)
+
+- **Contributor:** Yinyu Ye
+- **Open problem labels:** Question 5.1
+- **Open problem summary:** Asks whether there is a polynomial-time algorithm for general discounted MDPs when $\gamma$ is part of the numerical input, with complexity polynomial in $m$, $n$, and $\log\frac{1}{1-\gamma}$.
