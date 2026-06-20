@@ -1,4 +1,4 @@
-# Monotone Operator Theory and Variational Analysis
+# Rockafellar Sum Problem
 
 This file collects open problems in monotone operator theory and variational analysis. The present problem is foundational for maximal monotone operators in Banach spaces and is closely connected to convex analysis, variational inequalities, monotone inclusions, proximal methods, and splitting algorithms.
 

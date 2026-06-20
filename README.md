@@ -13,25 +13,42 @@ The index is the project overview. It records the table of contents, chapter lin
 ```text
 open_problems/
   part_1_convex_and_discrete_geometry/
-    01_convex_geometry_support_faces_distance.md
-    02_convex_covering_and_extremal_volume.md
-    03_discrete_covering_and_polyhedral_volume.md
-    04_simplicial_and_triangulation_geometry.md
-  part_2_optimization_and_variational_analysis/
-    05_first_order_convex_optimization_complexity.md
-    06_monotone_operator_theory.md
-  part_3_graphs_and_semidefinite_geometry/
-    07_semidefinite_graph_parameters.md
-  part_4_topological_and_combinatorial_convexity/
-    08_colored_convexity_tverberg_type_problems.md
+    01_antipodal_segments_and_simplices.md
+    02_points_in_o_symmetric_convex_body.md
+    03_faces_of_compact_convex_set.md
+    04_planks_covering_unit_ball.md
+    05_extremal_simplex_intersection_spherical_hyperbolic.md
+    06_covering_unit_cube_by_smaller_cubes.md
+    07_boolean_quadric_polytope_volume.md
+    08_triangulations_perturbed_grid_squares.md
+    09_incenter_euler_line_simplex.md
+  part_2_optimization_algorithms_and_variational_analysis/
+    10_composite_l0_l1_smooth_optimization.md
+    11_silver_stepsize_optimality_conjecture.md
+    12_rockafellar_sum_problem.md
+    13_dfp_quasi_newton_convergence.md
+    14_neural_network_and_llm_optimization.md
+  part_3_graphs_semidefinite_and_topological_combinatorics/
+    15_semidefinite_graph_parameters.md
+    16_colored_convexity_tverberg_type_problems.md
+  part_4_numerical_linear_algebra_and_algebraic_optimization/
+    17_gaussian_elimination_column_pivoting_error_bounds.md
+    18_convex_polynomial_and_semialgebraic_optimization.md
+  part_5_markov_decision_and_game_processes/
+    19_howards_policy_iteration_complexity_deterministic_mdps.md
+    20_strategy_iteration_complexity_turn_based_games.md
+    21_interior_point_discounted_mgps_log_discount.md
+    22_strongly_polynomial_general_discounted_mdps.md
+    23_polynomial_algorithm_discounted_mdps_variable_discount.md
 ```
 
 ## Thematic Parts
 
 * **Part 1: Convex, Discrete, and Polyhedral Geometry** covers convex-body structure, geometric covering, extremal volume, discrete covering, polyhedral volume, simplices, and triangulations.
-* **Part 2: Optimization and Variational Analysis** separates first-order convex optimization complexity from monotone operator theory and variational analysis.
-* **Part 3: Graphs and Semidefinite Geometry** covers graph parameters, Euclidean and Gram representations, and positive semidefinite matrix methods.
-* **Part 4: Topological and Combinatorial Convexity** covers colored convexity, Carathéodory-type conjectures, Tverberg-type problems, and related topological combinatorics.
+* **Part 2: Optimization Algorithms and Variational Analysis** covers first-order complexity, stepsize schedules, monotone operator theory, quasi-Newton convergence, and neural-network or LLM optimization questions.
+* **Part 3: Graphs, Semidefinite Geometry, and Topological Combinatorics** covers graph parameters, Euclidean and Gram representations, semidefinite matrix methods, colored convexity, and Tverberg-type combinatorics.
+* **Part 4: Numerical Linear Algebra and Algebraic Optimization** covers floating-point error analysis, pivoting stability, convex polynomial optimization, and semialgebraic certificates.
+* **Part 5: Markov Decision and Game Processes** covers algorithmic complexity questions for discounted MDPs and Markov game processes.
 
 ## Write-Up Structure
 

@@ -1,4 +1,4 @@
-# Semidefinite Graph Parameters and Euclidean Representations
+# Euclidean, Gram, and $\nu^{=}$ Graph Parameters
 
 This file focuses on one open problem at the interface of graph theory, semidefinite geometry, and Euclidean representations. The central question is how the graph parameters $ed(G)$, $gd(G)$, and $\nu^{=}(G)$ compare, and whether known one-sided inequalities can be upgraded to equalities.
 
@@ -8,7 +8,7 @@ This file focuses on one open problem at the interface of graph theory, semidefi
 
 ## 1. Euclidean, Gram, and $\nu^{=}$ Graph Parameters
 
-Contributors: Yinyu Ye
+Contributors: Monique Laurent, Yinyu Ye, and Antonios Varvitsiotis
 
 ### 1. Problem Background
 This problem concerns three graph parameters: the Euclidean dimension parameter $ed(G)$, the Gram dimension parameter $gd(G)$, and the positive semidefinite corank parameter $\nu^{=}(G)$. These parameters compare partial Euclidean-distance data, partial Gram data, and semidefinite corank data associated with a graph.

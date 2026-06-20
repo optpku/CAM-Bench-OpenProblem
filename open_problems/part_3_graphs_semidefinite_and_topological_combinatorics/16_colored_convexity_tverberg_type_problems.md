@@ -1,4 +1,4 @@
-# Colored Convexity and Tverberg-Type Problems
+# A Multicolored Carathéodory Conjecture
 
 This file discusses one open conjecture at the intersection of colored convexity and topological combinatorics. The conjecture can be viewed as a multicolored strengthening of Bárány's colored Carathéodory theorem and is closely related to extending colored Tverberg-type results beyond the prime case.
 
@@ -8,7 +8,7 @@ This file discusses one open conjecture at the intersection of colored convexity
 
 ## 1. A Multicolored Carathéodory Conjecture
 
-Contributors: Yinyu Ye
+Contributors: Benjamin Matschke and Yinyu Ye
 
 ### 1. Problem Background
 This problem is a multicolored variant of Bárány’s colored Carathéodory theorem. The classical colored Carathéodory theorem says that if $X_1,\ldots,X_{d+1}\subset \mathbb{R}^d$ are point sets such that $0\in \mathrm{conv}(X_i)$ for every $i$, then one can choose one point from each $X_i$ whose convex hull still contains $0$. In the present conjecture, the sets are arranged as columns $\{P_{1j},\ldots,P_{rj}\}$ in $\mathbb{R}^N$, with $0\in \mathrm{conv}\{P_{1j},\ldots,P_{rj}\}$ for each $j=1,\ldots,N+1$. One wants to choose one point from each column so that the chosen points still contain $0$ in their convex hull, but with an additional “rainbow” restriction coming from a partition $C_1\uplus\cdots\uplus C_m$ of the column indices: two indices in the same color class must be assigned different row labels.
