@@ -8,6 +8,15 @@ The main entry point is the project overview:
 
 The index is the project overview. It records the table of contents, problem links, problem anchors, and for each problem its contributor, open-problem labels, and brief summary.
 
+An additional machine-readable collection is available here:
+
+**[Mathematics of Operations Research import](datasets/open_problems_in_or/README.md)**
+
+This imported snapshot contains 132 records from the Open Problems in
+Operations Research website. It is intentionally separate from the
+hand-curated problem write-ups below because the upstream entries are marked
+as not independently verified as still open.
+
 ## Repository Layout
 
 ```text
@@ -48,6 +57,19 @@ open_problems/
   part_06_distributed_optimization/
     29_single_loop_time_varying_row_stochastic_optimization.md
     30_linear_speedup_stochastic_push_pull_time_varying_digraphs.md
+datasets/
+  open_problems_in_or/
+    README.md
+    mathematics_of_operations_research.jsonl
+    mathematics_of_operations_research_index.md
+    snapshot.json
+scripts/
+  fetch_open_problems_in_or.py
+  build_open_problems_in_or_index.py
+tests/
+  test_fetch_open_problems_in_or.py
+  test_build_open_problems_in_or_index.py
+  test_open_problems_in_or_snapshot.py
 ```
 
 ## Thematic Parts
@@ -77,3 +99,20 @@ Each problem write-up uses the following sections when applicable:
 
 5. **References**  
    Full bibliographic entries for works cited in the write-up.
+
+## Imported Data
+
+The [Open Problems in Operations Research
+import](datasets/open_problems_in_or/README.md) provides complete JSONL records
+and a [browsable generated
+catalog](datasets/open_problems_in_or/mathematics_of_operations_research_index.md).
+The snapshot records its upstream revision, extraction timestamp, record count,
+and checksum in
+[`snapshot.json`](datasets/open_problems_in_or/snapshot.json).
+
+To validate the import tooling:
+
+```bash
+python3 -m unittest discover -s tests -v
+python3 scripts/build_open_problems_in_or_index.py
+```
