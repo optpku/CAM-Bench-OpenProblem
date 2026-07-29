@@ -2,15 +2,6 @@
 
 This index is organized in a Stacks-style hierarchy: broad mathematical domains are listed as parts, and each problem is kept in its own problem file. Every problem title below links directly to the corresponding anchor in its problem file.
 
-## Imported Collections
-
-- [Mathematics of Operations Research: 132 imported open problems](datasets/open_problems_in_or/mathematics_of_operations_research_index.md)
-
-The imported collection is maintained separately from the hand-curated
-write-ups below. Its upstream entries are marked as not independently verified
-as still open; see the [dataset
-notes](datasets/open_problems_in_or/README.md) before using them.
-
 ## Table of Contents
 
 * Part 01: Geometry
