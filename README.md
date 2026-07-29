@@ -1,6 +1,6 @@
 # Open Problems in Mathematics
 
-This is an open problems project. It collects mathematical open problems and organizes them into a browseable set of thematic parts and problem files.
+This is an open problems project. It collects mathematical open problems and organizes them into a browseable set of thematic parts and problem files. The repository currently contains 162 problem write-ups.
 
 The main entry point is the project overview:
 
@@ -48,7 +48,21 @@ open_problems/
   part_06_distributed_optimization/
     29_single_loop_time_varying_row_stochastic_optimization.md
     30_linear_speedup_stochastic_push_pull_time_varying_digraphs.md
+  part_07_discrete_optimization_and_algorithms/
+    ...
+  part_08_markets_mechanism_design_and_online_algorithms/
+    ...
+  part_09_stochastic_models_and_applied_probability/
+    ...
 ```
+
+Problems 31--162 follow the same one-file-per-problem structure and are placed
+in the most relevant thematic part. They were imported from the
+[Open Problems in Operations Research](https://pranav-nuti.github.io/open-problems-in-or/)
+collection, restricted to source papers in *Mathematics of Operations
+Research*. The upstream records are marked as not independently verified as
+still open; every imported write-up preserves that warning and links to its
+source record.
 
 ## Thematic Parts
 
@@ -58,6 +72,9 @@ open_problems/
 * **Part 04: Computational Mathematics** covers floating-point error analysis, pivoting stability, convex polynomial optimization, semialgebraic certificates, and structured polynomial subproblems from high-order tensor methods.
 * **Part 05: Decision-Making and Games** covers algorithmic complexity questions for discounted MDPs and Markov game processes, where decisions affect future states.
 * **Part 06: Distributed Optimization** covers optimization algorithms whose central difficulty is communication, mixing, consensus, or gradient tracking over static or time-varying networks.
+* **Part 07: Discrete Optimization and Algorithms** covers integer programming, matching, matroid algorithms, scheduling, routing, polyhedra, and approximation algorithms.
+* **Part 08: Markets, Mechanism Design, and Online Algorithms** covers fair division, matching markets, auctions, prophet inequalities, secretary problems, online allocation, and social choice.
+* **Part 09: Stochastic Models and Applied Probability** covers stochastic approximation, optimal transport, queueing, diffusions, risk measures, large deviations, and optimal stopping.
 
 ## Write-Up Structure
 
