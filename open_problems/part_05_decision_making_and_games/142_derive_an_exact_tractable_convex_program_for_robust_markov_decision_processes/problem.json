@@ -1,0 +1,55 @@
+{
+  "id": 142,
+  "title": "Derive an exact tractable convex program for robust Markov decision processes",
+  "part": "决策与博弈",
+  "partKey": "part_05_decision_making_and_games",
+  "file": "open_problems/part_05_decision_making_and_games/142_derive_an_exact_tractable_convex_program_for_robust_markov_decision_processes/problem.md",
+  "jsonFile": "open_problems/part_05_decision_making_and_games/142_derive_an_exact_tractable_convex_program_for_robust_markov_decision_processes/problem.json",
+  "authors": "Julien Grand-Clément, Marek Petrik",
+  "source": "Julien Grand-Clément, Marek Petrik, On the Convex Formulations of Robust Markov Decision Processes, Mathematics of Operations Research, 2024.",
+  "keywords": "robust MDPs, convex formulation, conic optimization, rectangular uncertainty, Bellman operator, exact reformulation",
+  "verification": "待核验",
+  "type": "complexity",
+  "typeLabel": "复杂度 / 可计算性",
+  "typeTags": [
+    "复杂度 / 可计算性",
+    "界 / 近似 / 最优常数",
+    "算法 / 机制设计",
+    "证明或反例"
+  ],
+  "clarity": {
+    "score": 60,
+    "level": "L2",
+    "label": "方向明确",
+    "description": "研究方向和目标可辨认，完整形式化前仍需补充关键条件。",
+    "components": {
+      "问题陈述": 17,
+      "对象与假设": 8,
+      "目标与判据": 11,
+      "范围与边界": 9,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 17/25",
+      "对象与假设 8/20",
+      "目标与判据 11/25",
+      "范围与边界 9/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "A discounted robust Markov decision process (RMDP) is specified by finite sets of states $S$ and actions $A$, nonnegative rewards $r{sa}\\in\\mathbb{R}+$ for $(s,a)\\in S\\times A$, a discount factor $\\gamma\\in(0,1)$, an initial distribution $\\alpha\\in\\Delta(S)$, and an uncertainty set $\\mathcal{U}\\subseteq (\\Delta(S))^{S\\times A}$ of plausible transition kernels $P=(P{sas'})$. A stationary policy is $\\pi\\in\\Pi:=(\\Delta(A))^S$. For a fixed transition kernel $P$, the discounted return of $\\pi$ is $$",
+  "statement": "\\max{\\pi\\in\\Pi}\\ \\min{P\\in\\mathcal{U}}\\ R(\\pi,P),",
+  "statementLength": 47,
+  "statementSentences": 1,
+  "statementFormulas": 0,
+  "statementComplexityScore": 9,
+  "statementConnectors": 0,
+  "concisenessBasis": "长度 47、句子 1、公式 0、连接结构 0；本批次复杂度分位点 30/54",
+  "familiarity": "high",
+  "familiarityLabel": "高文献可见度",
+  "familiarityScore": 12,
+  "familiarityBasis": "来源元数据、参考文献 9 条、链接/DOI 8 个",
+  "content": "# Derive an exact tractable convex program for robust Markov decision processes\n\nThis file contains the open problem on Derive an exact tractable convex program for robust Markov decision processes.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Derive an exact tractable convex program for robust Markov decision processes\n\nSource paper authors: Julien Grand-Clément, Marek Petrik\n\n### 1. Problem Background\n\nA discounted robust Markov decision process (RMDP) is specified by finite sets of states $S$ and actions $A$, nonnegative rewards $r_{sa}\\in\\mathbb{R}_+$ for $(s,a)\\in S\\times A$, a discount factor $\\gamma\\in(0,1)$, an initial distribution $\\alpha\\in\\Delta(S)$, and an uncertainty set $\\mathcal{U}\\subseteq (\\Delta(S))^{S\\times A}$ of plausible transition kernels $P=(P_{sas'})$. A stationary policy is $\\pi\\in\\Pi:=(\\Delta(A))^S$. For a fixed transition kernel $P$, the discounted return of $\\pi$ is\n$$\n\nR(\\pi,P)=\\mathbb{E}_{\\pi,P}\\Big[\\sum_{t=0}^\\infty \\gamma^t\\, r_{S_tA_t}\\ \\Big|\\ S_0\\sim\\alpha\\Big].\n\n$$\nThe RMDP objective is the max–min problem\n$$\n\n\\max_{\\pi\\in\\Pi}\\ \\min_{P\\in\\mathcal{U}}\\ R(\\pi,P).\n\n$$\nA common tractable structure is rectangularity of $\\mathcal{U}$. Under sa-rectangularity one has $\\mathcal{U}=\\prod_{(s,a)\\in S\\times A} \\mathcal{U}_{sa}$ with $\\mathcal{U}_{sa}\\subseteq\\Delta(S)$ convex and compact, and the robust Bellman operator $T:\\mathbb{R}^S\\to\\mathbb{R}^S$ is\n$$\n\nT(v)_s = \\max_{a\\in A}\\ \\min_{p\\in\\mathcal{U}_{sa}}\\Big\\{ r_{sa}+\\gamma\\, p^\\top v\\Big\\},\\qquad s\\in S.\n\n$$\nThe fixed point $v^\\star$ of $T$ yields an optimal robust value function and an optimal stationary policy. Unlike the nominal MDP case (where a linear program exists), the maps $v\\mapsto T(v)_s$ need not be convex or concave, so the feasible sets $\\{v\\in\\mathbb{R}^S: v\\ge T(v)\\}$ or $\\{v\\in\\mathbb{R}^S: v\\le T(v)\\}$ are not known to admit a straightforward convex description in general.\n\n### 2. Open Problem\n\n**Question 1.1.** Find conditions and a polynomial-size convex optimization formulation (e.g., conic, geometric, or other convex program) whose optimal solutions encode an optimal robust stationary policy and the optimal robust value function for the discounted RMDP\n$$\n\n\\max_{\\pi\\in\\Pi}\\ \\min_{P\\in\\mathcal{U}}\\ R(\\pi,P),\n\n$$\nunder classical rectangular uncertainty (in particular sa-rectangular or s-rectangular $\\mathcal{U}$), without introducing an approximation scheme based on regularization (i.e., an exact convex reformulation of the original RMDP rather than a sequence of convex programs converging to it).\n\n### 3. Known Results\n\nThe source paper (Grand-Cl\\'ement–Petrik, 2023) frames a central gap between the nominal discounted MDP case—where the Bellman inequalities $v\\ge T_P(v)$ yield a polynomial-size LP—and the discounted robust case under classical rectangular uncertainty, where the robust Bellman operator $T(v)_s=\\max_a\\min_{p\\in\\mathcal U_{sa}}\\{r_{sa}+\\gamma p^\\top v\\}$ is generally neither convex nor concave in $v$. The paper’s main contribution is therefore approximate: it adds entropic regularization in the maximization over actions and applies an exponential change of variables to obtain a polynomial-size convex (often conic) program whose solutions converge to the robust optimum as the regularization parameter tends to 0. The open problem asks whether one can remove this regularization/limit and obtain an exact polynomial-size convex formulation for the original max–min RMDP.\n\nAmong forward citations, no work is identified as giving such an exact convex reformulation in full generality. The closest structural progress is \"Tractable robust Markov decision processes\", which sharpens the landscape of when Bellman fixed-point dynamic programming is valid: for compact convex uncertainty sets, s-rectangularity and sa-rectangularity are essentially the only models that are tractable for all rewards/policies. This supports focusing on rectangular sets but does not by itself yield an explicit conic/LP description of $\\{v: v\\ge T(v)\\}$ or a single convex program encoding $v^\\star$ and an optimal robust policy.\n\nSeveral papers provide partial tools rather than a full convexification. Data-driven distance-based ambiguity-set work (and related $\\kappa$-rectangular modeling) emphasizes that for many practically used $\\mathcal U_{sa}$ (e.g., norm or divergence balls), the inner minimization $\\min_{p\\in\\mathcal U_{sa}} p^\\top v$ is a convex optimization problem with tractable duals, suggesting that if one could decouple the outer $\\max_a$ and the dependence of $p$ on $v$ in a convex way, a conic epigraph might be possible in special cases. Conic-duality approaches in robust constrained MDPs show that even when the inner adversary problem is SOCP-representable, coupling it with policy choice typically introduces bilinearities, pinpointing a key obstruction to a global convex program. Algorithmic works (policy gradients; IWOCS) exploit rectangularity and saddle-point structure for computation but do not provide exact polynomial-size convex formulations. Overall, based on these forward citations, the exact convex-program reformulation for discounted rectangular RMDPs without regularization remains open; promising directions include identifying uncertainty-set classes where $v\\mapsto \\min_{p\\in\\mathcal U_{sa}} p^\\top v$ admits a conic epigraph that interacts benignly with the $\\max_a$ (e.g., via extended formulations), or proving impossibility/size lower bounds for general rectangular sets.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #126 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4400685310_p0/partial_progress/126.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Julien Grand-Clément, Marek Petrik, [*On the Convex Formulations of Robust Markov Decision Processes*](https://doi.org/10.1287/moor.2022.0284), Mathematics of Operations Research, 2024.\n- **Location in paper:** Section 1 (Introduction), page 2; reiterated in Section 7 (Conclusion), page 22.\n- **Area:** robust markov decision processes\n- **Keywords:** `robust MDPs`, `convex formulation`, `conic optimization`, `rectangular uncertainty`, `Bellman operator`, `exact reformulation`\n- **Upstream problem record:** [W4400685310_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4400685310_p0&n=126&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Julien Grand-Clément, Marek Petrik, [*On the Convex Formulations of Robust Markov Decision Processes*](https://doi.org/10.1287/moor.2022.0284), Mathematics of Operations Research, 2024.\n2. *Tractable robust Markov decision processes*.\n3. *Dynamic Programming for Epistemic Uncertainty in Markov Decision Processes*.\n4. [*Robust markov decision processes with data-driven, distance-based ambiguity sets*](https://doi.org/10.1137/21M1423841).\n5. [*A Family of -Rectangular Robust MDPs: Relative Conservativeness, Asymptotic Analyses, and Finite-Sample Properties*](https://doi.org/10.1137/23M1559920).\n6. *Transition Uncertainties in Constrained Markov Decision Models: A Robust Optimization Approach*.\n7. [*Policy Gradient Algorithms for Robust MDP with Nonrectangular Uncertainty Sets*](https://doi.org/10.1137/24M1631250).\n8. *Soft robust mdps and risk-sensitive mdps: Equivalence, policy gradient, and sample complexity*.\n9. *Revisiting the static model in robust reinforcement learning*.\n",
+  "conciseness": "short",
+  "concisenessLabel": "简洁"
+}

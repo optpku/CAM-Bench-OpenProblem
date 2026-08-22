@@ -6,6 +6,51 @@ The main entry point is the project overview:
 
 **[Open Problems Index](open_problems_index.md)**
 
+## Browser catalog
+
+The `site/` directory contains a static browser for all 162 entries. It supports
+search, responsive detail views, and switching between clarity, research area,
+problem type, source status, statement conciseness, and literature-visibility
+proxy groupings.
+
+Each problem has its Markdown write-up and companion JSON in the same
+problem-specific directory under `open_problems/`. The browser loads the
+small `site/catalog.json` index first and fetches a problem's JSON only when
+that problem is selected. To rebuild these files after editing or adding
+problem files:
+
+```bash
+python3 site/build_catalog.py
+python3 -m http.server 8000
+```
+
+Then open <http://localhost:8000/site/>. Serving from the repository root
+keeps both `site/catalog.json` and the per-problem files under
+`open_problems/` available to the browser. The clarity rubric is documented in
+[`site/classification_methodology.md`](site/classification_methodology.md). It
+is a transparent text heuristic, separate from the repository's “unverified”
+source status, and should not be read as a mathematical correctness judgment.
+
+For one-command startup, run `python3 run_site.py`. It rebuilds the catalog,
+chooses a free local port, serves the repository root, and opens the browser at
+the correct `/site/` URL. Use `python3 run_site.py --no-browser` when working
+on a headless machine.
+
+The browser opens directly to the problem browser. Detail views include a
+clickable section outline, copy-link action, and random-problem action.
+
+The left-side “浏览内容” selector also includes a curated library of 22
+named conjectures and famous open problems, with domain, status, statement,
+relevance to this collection, and external references.
+These records are kept separately in `site/named_conjectures.json` and are not counted among
+the 162 imported open-problem records.
+
+Statement conciseness uses a corpus-relative complexity score based on
+character length, sentence count, formula count, and connective structure;
+the 162 statements are split at the 33rd and 67th percentiles into concise,
+medium, and complex groups. The score and its basis are shown in each detail
+record.
+
 The index is the project overview. It records the table of contents, problem links, problem anchors, and for each problem its contributor, open-problem labels, and brief summary.
 
 ## Repository Layout
@@ -13,41 +58,32 @@ The index is the project overview. It records the table of contents, problem lin
 ```text
 open_problems/
   part_01_geometry/
-    01_antipodal_segments_and_simplices.md
-    02_points_in_o_symmetric_convex_body.md
-    03_faces_of_compact_convex_set.md
-    04_planks_covering_unit_ball.md
-    05_extremal_simplex_intersection_spherical_hyperbolic.md
-    06_covering_unit_cube_by_smaller_cubes.md
-    07_boolean_quadric_polytope_volume.md
-    08_triangulations_perturbed_grid_squares.md
-    09_incenter_euler_line_simplex.md
+    01_antipodal_segments_and_simplices/
+      problem.md
+      problem.json
+    02_points_in_o_symmetric_convex_body/
+      problem.md
+      problem.json
   part_02_continuous_optimization/
-    10_composite_l0_l1_smooth_optimization.md
-    11_silver_stepsize_optimality_conjecture.md
-    12_rockafellar_sum_problem.md
-    13_dfp_quasi_newton_convergence.md
-    14_neural_network_and_llm_optimization.md
-    15_nonsmooth_bfgs_armijo_wolfe.md
-    16_optimality_explicit_superlinear_quasi_newton_rates.md
-    17_standard_lbfgs_worst_case_complexity.md
-    18_constant_penalty_alm_nonlinear_nonconvex_constraints.md
+    10_composite_l0_l1_smooth_optimization/
+      problem.md
+      problem.json
   part_03_combinatorics/
-    19_semidefinite_graph_parameters.md
-    20_colored_convexity_tverberg_type_problems.md
+    19_semidefinite_graph_parameters/
+      problem.md
+      problem.json
   part_04_computational_mathematics/
-    21_gaussian_elimination_column_pivoting_error_bounds.md
-    22_convex_polynomial_and_semialgebraic_optimization.md
-    23_global_solution_arp_polynomial_subproblems.md
+    21_gaussian_elimination_column_pivoting_error_bounds/
+      problem.md
+      problem.json
   part_05_decision_making_and_games/
-    24_howards_policy_iteration_complexity_deterministic_mdps.md
-    25_strategy_iteration_complexity_turn_based_games.md
-    26_interior_point_discounted_mgps_log_discount.md
-    27_strongly_polynomial_general_discounted_mdps.md
-    28_polynomial_algorithm_discounted_mdps_variable_discount.md
+    24_howards_policy_iteration_complexity_deterministic_mdps/
+      problem.md
+      problem.json
   part_06_distributed_optimization/
-    29_single_loop_time_varying_row_stochastic_optimization.md
-    30_linear_speedup_stochastic_push_pull_time_varying_digraphs.md
+    29_single_loop_time_varying_row_stochastic_optimization/
+      problem.md
+      problem.json
   part_07_discrete_optimization_and_algorithms/
     ...
   part_08_markets_mechanism_design_and_online_algorithms/
@@ -56,8 +92,9 @@ open_problems/
     ...
 ```
 
-Problems 31--162 follow the same one-file-per-problem structure and are placed
-in the most relevant thematic part. They were imported from the
+Problems 31--162 follow the same per-problem-directory structure and are placed
+in the most relevant thematic part. Each directory contains the Markdown
+write-up and its generated JSON record. They were imported from the
 [Open Problems in Operations Research](https://pranav-nuti.github.io/open-problems-in-or/)
 collection, restricted to source papers in *Mathematics of Operations
 Research*. The upstream records are marked as not independently verified as

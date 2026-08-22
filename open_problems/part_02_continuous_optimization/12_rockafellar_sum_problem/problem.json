@@ -1,0 +1,53 @@
+{
+  "id": 12,
+  "title": "Rockafellar Sum Problem",
+  "part": "连续优化",
+  "partKey": "part_02_continuous_optimization",
+  "file": "open_problems/part_02_continuous_optimization/12_rockafellar_sum_problem/problem.md",
+  "jsonFile": "open_problems/part_02_continuous_optimization/12_rockafellar_sum_problem/problem.json",
+  "authors": "",
+  "source": "",
+  "keywords": "",
+  "verification": "专题整理",
+  "type": "optimization",
+  "typeLabel": "优化模型 / 算子",
+  "typeTags": [
+    "优化模型 / 算子"
+  ],
+  "clarity": {
+    "score": 76,
+    "level": "L3",
+    "label": "清晰可研究",
+    "description": "核心问题明确，但仍有少量边界、术语或最优性条件需要补齐。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 18,
+      "目标与判据": 15,
+      "范围与边界": 5,
+      "单一性": 13
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 18/20",
+      "目标与判据 15/25",
+      "范围与边界 5/15",
+      "单一性 13/15",
+      "出现宽泛或并列扩展措辞，需人工确认边界"
+    ]
+  },
+  "summary": "Let $X$ be a real Banach space and let $A,B:X\\to 2^{X^\\ast}$ be two maximal monotone operators. Their pointwise sum is defined by $(A+B)(x):=Ax+Bx=\\{a^\\ast+b^\\ast:a^\\ast\\in Ax,\\ b^\\ast\\in Bx\\}.$",
+  "statement": "Question 1.1. Rockafellar Sum Problem in General Banach Spaces. Let $X$ be a real Banach space, and let $A,B:X\\to 2^{X^\\ast}$ be maximal monotone operators satisfying $\\mathrm{dom}A\\cap \\mathrm{int}\\mathrm{dom}B\\neq\\varnothing.$ Is the sum $A+B$ necessarily maximal monotone?",
+  "statementLength": 242,
+  "statementSentences": 5,
+  "statementFormulas": 4,
+  "statementComplexityScore": 57,
+  "statementConnectors": 1,
+  "concisenessBasis": "长度 242、句子 5、公式 4、连接结构 1；本批次复杂度分位点 30/54",
+  "familiarity": "low",
+  "familiarityLabel": "低文献可见度",
+  "familiarityScore": 2,
+  "familiarityBasis": "来源元数据、参考文献 4 条、链接/DOI 0 个",
+  "content": "# Rockafellar Sum Problem\n\nThis file collects open problems in monotone operator theory and variational analysis. The present problem is foundational for maximal monotone operators in Banach spaces and is closely connected to convex analysis, variational inequalities, monotone inclusions, proximal methods, and splitting algorithms.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Rockafellar Sum Problem\n\nContributors: Junyu Zhang\n\n### 1. Problem Background\nLet $X$ be a real Banach space and let $A,B:X\\to 2^{X^\\ast}$ be two maximal monotone operators. Their pointwise sum is defined by $(A+B)(x):=Ax+Bx=\\{a^\\ast+b^\\ast:a^\\ast\\in Ax,\\ b^\\ast\\in Bx\\}.$\n\nThe sum $A+B$ is automatically monotone. Rockafellar's sum problem asks whether it remains maximal monotone under the classical interior-point constraint qualification $\\mathrm{dom}A\\cap \\mathrm{int}\\mathrm{dom}B\\neq\\varnothing.$ This question is central in monotone operator theory. The main difficulty in nonreflexive spaces is that duality and separation arguments can naturally produce objects in $X^{\\ast\\ast}$ rather than in $X$ itself. Many special cases are known, for example when one operator has full domain, one operator is a subdifferential or normal cone operator in suitable settings, or stronger representability/type assumptions are available.\n\n### 2. Open Problems\n**Question 1.1. Rockafellar Sum Problem in General Banach Spaces.** Let $X$ be a real Banach space, and let $A,B:X\\to 2^{X^\\ast}$ be maximal monotone operators satisfying $\\mathrm{dom}A\\cap \\mathrm{int}\\mathrm{dom}B\\neq\\varnothing.$ Is the sum $A+B$ necessarily maximal monotone?\n\n### 3. Known Results\n#### 3.1 Rockafellar's sum theorem in reflexive Banach spaces\n\n**Source:** R. T. Rockafellar, *On the maximality of sums of nonlinear monotone operators*, Transactions of the American Mathematical Society, 1969.\n\nLet $X$ be a real reflexive Banach space, and let $A,B:X\\to 2^{X^\\ast}$ be maximal monotone operators. Suppose that $\\mathrm{dom}A\\cap \\mathrm{int}\\mathrm{dom}B\\neq\\varnothing$. Then the pointwise sum $A+B:X\\to 2^{X^\\ast}$, defined by $(A+B)(x)=Ax+Bx$, is maximal monotone.\n\n### 4. References\n1. R. T. Rockafellar, **On the maximality of sums of nonlinear monotone operators**, Transactions of the American Mathematical Society, 1969.\n2. S. Simons, **Minimax and Monotonicity**, Lecture Notes in Mathematics, Springer, 1998.\n3. H. H. Bauschke, X. Wang, and L. Yao, **Recent Progress on Monotone Operator Theory**, 2012.\n4. M. D. Voisei, **The sum and chain rules for maximal monotone operators**, related survey articles on maximal monotone sums in nonreflexive Banach spaces.\n",
+  "conciseness": "long",
+  "concisenessLabel": "复杂"
+}

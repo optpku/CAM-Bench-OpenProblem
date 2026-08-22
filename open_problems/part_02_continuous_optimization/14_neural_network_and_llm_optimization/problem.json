@@ -1,0 +1,57 @@
+{
+  "id": 14,
+  "title": "Neural Network and LLM Optimization",
+  "part": "连续优化",
+  "partKey": "part_02_continuous_optimization",
+  "file": "open_problems/part_02_continuous_optimization/14_neural_network_and_llm_optimization/problem.md",
+  "jsonFile": "open_problems/part_02_continuous_optimization/14_neural_network_and_llm_optimization/problem.json",
+  "authors": "",
+  "source": "",
+  "keywords": "",
+  "verification": "专题整理",
+  "type": "characterization",
+  "typeLabel": "刻画 / 等价条件",
+  "typeTags": [
+    "刻画 / 等价条件",
+    "收敛 / 稳定性",
+    "界 / 近似 / 最优常数",
+    "算法 / 机制设计"
+  ],
+  "clarity": {
+    "score": 64,
+    "level": "L2",
+    "label": "方向明确",
+    "description": "研究方向和目标可辨认，完整形式化前仍需补充关键条件。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 10,
+      "目标与判据": 21,
+      "范围与边界": 5,
+      "单一性": 3
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 10/20",
+      "目标与判据 21/25",
+      "范围与边界 5/15",
+      "单一性 3/15",
+      "检测到 7 个子问题，按多目标议题扣分",
+      "出现宽泛或并列扩展措辞，需人工确认边界"
+    ]
+  },
+  "summary": "Modern neural network training is driven by large-scale nonconvex optimization. Empirically, gradient-based methods often reach useful solutions despite severe overparameterization, nonconvexity, stochasticity, and complicated architecture-dependent effects. The open questions below ask for mathematical explanations of this behavior and for optimization principles that can guide better algorithms for neural networks and LLMs.",
+  "statement": "Question 1.1. Landscape of regularized deep networks. For regularized neural networks with more than two layers, can one prove that there are no suboptimal local minima under natural assumptions on the data, architecture, and regularizer? Question 1.2. Convergence to global minima. For mildly wide n",
+  "statementLength": 256,
+  "statementSentences": 7,
+  "statementFormulas": 0,
+  "statementComplexityScore": 56,
+  "statementConnectors": 1,
+  "concisenessBasis": "长度 256、句子 7、公式 0、连接结构 1；本批次复杂度分位点 30/54",
+  "familiarity": "low",
+  "familiarityLabel": "低文献可见度",
+  "familiarityScore": 0,
+  "familiarityBasis": "来源元数据、参考文献 0 条、链接/DOI 0 个",
+  "content": "# Neural Network and LLM Optimization\n\nThis file collects open questions about optimization landscapes and algorithm design for neural networks and large language models.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Optimization Questions for Neural Networks and LLMs\n\nContributors: Ruoyu Sun\n\n### 1. Problem Background\n\nModern neural network training is driven by large-scale nonconvex optimization. Empirically, gradient-based methods often reach useful solutions despite severe overparameterization, nonconvexity, stochasticity, and complicated architecture-dependent effects. The open questions below ask for mathematical explanations of this behavior and for optimization principles that can guide better algorithms for neural networks and LLMs.\n\n### 2. Open Problems\n\n**Question 1.1. Landscape of regularized deep networks.** For regularized neural networks with more than two layers, can one prove that there are no suboptimal local minima under natural assumptions on the data, architecture, and regularizer?\n\n**Question 1.2. Convergence to global minima.** For mildly wide neural networks with at least two neurons, can one prove that gradient descent converges to a global minimizer under mild and checkable assumptions? What width, initialization, step-size, and data conditions are sufficient without making the model unrealistically overparameterized?\n\n**Question 1.3. Adam, Muon, and SGD.** Can one characterize when adaptive or matrix-normalized methods such as Adam and Muon are faster than SGD? A satisfactory theory should identify structural properties of the loss, noise, curvature, or parameterization that predict the relative advantage of these methods.\n\n**Question 1.4. Better algorithm design.** Can one design optimization algorithms for neural networks that reliably improve over Adam, Muon variants, and SGD, while retaining scalability and robustness in modern training regimes?\n\n**Question 1.5. Better local minima in LLMs.** Can one design algorithms that converge to better local minima for large language models, in a way that is visible in downstream performance rather than only in training loss?\n\n**Question 1.6. Self-improvement training.** Is there an optimization-based explanation for self-improvement training, including settings related to SePT? Can self-improvement be formalized as descent, implicit regularization, landscape reshaping, or a fixed-point/stability phenomenon?\n\n**Question 1.7. Continual learning.** Can continual learning be formulated as an optimization problem whose landscape and algorithmic properties explain stability-plasticity tradeoffs, forgetting, and adaptation across tasks?\n\n### 3. Desired Outcomes\n\nUseful progress may take the form of a theorem for a realistic model class, a counterexample separating popular algorithms, a predictive criterion for optimizer choice, or a new algorithm with both theoretical support and convincing training evidence.\n",
+  "conciseness": "long",
+  "concisenessLabel": "复杂"
+}

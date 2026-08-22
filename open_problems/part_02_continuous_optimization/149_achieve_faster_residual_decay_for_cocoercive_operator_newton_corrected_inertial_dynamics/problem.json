@@ -1,0 +1,55 @@
+{
+  "id": 149,
+  "title": "Achieve faster residual decay for cocoercive-operator Newton-corrected inertial dynamics",
+  "part": "连续优化",
+  "partKey": "part_02_continuous_optimization",
+  "file": "open_problems/part_02_continuous_optimization/149_achieve_faster_residual_decay_for_cocoercive_operator_newton_corrected_inertial_dynamics/problem.md",
+  "jsonFile": "open_problems/part_02_continuous_optimization/149_achieve_faster_residual_decay_for_cocoercive_operator_newton_corrected_inertial_dynamics/problem.json",
+  "authors": "Hédy Attouch, Radu Ioan Boţ, Dang‐Khoa Nguyen",
+  "source": "Hédy Attouch, Radu Ioan Boţ, Dang‐Khoa Nguyen, Fast Convex Optimization via Time Scale and Averaging of the Steepest Descent, Mathematics of Operations Research, 2024.",
+  "keywords": "cocoercive operator, inertial dynamics, newton correction term, time scaling, convergence rate, residual decay",
+  "verification": "待核验",
+  "type": "convergence",
+  "typeLabel": "收敛 / 稳定性",
+  "typeTags": [
+    "收敛 / 稳定性",
+    "证明或反例",
+    "优化模型 / 算子"
+  ],
+  "clarity": {
+    "score": 78,
+    "level": "L3",
+    "label": "清晰可研究",
+    "description": "核心问题明确，但仍有少量边界、术语或最优性条件需要补齐。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 14,
+      "目标与判据": 21,
+      "范围与边界": 5,
+      "单一性": 13
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 14/20",
+      "目标与判据 21/25",
+      "范围与边界 5/15",
+      "单一性 13/15",
+      "出现宽泛或并列扩展措辞，需人工确认边界"
+    ]
+  },
+  "summary": "Let $H$ be a real Hilbert space with inner product $\\langle \\cdot,\\cdot\\rangle$ and norm $\\|\\cdot\\|$. Let $M:H\\to H$ be a single-valued $\\rho$-cocoercive operator for some $\\rho>0$, meaning $$",
+  "statement": "\\|M(y(s))\\|=o\\!\\left(\\frac{1}{s^2}\\right)\\quad\\text{as }s\\to\\infty",
+  "statementLength": 65,
+  "statementSentences": 1,
+  "statementFormulas": 0,
+  "statementComplexityScore": 12,
+  "statementConnectors": 0,
+  "concisenessBasis": "长度 65、句子 1、公式 0、连接结构 0；本批次复杂度分位点 30/54",
+  "familiarity": "high",
+  "familiarityLabel": "高文献可见度",
+  "familiarityScore": 11,
+  "familiarityBasis": "来源元数据、参考文献 7 条、链接/DOI 8 个",
+  "content": "# Achieve faster residual decay for cocoercive-operator Newton-corrected inertial dynamics\n\nThis file contains the open problem on Achieve faster residual decay for cocoercive-operator Newton-corrected inertial dynamics.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Achieve faster residual decay for cocoercive-operator Newton-corrected inertial dynamics\n\nSource paper authors: Hédy Attouch, Radu Ioan Boţ, Dang‐Khoa Nguyen\n\n### 1. Problem Background\n\nLet $H$ be a real Hilbert space with inner product $\\langle \\cdot,\\cdot\\rangle$ and norm $\\|\\cdot\\|$. Let $M:H\\to H$ be a single-valued $\\rho$-cocoercive operator for some $\\rho>0$, meaning\n$$\n\n\\langle M(x)-M(y),x-y\\rangle \\ge \\rho\\,\\|M(x)-M(y)\\|^2\\quad\\forall x,y\\in H.\n\n$$\nAssume the set of zeros $\\mathrm{Zer}\nM:=\\{x\\in H: M(x)=0\\}$ is nonempty.\n\nFor a trajectory $y:[s_0,\\infty)\\to H$ with $s_0>0$, define the (formal) time derivative of $M(y(s))$ by the chain rule notation\n$$\n\n\\frac{d}{ds}(M(y(s)))\n\n$$\n(when $M$ is Lipschitz, this can be understood in the a.e. sense along absolutely continuous $y$).\n\nConsider the second-order inertial dynamics with vanishing viscous damping and a Newton-correction term\n$$\n\n y''(s)+\\frac{\\alpha}{s}y'(s)+c(s)\\,\\frac{d}{ds}(M(y(s)))+M(y(s))=0,\\qquad s\\ge s_0,\n\n$$\nwhere $\\alpha>1$ and $c(s)>0$ is a prescribed scalar coefficient. Two specific choices discussed are\n1) $c(s)=\\frac{s}{\\alpha+1}$, yielding the system\n$$\n\n y''(s)+\\frac{\\alpha}{s}y'(s)+\\frac{s}{\\alpha+1}\\,\\frac{d}{ds}(M(y(s)))+M(y(s))=0,\n\n$$\nfor which the paper proves $\\|M(y(s))\\|=o(1/s)$.\n2) $c(s)=\\frac{2s}{\\alpha+1}$, yielding the closely related system\n$$\n\n y''(s)+\\frac{\\alpha}{s}y'(s)+\\frac{2s}{\\alpha+1}\\,\\frac{d}{ds}(M(y(s)))+M(y(s))=0,\n\n$$\nwhich another work reports satisfies the sharper decay $\\|M(y(s))\\|=o(1/s^2)$ and $\\int_{s_0}^\\infty s^3\\|M(y(s))\\|^2\\,ds<\\infty$.\n\n### 2. Open Problem\n\n**Question 1.1.** Determine whether the time-scaling and perturbation approach developed for steepest-descent-type systems can be used to obtain the improved convergence rate\n$$\n\n\\|M(y(s))\\|=o\\!\\left(\\frac{1}{s^2}\\right)\\quad\\text{as }s\\to\\infty\n\n$$\n(and/or the corresponding weighted integrability $\\int_{s_0}^\\infty s^3\\|M(y(s))\\|^2\\,ds<\\infty$) for the Newton-corrected cocoercive-operator inertial dynamics\n$$\n\n y''(s)+\\frac{\\alpha}{s}y'(s)+\\frac{s}{\\alpha+1}\\,\\frac{d}{ds}(M(y(s)))+M(y(s))=0,\n\n$$\nor for an appropriately modified coefficient $c(s)$ within the same time-scaling/perturbation framework, under the standing assumptions that $M$ is cocoercive and $\\mathrm{Zer}\\,M\\neq\\emptyset$.\n\n### 3. Known Results\n\nIn Attouch–Boţ–Nguyen’s time-scaling/averaging program, the cocoercive-operator baseline flow $z'(t)+M(z(t))=0$ yields only $\\|M(z(t))\\|=o(t^{-1/2})$, and after the specific open-loop scaling $\\tau(s)=s^2/(2(\\alpha+1))$ one obtains the Newton-corrected inertial dynamics\n$$\ny''(s)+\\frac{\\alpha}{s}y'(s)+\\frac{s}{\\alpha+1}\\frac{d}{ds}M(y(s))+M(y(s))=0\n$$\nwith $\\|M(y(s))\\|=o(1/s)$ and $\\int s\\|M(y(s))\\|^2ds<\\infty$ (Theorem 12 of the source paper). The paper explicitly notes (Remark 8) that a closely related modification with coefficient $\\frac{2s}{\\alpha+1}$ in front of $\\frac{d}{ds}M(y(s))$ enjoys the sharper $\\|M(y(s))\\|=o(1/s^2)$ and $\\int s^3\\|M(y(s))\\|^2ds<\\infty$ in subsequent work, leaving open whether the original time-scaling/perturbation route can recover this sharper decay for the $\\frac{s}{\\alpha+1}$-coefficient model or via a nearby choice of $c(s)$.\n\nAmong forward citations, the strongest evidence that $o(1/s^2)$ residual decay is achievable within a Newton-corrected operator framework comes from the continuous/discrete Fast OGDA analysis, which studies a more general vanishing-damping Newton-corrected dynamics with a tunable scaling $\\beta(t)$ and an additional $V$-term coefficient tied to $\\beta$. It proves $\\|V(z(t))\\|=o(1/(t\\beta(t)))$ and $\\int t\\beta(t)^2\\|V(z(t))\\|^2dt<\\infty$; taking $\\beta(t)\\asymp t$ yields exactly $\\|V(z(t))\\|=o(1/t^2)$ and $\\int t^3\\|V(z(t))\\|^2dt<\\infty$. This matches the target rate/integrability but for a dynamics that differs from the open-problem equation by the presence of an extra coefficient multiplying $V(z(t))$, so it does not directly settle the $c(s)=s/(\\alpha+1)$ case.\n\nOther cited works develop complementary time-rescaling equivalences (Heavy Ball $\\leftrightarrow$ Fast OGDA), stochastic time-scaling/averaging transfers, and anchored/Tikhonov regularization equivalences for operator-derivative systems. Collectively they suggest two plausible routes to $o(1/s^2)$: (i) modify the Newton-correction model so that the coefficient in front of $M(y(s))$ is coupled to $c(s)$ (as in Fast OGDA-type templates), enabling Lyapunov cancellations that yield $o(1/(s c(s)))$; or (ii) embed the dynamics into an equivalent first-order anchored flow (possibly with Tikhonov regularization) where sharper residual decay can be proved and then transferred back by time rescaling. At present, none of the forward-citing papers provides a proof of $\\|M(y(s))\\|=o(1/s^2)$ for the exact equation with $c(s)=s/(\\alpha+1)$ under only cocoercivity, so the problem remains open in the stated form.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #135 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4403453300_p0/partial_progress/135.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Hédy Attouch, Radu Ioan Boţ, Dang‐Khoa Nguyen, [*Fast Convex Optimization via Time Scale and Averaging of the Steepest Descent*](https://doi.org/10.1287/moor.2023.0186), Mathematics of Operations Research, 2024.\n- **Location in paper:** Page 26, Section 5.1 (Remark 8).\n- **Area:** inertial monotone operator dynamics\n- **Keywords:** `cocoercive operator`, `inertial dynamics`, `newton correction term`, `time scaling`, `convergence rate`, `residual decay`\n- **Upstream problem record:** [W4403453300_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4403453300_p0&n=135&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Hédy Attouch, Radu Ioan Boţ, Dang‐Khoa Nguyen, [*Fast Convex Optimization via Time Scale and Averaging of the Steepest Descent*](https://doi.org/10.1287/moor.2023.0186), Mathematics of Operations Research, 2024.\n2. [*Fast Optimistic Gradient Descent Ascent (OGDA) method in continuous and discrete time*](https://doi.org/10.1007/s10208-023-09636-5).\n3. [*Recovering Nesterov accelerated dynamics from Heavy Ball dynamics via time rescaling*](https://doi.org/10.1137/25M1757903).\n4. [*Stochastic inertial dynamics via time scaling and averaging*](https://doi.org/10.1287/stsy.2024.0068).\n5. *Tikhonov regularization of monotone operator flows not only ensures strong convergence of the trajectories but also speeds up the vanishing of the residuals*.\n6. *Long-Time Analysis of Stochastic Heavy Ball Dynamics for Convex Optimization and Monotone Equations*.\n7. *Fast Krasnoselskii-Mann Method with Overrelaxation and Preconditioners*.\n",
+  "conciseness": "short",
+  "concisenessLabel": "简洁"
+}

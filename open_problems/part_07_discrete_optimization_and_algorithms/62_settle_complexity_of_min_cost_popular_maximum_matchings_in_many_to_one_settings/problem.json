@@ -1,0 +1,55 @@
+{
+  "id": 62,
+  "title": "Settle complexity of min-cost popular maximum matchings in many-to-one settings",
+  "part": "离散优化与算法",
+  "partKey": "part_07_discrete_optimization_and_algorithms",
+  "file": "open_problems/part_07_discrete_optimization_and_algorithms/62_settle_complexity_of_min_cost_popular_maximum_matchings_in_many_to_one_settings/problem.md",
+  "jsonFile": "open_problems/part_07_discrete_optimization_and_algorithms/62_settle_complexity_of_min_cost_popular_maximum_matchings_in_many_to_one_settings/problem.json",
+  "authors": "Telikepalli Kavitha, Kazuhisa Makino",
+  "source": "Telikepalli Kavitha, Kazuhisa Makino, Min-Cost Popular Matchings in a Hospitals/Residents Instance with Complete Preferences, Mathematics of Operations Research, 2025.",
+  "keywords": "popular matching, hospital residents, maximum matching, computational complexity, minimum cost, incomplete preferences",
+  "verification": "待核验",
+  "type": "complexity",
+  "typeLabel": "复杂度 / 可计算性",
+  "typeTags": [
+    "复杂度 / 可计算性",
+    "算法 / 机制设计",
+    "证明或反例",
+    "优化模型 / 算子"
+  ],
+  "clarity": {
+    "score": 88,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 20,
+      "目标与判据": 23,
+      "范围与边界": 5,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 20/20",
+      "目标与判据 23/25",
+      "范围与边界 5/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Let $G=(R\\cup H,E)$ be a bipartite hospitals/residents instance. Each resident $r\\in R$ has capacity $1$ and a strict preference order over its neighbors in $H$; each hospital $h\\in H$ has an integer capacity $\\mathrm{cap}(h)\\ge 1$ and a strict preference order over its neighbors in $R$. Preferences may be incomplete, i.e., $E$ need not be complete bipartite.",
+  "statement": "Equivalently, decide whether there is a polynomial-time algorithm that outputs $$",
+  "statementLength": 71,
+  "statementSentences": 1,
+  "statementFormulas": 0,
+  "statementComplexityScore": 15,
+  "statementConnectors": 1,
+  "concisenessBasis": "长度 71、句子 1、公式 0、连接结构 1；本批次复杂度分位点 30/54",
+  "familiarity": "high",
+  "familiarityLabel": "高文献可见度",
+  "familiarityScore": 9,
+  "familiarityBasis": "来源元数据、参考文献 2 条、链接/DOI 3 个",
+  "content": "# Settle complexity of min-cost popular maximum matchings in many-to-one settings\n\nThis file contains the open problem on Settle complexity of min-cost popular maximum matchings in many-to-one settings.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Settle complexity of min-cost popular maximum matchings in many-to-one settings\n\nSource paper authors: Telikepalli Kavitha, Kazuhisa Makino\n\n### 1. Problem Background\n\nLet $G=(R\\cup H,E)$ be a bipartite hospitals/residents instance. Each resident $r\\in R$ has capacity $1$ and a strict preference order over its neighbors in $H$; each hospital $h\\in H$ has an integer capacity $\\mathrm{cap}(h)\\ge 1$ and a strict preference order over its neighbors in $R$. Preferences may be incomplete, i.e., $E$ need not be complete bipartite.\n\nA (many-to-one) matching is a set $M\\subseteq E$ such that $|M(r)|\\le 1$ for all $r\\in R$ and $|M(h)|\\le \\mathrm{cap}(h)$ for all $h\\in H$, where $M(v)=\\{u:(u,v)\\in M\\}$.\n\nDefine the voting-based comparison between matchings $M$ and $N$ as follows.\n\n1) For a resident $r$, let $\\mathrm{vote}_r(M,N)\\in\\{-1,0,1\\}$ be $1$ if $r$ prefers its assignment in $M$ to its assignment in $N$, $-1$ if it prefers its assignment in $N$, and $0$ if the assignments are the same. Being unmatched is the worst outcome.\n\n2) For a hospital $h$, to compare two assigned sets $M(h)$ and $N(h)$, remove common residents and compare the symmetric differences $S'=M(h)\\setminus N(h)$ and $T'=N(h)\\setminus M(h)$ by choosing a bijection $\\psi:S'\\to T'$ (adding dummy residents if needed to equalize sizes, each dummy ranked below all real residents). The hospital's vote is defined adversarially as the minimum, over bijections $\\psi$, of the sum of pairwise votes induced by comparing each $r\\in S'$ with $\\psi(r)\\in T'$:\n$$\n\n\\mathrm{vote}_h(M,N) := \\min_{\\psi:S'\\to T'} \\sum_{r\\in S'} \\mathrm{vote}_h\\bigl(r,\\psi(r)\\bigr),\n\n$$\nwhere $\\mathrm{vote}_h(r,r')=1$ if $h$ prefers $r$ to $r'$, $-1$ if it prefers $r'$ to $r$, and $0$ otherwise.\n\n3) The net margin is\n$$\n\n\\Delta(M,N):=\\sum_{v\\in R\\cup H} \\mathrm{vote}_v(M,N).\n\n$$\nA matching $M$ is popular (within a specified feasible family) if $\\Delta(M,N)\\ge 0$ for all $N$ in that family.\n\nLet $\\mathrm{cost}:E\\to\\mathbb{R}$ be an edge-cost function and $\\mathrm{cost}(M)=\\sum_{e\\in M}\\mathrm{cost}(e)$.\n\nA matching $M$ is a maximum matching if it has maximum cardinality among all matchings in $G$. Define a \\emph{popular maximum matching} to mean a maximum-cardinality matching $M$ such that $\\Delta(M,N)\\ge 0$ for every maximum matching $N$ in $G$.\n\n### 2. Open Problem\n\n**Question 1.1.** Given a hospitals/residents instance $G=(R\\cup H,E)$ with strict (possibly incomplete) preferences and an edge-cost function $\\mathrm{cost}:E\\to\\mathbb{R}$, determine the computational complexity of computing a minimum-cost popular maximum matching.\n\nEquivalently, decide whether there is a polynomial-time algorithm that outputs\n$$\n\nM^*\\in\\arg\\min\\{\\mathrm{cost}(M): \\; M \\text{ is a maximum matching in }G \\text{ and } \\Delta(M,N)\\ge 0 \\;\\forall N\\text{ maximum in }G\\},\n\n$$\nor prove that this optimization problem is NP-hard.\n\n### 3. Known Results\n\nThe min-cost popular maximum matching problem in the hospitals/residents (many-to-one) model with strict, possibly incomplete preferences remains open in the sense highlighted by Kavitha and Makino: while min-cost popular matchings with complete preferences are now polynomial-time solvable in many-to-one, the restriction of popularity to the family of maximum-cardinality matchings in the incomplete-preference case does not admit a known polynomial-time algorithm nor a hardness proof.\n\nThe closest forward-cited progress in the provided analysis is the work on popular perfect matchings in the many-to-many setting, which develops structural characterizations of popularity via the nonexistence of positive-weight alternating cycles and leverages a reduction to min-cost stable matching in a carefully constructed colorful auxiliary instance. These techniques mirror the cycle/certificate viewpoints used in the many-to-one complete-preference setting and suggest that an eventual resolution for popular maximum matchings may require a refined decomposition of maximum-matchings’ symmetric differences (cycles and alternating paths) together with a way to encode the adversarial hospital vote within an optimization framework.\n\nA key remaining gap is that, unlike the perfect-matching case where cloning/projection arguments can be made surjective (and dual certificates can be strengthened), popular maximum matchings in many-to-one can be strictly richer than those induced by popular maximum matchings in the cloned one-to-one instance. This obstruction blocks straightforward reductions to known polynomial-time algorithms for one-to-one popular maximum matchings, leaving open whether the many-to-one problem is polynomial-time solvable or NP-hard.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #36 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4416664990_p0/partial_progress/36.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Telikepalli Kavitha, Kazuhisa Makino, [*Min-Cost Popular Matchings in a Hospitals/Residents Instance with Complete Preferences*](https://doi.org/10.1287/moor.2024.0634), Mathematics of Operations Research, 2025.\n- **Location in paper:** Section 4 (Conclusions and problems), page 20\n- **Area:** popular matchings\n- **Keywords:** `popular matching`, `hospital residents`, `maximum matching`, `computational complexity`, `minimum cost`, `incomplete preferences`\n- **Upstream problem record:** [W4416664990_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4416664990_p0&n=36&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Telikepalli Kavitha, Kazuhisa Makino, [*Min-Cost Popular Matchings in a Hospitals/Residents Instance with Complete Preferences*](https://doi.org/10.1287/moor.2024.0634), Mathematics of Operations Research, 2025.\n2. [*Perfect matchings and popularity in the many-to-many setting*](https://drops.dagstuhl.de/opus/volltexte/2023/).\n",
+  "conciseness": "short",
+  "concisenessLabel": "简洁"
+}

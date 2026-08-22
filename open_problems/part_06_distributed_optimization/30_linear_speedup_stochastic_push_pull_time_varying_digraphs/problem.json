@@ -1,0 +1,56 @@
+{
+  "id": 30,
+  "title": "Linear Speedup of Stochastic Push-Pull over Time-Varying Digraphs",
+  "part": "分布式优化",
+  "partKey": "part_06_distributed_optimization",
+  "file": "open_problems/part_06_distributed_optimization/30_linear_speedup_stochastic_push_pull_time_varying_digraphs/problem.md",
+  "jsonFile": "open_problems/part_06_distributed_optimization/30_linear_speedup_stochastic_push_pull_time_varying_digraphs/problem.json",
+  "authors": "",
+  "source": "",
+  "keywords": "",
+  "verification": "专题整理",
+  "type": "convergence",
+  "typeLabel": "收敛 / 稳定性",
+  "typeTags": [
+    "收敛 / 稳定性",
+    "界 / 近似 / 最优常数",
+    "算法 / 机制设计",
+    "证明或反例"
+  ],
+  "clarity": {
+    "score": 75,
+    "level": "L3",
+    "label": "清晰可研究",
+    "description": "核心问题明确，但仍有少量边界、术语或最优性条件需要补齐。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 14,
+      "目标与判据": 21,
+      "范围与边界": 6,
+      "单一性": 9
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 14/20",
+      "目标与判据 21/25",
+      "范围与边界 6/15",
+      "单一性 9/15",
+      "检测到 3 个子问题，按多目标议题扣分"
+    ]
+  },
+  "summary": "Consider decentralized stochastic optimization $$ \\minx f(x)=\\frac{1}{n}\\sum{i=1}^n fi(x), \\qquad fi(x)=\\mathbb E{\\xii}[Fi(x;\\xii)]. $$ Push-Pull, also called the AB method, combines row-stochastic mixing for the primal variables with column-stochastic mixing for gradient tracking. This avoids the need for doubly stochastic weights and is particularly suited to directed networks.",
+  "statement": "A complete positive result should give a full chain of lemmas and explicitly state how the constants depend on the number of agents $n$, noise level $\\sigma$, network time variation, and transient time.",
+  "statementLength": 170,
+  "statementSentences": 1,
+  "statementFormulas": 2,
+  "statementComplexityScore": 34,
+  "statementConnectors": 2,
+  "concisenessBasis": "长度 170、句子 1、公式 2、连接结构 2；本批次复杂度分位点 30/54",
+  "familiarity": "medium",
+  "familiarityLabel": "中文献可见度",
+  "familiarityScore": 6,
+  "familiarityBasis": "来源元数据、参考文献 5 条、链接/DOI 3 个",
+  "content": "# Linear Speedup of Stochastic Push-Pull over Time-Varying Digraphs\n\nThis file contains the open problem on linear speedup for stochastic Push-Pull methods over time-varying directed networks.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Stochastic Push-Pull with Time-Varying Directed Communication\n\nContributors: Kun Yuan\n\n### 1. Problem Background\n\nConsider decentralized stochastic optimization\n$$\n\\min_x f(x)=\\frac{1}{n}\\sum_{i=1}^n f_i(x),\n\\qquad\nf_i(x)=\\mathbb E_{\\xi_i}[F_i(x;\\xi_i)].\n$$\nPush-Pull, also called the AB method, combines row-stochastic mixing for the primal variables with column-stochastic mixing for gradient tracking. This avoids the need for doubly stochastic weights and is particularly suited to directed networks.\n\nThe deterministic theory covers time-varying directed graphs: Push-DIGing and time-varying AB/Push-Pull methods obtain geometric convergence for smooth strongly convex objectives under appropriate connectivity conditions. Accelerated variants are also available. Separately, stochastic Push-Pull has been shown to achieve linear speedup over static strongly connected digraphs.\n\nThus, convergence results are available for deterministic problems over static or time-varying topologies and for stochastic problems over static topologies. The missing case is linear speedup for stochastic optimization over time-varying directed graphs. This task aims to fill that gap.\n\n### 2. Setting and Target Rate\n\n- Each $f_i$ is $L$-smooth and nonconvex.\n- The stochastic gradients are unbiased and have bounded variance:\n  $$\n  \\mathbb E\\!\\left[\\nabla F_i(x;\\xi_i)\\right]=\\nabla f_i(x),\n  \\qquad\n  \\mathbb E\\!\\left\\|\\nabla F_i(x;\\xi_i)-\\nabla f_i(x)\\right\\|^2\\le \\sigma^2.\n  $$\n- Communication takes place over a time-varying directed graph sequence $\\{\\mathcal G_t\\}$.\n- Agents use time-varying row-stochastic matrices $R_t$ and column-stochastic matrices $C_t$.\n- Connectivity must follow the standard assumptions in the cited time-varying Push-Pull literature, such as strong connectivity at every time or its relaxation to $B$-strong/joint connectivity. No stronger time-varying condition should be introduced.\n\nThe desired guarantee is\n$$\n\\frac{1}{T}\\sum_{t=0}^{T-1}\n\\mathbb E\\left\\|\\nabla f(\\bar x_t)\\right\\|^2\n\\le\nO\\!\\left(\\frac{\\sigma}{\\sqrt{nT}}\\right)\n+\\text{higher-order transient terms in } \\frac{1}{T}.\n$$\nThe leading term implies $T=O(1/(n\\varepsilon^2))$ iterations to reach an $\\varepsilon$-stationary point, matching an $n$-fold improvement over single-node SGD.\n\n### 3. Open Problems\n\n**Question 1.1. Linear speedup under time variation.** Under standard time-varying directed-connectivity assumptions, does stochastic Push-Pull achieve an $O(\\sigma/\\sqrt{nT})$ leading stationarity rate for smooth nonconvex objectives?\n\nA complete positive result should give a full chain of lemmas and explicitly state how the constants depend on the number of agents $n$, noise level $\\sigma$, network time variation, and transient time.\n\n**Question 1.2. Counterexample if linear speedup fails.** If the guarantee in Question 1.1 cannot be established, can one construct a family of time-varying directed graphs and objective functions proving that linear speedup fails under the standard assumptions, through rate deterioration or disappearance of the speedup?\n\n### 4. Technical Objectives and Deliverables\n\nThe required output is a paper-level complete proof together with numerical experiments, with one of the following two theoretical conclusions:\n\n1. **Positive result (expected outcome).** Prove that stochastic Push-Pull over time-varying directed graphs achieves the $O(1/\\sqrt{nT})$ linear-speedup guarantee. Provide the complete lemma chain and make explicit the dependence of the constants on $n$, $\\sigma$, network time variation, and transient time.\n2. **Negative result (falsification alternative).** Construct a family of time-varying directed graphs and objective functions proving that, under the standard time-varying assumptions, linear speedup does not hold because the rate deteriorates or the speedup disappears.\n\n**Numerical experiments.** Use both synthetic nonconvex problems and real tasks, such as nonconvex-regularized logistic regression or shallow neural networks. Verify the $n$-fold speedup, study how transient time varies with the degree of network time variation, and compare against stochastic Push-Pull on static graphs (arXiv:2506.18075) and deterministic Push-Pull on time-varying graphs (OMS 2025).\n\n### 5. Known Results\n\n1. Push-DIGing combines push-sum with gradient tracking and converges geometrically for strongly convex objectives over time-varying directed graphs.\n2. Time-varying AB/Push-Pull methods using row- and column-stochastic matrices converge linearly for smooth strongly convex objectives. Later analysis gives explicit one-step contraction factors and stepsize bounds in terms of graph properties.\n3. Accelerated AB/Push-Pull variants improve rates for deterministic optimization over time-varying directed networks.\n4. Liang, Luo, and Yuan proved linear speedup for stochastic Push-Pull over arbitrary static strongly connected digraphs. Extending this result to time-varying digraphs remains open.\n\n### 6. References\n\n1. A. Nedić, A. Olshevsky, and W. Shi, **Achieving Geometric Convergence for Distributed Optimization over Time-Varying Graphs**, arXiv:1607.03218, 2016.\n2. F. Saadatniaki, R. Xin, and U. A. Khan, **Decentralized Optimization over Time-Varying Directed Graphs with Row and Column-Stochastic Matrices**, *IEEE Transactions on Automatic Control*, 65(11):4769--4780, 2020.\n3. A. Nedić, D. T. A. Nguyen, and D. T. Nguyen, **AB/Push-Pull Method for Distributed Optimization in Time-Varying Directed Networks**, *Optimization Methods and Software*, 40(5):1044--1071, 2025; arXiv:2209.06974.\n4. D. T. A. Nguyen, D. T. Nguyen, and A. Nedić, **Accelerated AB/Push-Pull Methods for Distributed Optimization over Time-Varying Directed Networks**, *IEEE Transactions on Control of Network Systems*, 11(3):1395--1407, 2024.\n5. L. Liang, G. Luo, and K. Yuan, **On the Linear Speedup of the Push-Pull Method for Decentralized Optimization over Digraphs**, arXiv:2506.18075, 2025.\n",
+  "conciseness": "medium",
+  "concisenessLabel": "适中"
+}

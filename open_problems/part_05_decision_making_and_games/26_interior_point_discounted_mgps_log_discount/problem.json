@@ -1,0 +1,52 @@
+{
+  "id": 26,
+  "title": "Interior-Point Method for Discounted MGPs with Logarithmic Discount Dependence",
+  "part": "决策与博弈",
+  "partKey": "part_05_decision_making_and_games",
+  "file": "open_problems/part_05_decision_making_and_games/26_interior_point_discounted_mgps_log_discount/problem.md",
+  "jsonFile": "open_problems/part_05_decision_making_and_games/26_interior_point_discounted_mgps_log_discount/problem.json",
+  "authors": "",
+  "source": "",
+  "keywords": "",
+  "verification": "专题整理",
+  "type": "algorithm",
+  "typeLabel": "算法 / 机制设计",
+  "typeTags": [
+    "算法 / 机制设计"
+  ],
+  "clarity": {
+    "score": 62,
+    "level": "L2",
+    "label": "方向明确",
+    "description": "研究方向和目标可辨认，完整形式化前仍需补充关键条件。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 10,
+      "目标与判据": 7,
+      "范围与边界": 5,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 10/20",
+      "目标与判据 7/25",
+      "范围与边界 5/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "For discounted MDPs (single player), Ye gave a combinatorial interior-point method that finds all optimal policies. Each of the at most $n$ elimination steps uses $O\\!\\left(n^{1/2}(\\log\\frac{1}{1-\\gamma}+\\log n)\\right)$ predictor-corrector iterations, each requiring $O(n^{2.5})$ arithmetic operations. The overall arithmetic complexity involves a factor of $\\log\\frac{1}{1-\\gamma}$.",
+  "statement": "Question 1.1. Is there a polynomial-time method for discounted Markov Game Processes using an interior-point method by the leader, whose dependence on the discount factor is only logarithmic in $\\frac{1}{1-\\gamma}$?",
+  "statementLength": 186,
+  "statementSentences": 3,
+  "statementFormulas": 1,
+  "statementComplexityScore": 36,
+  "statementConnectors": 0,
+  "concisenessBasis": "长度 186、句子 3、公式 1、连接结构 0；本批次复杂度分位点 30/54",
+  "familiarity": "low",
+  "familiarityLabel": "低文献可见度",
+  "familiarityScore": 1,
+  "familiarityBasis": "来源元数据、参考文献 2 条、链接/DOI 0 个",
+  "content": "# Interior-Point Method for Discounted MGPs with Logarithmic Discount Dependence\n\nThis file contains the open problem on Interior-Point Method for Discounted MGPs with Logarithmic Discount Dependence.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Interior-Point Method for Discounted MGPs with Logarithmic Discount Dependence\n\nContributors: Yinyu Ye\n\n### 1. Problem Background\n\nFor discounted MDPs (single player), Ye gave a combinatorial interior-point method that finds all optimal policies. Each of the at most $n$ elimination steps uses $O\\!\\left(n^{1/2}(\\log\\frac{1}{1-\\gamma}+\\log n)\\right)$ predictor-corrector iterations, each requiring $O(n^{2.5})$ arithmetic operations. The overall arithmetic complexity involves a factor of $\\log\\frac{1}{1-\\gamma}$.\n\nFor the two-player Markov Game Process, it is natural to ask whether an interior-point method for the *leader* (the minimizer or maximizer) achieves a similar logarithmic dependence on the discount factor.\n\n### 2. Open Problem\n\n**Question 1.1.** Is there a polynomial-time method for discounted Markov Game Processes using an interior-point method by the leader, whose dependence on the discount factor is only logarithmic in $\\frac{1}{1-\\gamma}$?\n\n### 3. Known Results\n\n#### 3.1 Combinatorial interior-point method for MDP\n\n**Source:** Y. Ye, *A new complexity result on solving the Markov decision problem*, Mathematics of Operations Research, 30(3):733–749, 2005.\n\nThere exists a combinatorial interior-point method that identifies and eliminates at least one action in each step. Each elimination step requires $O\\!\\left(n^{1/2}(\\log\\frac{1}{1-\\gamma}+\\log n)\\right)$ predictor-corrector iterations, with $O(n^{2.5})$ arithmetic operations per iteration. The total arithmetic complexity over all $O(n^2 m^2)$ steps involves a $\\log\\frac{1}{1-\\gamma}$ factor. No analogous result with logarithmic discount dependence is known for MGPs.\n\n### 4. References\n\n1. Y. Ye, **A new complexity result on solving the Markov decision problem**, Mathematics of Operations Research, 30(3):733–749, 2005.\n2. T. D. Hansen, P. B. Miltersen, and U. Zwick, **Strategy iteration is strongly polynomial for 2-player turn-based stochastic games with a constant discount factor**, Journal of the ACM, 60(1):1–16, 2013.\n\n---\n",
+  "conciseness": "medium",
+  "concisenessLabel": "适中"
+}

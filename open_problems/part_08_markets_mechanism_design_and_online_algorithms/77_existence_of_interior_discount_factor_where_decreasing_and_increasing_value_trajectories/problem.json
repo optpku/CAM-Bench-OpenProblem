@@ -1,0 +1,52 @@
+{
+  "id": 77,
+  "title": "Existence of interior discount factor where decreasing and increasing value trajectories coincide",
+  "part": "市场、机制设计与在线算法",
+  "partKey": "part_08_markets_mechanism_design_and_online_algorithms",
+  "file": "open_problems/part_08_markets_mechanism_design_and_online_algorithms/77_existence_of_interior_discount_factor_where_decreasing_and_increasing_value_trajectories/problem.md",
+  "jsonFile": "open_problems/part_08_markets_mechanism_design_and_online_algorithms/77_existence_of_interior_discount_factor_where_decreasing_and_increasing_value_trajectories/problem.json",
+  "authors": "Dimitry Shaiderman",
+  "source": "Dimitry Shaiderman, On the Monotonicity and Rate of Convergence of the Markovian Persuasion Value, Mathematics of Operations Research, 2026.",
+  "keywords": "dynamic persuasion, Markov chain, discounted value, monotone trajectories, concavification, invariant distribution",
+  "verification": "待核验",
+  "type": "existence",
+  "typeLabel": "存在性 / 唯一性",
+  "typeTags": [
+    "存在性 / 唯一性"
+  ],
+  "clarity": {
+    "score": 92,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 18,
+      "目标与判据": 25,
+      "范围与边界": 9,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 18/20",
+      "目标与判据 25/25",
+      "范围与边界 9/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Let $K=\\{1,\\dots,k\\}$ be a finite state space and let $M$ be an irreducible stochastic matrix on $K$ with unique invariant distribution $\\piM\\in\\Delta(K)$. In a Markovian persuasion game, the sender observes the current state $Xn\\in K$ of the Markov chain in real time and sends a signal; the receiver chooses an action based on his posterior belief, yielding a stage payoff to the sender. For each discount factor $\\delta\\in[0,1)$ and prior $q\\in\\Delta(K)$, let $v\\delta(q)$ denote the sender's optimal expected $(1-\\delta)$-normalized $\\delta$-discounted payoff.",
+  "statement": "\\Phi(\\delta)=v\\delta(\\piM),\\qquad \\Psi(\\delta)=\\sum{\\ell\\in K} \\piM(\\ell)\\, v\\delta(e\\ell)",
+  "statementLength": 86,
+  "statementSentences": 1,
+  "statementFormulas": 0,
+  "statementComplexityScore": 15,
+  "statementConnectors": 0,
+  "concisenessBasis": "长度 86、句子 1、公式 0、连接结构 0；本批次复杂度分位点 30/54",
+  "familiarity": "medium",
+  "familiarityLabel": "中文献可见度",
+  "familiarityScore": 7,
+  "familiarityBasis": "来源元数据、参考文献 1 条、链接/DOI 2 个",
+  "content": "# Existence of interior discount factor where decreasing and increasing value trajectories coincide\n\nThis file contains the open problem on Existence of interior discount factor where decreasing and increasing value trajectories coincide.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Existence of interior discount factor where decreasing and increasing value trajectories coincide\n\nSource paper authors: Dimitry Shaiderman\n\n### 1. Problem Background\n\nLet $K=\\{1,\\dots,k\\}$ be a finite state space and let $M$ be an irreducible stochastic matrix on $K$ with unique invariant distribution $\\pi_M\\in\\Delta(K)$. In a Markovian persuasion game, the sender observes the current state $X_n\\in K$ of the Markov chain in real time and sends a signal; the receiver chooses an action based on his posterior belief, yielding a stage payoff to the sender. For each discount factor $\\delta\\in[0,1)$ and prior $q\\in\\Delta(K)$, let $v_\\delta(q)$ denote the sender's optimal expected $(1-\\delta)$-normalized $\\delta$-discounted payoff.\n\nLet $e_\\ell\\in\\Delta(K)$ denote the Dirac belief on state $\\ell\\in K$ (i.e., $e_\\ell(\\ell)=1$). Define two functions of the discount factor $\\delta$:\n$$\n\n\\Phi(\\delta):=v_\\delta(\\pi_M),\\qquad \\Psi(\\delta):=\\sum_{\\ell\\in K} \\pi_M(\\ell)\\, v_\\delta(e_\\ell).\n\n$$\nFor irreducible $M$, the paper establishes that $\\Phi$ is non-increasing in $\\delta$ (when the prior is invariant) and that $\\Psi$ is non-decreasing in $\\delta$ (as a particular instance of an increasing weighted-average trajectory). Moreover, for each fixed $\\delta$, concavity of $v_\\delta(\\cdot)$ implies $\\Phi(\\delta)\\ge \\Psi(\\delta)$.\n\nDefine\n$$\n\n\\delta_0:=\\inf\\{\\delta\\in[0,1):\\Phi(\\delta)=\\Psi(\\delta)\\},\n\n$$\nwith the convention that the set may be empty (equivalently, $\\Phi(\\delta)>\\Psi(\\delta)$ for all $\\delta\\in[0,1)$). The paper notes that if equality holds at some $\\delta_0$, then both $\\Phi$ and $\\Psi$ must be constant on $[\\delta_0,1)$; hence the qualitative possibility of an equality point $\\delta_0\\in(0,1)$ is a distinct regime from equality only at $\\delta=1$ (in the limit) or no equality at all.\n\n### 2. Open Problem\n\n**Question 1.1.** Determine whether there exists a Markovian persuasion game with finite state space $K$ and irreducible transition matrix $M$ such that the associated functions\n$$\n\n\\Phi(\\delta)=v_\\delta(\\pi_M),\\qquad \\Psi(\\delta)=\\sum_{\\ell\\in K} \\pi_M(\\ell)\\, v_\\delta(e_\\ell)\n\n$$\nsatisfy\n$$\n\n\\Phi(\\delta)>\\Psi(\\delta)\\ \\text{for all }\\delta\\in[0,\\delta_0),\\qquad \\Phi(\\delta)=\\Psi(\\delta)\\ \\text{for all }\\delta\\in[\\delta_0,1)\n\n$$\nfor some \\emph{interior} point $\\delta_0\\in(0,1)$ (equivalently, whether equality can first occur strictly before $\\delta=1$).\n\n### 3. Known Results\n\nNo relevant Scholar-organic forward citations were available for this problem. The forward-citation review therefore cannot identify follow-up work that resolves or materially advances the problem.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Solution #52 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W7150839694_p0/solutions/52.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Dimitry Shaiderman, [*On the Monotonicity and Rate of Convergence of the Markovian Persuasion Value*](https://doi.org/10.1287/moor.2023.0296), Mathematics of Operations Research, 2026.\n- **Location in paper:** Section 3.2.1 (\"On the Analytic Behavior of Two Trajectories\"), page 12 (PDF pagination shown as 12/51).\n- **Area:** dynamic persuasion\n- **Keywords:** `dynamic persuasion`, `Markov chain`, `discounted value`, `monotone trajectories`, `concavification`, `invariant distribution`\n- **Upstream problem record:** [W7150839694_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W7150839694_p0&n=52&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Dimitry Shaiderman, [*On the Monotonicity and Rate of Convergence of the Markovian Persuasion Value*](https://doi.org/10.1287/moor.2023.0296), Mathematics of Operations Research, 2026.\n",
+  "conciseness": "short",
+  "concisenessLabel": "简洁"
+}

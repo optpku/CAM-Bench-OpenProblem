@@ -1,0 +1,55 @@
+{
+  "id": 39,
+  "title": "Prove polynomial-time convergence of Scarf’s algorithm for any ordinal matrix setting",
+  "part": "市场、机制设计与在线算法",
+  "partKey": "part_08_markets_mechanism_design_and_online_algorithms",
+  "file": "open_problems/part_08_markets_mechanism_design_and_online_algorithms/39_prove_polynomial_time_convergence_of_scarfs_algorithm_for_any_ordinal_matrix_setting/problem.md",
+  "jsonFile": "open_problems/part_08_markets_mechanism_design_and_online_algorithms/39_prove_polynomial_time_convergence_of_scarfs_algorithm_for_any_ordinal_matrix_setting/problem.json",
+  "authors": "Yuri Faenza, Chengyue He, Jay Sethuraman",
+  "source": "Yuri Faenza, Chengyue He, Jay Sethuraman, Scarf’s Algorithm and Stable Marriages, Mathematics of Operations Research, 2025.",
+  "keywords": "Scarf's algorithm, pivoting algorithms, bipartite matching polytope, degeneracy, polynomial-time convergence, ordinal matrices",
+  "verification": "待核验",
+  "type": "existence",
+  "typeLabel": "存在性 / 唯一性",
+  "typeTags": [
+    "存在性 / 唯一性",
+    "收敛 / 稳定性",
+    "算法 / 机制设计",
+    "证明或反例"
+  ],
+  "clarity": {
+    "score": 91,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 20,
+      "目标与判据": 25,
+      "范围与边界": 6,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 20/20",
+      "目标与判据 25/25",
+      "范围与边界 6/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Scarf’s algorithm is a pivoting procedure defined for inputs $(A,b,C)$ where $A\\in\\mathbb{Q}^{n\\times(n+m)}{\\ge 0}$ is in standard form $A=(I\\mid A')$, $b\\in\\mathbb{Q}^n{>0}$, and $C\\in\\mathbb{Z}^{n\\times(n+m)}$ is an ordinal matrix.",
+  "statement": "Equivalently, establish (or refute) the existence of a polynomial $p$ such that for every such input $(A,b,C)$ on the bipartite matching polytope, there is an execution of Scarf’s algorithm (respecting the uniquely determined ordinal pivots and some cardinal pivot selection rule when multiple leaving choices exist) that terminates in at most $p(n+m)$ iterations with $B=D$.",
+  "statementLength": 321,
+  "statementSentences": 1,
+  "statementFormulas": 4,
+  "statementComplexityScore": 59,
+  "statementConnectors": 3,
+  "concisenessBasis": "长度 321、句子 1、公式 4、连接结构 3；本批次复杂度分位点 30/54",
+  "familiarity": "high",
+  "familiarityLabel": "高文献可见度",
+  "familiarityScore": 9,
+  "familiarityBasis": "来源元数据、参考文献 4 条、链接/DOI 2 个",
+  "content": "# Prove polynomial-time convergence of Scarf’s algorithm for any ordinal matrix setting\n\nThis file contains the open problem on Prove polynomial-time convergence of Scarf’s algorithm for any ordinal matrix setting.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Prove polynomial-time convergence of Scarf’s algorithm for any ordinal matrix setting\n\nSource paper authors: Yuri Faenza, Chengyue He, Jay Sethuraman\n\n### 1. Problem Background\n\nScarf’s algorithm is a pivoting procedure defined for inputs $(A,b,C)$ where $A\\in\\mathbb{Q}^{n\\times(n+m)}_{\\ge 0}$ is in standard form $A=(I\\mid A')$, $b\\in\\mathbb{Q}^n_{>0}$, and $C\\in\\mathbb{Z}^{n\\times(n+m)}$ is an ordinal matrix.\n\nA polytope $P\\subseteq\\mathbb{R}^{n+m}_{\\ge 0}$ is given by\n$$\nP = \\{x\\in\\mathbb{R}^{n+m}_{\\ge 0}: Ax=b\\},\n$$\nand is assumed bounded. A set $B\\subseteq [n+m]$ of $n$ column indices is a feasible (cardinal) basis if the corresponding submatrix $A_B$ is nonsingular and the basic solution $x$ defined by $x_B=A_B^{-1}b$, $x_{[n+m]\\setminus B}=0$, satisfies $x\\ge 0$.\n\nGiven an ordinal basis $D\\subseteq [n+m]$ with $|D|=n$, define its utility vector $u\\in\\mathbb{Q}^n$ by\n$$\nu_i = \\min_{j\\in D} c_{i j},\\qquad i\\in[n].\n$$\nThe set $D$ is an ordinal basis if for every column $h\\notin [n]$ (i.e., among the $m$ non-identity columns), there exists some row $i\\in[n]$ such that $u_i\\ge c_{i h}$.\n\nA dominating basis is a set $B\\subseteq[n+m]$ that is simultaneously a feasible basis for $(A,b)$ and an ordinal basis for $C$. A dominating vertex is the basic feasible solution associated with a dominating basis.\n\nScarf’s algorithm maintains a pair $(B,D)$ where $B$ is a feasible basis and $D$ is an ordinal basis with $|B\\cap D|\\ge n-1$. If $B\\ne D$, let $j_t\\in D\\setminus B$ be the unique column in $D$ not in $B$. A cardinal pivot replaces some $j_\\ell\\in B\\cap D$ by $j_t$ to obtain a new feasible basis $B' = B\\setminus\\{j_\\ell\\}\\cup\\{j_t\\}$; in degenerate polytopes, multiple choices of $j_\\ell$ may be possible. An ordinal pivot then replaces the same leaving column $j_\\ell$ by a uniquely determined entering column $j^*\\notin D$ to obtain $D' = D\\setminus\\{j_\\ell\\}\\cup\\{j^*\\}$, which is again an ordinal basis. The algorithm terminates when $B=D$, yielding a dominating basis.\n\nIn the marriage/stable matching specialization, $(A,b)$ describes a bipartite matching polytope (with slack variables as loops), and the paper proves polynomial-time convergence for a particular consistent ordinal matrix $C^*$ (and via certain perturbations).\n\n### 2. Open Problem\n\n**Question 1.1.** Given the bipartite matching polytope $P=\\{x\\in\\mathbb{R}^{n+m}_{\\ge 0}:Ax=b\\}$ induced by a bipartite graph (as in the stable marriage/matching setting) and an arbitrary ordinal matrix $C\\in\\mathbb{Z}^{n\\times(n+m)}$, determine whether Scarf’s algorithm converges in polynomially many pivoting iterations (as a function of $n+m$) to a dominating basis, possibly under an appropriate rule for resolving degeneracy in the cardinal pivots.\n\nEquivalently, establish (or refute) the existence of a polynomial $p$ such that for every such input $(A,b,C)$ on the bipartite matching polytope, there is an execution of Scarf’s algorithm (respecting the uniquely determined ordinal pivots and some cardinal pivot selection rule when multiple leaving choices exist) that terminates in at most $p(n+m)$ iterations with $B=D$.\n\n### 3. Known Results\n\nThe open problem asks whether Scarf’s algorithm admits a polynomial pivot bound on the bipartite matching polytope for an arbitrary ordinal matrix $C$, possibly under a suitable degeneracy rule. The source paper (Faenza–He–Sethuraman, 2023) establishes the first polynomial-time convergence result for Scarf’s algorithm in a significant combinatorial setting, but only for a carefully structured consistent ordinal matrix $C^*$ encoding stable-marriage preferences (and for a standard perturbation that removes degeneracy). Their analysis exploits a detailed characterization of feasible bases of the matching polytope (\"forest with single loops\"), a structural description of almost-feasible ordinal bases via a unique \"separator\" man, and a monotone potential $(i,\\sum_{w\\in W}u_w)$ that increases over iterations under a tailored cardinal pivot rule.\n\nForward-citation evidence to date does not resolve the arbitrary-$C$ question. The strongest partial progress is the extension to arborescence hypergraphs, where a network-matrix structure enables a pivot rule with at most $|V|$ iterations, indicating that polynomial pivot bounds can hold well beyond bipartite graphs when $C$ has preference-induced structure. Other citing work emphasizes the broader landscape: polynomial-time computation is often achieved by alternative combinatorial or dynamic-programming methods in structured unimodular/normal hypergraphs, while PPAD-hardness results for related core-stability computations reinforce that no general polynomial-time guarantee should be expected for Scarf-style pivoting in full generality. Overall, the problem remains open: existing polynomial bounds rely on strong structure in $C$ (consistency/preference encoding) and/or in the constraint matrix (network/arborescence), and it is unknown whether arbitrary ordinal $C$ on the bipartite matching polytope admits any polynomially bounded execution of Scarf’s algorithm.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Solution #10 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4410395976_p0/solutions/10.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Yuri Faenza, Chengyue He, Jay Sethuraman, [*Scarf’s Algorithm and Stable Marriages*](https://doi.org/10.1287/moor.2023.0055), Mathematics of Operations Research, 2025.\n- **Location in paper:** Section 8 (Conclusions and Future Work), page 35.\n- **Area:** stable matching\n- **Keywords:** `Scarf's algorithm`, `pivoting algorithms`, `bipartite matching polytope`, `degeneracy`, `polynomial-time convergence`, `ordinal matrices`\n- **Upstream problem record:** [W4410395976_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4410395976_p0&n=10&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Yuri Faenza, Chengyue He, Jay Sethuraman, [*Scarf’s Algorithm and Stable Marriages*](https://doi.org/10.1287/moor.2023.0055), Mathematics of Operations Research, 2025.\n2. *Scarf's Algorithm on Arborescence Hypergraphs*.\n3. *Stable hypergraph matching in unimodular hypergraphs*.\n4. *On the Existence and Complexity of Core-Stable Data Exchanges*.\n",
+  "conciseness": "long",
+  "concisenessLabel": "复杂"
+}

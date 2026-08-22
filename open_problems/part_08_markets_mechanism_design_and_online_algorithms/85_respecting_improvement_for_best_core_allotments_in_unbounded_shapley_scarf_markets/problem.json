@@ -1,0 +1,53 @@
+{
+  "id": 85,
+  "title": "Respecting improvement for best core allotments in unbounded Shapley-Scarf markets",
+  "part": "市场、机制设计与在线算法",
+  "partKey": "part_08_markets_mechanism_design_and_online_algorithms",
+  "file": "open_problems/part_08_markets_mechanism_design_and_online_algorithms/85_respecting_improvement_for_best_core_allotments_in_unbounded_shapley_scarf_markets/problem.md",
+  "jsonFile": "open_problems/part_08_markets_mechanism_design_and_online_algorithms/85_respecting_improvement_for_best_core_allotments_in_unbounded_shapley_scarf_markets/problem.json",
+  "authors": "Péter Bíró, Flip Klijn, Xenia Klimentova, Ana Viana",
+  "source": "Péter Bíró, Flip Klijn, Xenia Klimentova, Ana Viana, Shapley–Scarf Housing Markets: Respecting Improvement, Integer Programming, and Kidney Exchange, Mathematics of Operations Research, 2023.",
+  "keywords": "housing markets, core stability, top trading cycles, comparative statics, respecting improvement, indivisible goods",
+  "verification": "待核验",
+  "type": "bound",
+  "typeLabel": "界 / 近似 / 最优常数",
+  "typeTags": [
+    "界 / 近似 / 最优常数",
+    "证明或反例"
+  ],
+  "clarity": {
+    "score": 85,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 20,
+      "目标与判据": 19,
+      "范围与边界": 6,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 20/20",
+      "目标与判据 19/25",
+      "范围与边界 6/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "A (Shapley--Scarf) housing market consists of a finite set of agents/objects $N=\\{1,\\dots,n\\}$. Agent $i\\in N$ is initially endowed with object $ei=i$ and has complete and transitive (weak) preferences $Ri$ over $N$. Write $Pi$ for the strict part and $Ii$ for indifference.",
+  "statement": "Determine whether the following property holds: for every choice of $x\\in C(R)$ with $xi\\in \\mathrm{best}i(C(R))$ and every choice of $\\widetilde x\\in C(\\widetilde R)$ with $\\widetilde xi\\in \\mathrm{best}i(C(\\widetilde R))$, one has $$",
+  "statementLength": 205,
+  "statementSentences": 1,
+  "statementFormulas": 4,
+  "statementComplexityScore": 41,
+  "statementConnectors": 2,
+  "concisenessBasis": "长度 205、句子 1、公式 4、连接结构 2；本批次复杂度分位点 30/54",
+  "familiarity": "high",
+  "familiarityLabel": "高文献可见度",
+  "familiarityScore": 11,
+  "familiarityBasis": "来源元数据、参考文献 6 条、链接/DOI 10 个",
+  "content": "# Respecting improvement for best core allotments in unbounded Shapley-Scarf markets\n\nThis file contains the open problem on Respecting improvement for best core allotments in unbounded Shapley-Scarf markets.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Respecting improvement for best core allotments in unbounded Shapley-Scarf markets\n\nSource paper authors: Péter Bíró, Flip Klijn, Xenia Klimentova, Ana Viana\n\n### 1. Problem Background\n\nA (Shapley--Scarf) housing market consists of a finite set of agents/objects $N=\\{1,\\dots,n\\}$. Agent $i\\in N$ is initially endowed with object $e_i=i$ and has complete and transitive (weak) preferences $R_i$ over $N$. Write $P_i$ for the strict part and $I_i$ for indifference.\n\nAn allocation is a permutation $x=(x_i)_{i\\in N}\\in N^N$ such that each agent receives exactly one object and each object is assigned to exactly one agent. An allocation $x$ is individually rational if $x_i R_i i$ for all $i$.\n\nA nonempty coalition $S\\subseteq N$ blocks an allocation $x$ if there exists an allocation $z$ using only objects of $S$ (i.e., $\\{z_i:i\\in S\\}=S$) such that $z_i P_i x_i$ for all $i\\in S$. The (weak) core $C(R)$ is the set of allocations that are not blocked by any coalition.\n\nAn \"improvement for agent $i$\" is a change of preferences from $R$ to $\\widetilde R$ such that: (1) $\\widetilde R_i=R_i$; (2) for each other agent $j\\neq i$, object $i$ can only move weakly up in $j$'s ranking among acceptable objects (relative orderings among objects $\\neq i$ are unchanged).\n\nFor a set of allocations $X$ and agent $i$, define the set of objects $X_i:=\\{x_i: x\\in X\\}$. Define $\\mathrm{best}_i(X)$ as an $R_i$-maximal element of $X_i$ (i.e., an agent $i$'s most preferred allotment attainable within $X$; if there are ties, $\\mathrm{best}_i(X)$ may be non-unique).\n\nThe paper proves that the unique competitive/strong-core allocation respects improvement under strict preferences, and gives related setwise results for competitive allocations under weak preferences, but leaves open a question for the (weak) core under unbounded exchanges.\n\n### 2. Open Problem\n\n**Question 1.1.** Given a housing market $(N,R)$ with unbounded exchange cycles and its core $C(R)$, and an agent $i\\in N$, consider a preference change to $(N,\\widetilde R)$ where $\\widetilde R$ is an improvement for $i$ with respect to $R$.\n\nDetermine whether the following property holds: for every choice of $x\\in C(R)$ with $x_i\\in \\mathrm{best}_i(C(R))$ and every choice of $\\widetilde x\\in C(\\widetilde R)$ with $\\widetilde x_i\\in \\mathrm{best}_i(C(\\widetilde R))$, one has\n$$\n\n\\widetilde x_i\\; R_i\\; x_i.\n\n$$\nEquivalently, decide whether agent $i$'s most preferred allotment among core allocations can ever become strictly worse after $i$'s object becomes (weakly) more desirable to other agents (with $i$'s own preferences fixed).\n\n### 3. Known Results\n\nBiró–Klijn–Klimentova–Viana (2021) introduced “respecting improvement” for Shapley–Scarf housing markets and proved it for the unique competitive/strong-core allocation under strict preferences (via TTC), and obtained setwise monotonicity for competitive allocations under weak preferences. They also showed that once exchanges are bounded (e.g., cycle length $\\le 3$), even strict-preference cores can fail to respect improvement for an agent’s best attainable allotment, leaving open the unbounded-cycle question for the (weak) core: can $\\mathrm{best}_i(C(R))$ become worse after a $p$-improvement (others rank $i$’s endowment weakly higher, $R_i$ fixed)?\n\nThis open problem has been solved affirmatively by Schlotter–Biró–Fleiner in “The core of housing markets from an agent's perspective: Is it worth sprucing up your home?”. Their Theorem 2 gives a strong monotonicity: starting from any core allocation $X\\in C(H)$, after a $p$-improvement $H'$ there exists $X'\\in C(H')$ with $X'(p)=X(p)$ or $X'(p)\\,P_p\\,X(p)$. Taking $X$ to be a $p$-best core allocation in $H$ implies that $p$’s best attainable core object in $H'$ is weakly better, yielding the exact quantified statement posed in the source paper: for any $x\\in C(R)$ with $x_i\\in \\mathrm{best}_i(C(R))$ and any $\\widetilde x\\in C(\\widetilde R)$ with $\\widetilde x_i\\in \\mathrm{best}_i(C(\\widetilde R))$, one has $\\widetilde x_i\\,R_i\\,x_i$. The result holds in full generality of unbounded exchange cycles and is constructive (linear time).\n\nRelated subsequent work develops broader “respecting improvement” frameworks for mechanisms (single-valued rules) and for stronger stability notions (e.g., strong core under partial orders), but these do not substitute for the above core-correspondence comparative statics. A remaining direction, suggested already by Biró et al. (2021), is to understand analogous RI-best statements in other stability models (e.g., stable roommates) and to delineate precisely which bounded-exchange restrictions reintroduce failures of monotonicity, as seen in their bounded-cycle counterexamples.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #60 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W3126339575_p0/partial_progress/60.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Péter Bíró, Flip Klijn, Xenia Klimentova, Ana Viana, [*Shapley–Scarf Housing Markets: Respecting Improvement, Integer Programming, and Kidney Exchange*](https://doi.org/10.1287/moor.2022.0092), Mathematics of Operations Research, 2023.\n- **Location in paper:** Conclusion, page 34, Section 6\n- **Area:** housing market core\n- **Keywords:** `housing markets`, `core stability`, `top trading cycles`, `comparative statics`, `respecting improvement`, `indivisible goods`\n- **Upstream problem record:** [W3126339575_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W3126339575_p0&n=60&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Péter Bíró, Flip Klijn, Xenia Klimentova, Ana Viana, [*Shapley–Scarf Housing Markets: Respecting Improvement, Integer Programming, and Kidney Exchange*](https://doi.org/10.1287/moor.2022.0092), Mathematics of Operations Research, 2023.\n2. [*The core of housing markets from an agent's perspective: Is it worth sprucing up your home?*](https://doi.org/10.1287/moor.2023.0092).\n3. [*The core of housing markets from an agent's perspective: Is it worth sprucing up your home?*](https://doi.org/10.1007/978-3-030-94676-0_14).\n4. [*Respecting improvement in markets with indivisible goods*](https://doi.org/10.1287/mnsc.2025.00052).\n5. *The strong core of housing markets with partial order preferences*.\n6. [*Novel integer programming models for the stable kidney exchange problem*](https://arxiv.org/abs/2012.04918).\n",
+  "conciseness": "medium",
+  "concisenessLabel": "适中"
+}

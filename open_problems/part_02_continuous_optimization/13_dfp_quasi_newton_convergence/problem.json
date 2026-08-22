@@ -1,0 +1,57 @@
+{
+  "id": 13,
+  "title": "DFP Quasi-Newton Convergence",
+  "part": "连续优化",
+  "partKey": "part_02_continuous_optimization",
+  "file": "open_problems/part_02_continuous_optimization/13_dfp_quasi_newton_convergence/problem.md",
+  "jsonFile": "open_problems/part_02_continuous_optimization/13_dfp_quasi_newton_convergence/problem.json",
+  "authors": "",
+  "source": "",
+  "keywords": "",
+  "verification": "专题整理",
+  "type": "existence",
+  "typeLabel": "存在性 / 唯一性",
+  "typeTags": [
+    "存在性 / 唯一性",
+    "收敛 / 稳定性",
+    "界 / 近似 / 最优常数",
+    "算法 / 机制设计"
+  ],
+  "clarity": {
+    "score": 81,
+    "level": "L3",
+    "label": "清晰可研究",
+    "description": "核心问题明确，但仍有少量边界、术语或最优性条件需要补齐。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 20,
+      "目标与判据": 21,
+      "范围与边界": 11,
+      "单一性": 4
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 20/20",
+      "目标与判据 21/25",
+      "范围与边界 11/15",
+      "单一性 4/15",
+      "检测到 4 个子问题，按多目标议题扣分",
+      "出现宽泛或并列扩展措辞，需人工确认边界"
+    ]
+  },
+  "summary": "Let $f:\\mathbb{R}^n\\to\\mathbb{R}$ be smooth, and define $$ gk=\\nabla f(xk),\\qquad pk=-Hk gk, $$ where $Hk\\succ 0$ is an inverse-Hessian approximation. Given a stepsize $\\alphak>0$, set $$ x{k+1}=xk+\\alphak pk,\\qquad sk=x{k+1}-xk,\\qquad yk=g{k+1}-gk. $$ The DFP update is $$ H{k+1} =Hk+\\frac{sk sk^\\top}{sk^\\top yk} -\\frac{Hk yk yk^\\top Hk}{yk^\\top Hk yk}. $$ If $sk^\\top yk>0$ and $Hk\\succ 0$, then $H{k+1}\\succ 0$.",
+  "statement": "Question 1.1. Weak global convergence of DFP. Let $f$ be twice continuously differentiable and uniformly strongly convex and smooth: $$ \\mu I\\preceq \\nabla^2 f(x)\\preceq L I $$ for all $x\\in\\mathbb{R}^n$, with $0<\\mu\\le L<\\infty$. Consider DFP with arbitrary $x0$ and arbitrary $H0\\succ 0$. Suppose e",
+  "statementLength": 257,
+  "statementSentences": 5,
+  "statementFormulas": 6,
+  "statementComplexityScore": 67,
+  "statementConnectors": 3,
+  "concisenessBasis": "长度 257、句子 5、公式 6、连接结构 3；本批次复杂度分位点 30/54",
+  "familiarity": "low",
+  "familiarityLabel": "低文献可见度",
+  "familiarityScore": 1,
+  "familiarityBasis": "来源元数据、参考文献 0 条、链接/DOI 0 个",
+  "content": "# DFP Quasi-Newton Convergence\n\nThis file collects open problems about the convergence theory of the DFP quasi-Newton method under inexact line search.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. DFP Convergence Under Wolfe Line Search\n\nContributors: Yaxiang Yuan\n\n### 1. Problem Background\n\nLet $f:\\mathbb{R}^n\\to\\mathbb{R}$ be smooth, and define\n$$\ng_k=\\nabla f(x_k),\\qquad p_k=-H_k g_k,\n$$\nwhere $H_k\\succ 0$ is an inverse-Hessian approximation. Given a stepsize $\\alpha_k>0$, set\n$$\nx_{k+1}=x_k+\\alpha_k p_k,\\qquad s_k=x_{k+1}-x_k,\\qquad y_k=g_{k+1}-g_k.\n$$\nThe DFP update is\n$$\nH_{k+1}\n=H_k+\\frac{s_k s_k^\\top}{s_k^\\top y_k}\n-\\frac{H_k y_k y_k^\\top H_k}{y_k^\\top H_k y_k}.\n$$\nIf $s_k^\\top y_k>0$ and $H_k\\succ 0$, then $H_{k+1}\\succ 0$.\n\nThe exact-line-search theory of DFP is closely related to classical Broyden-class and BFGS theory. The more delicate question is whether the original DFP method remains globally convergent under practical inexact line searches such as Wolfe or Armijo-Wolfe line search.\n\n### 2. Open Problems\n\n**Question 1.1. Weak global convergence of DFP.** Let $f$ be twice continuously differentiable and uniformly strongly convex and smooth:\n$$\n\\mu I\\preceq \\nabla^2 f(x)\\preceq L I\n$$\nfor all $x\\in\\mathbb{R}^n$, with $0<\\mu\\le L<\\infty$. Consider DFP with arbitrary $x_0$ and arbitrary $H_0\\succ 0$. Suppose each $\\alpha_k$ satisfies the Wolfe conditions\n$$\nf(x_k+\\alpha_k p_k)\\le f(x_k)+c_1\\alpha_k g_k^\\top p_k,\n$$\nand\n$$\n\\nabla f(x_k+\\alpha_k p_k)^\\top p_k\\ge c_2 g_k^\\top p_k,\n$$\nwhere $0<c_1<c_2<1$. Does DFP necessarily satisfy\n$$\n\\nabla f(x_k)\\to 0\n$$\nand hence $x_k\\to x^\\star$, the unique minimizer of $f$?\n\n**Question 1.2. Global linear and local superlinear convergence.** Under the assumptions of Question 1.1, and additionally assuming Lipschitz continuity of the Hessian,\n$$\n\\|\\nabla^2 f(x)-\\nabla^2 f(y)\\|\\le M\\|x-y\\|,\n$$\ndoes DFP with Wolfe or strong Wolfe line search admit a global linear phase and an eventual superlinear phase, namely\n$$\nf(x_k)-f(x^\\star)\\le C\\rho^k\n$$\nfor some $C>0$ and $\\rho\\in(0,1)$, followed by\n$$\n\\frac{\\|x_{k+1}-x^\\star\\|}{\\|x_k-x^\\star\\|}\\to 0?\n$$\n\n**Question 1.3. General convex or nonconvex variants.** If $f$ is convex with bounded level sets, or nonconvex with Lipschitz gradient, can one prove convergence of DFP to an optimum or stationary point under natural line-search safeguards? Alternatively, can one construct counterexamples showing that additional damping or safeguarding is necessary?\n\n### 3. Known Results and Difficulty\n\nFor strongly convex quadratic objectives and exact line search, DFP has the classical finite-termination behavior associated with conjugate-gradient and Broyden-class methods. For nonquadratic strongly convex functions with exact line search, the problem is also close to existing BFGS and Broyden-class theory.\n\nThe main difficulty is the Wolfe-line-search setting. BFGS has strong global convergence theory under Armijo-Wolfe conditions, but DFP is often excluded from classical restricted-Broyden-class global convergence results because the DFP update does not have the same self-correcting behavior as BFGS. The central issue is to control degeneration of the approximate inverse Hessians $H_k$ strongly enough to preserve descent and convergence.\n",
+  "conciseness": "long",
+  "concisenessLabel": "复杂"
+}

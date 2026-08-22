@@ -1,0 +1,53 @@
+{
+  "id": 150,
+  "title": "Convergence of single-valued fixed-point iteration for Gibbs-form equilibrium operators",
+  "part": "决策与博弈",
+  "partKey": "part_05_decision_making_and_games",
+  "file": "open_problems/part_05_decision_making_and_games/150_convergence_of_single_valued_fixed_point_iteration_for_gibbs_form_equilibrium_operators/problem.md",
+  "jsonFile": "open_problems/part_05_decision_making_and_games/150_convergence_of_single_valued_fixed_point_iteration_for_gibbs_form_equilibrium_operators/problem.json",
+  "authors": "Erhan Bayraktar, Yu‐Jui Huang, Zhenhua Wang, Zhou Zhou",
+  "source": "Erhan Bayraktar, Yu‐Jui Huang, Zhenhua Wang, Zhou Zhou, Relaxed Equilibria for Time-Inconsistent Markov Decision Processes, Mathematics of Operations Research, 2024.",
+  "keywords": "time-inconsistent MDP, entropy regularization, relaxed equilibrium, fixed-point iteration, convergence analysis",
+  "verification": "待核验",
+  "type": "convergence",
+  "typeLabel": "收敛 / 稳定性",
+  "typeTags": [
+    "收敛 / 稳定性",
+    "优化模型 / 算子"
+  ],
+  "clarity": {
+    "score": 68,
+    "level": "L3",
+    "label": "清晰可研究",
+    "description": "核心问题明确，但仍有少量边界、术语或最优性条件需要补齐。",
+    "components": {
+      "问题陈述": 17,
+      "对象与假设": 14,
+      "目标与判据": 17,
+      "范围与边界": 5,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 17/25",
+      "对象与假设 14/20",
+      "目标与判据 17/25",
+      "范围与边界 5/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Consider a discrete-time infinite-horizon Markov decision process (MDP) with finite state space $S=\\{1,\\dots,d\\}$ and compact action space $U\\subset \\mathbb{R}^\\ell$ with $0<\\mathrm{Leb}(U)<\\infty$. A relaxed (randomized) feedback control is a map $\\pi:S\\to \\mathcal{P}(U)$, where $\\mathcal{P}(U)$ denotes probability measures on $U$. For $\\lambda>0$, an entropy-regularized objective is used in which the stage payoff includes a Shannon differential entropy term. Under entropy regularization, the equilibrium (in the sense of intra-personal subgame-perfect equilibrium for time-inconsistent discounting) can be characterized as a fixed point of a single-valued operator of Gibbs (softmax) form.",
+  "statement": "$$ converges (e.g., from arbitrary initialization, or from some specified set of initial points) to a fixed point $y^\\star\\in\\mathbb{R}^d$ satisfying $\\Psi\\lambda(y^\\star)=y^\\star$, equivalently producing a regular relaxed equilibrium $\\pi^\\star=\\Gamma\\lambda(y^\\star,\\cdot)$ for the entropy-regularized time-inconsistent MDP.",
+  "statementLength": 294,
+  "statementSentences": 3,
+  "statementFormulas": 3,
+  "statementComplexityScore": 56,
+  "statementConnectors": 1,
+  "concisenessBasis": "长度 294、句子 3、公式 3、连接结构 1；本批次复杂度分位点 30/54",
+  "familiarity": "high",
+  "familiarityLabel": "高文献可见度",
+  "familiarityScore": 11,
+  "familiarityBasis": "来源元数据、参考文献 6 条、链接/DOI 6 个",
+  "content": "# Convergence of single-valued fixed-point iteration for Gibbs-form equilibrium operators\n\nThis file contains the open problem on Convergence of single-valued fixed-point iteration for Gibbs-form equilibrium operators.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Convergence of single-valued fixed-point iteration for Gibbs-form equilibrium operators\n\nSource paper authors: Erhan Bayraktar, Yu‐Jui Huang, Zhenhua Wang, Zhou Zhou\n\n### 1. Problem Background\n\nConsider a discrete-time infinite-horizon Markov decision process (MDP) with finite state space $S=\\{1,\\dots,d\\}$ and compact action space $U\\subset \\mathbb{R}^\\ell$ with $0<\\mathrm{Leb}(U)<\\infty$. A relaxed (randomized) feedback control is a map $\\pi:S\\to \\mathcal{P}(U)$, where $\\mathcal{P}(U)$ denotes probability measures on $U$. For $\\lambda>0$, an entropy-regularized objective is used in which the stage payoff includes a Shannon differential entropy term. Under entropy regularization, the equilibrium (in the sense of intra-personal subgame-perfect equilibrium for time-inconsistent discounting) can be characterized as a fixed point of a single-valued operator of Gibbs (softmax) form.\n\nMore concretely, for each state $i\\in S$ and vector $y\\in\\mathbb{R}^d$, define a probability density $\\Gamma_\\lambda(y,i)\\in \\mathcal{D}(U)$ by\n$$\n\\Gamma_\\lambda(y,i)(u):=\\frac{\\exp\\left(\\frac{1}{\\lambda}(f(0,i,u)+p_i^u\\cdot y)\\right)}{\\int_U \\exp\\left(\\frac{1}{\\lambda}(f(0,i,v)+p_i^v\\cdot y)\\right)\\,dv},\\qquad u\\in U,\n$$\nwhere $f(0,i,u)$ is the one-step reward (at time-difference $0$) and $p_i^u\\in\\mathbb{R}^d$ is the transition-probability row vector from state $i$ under action $u$. Given $y$, the corresponding relaxed control is $\\Gamma_\\lambda(y,\\cdot):S\\to \\mathcal{P}(U)$. Let $J_\\lambda^\\pi$ be the entropy-regularized value functional and let $V_\\lambda^\\pi\\in\\mathbb{R}^d$ be the associated continuation-value vector (expected future discounted reward plus discounted entropy starting one step ahead). Define the induced single-valued self-map $\\Psi_\\lambda:\\mathbb{R}^d\\to\\mathbb{R}^d$ by\n$$\n\\Psi_\\lambda(y):=V_\\lambda^{\\Gamma_\\lambda(y,\\cdot)}.\n$$\nFixed points $y^\\star$ of $\\Psi_\\lambda$ correspond to entropy-regularized relaxed equilibria $\\pi^\\star=\\Gamma_\\lambda(y^\\star,\\cdot)$.\n\nA natural numerical approach is fixed-point iteration on $\\Psi_\\lambda$ (equivalently on the policy operator $\\Phi_\\lambda(\\pi):=\\Gamma_\\lambda(V_\\lambda^\\pi,\\cdot)$), i.e., start from some $y_0\\in\\mathbb{R}^d$ (or $\\pi_0$) and generate $y_{n+1}=\\Psi_\\lambda(y_n)$ (or $\\pi_{n+1}=\\Phi_\\lambda(\\pi_n)$).\n\n### 2. Open Problem\n\n**Question 1.1.** Give conditions under which the single-valued fixed-point iteration\n$$\ny_{n+1}=\\Psi_\\lambda(y_n)\\qquad (n\\ge 0)\n\n$$\nconverges (e.g., from arbitrary initialization, or from some specified set of initial points) to a fixed point $y^\\star\\in\\mathbb{R}^d$ satisfying $\\Psi_\\lambda(y^\\star)=y^\\star$, equivalently producing a regular relaxed equilibrium $\\pi^\\star=\\Gamma_\\lambda(y^\\star,\\cdot)$ for the entropy-regularized time-inconsistent MDP.\n\n### 3. Known Results\n\nIn Bayraktar–Huang–Wang–Zhou (2024), entropy regularization turns the equilibrium best-response into a single-valued Gibbs map $\\Gamma_\\lambda$, yielding a single-valued equilibrium operator $\\Psi_\\lambda(y)=V^{\\Gamma_\\lambda(y,\\cdot)}_\\lambda$. Existence of fixed points is obtained via Brouwer after establishing uniform logarithmic entropy bounds (Lemma 2.1) under Lipschitz dependence on actions and a uniform cone condition on $U$. The paper explicitly leaves open the convergence of the naive fixed-point iteration $y_{n+1}=\\Psi_\\lambda(y_n)$ (Remark 2.6), which would make the approximation-by-regularization approach fully rigorous as a computational method.\n\nAmong forward citations, the closest progress on iteration convergence is in “Equilibrium for Time-inconsistent Mean Field Games: A Systematic Analysis by Entropy Regularization”, which proves contraction and convergence of a Gibbs-form policy-iteration map $\\Phi_\\lambda$ under restrictive conditions (small horizon and weak terminal interaction) in a continuous-time finite-horizon mean-field setting. This suggests that proving convergence in the discrete-time infinite-horizon finite-state MDP likely requires additional structure ensuring that $\\Psi_\\lambda$ (or $\\Phi_\\lambda$) is a contraction or at least has a globally attracting fixed point—e.g., strong discounting/mixing, small effective horizon $\\sum_t \\delta(t)$, or quantitative Lipschitz bounds on $y\\mapsto V^{\\Gamma_\\lambda(y,\\cdot)}_\\lambda$ combined with the $1/\\lambda$-Lipschitz nature of the softmax map.\n\nOther citing works mainly develop existence/approximation theories via entropy regularization and Schauder/Kakutani fixed points (including mean-field stopping and diffusion-control analogues) but do not establish general convergence of the fixed-point iteration for the Gibbs operator. Therefore, based on the provided forward-citation set, the convergence problem for single-valued fixed-point iteration of $\\Psi_\\lambda$ in the Bayraktar–Huang–Wang–Zhou discrete-time infinite-horizon setting remains open.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #136 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4403683873_p0/partial_progress/136.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Erhan Bayraktar, Yu‐Jui Huang, Zhenhua Wang, Zhou Zhou, [*Relaxed Equilibria for Time-Inconsistent Markov Decision Processes*](https://doi.org/10.1287/moor.2023.0209), Mathematics of Operations Research, 2024.\n- **Location in paper:** Page 10, Remark 2.6 (end of Section 2.2).\n- **Area:** entropy regularized mdp\n- **Keywords:** `time-inconsistent MDP`, `entropy regularization`, `relaxed equilibrium`, `fixed-point iteration`, `convergence analysis`\n- **Upstream problem record:** [W4403683873_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4403683873_p0&n=136&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Erhan Bayraktar, Yu‐Jui Huang, Zhenhua Wang, Zhou Zhou, [*Relaxed Equilibria for Time-Inconsistent Markov Decision Processes*](https://doi.org/10.1287/moor.2023.0209), Mathematics of Operations Research, 2024.\n2. *Equilibrium for Time-inconsistent Mean Field Games: A Systematic Analysis by Entropy Regularization*.\n3. [*Time-inconsistent mean-field stopping problems: a regularised equilibrium approach*](https://doi.org/10.1007/s00780-025-00581-5).\n4. *Equilibrium under time-inconsistency: A new existence theory by vanishing entropy regularization*.\n5. [*Existence of Markov equilibrium control in discrete time*](https://doi.org/10.1137/23M1594121).\n6. *Existence of equilibria for time-inconsistent games in discrete time*.\n",
+  "conciseness": "long",
+  "concisenessLabel": "复杂"
+}

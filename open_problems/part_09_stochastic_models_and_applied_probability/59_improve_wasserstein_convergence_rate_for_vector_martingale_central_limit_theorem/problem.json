@@ -1,0 +1,53 @@
+{
+  "id": 59,
+  "title": "Improve Wasserstein convergence rate for vector martingale central limit theorem",
+  "part": "随机模型与应用概率",
+  "partKey": "part_09_stochastic_models_and_applied_probability",
+  "file": "open_problems/part_09_stochastic_models_and_applied_probability/59_improve_wasserstein_convergence_rate_for_vector_martingale_central_limit_theorem/problem.md",
+  "jsonFile": "open_problems/part_09_stochastic_models_and_applied_probability/59_improve_wasserstein_convergence_rate_for_vector_martingale_central_limit_theorem/problem.json",
+  "authors": "R. Srikant",
+  "source": "R. Srikant, Rates of Convergence in the Central Limit Theorem for Markov Chains, with an Application to TD Learning, Mathematics of Operations Research, 2025.",
+  "keywords": "martingale central limit theorem, Wasserstein distance, Stein's method, rate of convergence, multivariate normal approximation, log factor removal",
+  "verification": "待核验",
+  "type": "convergence",
+  "typeLabel": "收敛 / 稳定性",
+  "typeTags": [
+    "收敛 / 稳定性",
+    "证明或反例"
+  ],
+  "clarity": {
+    "score": 77,
+    "level": "L3",
+    "label": "清晰可研究",
+    "description": "核心问题明确，但仍有少量边界、术语或最优性条件需要补齐。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 14,
+      "目标与判据": 17,
+      "范围与边界": 6,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 14/20",
+      "目标与判据 17/25",
+      "范围与边界 6/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Let $\\{mk\\}{k\\ge 1}$ be a $d$-dimensional martingale difference sequence with respect to a filtration $\\{\\mathcal Fk\\}{k\\ge 0}$, meaning $mk$ is $\\mathcal Fk$-measurable, $\\mathbb E\\|mk\\|<\\infty$, and $\\mathbb E[mk\\mid \\mathcal F{k-1}]=0$ for all $k\\ge 1$. Define partial sums $Sn=\\sum{k=1}^n mk$ and the normalized sum $Wn=Sn/\\sqrt n$.",
+  "statement": "dW\\bigl(Wn,\\, \\Sigma\\infty^{1/2} Z\\bigr)",
+  "statementLength": 38,
+  "statementSentences": 1,
+  "statementFormulas": 0,
+  "statementComplexityScore": 8,
+  "statementConnectors": 0,
+  "concisenessBasis": "长度 38、句子 1、公式 0、连接结构 0；本批次复杂度分位点 30/54",
+  "familiarity": "high",
+  "familiarityLabel": "高文献可见度",
+  "familiarityScore": 10,
+  "familiarityBasis": "来源元数据、参考文献 7 条、链接/DOI 2 个",
+  "content": "# Improve Wasserstein convergence rate for vector martingale central limit theorem\n\nThis file contains the open problem on Improve Wasserstein convergence rate for vector martingale central limit theorem.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Improve Wasserstein convergence rate for vector martingale central limit theorem\n\nSource paper authors: R. Srikant\n\n### 1. Problem Background\n\nLet $\\{m_k\\}_{k\\ge 1}$ be a $d$-dimensional martingale difference sequence with respect to a filtration $\\{\\mathcal F_k\\}_{k\\ge 0}$, meaning $m_k$ is $\\mathcal F_k$-measurable, $\\mathbb E\\|m_k\\|<\\infty$, and $\\mathbb E[m_k\\mid \\mathcal F_{k-1}]=0$ for all $k\\ge 1$. Define partial sums $S_n=\\sum_{k=1}^n m_k$ and the normalized sum $W_n=S_n/\\sqrt n$.\n\nAssume there exists $\\beta\\in(0,1)$ such that $\\mathbb E\\|m_k\\|^{2+\\beta}<\\infty$ for all $k$, and the conditional covariance matrices $\\Sigma_k:=\\mathbb E[m_k m_k^\\top\\mid \\mathcal F_{k-1}]$ exist. Let $\\Sigma_\\infty\\succ 0$ be a positive definite matrix intended to represent the limiting (asymptotic) covariance of $W_n$ in a martingale central limit theorem.\n\nLet $Z\\sim\\mathcal N(0,I_d)$. For random vectors $X,Y\\in\\mathbb R^d$, the $1$-Wasserstein distance is\n$$\n\n d_W(X,Y)=\\sup_{h\\in\\mathrm{Lip}_1} \\mathbb E[h(X)-h(Y)],\n\n$$\nwhere $\\mathrm{Lip}_1$ is the set of real-valued functions on $\\mathbb R^d$ with Lipschitz constant at most 1 w.r.t. the Euclidean norm.\n\nA non-asymptotic martingale CLT bound in Wasserstein distance can have the form\n$$\n\n d_W\\bigl(W_n,\\, \\Sigma_\\infty^{1/2} Z\\bigr) \\le \\text{(explicit bound depending on moments, }\\Sigma_k,\\Sigma_\\infty\\text{)}.\n\n$$\nIn the paper, a general bound is proved that (in typical applications) yields the rate $O(\\log n/\\sqrt n)$ in $d_W$.\n\n### 2. Open Problem\n\n**Question 1.1.** Find additional, verifiable conditions on the martingale difference sequence $\\{m_k\\}$ (beyond the finite-$(2+\\beta)$ moment and conditional covariance assumptions stated above) under which the Wasserstein error\n$$\n\n d_W\\bigl(W_n,\\, \\Sigma_\\infty^{1/2} Z\\bigr)\n\n$$\nadmits an improved rate of convergence $O(1/\\sqrt n)$ (i.e., with the $\\log n$ factor removed) as $n\\to\\infty$, while keeping a vector-valued martingale setting and a Gaussian limit with covariance $\\Sigma_\\infty$.\n\n### 3. Known Results\n\nSrikant’s 2026 paper proves a non-asymptotic vector martingale CLT in 1-Wasserstein distance via a Lindeberg decomposition combined with multivariate Stein regularity estimates (Gallou\\\"et–Mijoule–Swan; Fang–Shao–Xu). The resulting bound (Theorem 1) has a typical $O((\\log n)/\\sqrt n)$ rate when one pushes the Hölder parameter $\\beta\\uparrow 1$ to approach the i.i.d.-optimal $n^{-1/2}$ scaling; the $\\log n$ arises from the blow-up of Stein-solution Hölder constants like $(1-\\beta)^{-1}$. In the Markov-chain application, Poisson’s equation yields a martingale difference sequence with bounded moments and geometrically decaying covariance mismatch $\\|\\mathbb E\\Sigma_k-\\Sigma_\\infty\\|$, but the same Stein-regularity mechanism still produces $O((\\log n)/\\sqrt n)$ in Wasserstein-1.\n\nAmong forward citations, the most direct evidence that the $\\log n$ factor is not intrinsic comes from “Wasserstein-p Central Limit Theorem Rates: From Local Dependence to Markov Chains”, which attains the optimal $O(n^{-1/2})$ Wasserstein-1 rate for additive functionals of geometrically ergodic Markov chains under drift/minorization and $(2+\\delta)$-moment domination (with $\\delta>1$), and in the homogeneous case transfers this to $\\mathcal N(0,\\Sigma_\\infty)$ when the covariance stabilizes at $O(1/n)$. This suggests that log-free $n^{-1/2}$ rates are achievable in dependent settings when one avoids the particular Stein-equation regularity step that forces $\\beta\\uparrow 1$, for example via local-dependence/regeneration couplings or alternative Stein couplings tailored to Markov chains.\n\nHowever, none of the citing works provides a general theorem for arbitrary $d$-dimensional martingale differences $m_k$ in terms of predictable covariances $\\Sigma_k=\\mathbb E[m_km_k^\\top\\mid\\mathcal F_{k-1}]$ that removes the $\\log n$ while keeping only verifiable structural assumptions. Several papers in stochastic approximation and RL (two-time-scale SA, Q-learning, nonlinear SA) explicitly rely on martingale Wasserstein CLTs with $\\log n$ losses and identify improved martingale Wasserstein bounds as a key missing ingredient. Overall, the problem remains open at the level of a general vector martingale CLT, though optimal $O(n^{-1/2})$ rates are known in important subclasses (notably geometrically ergodic Markov-chain additive functionals) under stronger dependence/moment and covariance-stabilization conditions.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #32 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4414783466_p0/partial_progress/32.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** R. Srikant, [*Rates of Convergence in the Central Limit Theorem for Markov Chains, with an Application to TD Learning*](https://doi.org/10.1287/moor.2024.0444), Mathematics of Operations Research, 2025.\n- **Location in paper:** Section 5 (Conclusions), page 19\n- **Area:** martingale central limit theorem\n- **Keywords:** `martingale central limit theorem`, `Wasserstein distance`, `Stein's method`, `rate of convergence`, `multivariate normal approximation`, `log factor removal`\n- **Upstream problem record:** [W4414783466_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4414783466_p0&n=32&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. R. Srikant, [*Rates of Convergence in the Central Limit Theorem for Markov Chains, with an Application to TD Learning*](https://doi.org/10.1287/moor.2024.0444), Mathematics of Operations Research, 2025.\n2. *Wasserstein-p Central Limit Theorem Rates: From Local Dependence to Markov Chains*.\n3. *Nonasymptotic clt and error bounds for two-time-scale stochastic approximation*.\n4. *Finite-Sample Wasserstein Error Bounds and Concentration Inequalities for Nonlinear Stochastic Approximation*.\n5. *Quantifying Normality: Convergence Rate to Gaussian Limit for Stochastic Approximation and Unadjusted OU Algorithm*.\n6. *Central Limit Theorems for Asynchronous Averaged Q-Learning*.\n7. *Gaussian Approximation for Asynchronous Q-learning*.\n",
+  "conciseness": "short",
+  "concisenessLabel": "简洁"
+}

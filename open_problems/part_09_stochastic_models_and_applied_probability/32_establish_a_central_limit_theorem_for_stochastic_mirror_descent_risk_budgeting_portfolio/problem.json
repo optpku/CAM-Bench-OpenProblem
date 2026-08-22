@@ -1,0 +1,55 @@
+{
+  "id": 32,
+  "title": "Establish a central limit theorem for stochastic mirror descent risk budgeting portfolios",
+  "part": "随机模型与应用概率",
+  "partKey": "part_09_stochastic_models_and_applied_probability",
+  "file": "open_problems/part_09_stochastic_models_and_applied_probability/32_establish_a_central_limit_theorem_for_stochastic_mirror_descent_risk_budgeting_portfolio/problem.md",
+  "jsonFile": "open_problems/part_09_stochastic_models_and_applied_probability/32_establish_a_central_limit_theorem_for_stochastic_mirror_descent_risk_budgeting_portfolio/problem.json",
+  "authors": "M. Iglesias, Adil Rengim Cetingoz, Noufel Frikha",
+  "source": "M. Iglesias, Adil Rengim Cetingoz, Noufel Frikha, Mirror Descent Algorithms for Risk Budgeting Portfolios, Mathematics of Operations Research, 2026.",
+  "keywords": "risk budgeting, stochastic mirror descent, central limit theorem, asymptotic normality, Bregman divergence, tamed gradients",
+  "verification": "待核验",
+  "type": "characterization",
+  "typeLabel": "刻画 / 等价条件",
+  "typeTags": [
+    "刻画 / 等价条件",
+    "收敛 / 稳定性",
+    "算法 / 机制设计",
+    "证明或反例"
+  ],
+  "clarity": {
+    "score": 83,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 14,
+      "目标与判据": 23,
+      "范围与边界": 6,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 14/20",
+      "目标与判据 23/25",
+      "范围与边界 6/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Let $d\\in\\mathbb{N}$ be the number of assets and $X$ an $\\mathbb{R}^d$-valued random vector of asset returns on a probability space $(\\Omega,\\mathcal{F},\\mathbb{P})$. For portfolio weights $u\\in\\Deltad:=\\{u\\in\\mathbb{R}^d+:\\sum{i=1}^d ui=1\\}$, the portfolio loss is $-\\langle u,X\\rangle$.",
+  "statement": "Concretely, establish a central limit theorem (CLT) for an appropriately normalized error of either the raw iterates $zn$ or the averaged iterates $\\bar zn$, i.e. prove convergence in distribution of the form $$ an\\,(\\bar zn - z^\\star) \\;\\Rightarrow\\; \\mathcal{N}(0,\\Sigma), $$ for a deterministic scaling $an\\to\\infty$ and a covariance matrix $\\Sigma$, and characterize $an$ and $\\Sigma$ in terms of the model primitives $(L,X,b,g,\\rho)$ and the mirror map/taming mechanism $(\\kappa, Py^m)$.",
+  "statementLength": 424,
+  "statementSentences": 3,
+  "statementFormulas": 9,
+  "statementComplexityScore": 88,
+  "statementConnectors": 5,
+  "concisenessBasis": "长度 424、句子 3、公式 9、连接结构 5；本批次复杂度分位点 30/54",
+  "familiarity": "medium",
+  "familiarityLabel": "中文献可见度",
+  "familiarityScore": 7,
+  "familiarityBasis": "来源元数据、参考文献 1 条、链接/DOI 2 个",
+  "content": "# Establish a central limit theorem for stochastic mirror descent risk budgeting portfolios\n\nThis file contains the open problem on Establish a central limit theorem for stochastic mirror descent risk budgeting portfolios.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Establish a central limit theorem for stochastic mirror descent risk budgeting portfolios\n\nSource paper authors: M. Iglesias, Adil Rengim Cetingoz, Noufel Frikha\n\n### 1. Problem Background\n\nLet $d\\in\\mathbb{N}$ be the number of assets and $X$ an $\\mathbb{R}^d$-valued random vector of asset returns on a probability space $(\\Omega,\\mathcal{F},\\mathbb{P})$. For portfolio weights $u\\in\\Delta_d:=\\{u\\in\\mathbb{R}^d_+:\\sum_{i=1}^d u_i=1\\}$, the portfolio loss is $-\\langle u,X\\rangle$.\n\nFix a risk-budget vector $b\\in\\Delta^{>0}_d:=\\{b\\in(0,\\infty)^d:\\sum_{i=1}^d b_i=1\\}$. Let $\\rho$ be an RB-compatible risk measure (positive homogeneous and subadditive) such that the map\n$$\nr_\\rho(y):=\\rho(-\\langle y,X\\rangle),\\qquad y\\in\\mathbb{R}^d_+\n$$\nis continuous on $\\mathbb{R}^d_+$ and continuously differentiable on $(0,\\infty)^d$. Let $g:\\mathbb{R}_+\\to\\mathbb{R}$ be continuously differentiable, convex, and increasing, and define the strictly convex objective\n$$\n\\Gamma_g(y):= g(r_\\rho(y)) - \\sum_{i=1}^d b_i\\log y_i,\\qquad y\\in(0,\\infty)^d.\n$$\nLet $y^\\star\\in(0,\\infty)^d$ denote the unique minimizer of $\\Gamma_g$, and $u^\\star:=y^\\star/\\|y^\\star\\|_1$ the corresponding (unique) risk budgeting portfolio.\n\nAssume a stochastic representation of $g\\circ r_\\rho$: there exists a convex loss function $L:\\mathbb{R}^2\\to\\mathbb{R}$ such that for all $y\\in(0,\\infty)^d$,\n$$\ng(r_\\rho(y)) = \\min_{\\xi\\in\\mathbb{R}} \\mathbb{E}[L(\\xi,-\\langle y,X\\rangle)] = \\mathbb{E}[L(\\xi^\\star(y),-\\langle y,X\\rangle)],\n$$\nwhere $\\xi^\\star(y)$ is uniquely defined. Define the joint variable $z=(\\xi,y)\\in\\mathbb{R}\\times(0,\\infty)^d$, and the population objective\n$$\nh(z):=\\mathbb{E}[H(z,X)],\\qquad H(z,X):=L(\\xi,-\\langle y,X\\rangle) - \\sum_{i=1}^d b_i\\log y_i.\n$$\nLet $z^\\star=(\\xi^\\star,y^\\star)$ be the unique minimizer of $h$.\n\nBecause $\\nabla_y H$ is singular as some $y_i\\downarrow 0$, the paper introduces a tamed factor $\\kappa(y):= (\\min_{1\\le i\\le d} y_i)\\wedge 1$. Using i.i.d. samples $(X_k)_{k\\ge 1}$, a stochastic mirror descent (SMD) recursion is defined for a chosen radius $m>0$ (assumed $m\\ge \\|y^\\star\\|_1$) and step sizes $(\\gamma_k)$:\n1) $\\xi_{k+1} = \\xi_k - \\gamma_{k+1}\\,\\partial_\\xi H(z_k,X_{k+1})$.\n2) $y_{k+1} = P^{m}_{y_k}\\bigl(\\gamma_{k+1}\\,\\kappa(y_k)\\,\\nabla_y H(z_k,X_{k+1})\\bigr)$,\nwhere $P^{m}_{y}(v)$ is the negative-entropy mirror (KL) proximal map onto $(0,\\infty)^d\\cap\\{\\|y\\|_1\\le m\\}$ (explicitly $y\\mapsto y\\odot e^{-v}$ followed by $\\ell_1$-rescaling if needed).\nThe paper proves almost sure convergence $z_k\\to z^\\star$ and provides an almost sure non-asymptotic bound for the weighted averaged iterates $\\bar z_n := (\\sum_{k=1}^n \\gamma_k z_{k-1})/(\\sum_{k=1}^n \\gamma_k)$.\n\n### 2. Open Problem\n\n**Question 1.1.** Under suitable regularity and moment assumptions ensuring the SMD recursion $(z_k)_{k\\ge 0}$ is well-defined and converges to $z^\\star$, derive an asymptotic distributional error characterization for the stochastic mirror descent risk-budgeting estimator.\n\nConcretely, establish a central limit theorem (CLT) for an appropriately normalized error of either the raw iterates $z_n$ or the averaged iterates $\\bar z_n$, i.e. prove convergence in distribution of the form\n$$\na_n\\,(\\bar z_n - z^\\star) \\;\\Rightarrow\\; \\mathcal{N}(0,\\Sigma),\n$$\nfor a deterministic scaling $a_n\\to\\infty$ and a covariance matrix $\\Sigma$, and characterize $a_n$ and $\\Sigma$ in terms of the model primitives $(L,X,b,g,\\rho)$ and the mirror map/taming mechanism $(\\kappa, P_y^m)$.\n\n### 3. Known Results\n\nNo relevant Scholar-organic forward citations were available for this problem. The forward-citation review therefore cannot identify follow-up work that resolves or materially advances the problem.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #2 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4404530034_p0/partial_progress/2.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** M. Iglesias, Adil Rengim Cetingoz, Noufel Frikha, [*Mirror Descent Algorithms for Risk Budgeting Portfolios*](https://doi.org/10.1287/moor.2024.0847), Mathematics of Operations Research, 2026.\n- **Location in paper:** Conclusion (page 25 of 34)\n- **Area:** stochastic approximation\n- **Keywords:** `risk budgeting`, `stochastic mirror descent`, `central limit theorem`, `asymptotic normality`, `Bregman divergence`, `tamed gradients`\n- **Upstream problem record:** [W4404530034_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4404530034_p0&n=2&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. M. Iglesias, Adil Rengim Cetingoz, Noufel Frikha, [*Mirror Descent Algorithms for Risk Budgeting Portfolios*](https://doi.org/10.1287/moor.2024.0847), Mathematics of Operations Research, 2026.\n",
+  "conciseness": "long",
+  "concisenessLabel": "复杂"
+}

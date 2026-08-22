@@ -1,0 +1,53 @@
+{
+  "id": 1,
+  "title": "Antipodal Segments and Simplices",
+  "part": "几何",
+  "partKey": "part_01_geometry",
+  "file": "open_problems/part_01_geometry/01_antipodal_segments_and_simplices/problem.md",
+  "jsonFile": "open_problems/part_01_geometry/01_antipodal_segments_and_simplices/problem.json",
+  "authors": "",
+  "source": "",
+  "keywords": "",
+  "verification": "专题整理",
+  "type": "other",
+  "typeLabel": "开放式研究问题",
+  "typeTags": [
+    "开放式研究问题"
+  ],
+  "clarity": {
+    "score": 72,
+    "level": "L3",
+    "label": "清晰可研究",
+    "description": "核心问题明确，但仍有少量边界、术语或最优性条件需要补齐。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 20,
+      "目标与判据": 15,
+      "范围与边界": 9,
+      "单一性": 3
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 20/20",
+      "目标与判据 15/25",
+      "范围与边界 9/15",
+      "单一性 3/15",
+      "检测到 5 个子问题，按多目标议题扣分"
+    ]
+  },
+  "summary": "This problem concerns a generalization of antipodal sets in convex geometry.",
+  "statement": "If Question 1.2 is true, it would also be sharp: an example would be simplices on all $k$-faces of a parallelotope, parallel to a given $k$-face.",
+  "statementLength": 120,
+  "statementSentences": 2,
+  "statementFormulas": 2,
+  "statementComplexityScore": 28,
+  "statementConnectors": 1,
+  "concisenessBasis": "长度 120、句子 2、公式 2、连接结构 1；本批次复杂度分位点 30/54",
+  "familiarity": "low",
+  "familiarityLabel": "低文献可见度",
+  "familiarityScore": 2,
+  "familiarityBasis": "来源元数据、参考文献 4 条、链接/DOI 0 个",
+  "content": "# Antipodal Segments and Simplices\n\nThis file contains the open problem on Antipodal Segments and Simplices.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Antipodal Segments and Simplices\n\nContributors: Imre Bárány, Yinyu Ye, Endre Makai, Jr., Horst Martini, and Valeriu Soltan\n\n### 1. Problem Background\n\nThis problem concerns a generalization of **antipodal sets** in convex geometry.\n\nThe classical objects are finite point sets $X \\subset \\mathbb{R}^d$. Following Klee's definition, two distinct points $x',x'' \\in X$ are called **antipodal** if they lie on two distinct parallel supporting hyperplanes of $\\mathrm{conv} X$. If every pair of distinct points in $X$ is antipodal, then $X$ is called an antipodal set.\n\nDanzer and Grünbaum solved a problem of Erdős and Klee by proving that if $X \\subset \\mathbb{R}^d$ is an antipodal set, then $|X| \\le 2^d$. Moreover, this bound is sharp, as it is attained by the vertex set of a $d$-dimensional parallelotope.\n\nThe present problem extends this classical theorem from points to higher-dimensional objects. Instead of considering only points, it considers line segments and, more generally, $k$-simplices. Correspondingly, the condition that two points lie on two distinct parallel supporting hyperplanes is generalized to the condition that two $k$-simplices are each entirely contained in two distinct parallel supporting hyperplanes.\n\n### 2. Definitions and Conventions\n\n#### 2.1 $k$-simplex\n\nA **$k$-simplex** in $\\mathbb{R}^d$ is the convex hull of $k+1$ affinely independent points. In particular, a $1$-simplex is a line segment.\n\n**Source:** Grünbaum, *Convex Polytopes* [2]; the same terminology is used for $k$-simplices in Makai--Martini [3].\n\n#### 2.2 $k$-antipodal set of $k$-simplices\n\nLet $S^k=\\{s_1^k,\\dots,s_n^k\\}$ be a finite set of $k$-simplices in $\\mathbb{R}^d$, and let $P=\\mathrm{conv}(\\bigcup_{s\\in S^k}s).$ The set $S^k$ is called **$k$-antipodal** if, for any $i\\neq j$, there are different parallel supporting hyperplanes $H'$ and $H''$ of $P$ such that $s_i^k\\subset H'$ and $s_j^k\\subset H''$.\n\n**Source:** Makai--Martini [3].\n\n### 3. Open Problems\n\n**Question 1.1.** Suppose $S$ is a set of segments in $\\mathbb{R}^d$ such that for every $s', s'' \\in S$ with $s' \\ne s''$ there are different parallel supporting hyperplanes $H', H''$ of the convex hull $\\mathrm{conv}(\\bigcup\\{s : s \\in S\\})$, such that $s' \\subset H'$ and $s'' \\subset H''$. Then is it true that $|S| \\le 2^{d-1}$?\n\n**Question 1.2.** More generally, let $S_k$ be a set of $k$-simplices in $\\mathbb{R}^d$ satisfying the word-for-word analogue of the property in Question 1.1: for every two distinct simplices in $S_k$, there are different parallel supporting hyperplanes of the convex hull of the union of all simplices, each containing one of the two simplices. For $1 \\le k \\le d - 2$, is it true that $|S_k| \\le 2^{d-k}?$ If Question 1.1 is true, it would be sharp: an example would be the set of all edges of a parallelotope, parallel to a given edge.\n\nIf Question 1.2 is true, it would also be sharp: an example would be simplices on all $k$-faces of a parallelotope, parallel to a given $k$-face.\n\n### 4. Known Results\n\n#### 4.1 Danzer--Grünbaum Theorem for Antipodal Point Sets\n\nLet $X \\subset \\mathbb{R}^d$ be a finite point set. Suppose that $X$ is an antipodal set; that is, for every pair of distinct points $x',x'' \\in X$, there exist two distinct parallel supporting hyperplanes $H'$ and $H''$ of $\\mathrm{conv} X$ such that $x' \\in H'$ and $x'' \\in H''$. Then $|X| \\le 2^d$. This bound is sharp, since it is attained by the vertex set of a $d$-dimensional parallelotope.\n\n#### 4.2 The Three-Dimensional Segment Case\n\nLet $S$ be a family of line segments in $\\mathbb{R}^3$. Define $P=\\mathrm{conv}(\\bigcup_{s\\in S} s)$. Suppose that for every two distinct segments $s',s'' \\in S$, there exist two distinct parallel supporting planes $H'$ and $H''$ of $P$ such that $s' \\subset H'$ and $s'' \\subset H''$. Then $|S| \\le 4$. This is the case $d=3$ and $k=1$.\n\n#### 4.3 The Boundary Case $k=d-1$\n\nLet $S_{d-1}$ be a family of $(d-1)$-simplices in $\\mathbb{R}^d$. Define $P=\\mathrm{conv}(\\bigcup_{s\\in S_{d-1}} s)$. Suppose that for every two distinct $(d-1)$-simplices $s',s'' \\in S_{d-1}$, there exist two distinct parallel supporting hyperplanes $H'$ and $H''$ of $P$ such that $s' \\subset H'$ and $s'' \\subset H''$. Then $|S_{d-1}| \\le 2$. This agrees with the formula $2^{d-(d-1)}=2$.\n\n### 5. References\n\n1. L. Danzer, B. Grünbaum, Über zwei Probleme bezüglich konvexer Körper von P. Erdős und V. L. Klee, Math. Z. 79 (1962), 95-99.\n2. B. Grünbaum, Convex polytopes, Wiley-Interscience, London etc., 1967.\n3. E. Makai, Jr., H. Martini, On the number of antipodal or strictly antipodal pairs of points in finite subsets of $\\mathbb{R}^d$, in: Applied Geom. and Discr. Math., The V. Klee Festschrift (P. Gritzmann, B. Sturmfels, eds.), DIMACS Series in Discr. Math. and Theoretical Computer Sci., Vol. 4, Amer. Math. Soc., Providence, RI, 1991, 457-470.\n4. I. Talata, Oral communication.\n\n---\n",
+  "conciseness": "short",
+  "concisenessLabel": "简洁"
+}

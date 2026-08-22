@@ -1,0 +1,54 @@
+{
+  "id": 76,
+  "title": "Equilibrium-equivalent reduction of zero-sum games to cone-leveled strategy games",
+  "part": "决策与博弈",
+  "partKey": "part_05_decision_making_and_games",
+  "file": "open_problems/part_05_decision_making_and_games/76_equilibrium_equivalent_reduction_of_zero_sum_games_to_cone_leveled_strategy_games/problem.md",
+  "jsonFile": "open_problems/part_05_decision_making_and_games/76_equilibrium_equivalent_reduction_of_zero_sum_games_to_cone_leveled_strategy_games/problem.json",
+  "authors": "Nikos Dimou",
+  "source": "Nikos Dimou, On the Equivalence of Zero-Sum Games and Conic Programs, Mathematics of Operations Research, 2026.",
+  "keywords": "zero-sum games, Nash equilibrium, equilibrium equivalence, cone-leveled sets, conic programming, Banach spaces",
+  "verification": "待核验",
+  "type": "characterization",
+  "typeLabel": "刻画 / 等价条件",
+  "typeTags": [
+    "刻画 / 等价条件",
+    "收敛 / 稳定性",
+    "优化模型 / 算子"
+  ],
+  "clarity": {
+    "score": 86,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 16,
+      "目标与判据": 23,
+      "范围与边界": 7,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 16/20",
+      "目标与判据 23/25",
+      "范围与边界 7/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "A two-player zero-sum game is a triple $G=(S,T,u)$, where $S\\subseteq X$ and $T\\subseteq Y$ are the strategy sets of players I and II, and $u:S\\times T\\to\\mathbb{R}$ is the payoff to player I.",
+  "statement": "\\widetilde u(\\tilde x,\\tilde y)=\\langle \\tilde y, \\widetilde A\\tilde x\\rangle",
+  "statementLength": 69,
+  "statementSentences": 1,
+  "statementFormulas": 0,
+  "statementComplexityScore": 12,
+  "statementConnectors": 0,
+  "concisenessBasis": "长度 69、句子 1、公式 0、连接结构 0；本批次复杂度分位点 30/54",
+  "familiarity": "medium",
+  "familiarityLabel": "中文献可见度",
+  "familiarityScore": 8,
+  "familiarityBasis": "来源元数据、参考文献 2 条、链接/DOI 2 个",
+  "content": "# Equilibrium-equivalent reduction of zero-sum games to cone-leveled strategy games\n\nThis file contains the open problem on Equilibrium-equivalent reduction of zero-sum games to cone-leveled strategy games.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Equilibrium-equivalent reduction of zero-sum games to cone-leveled strategy games\n\nSource paper authors: Nikos Dimou\n\n### 1. Problem Background\n\nA two-player zero-sum game is a triple $G=(S,T,u)$, where $S\\subseteq X$ and $T\\subseteq Y$ are the strategy sets of players I and II, and $u:S\\times T\\to\\mathbb{R}$ is the payoff to player I.\n\nIn the setting considered here, $X$ and $Y$ are (reflexive) Banach spaces with continuous duals $X^*$ and $Y^*$. A bilinear pairing is denoted by $\\langle \\cdot,\\cdot\\rangle$. A (closed convex) cone $C\\subseteq X$ has positive dual cone $C^*:=\\{w\\in X^*: \\langle w,x\\rangle\\ge 0\\ \\forall x\\in C\\}$, and similarly for a cone $K\\subseteq Y$.\n\nA cone-leveled set is a subset $S\\subseteq X$ that can be written as\n$$\n\nS=\\{x\\in C: \\langle \\alpha,x\\rangle\\in H\\},\n\n$$\nfor some convex cone $C\\subseteq X$, some nonzero functional $\\alpha\\in X^*$, and some nonempty set $H\\subseteq (0,\\infty)$ (typically an interval). A basic cone-leveled set is the special case $H=\\{p\\}$ (a single level). A base of a cone is a basic cone-leveled set $\\{x\\in C: \\langle \\alpha,x\\rangle=1\\}$ with $\\alpha\\in \\mathrm{int}(C^*)$.\n\nTwo games $G=(S,T,u)$ and $G'=(S',T',u')$ are equilibrium-equivalent if they have the same set of Nash equilibria after an identification of strategies (e.g., via maps between $S$ and $S'$, $T$ and $T'$) that preserves saddle-point inequalities, so that equilibria and game values correspond under the identification.\n\nThe paper establishes that games whose strategy sets are cone-leveled (in particular, bases of convex cones) and whose payoff is bilinear $u(x,y)=\\langle y,Ax\\rangle$ can be analyzed/solved via associated conic linear programs and duality. This motivates asking which more general games can be reduced, without changing equilibrium structure, to this cone-leveled class.\n\n### 2. Open Problem\n\n**Question 1.1.** Characterize (or give verifiable necessary and sufficient conditions for) when a given two-player zero-sum game $G=(S,T,u)$ is equilibrium-equivalent to a two-player zero-sum game $\\widetilde G=(\\widetilde S,\\widetilde T,\\widetilde u)$ with cone-leveled strategy sets $\\widetilde S\\subseteq \\widetilde X$, $\\widetilde T\\subseteq \\widetilde Y$ and bilinear payoff of the form\n$$\n\n\\widetilde u(\\tilde x,\\tilde y)=\\langle \\tilde y, \\widetilde A\\tilde x\\rangle\n\n$$\nfor some linear operator $\\widetilde A$, such that Nash equilibria (saddle points) of $G$ correspond to Nash equilibria of $\\widetilde G$ under the equivalence mapping.\n\n### 3. Known Results\n\nDimou’s framework isolates a broad class of zero-sum games—those with cone-leveled strategy sets and bilinear payoff \\,$u(x,y)=\\langle y,Ax\\rangle$—for which equilibria and values can be computed via associated conic linear programs, and conversely shows an “almost equivalence” between minimax and strong duality in reflexive Banach spaces. The open problem asks for a characterization of when an arbitrary zero-sum game $G=(S,T,u)$ is equilibrium-equivalent (via strategy identifications preserving saddle inequalities) to such a cone-leveled bilinear game $\\widetilde G$, thereby enabling conic-programming machinery to solve the original game without changing its equilibrium structure.\n\nThe only forward-citing work provided here makes partial progress in a major subclass: semidefinite programming. It constructs, under verifiable constraint qualifications (strong optimality or strict unboundedness), an equilibrium-preserving reduction from an SDP pair to a zero-sum semidefinite game whose strategy sets are density matrices (bases of the PSD cone) and whose payoff is bilinear. This aligns closely with Dimou’s cone-base setting and demonstrates that, at least for SDPs, one can build explicit equivalence mappings that allow recovery of primal/dual solutions or certificates from game equilibria.\n\nHowever, the general characterization problem remains open: beyond specific conic-programming-derived games (LP/SDP and variants), there is no known necessary-and-sufficient condition describing exactly which general Banach-space games admit an equilibrium-equivalent embedding into the cone-leveled bilinear class. Promising directions suggested by Dimou’s paper include identifying invariants of equilibrium structure preserved under positive-homogeneous rescalings and cone-base normalizations, and developing criteria that recognize when a game’s payoff and feasible strategy geometry can be represented (possibly after lifting) as linear images of cone slices (bases or cone-leveled sets), as in moment/SOS liftings for polynomial games.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #50 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W7143448186_p0/partial_progress/50.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Nikos Dimou, [*On the Equivalence of Zero-Sum Games and Conic Programs*](https://doi.org/10.1287/moor.2025.0926), Mathematics of Operations Research, 2026.\n- **Location in paper:** Section 7 (Future directions), page 34.\n- **Area:** zero sum games\n- **Keywords:** `zero-sum games`, `Nash equilibrium`, `equilibrium equivalence`, `cone-leveled sets`, `conic programming`, `Banach spaces`\n- **Upstream problem record:** [W7143448186_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W7143448186_p0&n=50&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Nikos Dimou, [*On the Equivalence of Zero-Sum Games and Conic Programs*](https://doi.org/10.1287/moor.2025.0926), Mathematics of Operations Research, 2026.\n2. *On the equivalence of semidefinite programming and zero-sum semidefinite games*.\n",
+  "conciseness": "short",
+  "concisenessLabel": "简洁"
+}

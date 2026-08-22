@@ -1,0 +1,52 @@
+{
+  "id": 140,
+  "title": "Order dependence of sequential issue-by-issue voting without LAMO bases",
+  "part": "市场、机制设计与在线算法",
+  "partKey": "part_08_markets_mechanism_design_and_online_algorithms",
+  "file": "open_problems/part_08_markets_mechanism_design_and_online_algorithms/140_order_dependence_of_sequential_issue_by_issue_voting_without_lamo_bases/problem.md",
+  "jsonFile": "open_problems/part_08_markets_mechanism_design_and_online_algorithms/140_order_dependence_of_sequential_issue_by_issue_voting_without_lamo_bases/problem.json",
+  "authors": "Alex Gershkov, Benny Moldovanu, Xianwen Shi",
+  "source": "Alex Gershkov, Benny Moldovanu, Xianwen Shi, Order Independence in Sequential, Issue-by-Issue Voting, Mathematics of Operations Research, 2024.",
+  "keywords": "sequential voting, order independence, normed spaces, birkhoff-james orthogonality, LAMO bases, issue-by-issue median, ex-post perfect equilibrium",
+  "verification": "待核验",
+  "type": "other",
+  "typeLabel": "开放式研究问题",
+  "typeTags": [
+    "开放式研究问题"
+  ],
+  "clarity": {
+    "score": 83,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 16,
+      "目标与判据": 21,
+      "范围与边界": 6,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 16/20",
+      "目标与判据 21/25",
+      "范围与边界 6/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Let $d\\ge 2$ and let $(\\mathbb{R}^d,\\|\\cdot\\|)$ be a finite-dimensional normed vector space.",
+  "statement": "Determine whether it must follow that sequential issue-by-issue voting with respect to $B$ is order dependent, in the sense that there exist (at least) two permutations $\\sigma,\\pi$ of $\\{1,\\dots,d\\}$ and a profile of peaks $(t1,\\dots,tn)$ for which the (iteratively undominated) ex-post perfect equilibrium outcomes of the corresponding sequential procedures differ in $\\mathbb{R}^d$.",
+  "statementLength": 334,
+  "statementSentences": 1,
+  "statementFormulas": 5,
+  "statementComplexityScore": 60,
+  "statementConnectors": 2,
+  "concisenessBasis": "长度 334、句子 1、公式 5、连接结构 2；本批次复杂度分位点 30/54",
+  "familiarity": "medium",
+  "familiarityLabel": "中文献可见度",
+  "familiarityScore": 7,
+  "familiarityBasis": "来源元数据、参考文献 1 条、链接/DOI 2 个",
+  "content": "# Order dependence of sequential issue-by-issue voting without LAMO bases\n\nThis file contains the open problem on Order dependence of sequential issue-by-issue voting without LAMO bases.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Order dependence of sequential issue-by-issue voting without LAMO bases\n\nSource paper authors: Alex Gershkov, Benny Moldovanu, Xianwen Shi\n\n### 1. Problem Background\n\nLet $d\\ge 2$ and let $(\\mathbb{R}^d,\\|\\cdot\\|)$ be a finite-dimensional normed vector space.\n\n1) Voters and preferences. There are $n\\ge 3$ voters (with $n$ odd). Voter $i$ has an ideal point (peak) $t_i\\in\\mathbb{R}^d$. Preferences are induced by the norm distance to the peak: voter $i$ weakly prefers outcome $v$ to $v'$ iff $\\|t_i-v\\|\\le \\|t_i-v'\\|$.\n\n2) Issues as a basis. Fix an algebraic basis $B=\\{x_1,\\dots,x_d\\}$ of $\\mathbb{R}^d$. Any $v\\in\\mathbb{R}^d$ can be uniquely written $v=\\sum_{j=1}^d \\alpha_j(v) x_j$; here $\\alpha_j(v)\\in\\mathbb{R}$ is the $j$-th coordinate of $v$ in basis $B$.\n\n3) Sequential issue-by-issue voting. For a permutation $\\sigma=(\\sigma_1,\\dots,\\sigma_d)$ of $\\{1,\\dots,d\\}$, consider the sequential procedure that determines the coordinate along $x_{\\sigma_1}$ first, then $x_{\\sigma_2}$, etc. At stage $k$, voters report a real number for the coordinate along $x_{\\sigma_k}$; the stage outcome is the simple majority (one-dimensional) median of reported numbers. Earlier stage outcomes are observed before later-stage reports are chosen. The equilibrium concept is ex-post perfect equilibrium, and the paper focuses on the equilibrium surviving iterative elimination of weakly dominated strategies.\n\n4) Order independence. The family of sequential procedures associated with the fixed basis $B$ is called order independent if, for every profile $(t_1,\\dots,t_n)$, the resulting equilibrium outcome in $\\mathbb{R}^d$ is the same for all permutations $\\sigma$.\n\n5) Birkhoff--James orthogonality and LAMO. For vectors $x,y\\in\\mathbb{R}^d$, $x$ is Birkhoff--James (BJ) orthogonal to $y$ (written $x\\dashv y$) if $\\|x+\\lambda y\\|\\ge \\|x\\|$ for all $\\lambda\\in\\mathbb{R}$. For a basis $B=\\{x_1,\\dots,x_d\\}$, let $X_j$ be the subspace spanned by $B\\setminus\\{x_j\\}$. The basis satisfies left-additive mutual orthogonality (LAMO) if $X_j\\dashv x_j$ for every $j$ (equivalently, every linear combination of the other basis vectors is BJ-orthogonal to $x_j$).\n\n### 2. Open Problem\n\n**Question 1.1.** Assume a norm $\\|\\cdot\\|$ on $\\mathbb{R}^d$ and a basis $B=\\{x_1,\\dots,x_d\\}$ that does not satisfy LAMO with respect to $\\|\\cdot\\|$ (i.e., for some $j$ there exists $y\\in X_j$ and $\\lambda\\in\\mathbb{R}$ such that $\\|y+\\lambda x_j\\|<\\|y\\|$).\n\nDetermine whether it must follow that sequential issue-by-issue voting with respect to $B$ is order dependent, in the sense that there exist (at least) two permutations $\\sigma,\\pi$ of $\\{1,\\dots,d\\}$ and a profile of peaks $(t_1,\\dots,t_n)$ for which the (iteratively undominated) ex-post perfect equilibrium outcomes of the corresponding sequential procedures differ in $\\mathbb{R}^d$.\n\n### 3. Known Results\n\nNo relevant Scholar-organic forward citations were available for this problem. The forward-citation review therefore cannot identify follow-up work that resolves or materially advances the problem.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #124 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4400583084_p0/partial_progress/124.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Alex Gershkov, Benny Moldovanu, Xianwen Shi, [*Order Independence in Sequential, Issue-by-Issue Voting*](https://doi.org/10.1287/moor.2022.0342), Mathematics of Operations Research, 2024.\n- **Location in paper:** Page 23, Section 5 (end of the proof of Proposition 3, immediately before Proposition 4).\n- **Area:** spatial voting\n- **Keywords:** `sequential voting`, `order independence`, `normed spaces`, `birkhoff-james orthogonality`, `LAMO bases`, `issue-by-issue median`, `ex-post perfect equilibrium`\n- **Upstream problem record:** [W4400583084_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4400583084_p0&n=124&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Alex Gershkov, Benny Moldovanu, Xianwen Shi, [*Order Independence in Sequential, Issue-by-Issue Voting*](https://doi.org/10.1287/moor.2022.0342), Mathematics of Operations Research, 2024.\n",
+  "conciseness": "long",
+  "concisenessLabel": "复杂"
+}

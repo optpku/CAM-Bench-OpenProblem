@@ -1,0 +1,55 @@
+{
+  "id": 129,
+  "title": "Verify gamma^{-beta} truncation schedule meets summability condition in policy gradient algorithm",
+  "part": "决策与博弈",
+  "partKey": "part_05_decision_making_and_games",
+  "file": "open_problems/part_05_decision_making_and_games/129_verify_gamma_beta_truncation_schedule_meets_summability_condition_in_policy_gradient_alg/problem.md",
+  "jsonFile": "open_problems/part_05_decision_making_and_games/129_verify_gamma_beta_truncation_schedule_meets_summability_condition_in_policy_gradient_alg/problem.json",
+  "authors": "Mehrdad Moharrami, Yashaswini Murthy, Arghyadip Roy, R. Srikant",
+  "source": "Mehrdad Moharrami, Yashaswini Murthy, Arghyadip Roy, R. Srikant, A Policy Gradient Algorithm for the Risk-Sensitive Exponential Cost MDP, Mathematics of Operations Research, 2024.",
+  "keywords": "risk-sensitive MDP, policy gradient, stochastic approximation, truncation schedule, regenerative simulation, convergence conditions",
+  "verification": "待核验",
+  "type": "existence",
+  "typeLabel": "存在性 / 唯一性",
+  "typeTags": [
+    "存在性 / 唯一性",
+    "收敛 / 稳定性",
+    "界 / 近似 / 最优常数",
+    "算法 / 机制设计"
+  ],
+  "clarity": {
+    "score": 91,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 20,
+      "目标与判据": 25,
+      "范围与边界": 6,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 20/20",
+      "目标与判据 25/25",
+      "范围与边界 6/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Consider a finite-state Markov chain (or finite MDP under a stationary randomized policy) with state space $\\mathcal X$ and a designated recurrent regeneration state $x^\\ast\\in\\mathcal X$. A policy is parameterized by $\\theta\\in\\mathbb R^\\ell$, inducing an aperiodic irreducible transition kernel $P\\theta$ on $\\mathcal X$, and a bounded one-step cost $C\\theta(x)$. Fix a risk factor $\\alpha>0$.",
+  "statement": "Show that the truncation schedule $$ Mm=\\gammam^{-\\beta} $$ satisfies the varying-truncation summability condition $$ \\sum{m=0}^\\infty \\sup{\\theta\\in\\mathbb R^\\ell}\\Big(\\Lambda^{(M{m+1})}\\theta-\\Lambda^{(Mm)}\\theta\\Big)<\\infty, $$ (or, equivalently, verify that $(Mm)$ meets the paper's sufficient conditions for convergence to a stationary point of the untruncated objective when used in the trajectory-based policy-gradient scheme).",
+  "statementLength": 390,
+  "statementSentences": 1,
+  "statementFormulas": 4,
+  "statementComplexityScore": 63,
+  "statementConnectors": 1,
+  "concisenessBasis": "长度 390、句子 1、公式 4、连接结构 1；本批次复杂度分位点 30/54",
+  "familiarity": "medium",
+  "familiarityLabel": "中文献可见度",
+  "familiarityScore": 7,
+  "familiarityBasis": "来源元数据、参考文献 1 条、链接/DOI 2 个",
+  "content": "# Verify gamma^{-beta} truncation schedule meets summability condition in policy gradient algorithm\n\nThis file contains the open problem on Verify gamma^{-beta} truncation schedule meets summability condition in policy gradient algorithm.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Verify gamma^{-beta} truncation schedule meets summability condition in policy gradient algorithm\n\nSource paper authors: Mehrdad Moharrami, Yashaswini Murthy, Arghyadip Roy, R. Srikant\n\n### 1. Problem Background\n\nConsider a finite-state Markov chain (or finite MDP under a stationary randomized policy) with state space $\\mathcal X$ and a designated recurrent regeneration state $x^\\ast\\in\\mathcal X$. A policy is parameterized by $\\theta\\in\\mathbb R^\\ell$, inducing an aperiodic irreducible transition kernel $P_\\theta$ on $\\mathcal X$, and a bounded one-step cost $C_\\theta(x)$. Fix a risk factor $\\alpha>0$.\n\nThe risk-sensitive exponential average cost is\n$$\n\\Lambda_\\theta:=\\lim_{n\\to\\infty}\\frac1n\\log\\mathbb E_\\theta\\Big[\\exp\\Big(\\alpha\\sum_{i=0}^{n-1}C_\\theta(\\Phi_i)\\Big)\\,\\Big|\\,\\Phi_0=x\\Big],\n$$\nwhich exists and is independent of the initial state $x\\in\\mathcal X$ under the stated ergodicity assumptions.\n\nTo construct trajectory-based stochastic approximation algorithms, the paper introduces a family of smooth truncations indexed by $M>1$, yielding an approximating objective $\\Lambda^{(M)}_\\theta$ defined implicitly as the unique $\\Lambda$ solving\n$$\ng^{(M)}(\\theta,\\Lambda)=\\mathbb E_\\theta\\big[ G^{(M)}(\\theta,\\Lambda)\\,\\big|\\,\\Phi_0=x^\\ast\\big]=1,\n$$\nwhere $G^{(M)}(\\theta,\\Lambda)$ is a smooth, bounded modification of\n$$\nH(\\theta,\\Lambda):=\\exp\\Big(\\sum_{i=0}^{\\tau_{x^\\ast}-1}(\\alpha C_\\theta(\\Phi_i)-\\Lambda)\\Big),\n$$\nwith $\\tau_{x^\\ast}$ the first return time to $x^\\ast$. For fixed $M$, the corresponding gradient $\\nabla_\\theta\\Lambda^{(M)}_\\theta$ exists and can be estimated from a single regenerative trajectory segment.\n\nTo recover stationarity for the original (untruncated) objective $\\Lambda_\\theta$, the paper considers an increasing truncation sequence $(M_m)_{m\\ge 0}$ (possibly depending on the stepsize $\\gamma_m$) and a coupled stochastic approximation that updates $\\theta_m$ and an auxiliary cost estimate $\\widehat\\Lambda_m$ at successive regeneration times.\n\nA key technical requirement for varying truncations is the summability condition\n$$\n\\sum_{m=0}^\\infty \\sup_{\\theta\\in\\mathbb R^\\ell}\\Big(\\Lambda^{(M_{m+1})}_\\theta-\\Lambda^{(M_m)}_\\theta\\Big)<\\infty,\n$$\nwhich ensures the cumulative error caused by changing the truncation level is finite. The paper assumes the existence of some increasing sequence $(N_i)$ satisfying this condition and then sets $M_m$ to be (essentially) $\\gamma_m^{-\\beta}$ rounded down to the nearest $N_i$, for some $\\beta\\in(0,1/2)$. In simulations, the authors report that the simple choice $M_m=\\gamma_m^{-\\beta}$ appears to work.\n\n### 2. Open Problem\n\n**Question 1.1.** Let $(\\gamma_m)_{m\\ge 0}$ be a stepsize sequence with $\\sum_m \\gamma_m=\\infty$ and $\\gamma_m\\downarrow 0$, and fix $\\beta\\in(0,1/2)$. For each $M>1$ and $\\theta\\in\\mathbb R^\\ell$, let $\\Lambda^{(M)}_\\theta$ denote the smooth-truncated approximation of the risk-sensitive cost defined as the unique solution to $g^{(M)}(\\theta,\\Lambda)=1$.\n\nShow that the truncation schedule\n$$\nM_m=\\gamma_m^{-\\beta}\n$$\nsatisfies the varying-truncation summability condition\n$$\n\\sum_{m=0}^\\infty \\sup_{\\theta\\in\\mathbb R^\\ell}\\Big(\\Lambda^{(M_{m+1})}_\\theta-\\Lambda^{(M_m)}_\\theta\\Big)<\\infty,\n$$\n(or, equivalently, verify that $(M_m)$ meets the paper's sufficient conditions for convergence to a stationary point of the untruncated objective when used in the trajectory-based policy-gradient scheme).\n\n### 3. Known Results\n\nNo relevant Scholar-organic forward citations were available for this problem. The forward-citation review therefore cannot identify follow-up work that resolves or materially advances the problem.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Solution #112 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4392646050_p0/solutions/112.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Mehrdad Moharrami, Yashaswini Murthy, Arghyadip Roy, R. Srikant, [*A Policy Gradient Algorithm for the Risk-Sensitive Exponential Cost MDP*](https://doi.org/10.1287/moor.2022.0139), Mathematics of Operations Research, 2024.\n- **Location in paper:** Page 12, Section 7 (Conclusion).\n- **Area:** risk sensitive mdp\n- **Keywords:** `risk-sensitive MDP`, `policy gradient`, `stochastic approximation`, `truncation schedule`, `regenerative simulation`, `convergence conditions`\n- **Upstream problem record:** [W4392646050_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4392646050_p0&n=112&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Mehrdad Moharrami, Yashaswini Murthy, Arghyadip Roy, R. Srikant, [*A Policy Gradient Algorithm for the Risk-Sensitive Exponential Cost MDP*](https://doi.org/10.1287/moor.2022.0139), Mathematics of Operations Research, 2024.\n",
+  "conciseness": "long",
+  "concisenessLabel": "复杂"
+}

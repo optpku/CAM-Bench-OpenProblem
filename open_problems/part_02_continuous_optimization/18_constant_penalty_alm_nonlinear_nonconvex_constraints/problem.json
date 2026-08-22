@@ -1,0 +1,56 @@
+{
+  "id": 18,
+  "title": "Constant-Penalty ALM for Nonlinearly Constrained Nonconvex Optimization",
+  "part": "连续优化",
+  "partKey": "part_02_continuous_optimization",
+  "file": "open_problems/part_02_continuous_optimization/18_constant_penalty_alm_nonlinear_nonconvex_constraints/problem.md",
+  "jsonFile": "open_problems/part_02_continuous_optimization/18_constant_penalty_alm_nonlinear_nonconvex_constraints/problem.json",
+  "authors": "",
+  "source": "",
+  "keywords": "",
+  "verification": "专题整理",
+  "type": "complexity",
+  "typeLabel": "复杂度 / 可计算性",
+  "typeTags": [
+    "复杂度 / 可计算性",
+    "界 / 近似 / 最优常数",
+    "算法 / 机制设计",
+    "证明或反例"
+  ],
+  "clarity": {
+    "score": 86,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 18,
+      "目标与判据": 25,
+      "范围与边界": 6,
+      "单一性": 12
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 18/20",
+      "目标与判据 25/25",
+      "范围与边界 6/15",
+      "单一性 12/15",
+      "检测到 2 个子问题，按多目标议题扣分"
+    ]
+  },
+  "summary": "Consider deterministic nonlinear equality-constrained optimization $$ \\min{x\\in X} f(x) \\qquad\\text{subject to}\\qquad c(x)=0, $$ where $f:\\mathbb R^d\\to\\mathbb R$ and $c:\\mathbb R^d\\to\\mathbb R^m$ are smooth and may be nonconvex, and $X$ is a simple closed convex set. The augmented Lagrangian is $$ \\mathcal L\\rho(x,\\lambda) =f(x)+\\langle\\lambda,c(x)\\rangle +\\frac{\\rho}{2}\\|c(x)\\|^2. $$ A typical ALM alternates an inexact primal minimization of $\\mathcal L\\rho$ with a dual update such as $$ \\lambda{k+1}=\\lambdak+\\etak c(x{k+1}). $$",
+  "statement": "The result should specify the constraint regularity assumptions, the accuracy required in primal subproblems, whether a single-loop implementation is possible, and the dependence of the bound on $\\rho$, the dual stepsize, smoothness constants, and regularity constants.",
+  "statementLength": 234,
+  "statementSentences": 1,
+  "statementFormulas": 1,
+  "statementComplexityScore": 43,
+  "statementConnectors": 3,
+  "concisenessBasis": "长度 234、句子 1、公式 1、连接结构 3；本批次复杂度分位点 30/54",
+  "familiarity": "low",
+  "familiarityLabel": "低文献可见度",
+  "familiarityScore": 3,
+  "familiarityBasis": "来源元数据、参考文献 3 条、链接/DOI 1 个",
+  "content": "# Constant-Penalty ALM for Nonlinearly Constrained Nonconvex Optimization\n\nThis file contains the open problem on obtaining the best-known first-order complexity for augmented Lagrangian methods with a constant penalty parameter and large dual steps.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Constant-Penalty ALM with Large Dual Steps\n\nContributors: Kangkang Deng\n\n### 1. Problem Background\n\nConsider deterministic nonlinear equality-constrained optimization\n$$\n\\min_{x\\in X} f(x)\n\\qquad\\text{subject to}\\qquad\nc(x)=0,\n$$\nwhere $f:\\mathbb R^d\\to\\mathbb R$ and $c:\\mathbb R^d\\to\\mathbb R^m$ are smooth and may be nonconvex, and $X$ is a simple closed convex set. The augmented Lagrangian is\n$$\n\\mathcal L_\\rho(x,\\lambda)\n=f(x)+\\langle\\lambda,c(x)\\rangle\n+\\frac{\\rho}{2}\\|c(x)\\|^2.\n$$\nA typical ALM alternates an inexact primal minimization of $\\mathcal L_\\rho$ with a dual update such as\n$$\n\\lambda_{k+1}=\\lambda_k+\\eta_k c(x_{k+1}).\n$$\n\nHistorically, a principal advantage of ALM over a pure quadratic penalty method is that it can attain high accuracy without driving the penalty parameter to infinity. Nevertheless, the analyses attaining the best-known first-order complexity for deterministic, nonlinearly constrained nonconvex problems generally use increasing penalties, or penalties chosen as functions of the target accuracy, together with small dual steps.\n\n### 2. Stationarity Criterion\n\nAn $\\varepsilon$-first-order KKT point is a pair $(\\bar x,\\bar\\lambda)$ satisfying, for example,\n$$\n\\operatorname{dist}\\!\\left(\n0,\\nabla f(\\bar x)+\\nabla c(\\bar x)^\\top\\bar\\lambda+N_X(\\bar x)\n\\right)\\le\\varepsilon,\n\\qquad\n\\|c(\\bar x)\\|\\le\\varepsilon,\n$$\nunder an appropriate constraint qualification or regularity condition.\n\n### 3. Open Problem\n\n**Question 1.1. Constant-penalty optimal complexity.** Can one design and analyze an augmented Lagrangian method for deterministic, nonlinearly constrained nonconvex problems that simultaneously:\n\n- uses a penalty parameter $\\rho=O(1)$ independent of the target accuracy $\\varepsilon$;\n- permits a nonvanishing, practically large dual stepsize;\n- returns an $\\varepsilon$-first-order KKT point; and\n- attains the best-known first-order oracle complexity\n  $$\n  \\widetilde O(\\varepsilon^{-3})?\n  $$\n\nThe result should specify the constraint regularity assumptions, the accuracy required in primal subproblems, whether a single-loop implementation is possible, and the dependence of the bound on $\\rho$, the dual stepsize, smoothness constants, and regularity constants.\n\n**Question 1.2. Necessity or impossibility.** If the target is impossible under standard regularity assumptions, establish a lower bound or counterexample showing why either the penalty must depend on $\\varepsilon$, the dual step must shrink, or the complexity must worsen.\n\n### 4. Known Results\n\n1. Xie and Wright analyzed a proximal ALM whose penalty is fixed across outer iterations, but the available guarantee does not simultaneously give an accuracy-independent penalty, large dual steps, and the best-known $\\widetilde O(\\varepsilon^{-3})$ complexity.\n2. Rate-improved inexact ALM analyses obtain $\\widetilde O(\\varepsilon^{-3})$ complexity under suitable regularity conditions, but use penalty schedules that grow with the target accuracy or iteration.\n3. Alacaoglu and Wright obtained single-loop stochastic results for several constraint classes. Their constant-penalty, constant-dual-step result applies to linear constraints; for nonlinear functional constraints, their analysis uses increasing penalties and small dual steps. They explicitly identify the deterministic nonlinear constant-penalty, large-dual-step $\\widetilde O(\\varepsilon^{-3})$ guarantee as an open question.\n\n### 5. References\n\n1. Y. Xie and S. J. Wright, **Complexity of Proximal Augmented Lagrangian for Nonconvex Optimization with Nonlinear Equality Constraints**, *Journal of Scientific Computing*, 86(3), Article 38, 2021.\n2. Z. Li, P.-Y. Chen, S. Liu, S. Lu, and Y. Xu, **Rate-Improved Inexact Augmented Lagrangian Method for Constrained Nonconvex Optimization**, *Proceedings of AISTATS*, PMLR 130:2170--2178, 2021.\n3. A. Alacaoglu and S. J. Wright, **Complexity of Single Loop Algorithms for Nonlinear Programming with Stochastic Objective and Constraints**, *Proceedings of AISTATS*, PMLR 238:4627--4635, 2024; arXiv:2311.00678.\n",
+  "conciseness": "medium",
+  "concisenessLabel": "适中"
+}

@@ -1,0 +1,55 @@
+{
+  "id": 75,
+  "title": "Establish smoothing and gradient consistency for value functions with x-dependent constraints",
+  "part": "连续优化",
+  "partKey": "part_02_continuous_optimization",
+  "file": "open_problems/part_02_continuous_optimization/75_establish_smoothing_and_gradient_consistency_for_value_functions_with_x_dependent_constr/problem.md",
+  "jsonFile": "open_problems/part_02_continuous_optimization/75_establish_smoothing_and_gradient_consistency_for_value_functions_with_x_dependent_constr/problem.json",
+  "authors": "Jan Harold Alcantara, Akiko Takeda",
+  "source": "Jan Harold Alcantara, Akiko Takeda, Theoretical Smoothing Frameworks for Nonsmooth Simple Bilevel Problems, Mathematics of Operations Research, 2026.",
+  "keywords": "bilevel optimization, value function, smoothing methods, gradient consistency, parametric constraints, Clarke subdifferential",
+  "verification": "待核验",
+  "type": "bound",
+  "typeLabel": "界 / 近似 / 最优常数",
+  "typeTags": [
+    "界 / 近似 / 最优常数",
+    "算法 / 机制设计",
+    "证明或反例",
+    "优化模型 / 算子"
+  ],
+  "clarity": {
+    "score": 85,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 14,
+      "目标与判据": 25,
+      "范围与边界": 6,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 14/20",
+      "目标与判据 25/25",
+      "范围与边界 6/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Consider the bilevel optimization problem $$",
+  "statement": "\\text{(i) a smoothing family: } v\\mu \\in C^1 \\text{ and } \\lim{(x,\\mu)\\to(\\bar x,0)} v\\mu(x)=v(\\bar x),",
+  "statementLength": 89,
+  "statementSentences": 1,
+  "statementFormulas": 0,
+  "statementComplexityScore": 17,
+  "statementConnectors": 1,
+  "concisenessBasis": "长度 89、句子 1、公式 0、连接结构 1；本批次复杂度分位点 30/54",
+  "familiarity": "medium",
+  "familiarityLabel": "中文献可见度",
+  "familiarityScore": 7,
+  "familiarityBasis": "来源元数据、参考文献 1 条、链接/DOI 2 个",
+  "content": "# Establish smoothing and gradient consistency for value functions with x-dependent constraints\n\nThis file contains the open problem on Establish smoothing and gradient consistency for value functions with x-dependent constraints.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Establish smoothing and gradient consistency for value functions with x-dependent constraints\n\nSource paper authors: Jan Harold Alcantara, Akiko Takeda\n\n### 1. Problem Background\n\nConsider the bilevel optimization problem\n$$\n\n\\min_{(x,y)\\in X\\times Y(x)} f(x,y) \\quad \\text{s.t.}\\quad y\\in \\arg\\min_{\\bar y\\in Y(x)} g(x,\\bar y),\n\n$$\nwhere $X\\subseteq \\mathbb{R}^n$ is a closed convex set, and the lower-level feasible set $Y(x)\\subseteq \\mathbb{R}^m$ depends on $x$. The functions $f,g$ are (possibly nonsmooth) real-valued functions; the paper’s main body treats the fixed-set case $Y(x)\\equiv Y$ and focuses on the lower-level value function\n$$\n\nv(x):=\\min_{y\\in Y} g(x,y)\n\n$$\n(or analogously $v(x):=\\min_{y\\in Y(x)} g(x,y)$ in the $x$-dependent case) and smooth approximation families $\\{v_\\mu\\}_{\\mu>0}$ intended to satisfy:\n1) (smoothing/approximation) $v_\\mu$ is continuously differentiable and $v_\\mu(x)\\to v(x)$ as $(x,\\mu)\\to (\\bar x,0)$, and\n2) (gradient consistency) any cluster point of $\\nabla v_\\mu(x)$ as $(x,\\mu)\\to (\\bar x,0)$ lies in the Clarke subdifferential $\\partial v(\\bar x)$.\n\nIn the $x$-dependent constraint setting, the relevant lower-level value function becomes\n$$\n\nv(x):=\\min_{y\\in Y(x)} g(x,y),\n\n$$\nand one seeks to construct a family $\\{v_\\mu\\}_{\\mu>0}$ (potentially based on regularization/penalization of the lower-level problem and/or smoothing of $g$ and of the set-valued mapping $x\\mapsto Y(x)$) that is a smoothing family in the above sense and is gradient consistent.\n\n### 2. Open Problem\n\n**Question 1.1.** Determine conditions and a concrete construction under which, for the $x$-dependent lower-level feasible set $Y(x)$, the resulting smooth approximation $\\{v_\\mu\\}_{\\mu>0}$ of the value function $v(x)=\\min_{y\\in Y(x)} g(x,y)$ (obtained for example by a quadratic-regularization combined with penalization approach) is:\n$$\n\n\\text{(i) a smoothing family: } v_\\mu \\in C^1 \\text{ and } \\lim_{(x,\\mu)\\to(\\bar x,0)} v_\\mu(x)=v(\\bar x),\n\n$$\nand\n$$\n\n\\text{(ii) gradient consistent at each } \\bar x: \\varnothing\\neq \\limsup_{(x,\\mu)\\to(\\bar x,0)} \\nabla v_\\mu(x) \\subseteq \\partial v(\\bar x).\n\n$$\nHere $\\partial v(\\bar x)$ denotes the Clarke subdifferential of $v$ at $\\bar x$, and\n$$\n\n\\limsup_{(x,\\mu)\\to(\\bar x,0)} \\nabla v_\\mu(x):=\\left\\{\\xi:\\exists x_k\\to \\bar x,\\ \\mu_k\\downarrow 0\\ \\text{with }\\nabla v_{\\mu_k}(x_k)\\to \\xi\\right\\}.\n\n$$\n\n### 3. Known Results\n\nNo relevant Scholar-organic forward citations were available for this problem. The forward-citation review therefore cannot identify follow-up work that resolves or materially advances the problem.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #49 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W7140189588_p0/partial_progress/49.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Jan Harold Alcantara, Akiko Takeda, [*Theoretical Smoothing Frameworks for Nonsmooth Simple Bilevel Problems*](https://doi.org/10.1287/moor.2024.0405), Mathematics of Operations Research, 2026.\n- **Location in paper:** Page 30, Section 5 (Concluding Remarks and Future Directions).\n- **Area:** bilevel optimization\n- **Keywords:** `bilevel optimization`, `value function`, `smoothing methods`, `gradient consistency`, `parametric constraints`, `Clarke subdifferential`\n- **Upstream problem record:** [W7140189588_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W7140189588_p0&n=49&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Jan Harold Alcantara, Akiko Takeda, [*Theoretical Smoothing Frameworks for Nonsmooth Simple Bilevel Problems*](https://doi.org/10.1287/moor.2024.0405), Mathematics of Operations Research, 2026.\n",
+  "conciseness": "short",
+  "concisenessLabel": "简洁"
+}

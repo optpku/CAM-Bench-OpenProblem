@@ -1,0 +1,55 @@
+{
+  "id": 54,
+  "title": "Prove existence of a simpler all-norms approximation clustering for correlation clustering",
+  "part": "离散优化与算法",
+  "partKey": "part_07_discrete_optimization_and_algorithms",
+  "file": "open_problems/part_07_discrete_optimization_and_algorithms/54_prove_existence_of_a_simpler_all_norms_approximation_clustering_for_correlation_clusteri/problem.md",
+  "jsonFile": "open_problems/part_07_discrete_optimization_and_algorithms/54_prove_existence_of_a_simpler_all_norms_approximation_clustering_for_correlation_clusteri/problem.json",
+  "authors": "Sami Davies, Benjamin Moseley, Heather Newman",
+  "source": "Sami Davies, Benjamin Moseley, Heather Newman, Fast Combinatorial Algorithms for Simultaneously Approximating All ℓ<sub><i>p</i></sub>-Norms in Correlation Clustering, Mathematics of Operations Research, 2025.",
+  "keywords": "correlation clustering, all-norms objective, simultaneous approximation, lp norms, disagreement vector",
+  "verification": "待核验",
+  "type": "existence",
+  "typeLabel": "存在性 / 唯一性",
+  "typeTags": [
+    "存在性 / 唯一性",
+    "界 / 近似 / 最优常数",
+    "算法 / 机制设计",
+    "证明或反例"
+  ],
+  "clarity": {
+    "score": 86,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 20,
+      "目标与判据": 17,
+      "范围与边界": 9,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 20/20",
+      "目标与判据 17/25",
+      "范围与边界 9/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Let $G=(V,E)$ be an unweighted complete graph on $n=|V|$ vertices whose edges are labeled $+$ (similar) or $-$ (dissimilar). Write $E^+$ and $E^-$ for the sets of positive and negative edges, respectively.",
+  "statement": "\\|y{\\mathcal C}\\|p \\le \\alpha\\,\\mathrm{OPT}p \\qquad \\text{for all } p\\in [1,\\infty].",
+  "statementLength": 75,
+  "statementSentences": 1,
+  "statementFormulas": 0,
+  "statementComplexityScore": 13,
+  "statementConnectors": 0,
+  "concisenessBasis": "长度 75、句子 1、公式 0、连接结构 0；本批次复杂度分位点 30/54",
+  "familiarity": "medium",
+  "familiarityLabel": "中文献可见度",
+  "familiarityScore": 7,
+  "familiarityBasis": "来源元数据、参考文献 1 条、链接/DOI 2 个",
+  "content": "# Prove existence of a simpler all-norms approximation clustering for correlation clustering\n\nThis file contains the open problem on Prove existence of a simpler all-norms approximation clustering for correlation clustering.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Prove existence of a simpler all-norms approximation clustering for correlation clustering\n\nSource paper authors: Sami Davies, Benjamin Moseley, Heather Newman\n\n### 1. Problem Background\n\nLet $G=(V,E)$ be an unweighted complete graph on $n=|V|$ vertices whose edges are labeled $+$ (similar) or $-$ (dissimilar). Write $E^+$ and $E^-$ for the sets of positive and negative edges, respectively.\n\nA clustering $\\mathcal C$ is a partition of $V$ into clusters. For a vertex $u\\in V$, let $\\mathcal C(u)$ denote the cluster containing $u$, and let $V\\setminus \\mathcal C(u)$ be the vertices in other clusters.\n\nAn edge $\\{u,v\\}\\in E^+$ is a disagreement under $\\mathcal C$ if $u$ and $v$ lie in different clusters; an edge $\\{u,v\\}\\in E^-$ is a disagreement if $u$ and $v$ lie in the same cluster.\n\nDefine the disagreement count (disagreement degree) of $u$ under $\\mathcal C$ by\n$$\n\n y_{\\mathcal C}(u) := |\\{v\\in V: \\{u,v\\}\\text{ is a disagreement under }\\mathcal C\\}|,\n\n$$\nand the disagreement vector $y_{\\mathcal C}\\in \\mathbb Z_{\\ge 0}^n$ by $(y_{\\mathcal C}(u))_{u\\in V}$.\n\nFor $p\\in [1,\\infty)$, define $\\|y_{\\mathcal C}\\|_p := \\big(\\sum_{u\\in V} y_{\\mathcal C}(u)^p\\big)^{1/p}$, and $\\|y_{\\mathcal C}\\|_{\\infty} := \\max_{u\\in V} y_{\\mathcal C}(u)$.\n\nFor each $p\\in [1,\\infty]$, let\n$$\n\n\\mathrm{OPT}_p := \\min_{\\mathcal C\\text{ a partition of }V}\\ \\|y_{\\mathcal C}\\|_p\n\n$$\ndenote the optimal $\\ell_p$-norm disagreement objective value.\n\nA clustering $\\mathcal C$ is said to be a constant-factor approximation simultaneously for all $\\ell_p$-objectives (the all-norms objective) if there exists a universal constant $\\alpha>0$ such that for every $p\\in [1,\\infty]$, $\\|y_{\\mathcal C}\\|_p \\le \\alpha\\,\\mathrm{OPT}_p$.\n\n### 2. Open Problem\n\n**Question 1.1.** Give a proof, not necessarily algorithmic, that for every unweighted complete signed graph $G=(V,E)$ as above, there exists a clustering $\\mathcal C$ and a universal constant $\\alpha>0$ (independent of $n$, the instance $G$, and $p$) such that\n$$\n\n\\|y_{\\mathcal C}\\|_p \\le \\alpha\\,\\mathrm{OPT}_p \\qquad \\text{for all } p\\in [1,\\infty].\n\n$$\nThe goal is to obtain a simpler existential argument for the existence of such a clustering than the paper's algorithmic construction and analysis.\n\n### 3. Known Results\n\nNo relevant Scholar-organic forward citations were available for this problem. The forward-citation review therefore cannot identify follow-up work that resolves or materially advances the problem.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #27 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4414091988_p0/partial_progress/27.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Sami Davies, Benjamin Moseley, Heather Newman, [*Fast Combinatorial Algorithms for Simultaneously Approximating All ℓ<sub><i>p</i></sub>-Norms in Correlation Clustering*](https://doi.org/10.1287/moor.2024.0567), Mathematics of Operations Research, 2025.\n- **Location in paper:** Page 17, Section 5 (Conclusion).\n- **Area:** correlation clustering\n- **Keywords:** `correlation clustering`, `all-norms objective`, `simultaneous approximation`, `lp norms`, `disagreement vector`\n- **Upstream problem record:** [W4414091988_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4414091988_p0&n=27&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Sami Davies, Benjamin Moseley, Heather Newman, [*Fast Combinatorial Algorithms for Simultaneously Approximating All ℓ<sub><i>p</i></sub>-Norms in Correlation Clustering*](https://doi.org/10.1287/moor.2024.0567), Mathematics of Operations Research, 2025.\n",
+  "conciseness": "short",
+  "concisenessLabel": "简洁"
+}

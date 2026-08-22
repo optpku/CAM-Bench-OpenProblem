@@ -1,0 +1,54 @@
+{
+  "id": 94,
+  "title": "Uniqueness in law criteria for weak solutions of multidimensional Ito SDEs",
+  "part": "随机模型与应用概率",
+  "partKey": "part_09_stochastic_models_and_applied_probability",
+  "file": "open_problems/part_09_stochastic_models_and_applied_probability/94_uniqueness_in_law_criteria_for_weak_solutions_of_multidimensional_ito_sdes/problem.md",
+  "jsonFile": "open_problems/part_09_stochastic_models_and_applied_probability/94_uniqueness_in_law_criteria_for_weak_solutions_of_multidimensional_ito_sdes/problem.json",
+  "authors": "Stefan Ankirchner, Nabil Kazi-Tani, Julian Wendt, Chao Zhou",
+  "source": "Stefan Ankirchner, Nabil Kazi-Tani, Julian Wendt, Chao Zhou, Large Ranking Games with Diffusion Control, Mathematics of Operations Research, 2023.",
+  "keywords": "weak solutions, uniqueness in law, uniform ellipticity, ito sdes, multidimensional diffusion, measurable coefficients",
+  "verification": "待核验",
+  "type": "characterization",
+  "typeLabel": "刻画 / 等价条件",
+  "typeTags": [
+    "刻画 / 等价条件",
+    "存在性 / 唯一性",
+    "界 / 近似 / 最优常数"
+  ],
+  "clarity": {
+    "score": 86,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 16,
+      "目标与判据": 25,
+      "范围与边界": 5,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 16/20",
+      "目标与判据 25/25",
+      "范围与边界 5/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Let $(\\Omega,\\mathcal F,(\\mathcal Ft){t\\ge 0},\\mathbb P)$ be a filtered probability space supporting a standard $d$-dimensional Brownian motion $W$. Consider the It\\^o stochastic differential equation (SDE) $$",
+  "statement": "dXt = b(t,Xt)\\,dt + \\sigma(t,Xt)\\,dWt,\\qquad X0=x\\in\\mathbb R^d,",
+  "statementLength": 58,
+  "statementSentences": 1,
+  "statementFormulas": 0,
+  "statementComplexityScore": 11,
+  "statementConnectors": 0,
+  "concisenessBasis": "长度 58、句子 1、公式 0、连接结构 0；本批次复杂度分位点 30/54",
+  "familiarity": "high",
+  "familiarityLabel": "高文献可见度",
+  "familiarityScore": 10,
+  "familiarityBasis": "来源元数据、参考文献 4 条、链接/DOI 4 个",
+  "content": "# Uniqueness in law criteria for weak solutions of multidimensional Ito SDEs\n\nThis file contains the open problem on Uniqueness in law criteria for weak solutions of multidimensional Ito SDEs.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Uniqueness in law criteria for weak solutions of multidimensional Ito SDEs\n\nSource paper authors: Stefan Ankirchner, Nabil Kazi-Tani, Julian Wendt, Chao Zhou\n\n### 1. Problem Background\n\nLet $(\\Omega,\\mathcal F,(\\mathcal F_t)_{t\\ge 0},\\mathbb P)$ be a filtered probability space supporting a standard $d$-dimensional Brownian motion $W$. Consider the It\\^o stochastic differential equation (SDE)\n$$\n\n dX_t = b(t,X_t)\\,dt + \\sigma(t,X_t)\\,dW_t,\\qquad X_0=x\\in\\mathbb R^d,\n\n$$\nwhere $b:[0,T]\\times\\mathbb R^d\\to\\mathbb R^d$ and $\\sigma:[0,T]\\times\\mathbb R^d\\to\\mathbb R^{d\\times d}$ are Borel measurable coefficients. A \\emph{weak solution} is a tuple $(\\Omega',\\mathcal F',(\\mathcal F'_t)_{t\\ge 0},\\mathbb P',W',X')$ such that $W'$ is a Brownian motion and $X'$ is an adapted continuous process satisfying the SDE in the It\\^o sense under $\\mathbb P'$.\n\nThe SDE is said to have \\emph{uniqueness in law} (also called \\emph{weak uniqueness}) if for any two weak solutions with the same initial condition $x$, the laws of the solution processes $(X_t)_{t\\in[0,T]}$ on path space coincide. One often assumes some form of (uniform) nondegeneracy/ellipticity of $\\sigma$, e.g. $\\sigma\\sigma^\\top\\ge \\lambda I$ for some $\\lambda>0$, but coefficients may still be merely measurable or discontinuous.\n\nIn the attached paper, the finite-player game dynamics lead to an $n$-dimensional SDE of the form\n$$\n\n dX_t = D(t,X_t)\\,dW_t,\n\n$$\nwith diagonal diffusion matrix $D(t,x)$ whose diagonal entries are bounded between two positive constants $\\sigma_1<\\sigma_2$ (uniform ellipticity), but can be discontinuous as functions of $x$ because they arise from feedback controls. The paper notes that, in dimensions greater than 2, general necessary-and-sufficient conditions for uniqueness in law of such weak solutions are not known.\n\n### 2. Open Problem\n\n**Question 1.1.** For dimensions $d>2$, characterize (with conditions that are simultaneously sufficient and necessary) when the It\\^o SDE\n$$\n\n dX_t = b(t,X_t)\\,dt + \\sigma(t,X_t)\\,dW_t,\\qquad X_0=x\\in\\mathbb R^d,\n\n$$\nadmits uniqueness in law of weak solutions.\n\nIn particular, determine such a sharp characterization for the driftless, uniformly elliptic case\n$$\n\n dX_t = \\sigma(t,X_t)\\,dW_t,\n\n$$\nincluding the case where $\\sigma(t,\\cdot)$ may be discontinuous (e.g. piecewise constant) and may be restricted to be diagonal-valued.\n\n### 3. Known Results\n\nThe open problem highlighted in the source paper concerns sharp (simultaneously necessary and sufficient) criteria for uniqueness in law of weak solutions to multidimensional It\\^o SDEs with merely measurable, potentially discontinuous coefficients, even under uniform ellipticity. In the game-motivated setting, the diffusion matrix is diagonal with entries in $[\\sigma_1,\\sigma_2]$ but discontinuous in the state due to feedback (rank/threshold-type) controls; the paper stresses that while weak existence follows from classical uniformly elliptic theory (e.g. Krylov), weak uniqueness can fail in dimensions $d>2$, and no general characterization is known.\n\nAmong the forward-citing items provided, the most relevant progress is confined to one-dimensional driftless threshold diffusions (oscillating Brownian motion type). \"Mean-field ranking games with diffusion control\" proves equilibrium existence/uniqueness and $O(n^{-1/2})$ approximate Nash equilibria in a 1D setting with piecewise constant diffusion, relying on established 1D pathwise uniqueness results (Nakao-type). The other citing works are either methodological (PDE well-posedness for smooth controlled diffusions) or expository background, and do not address the multidimensional weak uniqueness characterization.\n\nOverall, based on the provided forward citations, the problem remains open: there is still no known necessary-and-sufficient criterion for weak uniqueness for general uniformly elliptic, merely measurable (possibly diagonal/piecewise constant) diffusion coefficients in dimensions $d>2$. Promising directions suggested by the source context include identifying structural subclasses (e.g. diagonal coefficients with special discontinuity geometry, or coefficients of bounded variation in each coordinate) where the martingale problem is well posed, and clarifying the boundary between well-posedness and counterexamples in higher dimensions.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #70 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W3217525437_p0/partial_progress/70.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Stefan Ankirchner, Nabil Kazi-Tani, Julian Wendt, Chao Zhou, [*Large Ranking Games with Diffusion Control*](https://doi.org/10.1287/moor.2023.1373), Mathematics of Operations Research, 2023.\n- **Location in paper:** Page 3, Section 1 (Introduction), footnote 1.\n- **Area:** stochastic differential equations\n- **Keywords:** `weak solutions`, `uniqueness in law`, `uniform ellipticity`, `ito sdes`, `multidimensional diffusion`, `measurable coefficients`\n- **Upstream problem record:** [W3217525437_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W3217525437_p0&n=70&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Stefan Ankirchner, Nabil Kazi-Tani, Julian Wendt, Chao Zhou, [*Large Ranking Games with Diffusion Control*](https://doi.org/10.1287/moor.2023.1373), Mathematics of Operations Research, 2023.\n2. [*Mean-field ranking games with diffusion control*](https://doi.org/10.1007/s11579-024-00354-2).\n3. *Diffusion control and games*.\n4. *Large ranking games*.\n",
+  "conciseness": "short",
+  "concisenessLabel": "简洁"
+}

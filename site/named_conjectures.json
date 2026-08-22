@@ -1,0 +1,345 @@
+[
+  {
+    "id": "mahler",
+    "name": "马勒猜想",
+    "nameEn": "Mahler's conjecture",
+    "domain": "几何",
+    "domainKey": "geometry",
+    "status": "未解决",
+    "statement": "对中心对称凸体 K 及其极性体 K*，Mahler 猜想断言乘积 vol(K)·vol(K*) 在所有中心对称凸体中有一个由低维极值体达到的统一下界。它是凸几何中关于 Mahler 体积的核心极值问题。",
+    "summary": "研究中心对称凸体与极性体体积乘积的最小值。",
+    "relevance": "与本库中的凸体、椭球逼近、体积极值和对偶性问题直接相关。",
+    "tags": ["凸几何", "极性体", "Mahler 体积", "极值问题"],
+    "sources": [
+      {"label": "Wikipedia: Mahler volume", "url": "https://en.wikipedia.org/wiki/Mahler_volume"},
+      {"label": "Encyclopedia of Mathematics: Mahler conjecture", "url": "https://encyclopediaofmath.org/wiki/Mahler_conjecture"}
+    ]
+  },
+  {
+    "id": "hadwiger",
+    "name": "海德维格猜想",
+    "nameEn": "Hadwiger's conjecture",
+    "domain": "组合数学",
+    "domainKey": "combinatorics",
+    "status": "未解决",
+    "statement": "若图 G 的色数至少为 t，则 G 必含有 K_t 作为图 minor。该猜想把图着色与完全图 minor 联系起来；目前只在较小的 t，以及若干特殊图类中得到证明。",
+    "summary": "用完全图 minor 刻画图的高色数结构。",
+    "relevance": "与本库的图参数、组合结构、复杂度和离散算法问题密切相关。",
+    "tags": ["图论", "图 minor", "图着色", "完全图"],
+    "sources": [
+      {"label": "Wikipedia: Hadwiger's conjecture", "url": "https://en.wikipedia.org/wiki/Hadwiger%27s_conjecture"},
+      {"label": "Wolfram MathWorld: Hadwiger's Conjecture", "url": "https://mathworld.wolfram.com/HadwigersConjecture.html"}
+    ]
+  },
+  {
+    "id": "erdos-hajnal",
+    "name": "厄多斯–海纳尔猜想",
+    "nameEn": "Erdős–Hajnal conjecture",
+    "domain": "组合数学",
+    "domainKey": "combinatorics",
+    "status": "未解决",
+    "statement": "对任意含有无穷多个顶点的有限图 H，都存在常数 δ(H)>0，使得每个不含 H 作为诱导子图的 n 顶点图都含有一个大小至少为 n^{δ(H)} 的团或独立集。",
+    "summary": "研究诱导子图禁图条件下团或独立集的多项式规模保证。",
+    "relevance": "连接图结构、极值组合和算法中的结构分解，是组合问题中典型的命名猜想。",
+    "tags": ["极值图论", "团", "独立集", "诱导子图"],
+    "sources": [
+      {"label": "Wikipedia: Erdős–Hajnal conjecture", "url": "https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Hajnal_conjecture"},
+      {"label": "Erdős–Hajnal conjecture, Scholarpedia", "url": "http://www.scholarpedia.org/article/Erdos-Hajnal_conjecture"}
+    ]
+  },
+  {
+    "id": "reconstruction",
+    "name": "图重构猜想",
+    "nameEn": "Reconstruction conjecture",
+    "domain": "组合数学",
+    "domainKey": "combinatorics",
+    "status": "未解决",
+    "statement": "任意至少有三个顶点的有限简单图，是否都能由删去任意一个顶点所得的所有子图（其 deck）唯一重构？这要求从一阶顶点删除信息恢复原图。",
+    "summary": "从所有顶点删除子图唯一恢复原图。",
+    "relevance": "与图同构、组合重构和离散算法中的信息恢复问题直接相关。",
+    "tags": ["图重构", "图同构", "组合设计", "离散算法"],
+    "sources": [
+      {"label": "Wikipedia: Reconstruction conjecture", "url": "https://en.wikipedia.org/wiki/Reconstruction_conjecture"},
+      {"label": "Encyclopedia of Mathematics: Reconstruction conjecture", "url": "https://encyclopediaofmath.org/wiki/Reconstruction_conjecture"}
+    ]
+  },
+  {
+    "id": "union-closed",
+    "name": "并集封闭猜想",
+    "nameEn": "Union-closed sets conjecture",
+    "domain": "组合数学",
+    "domainKey": "combinatorics",
+    "status": "未解决",
+    "statement": "若有限集合族 F 对任意 A,B∈F 都满足 A∪B∈F，则 F 中存在一个元素至少属于 F 中一半的集合。",
+    "summary": "并集封闭的集合族必须有一个高频元素。",
+    "relevance": "与集合系统、极值组合、布尔格和离散优化中的覆盖结构有关。",
+    "tags": ["集合系统", "极值组合", "布尔格", "频率"],
+    "sources": [
+      {"label": "Wikipedia: Union-closed sets conjecture", "url": "https://en.wikipedia.org/wiki/Union-closed_sets_conjecture"},
+      {"label": "Conjecture 1 of the Union-Closed Sets project", "url": "https://www.union-closed.org/"}
+    ]
+  },
+  {
+    "id": "hadwiger-nelson",
+    "name": "海德维格–纳尔逊问题",
+    "nameEn": "Hadwiger–Nelson problem",
+    "domain": "几何 / 组合数学",
+    "domainKey": "geometry-combinatorics",
+    "status": "未解决（已知 5≤χ≤7）",
+    "statement": "给平面中的每个点着色，使任意相距 1 的两点颜色不同，至少需要多少种颜色？等价地，这是单位距离图的色数 χ(R²) 的精确值问题。",
+    "summary": "确定平面单位距离图的色数。",
+    "relevance": "连接几何图论、平面着色、单位距离图和组合构造。",
+    "tags": ["几何图论", "单位距离图", "平面着色", "色数"],
+    "sources": [
+      {"label": "Wikipedia: Hadwiger–Nelson problem", "url": "https://en.wikipedia.org/wiki/Hadwiger%E2%80%93Nelson_problem"},
+      {"label": "Polymath: Hadwiger–Nelson problem", "url": "https://polymathprojects.org/2018/04/18/the-hadwiger-nelson-problem/"}
+    ]
+  },
+  {
+    "id": "unique-games",
+    "name": "唯一游戏猜想",
+    "nameEn": "Unique games conjecture",
+    "domain": "离散优化与算法",
+    "domainKey": "discrete-optimization",
+    "status": "未解决",
+    "statement": "唯一游戏猜想断言：对任意 ε>0，判断一个唯一游戏实例的最优满足率是至少 1−ε 还是至多 ε，在随机多项式时间意义下不存在近似算法。",
+    "summary": "关于唯一约束满足问题近似难度的核心猜想。",
+    "relevance": "它深刻影响近似算法、半定规划、约束满足和离散优化的可逼近边界。",
+    "tags": ["近似算法", "约束满足", "半定规划", "计算复杂性"],
+    "sources": [
+      {"label": "Wikipedia: Unique games conjecture", "url": "https://en.wikipedia.org/wiki/Unique_games_conjecture"},
+      {"label": "Khot, On the Unique Games Conjecture", "url": "https://www.cs.princeton.edu/~khot/papers/UGC.pdf"}
+    ]
+  },
+  {
+    "id": "hirsch",
+    "name": "赫希猜想",
+    "nameEn": "Hirsch conjecture",
+    "domain": "离散优化与算法",
+    "domainKey": "discrete-optimization",
+    "status": "已否证",
+    "statement": "赫希猜想曾断言：具有 n 个不等式和 d 维的有界 d-多面体，其图直径不超过 n−d。2010 年 Santos 构造出反例，猜想因此被否证。",
+    "summary": "关于多面体图直径的经典猜想，现已被反例推翻。",
+    "relevance": "它仍是单纯形法、线性规划、多面体算法和直径下界研究的重要历史基准。",
+    "tags": ["多面体", "线性规划", "单纯形法", "图直径"],
+    "sources": [
+      {"label": "Wikipedia: Hirsch conjecture", "url": "https://en.wikipedia.org/wiki/Hirsch_conjecture"},
+      {"label": "Santos, A counterexample to the Hirsch conjecture", "url": "https://doi.org/10.1126/science.1192131"}
+    ]
+  },
+  {
+    "id": "p-vs-np",
+    "name": "P versus NP 问题",
+    "nameEn": "P versus NP problem",
+    "domain": "计算数学",
+    "domainKey": "computational-mathematics",
+    "status": "未解决",
+    "statement": "P 是否等于 NP？也就是说，所有能在多项式时间内验证解的判定问题，是否也都能在多项式时间内求解？",
+    "summary": "判断高效验证是否意味着高效求解。",
+    "relevance": "它为算法复杂度、组合优化和可计算性研究提供最核心的难度分界。",
+    "tags": ["计算复杂性", "算法", "NP 完全", "多项式时间"],
+    "sources": [
+      {"label": "Clay Mathematics Institute: P vs NP", "url": "https://www.claymath.org/millennium-problems/p-vs-np-problem/"},
+      {"label": "Wikipedia: P versus NP problem", "url": "https://en.wikipedia.org/wiki/P_versus_NP_problem"}
+    ]
+  },
+  {
+    "id": "hodge",
+    "name": "霍奇猜想",
+    "nameEn": "Hodge conjecture",
+    "domain": "计算数学",
+    "domainKey": "computational-mathematics",
+    "status": "未解决",
+    "statement": "对光滑射影复代数簇，霍奇猜想断言每个有理霍奇类都是代数循环类的有理线性组合。它试图刻画拓扑上特殊的上同调类何时来自代数子簇。",
+    "summary": "判断有理霍奇类是否由代数循环产生。",
+    "relevance": "与代数几何、拓扑不变量、符号计算和几何结构识别有关。",
+    "tags": ["代数几何", "上同调", "代数循环", "拓扑"],
+    "sources": [
+      {"label": "Clay Mathematics Institute: Hodge Conjecture", "url": "https://www.claymath.org/millennium-problems/hodge-conjecture/"},
+      {"label": "Wikipedia: Hodge conjecture", "url": "https://en.wikipedia.org/wiki/Hodge_conjecture"}
+    ]
+  },
+  {
+    "id": "birch-swinnerton-dyer",
+    "name": "伯奇–斯温纳顿-戴尔猜想",
+    "nameEn": "Birch and Swinnerton-Dyer conjecture",
+    "domain": "计算数学",
+    "domainKey": "computational-mathematics",
+    "status": "未解决",
+    "statement": "对椭圆曲线 E，伯奇–斯温纳顿-戴尔猜想把 L(E,s) 在 s=1 处的零点阶数与 E(Q) 的 Mordell–Weil 秩联系起来，并给出 L 函数首项系数与算术不变量的关系。",
+    "summary": "用椭圆曲线 L 函数刻画有理点群的秩。",
+    "relevance": "连接数论、代数几何、椭圆曲线计算和算术不变量。",
+    "tags": ["椭圆曲线", "L 函数", "Mordell–Weil 群", "数论"],
+    "sources": [
+      {"label": "Clay Mathematics Institute: Birch and Swinnerton-Dyer", "url": "https://www.claymath.org/millennium-problems/birch-and-swinnerton-dyer-conjecture/"},
+      {"label": "Wikipedia: Birch and Swinnerton-Dyer conjecture", "url": "https://en.wikipedia.org/wiki/Birch_and_Swinnerton-Dyer_conjecture"}
+    ]
+  },
+  {
+    "id": "kpz",
+    "name": "KPZ 普适性猜想",
+    "nameEn": "KPZ universality conjecture",
+    "domain": "随机模型与应用概率",
+    "domainKey": "stochastic-models",
+    "status": "部分证明",
+    "statement": "KPZ 普适性猜想认为，大量一维随机生长、随机界面和随机优化模型在长时间大尺度极限下具有相同的标度指数、涨落分布和极限过程。",
+    "summary": "预测一大类随机模型共享同一套极限标度与涨落规律。",
+    "relevance": "与随机优化、随机过程、极限理论和统计物理中的普适性问题直接相关。",
+    "tags": ["随机过程", "随机生长", "普适性", "极限分布"],
+    "sources": [
+      {"label": "Wikipedia: KPZ universality class", "url": "https://en.wikipedia.org/wiki/KPZ_universality_class"},
+      {"label": "Corwin, The Kardar–Parisi–Zhang equation and universality class", "url": "https://arxiv.org/abs/1106.1596"}
+    ]
+  },
+  {
+    "id": "aldous-gap",
+    "name": "Aldous 谱隙猜想",
+    "nameEn": "Aldous's spectral gap conjecture",
+    "domain": "随机模型与应用概率",
+    "domainKey": "stochastic-models",
+    "status": "已解决",
+    "statement": "Aldous 谱隙猜想断言：在交换粒子系统中，随机游走生成元的谱隙等于底层单粒子随机游走生成元的谱隙。它把高维相互作用系统的混合速度与单粒子过程联系起来。",
+    "summary": "把交换粒子系统的谱隙化约为单粒子随机游走谱隙。",
+    "relevance": "是马尔可夫链混合、谱方法和随机优化收敛分析中的重要命名结果；2021 年已由 Caputo、Liggett、Richthammer 证明。",
+    "tags": ["马尔可夫链", "谱隙", "交换粒子系统", "混合时间"],
+    "sources": [
+      {"label": "Wikipedia: Aldous's spectral gap conjecture", "url": "https://en.wikipedia.org/wiki/Aldous%27s_spectral_gap_conjecture"},
+      {"label": "Caputo, Liggett and Richthammer, Proof of Aldous' spectral gap conjecture", "url": "https://arxiv.org/abs/0906.1238"}
+    ]
+  },
+  {
+    "id": "marcus-de-oliveira",
+    "name": "Marcus–de Oliveira 行列式猜想",
+    "nameEn": "Marcus–de Oliveira determinantal conjecture",
+    "domain": "计算数学",
+    "domainKey": "computational-mathematics",
+    "status": "未解决（待核验）",
+    "statement": "若 A、B 是正规矩阵，则 det(A+B) 应落在由两组特征值的配对乘积所生成的凸包中。该猜想试图用谱数据控制两个正规矩阵之和的行列式。",
+    "summary": "用两组正规矩阵的特征值描述 det(A+B) 的可能范围。",
+    "relevance": "与本库的矩阵分析、谱方法和数值线性代数问题直接相关。",
+    "tags": ["矩阵分析", "正规矩阵", "行列式", "谱理论"],
+    "sources": [
+      {"label": "用户截图整理（待核验）", "url": null}
+    ]
+  },
+  {
+    "id": "hadamard",
+    "name": "Hadamard 猜想",
+    "nameEn": "Hadamard conjecture",
+    "domain": "组合数学",
+    "domainKey": "combinatorics",
+    "status": "未解决",
+    "statement": "对每个正整数 n，是否都存在一个 n×n 的 {−1,+1} 矩阵 H，使 HHᵀ=nI？Hadamard 猜想进一步断言：除 n=1、2 外，所有 n≡0 (mod 4) 都存在这样的 Hadamard 矩阵。",
+    "summary": "判断所有 4 的倍数阶是否都存在 Hadamard 矩阵。",
+    "relevance": "连接组合设计、编码理论、矩阵构造与离散优化中的正交结构。",
+    "tags": ["Hadamard 矩阵", "组合设计", "编码理论", "正交性"],
+    "sources": [
+      {"label": "Wikipedia: Hadamard matrix", "url": "https://en.wikipedia.org/wiki/Hadamard_matrix"}
+    ]
+  },
+  {
+    "id": "komlos",
+    "name": "Komlós 猜想",
+    "nameEn": "Komlós conjecture",
+    "domain": "计算数学",
+    "domainKey": "computational-mathematics",
+    "status": "未解决",
+    "statement": "若矩阵 A 的每一列二范数不超过 1，是否总能找到一个符号向量 x∈{−1,+1}ⁿ，使得 ||Ax||∞ 被一个与维数无关的常数统一控制？",
+    "summary": "为列范数受控的矩阵寻找使所有坐标同时小的符号组合。",
+    "relevance": "与 discrepancy theory、向量平衡、随机矩阵和近似算法中的舍入问题密切相关。",
+    "tags": ["discrepancy", "向量平衡", "矩阵范数", "近似算法"],
+    "sources": [
+      {"label": "Wikipedia: Komlós conjecture（待核验）", "url": "https://en.wikipedia.org/wiki/Koml%C3%B3s_conjecture"}
+    ]
+  },
+  {
+    "id": "chollet-permanent",
+    "name": "Chollet permanent 猜想",
+    "nameEn": "Chollet permanent conjecture",
+    "domain": "计算数学",
+    "domainKey": "computational-mathematics",
+    "status": "未解决（待核验）",
+    "statement": "对半正定矩阵 A、B，是否总有 per(A∘B)≤per(A)per(B)，其中 ∘ 表示 Hadamard 逐元素乘积，per 表示 permanent？",
+    "summary": "比较半正定矩阵逐元素乘积的 permanent 与原矩阵 permanents。",
+    "relevance": "涉及矩阵不等式、永久函数、半正定性和组合优化中的计数结构。",
+    "tags": ["permanent", "半正定矩阵", "Hadamard 乘积", "矩阵不等式"],
+    "sources": [
+      {"label": "用户截图整理（待核验）", "url": null}
+    ]
+  },
+  {
+    "id": "ryser-circulant-hadamard",
+    "name": "Ryser circulant Hadamard 猜想",
+    "nameEn": "Ryser circulant Hadamard conjecture",
+    "domain": "组合数学",
+    "domainKey": "combinatorics",
+    "status": "未解决",
+    "statement": "是否不存在阶数大于 4 的 circulant Hadamard 矩阵？等价地，除已知的 1、2、4 阶例外，循环结构是否排除了 Hadamard 正交性？",
+    "summary": "断言高于 4 阶的循环 Hadamard 矩阵不存在。",
+    "relevance": "把 Hadamard 矩阵、循环群、组合设计和快速构造问题联系起来。",
+    "tags": ["循环矩阵", "Hadamard 矩阵", "组合设计", "群论"],
+    "sources": [
+      {"label": "Wikipedia: Circulant Hadamard matrix", "url": "https://en.wikipedia.org/wiki/Circulant_Hadamard_matrix"}
+    ]
+  },
+  {
+    "id": "kls",
+    "name": "KLS 猜想",
+    "nameEn": "KLS conjecture",
+    "domain": "几何 / 随机模型与应用概率",
+    "domainKey": "geometry-stochastic-models",
+    "status": "部分解决 / 未解决",
+    "statement": "KLS 猜想断言：任意各向同性对数凹概率测度的 Poincaré 常数都有与维数无关的统一上界。它等价于一类凸体上的等周不等式和随机游走快速混合性质。",
+    "summary": "为各向同性对数凹测度寻找维数无关的 Poincaré 常数界。",
+    "relevance": "连接凸几何、等周不等式、马尔可夫链混合和高维采样算法。",
+    "tags": ["对数凹测度", "Poincaré 不等式", "凸几何", "随机游走"],
+    "sources": [
+      {"label": "Wikipedia: KLS conjecture", "url": "https://en.wikipedia.org/wiki/KLS_conjecture"}
+    ]
+  },
+  {
+    "id": "mub-6",
+    "name": "MUB(6) 问题",
+    "nameEn": "MUB(6) problem",
+    "domain": "组合数学",
+    "domainKey": "combinatorics",
+    "status": "未解决",
+    "statement": "在复向量空间 C⁶ 中，是否存在 4 个两两 mutually unbiased 的正交基？这是一道低维但高度约束的组合与量子信息问题。",
+    "summary": "判断 C⁶ 中是否存在四个两两互相无偏的正交基。",
+    "relevance": "涉及组合设计、量子信息、酉矩阵和有限维谱结构。",
+    "tags": ["mutually unbiased bases", "量子信息", "酉矩阵", "组合设计"],
+    "sources": [
+      {"label": "Wikipedia: Mutually unbiased bases", "url": "https://en.wikipedia.org/wiki/Mutually_unbiased_bases"}
+    ]
+  },
+  {
+    "id": "strongly-polynomial-lp",
+    "name": "强多项式线性规划问题",
+    "nameEn": "strongly polynomial LP problem",
+    "domain": "离散优化与算法",
+    "domainKey": "discrete-optimization",
+    "status": "未解决",
+    "statement": "一般线性规划是否存在强多项式算法？也就是说，是否能在只依赖变量和约束数量的算术运算步数内求解，并且中间数值的位长也受到相应多项式控制？",
+    "summary": "寻找不依赖输入数值位长的通用线性规划算法。",
+    "relevance": "这是线性规划复杂度、单纯形法、内点法和组合优化算法理论的核心开放问题。",
+    "tags": ["线性规划", "强多项式算法", "内点法", "算法复杂度"],
+    "sources": [
+      {"label": "Wikipedia: Strongly polynomial time", "url": "https://en.wikipedia.org/wiki/Strongly_polynomial_time"}
+    ]
+  },
+  {
+    "id": "invariant-subspace",
+    "name": "不变子空间问题",
+    "nameEn": "Invariant Subspace Problem",
+    "domain": "计算数学",
+    "domainKey": "computational-mathematics",
+    "status": "未解决",
+    "statement": "Hilbert 空间上的每个有界线性算子是否都有非平凡、闭的、不变子空间？这里的不变子空间既不是 {0}，也不是整个空间。",
+    "summary": "判断有界算子是否必然拥有非平凡闭不变子空间。",
+    "relevance": "连接泛函分析、算子理论、谱理论与无限维线性代数。",
+    "tags": ["泛函分析", "算子理论", "谱理论", "Hilbert 空间"],
+    "sources": [
+      {"label": "Wikipedia: Invariant subspace problem", "url": "https://en.wikipedia.org/wiki/Invariant_subspace_problem"}
+    ]
+  }
+]

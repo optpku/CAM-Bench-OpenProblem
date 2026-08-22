@@ -1,0 +1,53 @@
+{
+  "id": 71,
+  "title": "Approximate symmetric convex bodies by intersections of co-centered ellipsoids in high dimensions",
+  "part": "几何",
+  "partKey": "part_01_geometry",
+  "file": "open_problems/part_01_geometry/71_approximate_symmetric_convex_bodies_by_intersections_of_co_centered_ellipsoids_in_high_d/problem.md",
+  "jsonFile": "open_problems/part_01_geometry/71_approximate_symmetric_convex_bodies_by_intersections_of_co_centered_ellipsoids_in_high_d/problem.json",
+  "authors": "Amir Ali Ahmadi, Abraar Chaudhry, Cemil Dibek",
+  "source": "Amir Ali Ahmadi, Abraar Chaudhry, Cemil Dibek, Generalized Ellipsoids, Mathematics of Operations Research, 2026.",
+  "keywords": "convex geometry, symmetric convex bodies, ellipsoid intersections, geometric approximation, John ellipsoid, semidefinite representations",
+  "verification": "待核验",
+  "type": "characterization",
+  "typeLabel": "刻画 / 等价条件",
+  "typeTags": [
+    "刻画 / 等价条件",
+    "界 / 近似 / 最优常数"
+  ],
+  "clarity": {
+    "score": 89,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 16,
+      "目标与判据": 25,
+      "范围与边界": 8,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 16/20",
+      "目标与判据 25/25",
+      "范围与边界 8/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Let $C\\subset \\mathbb{R}^n$ be a symmetric convex body, i.e., a compact convex set with nonempty interior such that $x\\in C\\Rightarrow -x\\in C$. An ellipsoid (centered at the origin) is a set of the form $$ E(Q):=\\{x\\in\\mathbb{R}^n: x^TQx\\le 1\\}, $$ where $Q\\in \\mathbb{S}^n{++}$ is symmetric positive definite. (Equivalently, an ellipsoid is the unit ball of a quadratic norm.)",
+  "statement": "$$ Equivalently, characterize the best possible approximation quality achievable by intersections of $m$ co-centered ellipsoids as a function of $m$ and $n$.",
+  "statementLength": 136,
+  "statementSentences": 1,
+  "statementFormulas": 3,
+  "statementComplexityScore": 28,
+  "statementConnectors": 1,
+  "concisenessBasis": "长度 136、句子 1、公式 3、连接结构 1；本批次复杂度分位点 30/54",
+  "familiarity": "medium",
+  "familiarityLabel": "中文献可见度",
+  "familiarityScore": 7,
+  "familiarityBasis": "来源元数据、参考文献 1 条、链接/DOI 2 个",
+  "content": "# Approximate symmetric convex bodies by intersections of co-centered ellipsoids in high dimensions\n\nThis file contains the open problem on Approximate symmetric convex bodies by intersections of co-centered ellipsoids in high dimensions.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Approximate symmetric convex bodies by intersections of co-centered ellipsoids in high dimensions\n\nSource paper authors: Amir Ali Ahmadi, Abraar Chaudhry, Cemil Dibek\n\n### 1. Problem Background\n\nLet $C\\subset \\mathbb{R}^n$ be a symmetric convex body, i.e., a compact convex set with nonempty interior such that $x\\in C\\Rightarrow -x\\in C$. An ellipsoid (centered at the origin) is a set of the form\n$$\nE(Q):=\\{x\\in\\mathbb{R}^n: x^TQx\\le 1\\},\n$$\nwhere $Q\\in \\mathbb{S}^n_{++}$ is symmetric positive definite. (Equivalently, an ellipsoid is the unit ball of a quadratic norm.)\n\nFor an integer $m\\ge 1$, an intersection of $m$ co-centered ellipsoids means a set of the form\n$$\n\\bigcap_{i=1}^m E(Q_i)=\\{x\\in\\mathbb{R}^n: x^TQ_i x\\le 1\\ \\text{for all } i=1,\\dots,m\\},\n$$\nwith all ellipsoids centered at the origin.\n\nGiven two symmetric convex bodies $K,L\\subset \\mathbb{R}^n$, a standard multiplicative (sandwich) approximation notion is: $K$ $\\varepsilon$-approximates $L$ if\n$$\nK\\subseteq L\\subseteq (1+\\varepsilon)K,\n$$\nwhere $(1+\\varepsilon)K:=\\{(1+\\varepsilon)x: x\\in K\\}$ is a uniform radial scaling.\n\nThe paper introduces generalized ellipsoids (GEs) and shows (i) any intersection of $m$ co-centered ellipsoids can be represented exactly as a generalized ellipsoid of degree $d\\le 2m-3$, and (ii) every symmetric convex body can be approximated by a GE with a quantitative degree bound obtained via known results on polytopic approximation. The question below asks directly about approximation by intersections of ellipsoids, which would in turn sharpen the degree-vs-accuracy bounds for GE approximation.\n\n### 2. Open Problem\n\n**Question 1.1.** For fixed dimension $n$ and approximation parameter $\\varepsilon>0$, determine (or tightly bound) the smallest integer $m=m(n,\\varepsilon)$ such that for every symmetric convex body $C\\subset \\mathbb{R}^n$ there exist positive definite matrices $Q_1,\\dots,Q_m\\in\\mathbb{S}^n_{++}$ with\n$$\n\\bigcap_{i=1}^m \\{x\\in\\mathbb{R}^n: x^TQ_i x\\le 1\\}\\ \\subseteq\\ C\\ \\subseteq\\ (1+\\varepsilon)\\,\\bigcap_{i=1}^m \\{x\\in\\mathbb{R}^n: x^TQ_i x\\le 1\\}.\n\n$$\nEquivalently, characterize the best possible approximation quality achievable by intersections of $m$ co-centered ellipsoids as a function of $m$ and $n$.\n\n### 3. Known Results\n\nNo relevant Scholar-organic forward citations were available for this problem. The forward-citation review therefore cannot identify follow-up work that resolves or materially advances the problem.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #45 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W7126221168_p0/partial_progress/45.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Amir Ali Ahmadi, Abraar Chaudhry, Cemil Dibek, [*Generalized Ellipsoids*](https://doi.org/10.1287/moor.2024.0643), Mathematics of Operations Research, 2026.\n- **Location in paper:** Section 7 (Future Research Directions), page 31 (PDF pagination in the provided text)\n- **Area:** convex body approximation\n- **Keywords:** `convex geometry`, `symmetric convex bodies`, `ellipsoid intersections`, `geometric approximation`, `John ellipsoid`, `semidefinite representations`\n- **Upstream problem record:** [W7126221168_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W7126221168_p0&n=45&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Amir Ali Ahmadi, Abraar Chaudhry, Cemil Dibek, [*Generalized Ellipsoids*](https://doi.org/10.1287/moor.2024.0643), Mathematics of Operations Research, 2026.\n",
+  "conciseness": "short",
+  "concisenessLabel": "简洁"
+}

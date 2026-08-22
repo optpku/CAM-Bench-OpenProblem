@@ -1,0 +1,52 @@
+{
+  "id": 152,
+  "title": "Determine the exact master route ratio for a priori TSP with depot",
+  "part": "离散优化与算法",
+  "partKey": "part_07_discrete_optimization_and_algorithms",
+  "file": "open_problems/part_07_discrete_optimization_and_algorithms/152_determine_the_exact_master_route_ratio_for_a_priori_tsp_with_depot/problem.md",
+  "jsonFile": "open_problems/part_07_discrete_optimization_and_algorithms/152_determine_the_exact_master_route_ratio_for_a_priori_tsp_with_depot/problem.json",
+  "authors": "Jannis Blauth, Meike Neuwohner, Luise Puhlmann, Jens Vygen",
+  "source": "Jannis Blauth, Meike Neuwohner, Luise Puhlmann, Jens Vygen, Improved Guarantees for the A Priori TSP, Mathematics of Operations Research, 2024.",
+  "keywords": "a priori tsp, stochastic optimization, master route solutions, worst-case ratio, metric tsp, random activations",
+  "verification": "待核验",
+  "type": "other",
+  "typeLabel": "开放式研究问题",
+  "typeTags": [
+    "开放式研究问题"
+  ],
+  "clarity": {
+    "score": 85,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 14,
+      "目标与判据": 25,
+      "范围与边界": 6,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 14/20",
+      "目标与判据 25/25",
+      "范围与边界 6/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Let $(V,c)$ be a finite metric space (triangle inequality, symmetry, and $c(v,v)=0$) whose points $V$ are called customers. Each customer $v\\in V$ is active independently with probability $p(v)\\in(0,1]$. A distinguished customer $d\\in V$ is a depot with $p(d)=1$.",
+  "statement": "Question 1.1. Determine the exact value of the master route ratio $\\rho^$, i.e., compute $$ \\rho^ := \\sup{(V,c,p)\\,\\text{with depot }d} \\ \\frac{\\min\\{\\mathrm{MR}(S): \\varnothing\\ne S\\subseteq V\\}}{\\mathrm{OPT}} $$ for the a priori TSP with independent activations and a depot $d$ satisfying $p(d)=1$.",
+  "statementLength": 261,
+  "statementSentences": 5,
+  "statementFormulas": 4,
+  "statementComplexityScore": 59,
+  "statementConnectors": 1,
+  "concisenessBasis": "长度 261、句子 5、公式 4、连接结构 1；本批次复杂度分位点 30/54",
+  "familiarity": "medium",
+  "familiarityLabel": "中文献可见度",
+  "familiarityScore": 7,
+  "familiarityBasis": "来源元数据、参考文献 1 条、链接/DOI 2 个",
+  "content": "# Determine the exact master route ratio for a priori TSP with depot\n\nThis file contains the open problem on Determine the exact master route ratio for a priori TSP with depot.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Determine the exact master route ratio for a priori TSP with depot\n\nSource paper authors: Jannis Blauth, Meike Neuwohner, Luise Puhlmann, Jens Vygen\n\n### 1. Problem Background\n\nLet $(V,c)$ be a finite metric space (triangle inequality, symmetry, and $c(v,v)=0$) whose points $V$ are called customers. Each customer $v\\in V$ is active independently with probability $p(v)\\in(0,1]$. A distinguished customer $d\\in V$ is a depot with $p(d)=1$.\n\nAn \\emph{a priori TSP tour} is a cyclic ordering (TSP tour) $T$ visiting all vertices in $V$, chosen before seeing which customers are active. Given a realized active set $A\\subseteq V$, the realized tour cost is the length of the tour obtained by \\emph{skipping} inactive vertices in the order prescribed by $T$; denote this realized cost by $c(T[A])$. The objective value of $T$ is $\\mathbb{E}[c(T[A])]$ where the expectation is over the independent activations.\n\nFor a nonempty subset $S\\subseteq V$ with $d\\in S$, a \\emph{master route solution} based on $S$ consists of:\n1) a TSP tour on $S$ of length $\\mathrm{OPT}_{\\mathrm{tsp}}(S,c)$, and\n2) for each $v\\in V\\setminus S$, two parallel edges connecting $v$ to a nearest point in $S$, where $c(v,S):=\\min\\{c(v,s): s\\in S\\}$.\n\nUnder the standard analysis for master route solutions, the expected cost of the master route solution based on $S$ is\n$$\n\\mathrm{MR}(S) := \\mathbb{E}\\Big[\\mathbf{1}_{\\{|A|\\ge 2\\}}\\Big(\\mathrm{OPT}_{\\mathrm{tsp}}(S,c) + 2\\sum_{v\\in A} c(v,S)\\Big)\\Big],\n$$\nwhere $A$ is the random active set, and the indicator accounts for the convention that if fewer than two customers are active then one may shortcut to cost $0$.\n\nLet $\\mathrm{OPT}$ denote the minimum possible expected cost $\\min_T \\mathbb{E}[c(T[A])]$ over all a priori tours $T$ for $(V,c,p)$.\n\nThe \\emph{master route ratio} (with depot) is the worst-case ratio between the best master route solution and the optimal a priori tour, i.e.\n$$\n\\rho^* := \\sup_{(V,c,p)\\,\\text{with depot }d} \\ \\frac{\\min\\{\\mathrm{MR}(S): \\varnothing\\ne S\\subseteq V\\}}{\\mathrm{OPT}},\n$$\nwith the convention $0/0:=1$ when needed.\n\n### 2. Open Problem\n\n**Question 1.1.** Determine the exact value of the master route ratio $\\rho^*$, i.e., compute\n$$\n\\rho^* := \\sup_{(V,c,p)\\,\\text{with depot }d} \\ \\frac{\\min\\{\\mathrm{MR}(S): \\varnothing\\ne S\\subseteq V\\}}{\\mathrm{OPT}}\n$$\nfor the a priori TSP with independent activations and a depot $d$ satisfying $p(d)=1$. In particular, decide whether\n$$\n\\rho^* = \\frac{1}{1-e^{-1/2}}.\n$$\n\n### 3. Known Results\n\nNo relevant Scholar-organic forward citations were available for this problem. The forward-citation review therefore cannot identify follow-up work that resolves or materially advances the problem.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Solution #138 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4404566852_p0/solutions/138.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Jannis Blauth, Meike Neuwohner, Luise Puhlmann, Jens Vygen, [*Improved Guarantees for the A Priori TSP*](https://doi.org/10.1287/moor.2023.0322), Mathematics of Operations Research, 2024.\n- **Location in paper:** Page 5, Section 1.2 (after Theorem 6); reiterated in Page 38, Section 9 (Discussion).\n- **Area:** stochastic tsp\n- **Keywords:** `a priori tsp`, `stochastic optimization`, `master route solutions`, `worst-case ratio`, `metric tsp`, `random activations`\n- **Upstream problem record:** [W4404566852_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4404566852_p0&n=138&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Jannis Blauth, Meike Neuwohner, Luise Puhlmann, Jens Vygen, [*Improved Guarantees for the A Priori TSP*](https://doi.org/10.1287/moor.2023.0322), Mathematics of Operations Research, 2024.\n",
+  "conciseness": "long",
+  "concisenessLabel": "复杂"
+}
