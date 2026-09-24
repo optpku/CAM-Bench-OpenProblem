@@ -8,7 +8,7 @@ Start with the **[Open Problems Index](open_problems_index.md)** for the complet
 
 Each problem has a dedicated directory under [`open_problems/`](open_problems/), containing a Markdown write-up (`problem.md`) and a companion JSON record (`problem.json`). Some write-ups contain multiple related questions.
 
-The repository also includes a [browser catalog](site/) with search and filtering, and a separate collection of [22 named conjectures and famous open problems](site/named_conjectures.json). These 22 records are not counted among the 162 problem write-ups.
+The repository also includes a [browser catalog](site/) with Chinese/English interface switching, search, filtering, and per-problem clarity score breakdowns, and a separate collection of [22 named conjectures and famous open problems](site/named_conjectures.json). These 22 records are not counted among the 162 problem write-ups.
 
 ## Thematic Parts
 

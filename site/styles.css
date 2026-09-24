@@ -9,3 +9,13 @@
 .markdown [id^="detail-heading-"]{scroll-margin-top:20px}
 .conjecture-card .card-title small{display:block;color:var(--muted);font-size:10px;font-weight:500;margin-top:3px}.conjecture-status{color:#7b5a22;background:#fbf0d9}.conjecture-detail .detail-head{background:#fbfaf5}.named-statement{border-left:3px solid var(--amber);padding-left:15px}.named-statement p{font-size:15px;line-height:1.85;color:#394f5c}.conjecture-detail .detail-source a{color:var(--teal);line-height:1.9}.detail-metadata{margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #edf0f2}.detail-source strong{color:#63737e}
 @media (max-width:700px){.overview{margin:0 0 22px;padding:17px 15px}.overview-heading{align-items:start;display:block}.overview-note{display:block;margin-top:7px}.overview-grid{grid-template-columns:1fr;gap:22px}.bar-row{grid-template-columns:105px minmax(60px,1fr) 28px}.part-chart .bar-row{grid-template-columns:132px minmax(60px,1fr) 28px}}
+
+/* Bilingual labels and transparent clarity scoring. */
+.language-note{font-size:11px;line-height:1.6;color:var(--muted)}
+.clarity-components{width:100%;border-collapse:collapse;font-size:12px;margin:12px 0}
+.clarity-components th{text-align:left;font-weight:500}.clarity-components td{text-align:right;font-variant-numeric:tabular-nums}
+.clarity-components th,.clarity-components td{padding:6px 0;border-bottom:1px solid var(--line)}
+.clarity-top{gap:12px;flex-wrap:wrap}.clarity-top h3{font-size:13px;margin:0}.clarity-top strong{font-size:13px}
+.card-meta,.card-foot,.detail-kicker{flex-wrap:wrap}.chip{max-width:100%;text-align:left;overflow-wrap:anywhere}.controls .control-group{min-width:0}.pill{overflow-wrap:anywhere}.detail-source{overflow-wrap:anywhere}
+
+.legend-row b{white-space:nowrap;flex-shrink:0}.legend-row .dot{flex-shrink:0}

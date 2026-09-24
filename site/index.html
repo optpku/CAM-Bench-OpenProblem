@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="CAM-Bench 开放问题的可解释分类与浏览器">
   <title>CAM-Bench · 开放问题图谱</title>
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=6">
   <link rel="stylesheet" href="vendor/katex/katex.min.css?v=3">
 </head>
 <body>
@@ -13,18 +14,22 @@
     <section class="workspace" aria-label="问题浏览器">
       <aside class="controls">
         <div class="control-group">
-          <label for="collectionSelect">浏览内容</label>
+          <label for="languageSelect">语言 / Language</label>
+          <select id="languageSelect"><option value="zh">中文</option><option value="en">English</option></select>
+        </div>
+        <div class="control-group">
+          <label for="collectionSelect" data-i18n="浏览内容">浏览内容</label>
           <select id="collectionSelect">
             <option value="open">开放问题库（162）</option>
             <option value="named">命名猜想（22）</option>
           </select>
         </div>
         <div class="control-group search-group">
-          <label for="search">搜索问题</label>
+          <label for="search" data-i18n="搜索问题">搜索问题</label>
           <div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="标题、关键词、作者…" autocomplete="off"></div>
         </div>
         <div class="control-group">
-          <label for="groupBy">分组方式</label>
+          <label for="groupBy" data-i18n="分组方式">分组方式</label>
           <select id="groupBy">
             <option value="clarity">明确度</option>
             <option value="part">研究领域</option>
@@ -35,29 +40,31 @@
           </select>
         </div>
         <div class="control-group">
-          <label>快速筛选</label>
+          <label data-i18n="快速筛选">快速筛选</label>
           <div class="chip-list" id="filters"></div>
         </div>
         <div class="control-group legend">
-          <label>明确度量表</label>
-          <div class="legend-row"><i class="dot l4"></i><span>L4 精确定式</span><b>82–100</b></div>
-          <div class="legend-row"><i class="dot l3"></i><span>L3 清晰可研究</span><b>67–81</b></div>
-          <div class="legend-row"><i class="dot l2"></i><span>L2 方向明确</span><b>50–66</b></div>
-          <div class="legend-row"><i class="dot l1"></i><span>L1 探索性议题</span><b>0–49</b></div>
-          <a class="method-link" href="classification_methodology.md">阅读分级方法 ↗</a>
+          <label data-i18n="明确度量表">明确度量表</label>
+          <div class="legend-row"><i class="dot l4"></i><span data-i18n="L4 精确定式">L4 精确定式</span><b>82–100</b></div>
+          <div class="legend-row"><i class="dot l3"></i><span data-i18n="L3 清晰可研究">L3 清晰可研究</span><b>67–81</b></div>
+          <div class="legend-row"><i class="dot l2"></i><span data-i18n="L2 方向明确">L2 方向明确</span><b>50–66</b></div>
+          <div class="legend-row"><i class="dot l1"></i><span data-i18n="L1 探索性议题">L1 探索性议题</span><b>0–49</b></div>
+          <p class="language-note" data-i18n="文本启发式评分；不代表正确性、难度或是否仍未解决。">文本启发式评分；不代表正确性、难度或是否仍未解决。</p>
+          <a class="method-link" href="classification_methodology.md" data-i18n="阅读分级方法 ↗">阅读分级方法 ↗</a>
         </div>
       </aside>
       <section class="results-pane">
-        <div class="results-head"><div><span class="results-count" id="resultCount">0</span> 条问题</div><button class="sort-button" id="sortButton" type="button">按编号排序 <span>↕</span></button></div>
+        <div class="results-head"><div><span class="results-count" id="resultCount">0</span> <span data-i18n="条问题">条问题</span></div><button class="sort-button" id="sortButton" type="button">按编号排序 <span>↕</span></button></div>
         <div id="results" class="results" aria-live="polite"></div>
-        <div id="empty" class="empty" hidden><div class="empty-icon">⌕</div><h2>没有匹配的问题</h2><p>试试更短的关键词，或清除筛选条件。</p></div>
+        <div id="empty" class="empty" hidden><div class="empty-icon">⌕</div><h2 data-i18n="没有匹配的问题">没有匹配的问题</h2><p data-i18n="试试更短的关键词，或清除筛选条件。">试试更短的关键词，或清除筛选条件。</p></div>
       </section>
       <aside class="detail-pane" id="detailPane" aria-label="问题详情">
-        <div class="detail-placeholder"><div class="placeholder-mark">↗</div><h2>选择一个问题</h2><p>详情会显示在这里</p></div>
+        <div class="detail-placeholder"><div class="placeholder-mark">↗</div><h2 data-i18n="选择一个问题">选择一个问题</h2><p data-i18n="详情会显示在这里">详情会显示在这里</p></div>
       </aside>
     </section>
   </main>
   <script src="vendor/katex/katex.min.js?v=3"></script>
-  <script src="app.js?v=5"></script>
+  <script src="i18n.js?v=1"></script>
+  <script src="app.js?v=6"></script>
 </body>
 </html>
