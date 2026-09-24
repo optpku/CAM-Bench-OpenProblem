@@ -1,0 +1,54 @@
+{
+  "id": 137,
+  "title": "Classify stable serial knockout competitions up to equivalence for larger powers of two",
+  "part": "博弈论与数理经济学",
+  "partKey": "part_08_game_theory_and_mathematical_economics",
+  "file": "open_problems/part_08_game_theory_and_mathematical_economics/137_classify_stable_serial_knockout_competitions_up_to_equivalence_for_larger_powers_of_two/problem.md",
+  "jsonFile": "open_problems/part_08_game_theory_and_mathematical_economics/137_classify_stable_serial_knockout_competitions_up_to_equivalence_for_larger_powers_of_two/problem.json",
+  "authors": "Roel Lambers, Rudi Pendavingh, Frits Spieksma",
+  "source": "Roel Lambers, Rudi Pendavingh, Frits Spieksma, How to Design a Stable Serial Knockout Competition, Mathematics of Operations Research, 2024.",
+  "keywords": "tournament design, serial knockout competition, stability, finite fields, combinatorial designs, equivalence classes",
+  "verification": "待核验",
+  "type": "characterization",
+  "typeLabel": "刻画 / 等价条件",
+  "typeTags": [
+    "刻画 / 等价条件",
+    "收敛 / 稳定性",
+    "算法 / 机制设计"
+  ],
+  "clarity": {
+    "score": 88,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 16,
+      "目标与判据": 25,
+      "范围与边界": 7,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 16/20",
+      "目标与判据 25/25",
+      "范围与边界 7/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Fix an integer $k\\ge 2$ and let $n=2^k$. A (balanced) single-elimination knockout tournament on a player set $P$ with $|P|=n$ is a rooted binary tree with $n$ leaves labeled bijectively by the players; the tournament has $k$ rounds, and players $x,x'\\in P$ are said to be able to meet in round $i\\in\\{1,\\dots,k\\}$ if, given the fixed bracket, there is a possible sequence of earlier match outcomes under which they face each other in round $i$. Formally, for a knockout tournament $T$ on $P$, define $vT(x,x')=i$ if $x$ and $x'$ can meet in round $i$ in $T$.",
+  "statement": "Question 1.1. For $n=2^k>8$, determine whether every stable serial knockout competition $\\mathcal{T}$ on $n$ players is equivalent (via relabeling of players) to the algebraic stable SKC constructed using $\\mathrm{GF}(2^k)$; equivalently, decide whether there exist stable SKCs on $n$ players that ar",
+  "statementLength": 260,
+  "statementSentences": 2,
+  "statementFormulas": 5,
+  "statementComplexityScore": 53,
+  "statementConnectors": 2,
+  "concisenessBasis": "长度 260、句子 2、公式 5、连接结构 2；本批次复杂度分位点 30/54",
+  "familiarity": "medium",
+  "familiarityLabel": "中文献可见度",
+  "familiarityScore": 8,
+  "familiarityBasis": "来源元数据、参考文献 2 条、链接/DOI 2 个",
+  "content": "# Classify stable serial knockout competitions up to equivalence for larger powers of two\n\nThis file contains the open problem on Classify stable serial knockout competitions up to equivalence for larger powers of two.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Classify stable serial knockout competitions up to equivalence for larger powers of two\n\nSource paper authors: Roel Lambers, Rudi Pendavingh, Frits Spieksma\n\n### 1. Problem Background\n\nFix an integer $k\\ge 2$ and let $n=2^k$. A (balanced) single-elimination knockout tournament on a player set $P$ with $|P|=n$ is a rooted binary tree with $n$ leaves labeled bijectively by the players; the tournament has $k$ rounds, and players $x,x'\\in P$ are said to be able to meet in round $i\\in\\{1,\\dots,k\\}$ if, given the fixed bracket, there is a possible sequence of earlier match outcomes under which they face each other in round $i$. Formally, for a knockout tournament $T$ on $P$, define $v_T(x,x')=i$ if $x$ and $x'$ can meet in round $i$ in $T$.\n\nA serial knockout competition (SKC) on $P$ is a set $\\mathcal{T}$ of $n-1$ knockout tournaments on the same player set $P$. For each round $i$, the SKC $\\mathcal{T}$ is called stable in round $i$ if there exists a constant $c_i$ such that for every distinct pair $x\\ne x'$ in $P$,\n$$\n\n\\#\\{T\\in\\mathcal{T}: v_T(x,x')=i\\}=c_i.\n\n$$\nIt is stable if it is stable in all rounds $i=1,\\dots,k$. For an SKC with $|\\mathcal{T}|=n-1$, counting implies $c_i=2^{i-1}$.\n\nTwo knockout tournaments $T,T'$ on player sets $P,P'$ are considered identical if $v_T(p,q)=v_{T'}(p,q)$ for all pairs $p,q$ in the common player set; and two SKCs $\\mathcal{T}$ on $P$ and $\\mathcal{T}'$ on $P'$ are called equivalent if there exists a bijection $s:P\\to P'$ such that $\\mathcal{T}'=\\{T(s): T\\in \\mathcal{T}\\}$, where $T(s)$ is obtained from $T$ by relabeling each player $p\\in P$ as $s(p)$. The paper constructs, for every $n=2^k$, a stable SKC via algebraic structure on $\\mathrm{GF}(2^k)$.\n\n### 2. Open Problem\n\n**Question 1.1.** For $n=2^k>8$, determine whether every stable serial knockout competition $\\mathcal{T}$ on $n$ players is equivalent (via relabeling of players) to the algebraic stable SKC constructed using $\\mathrm{GF}(2^k)$; equivalently, decide whether there exist stable SKCs on $n$ players that are inequivalent to that construction (in particular, for $n=16$).\n\n### 3. Known Results\n\nThe defining constraint for a stable SKC on $n=2^k$ players is that for each round $i\\in\\{1,\\dots,k\\}$ and each unordered pair $\\{x,x'\\}$, the number of brackets $T$ in the family $\\mathcal T$ with $v_T(x,x')=i$ is constant (necessarily $c_i=2^{i-1}$ when $|\\mathcal T|=n-1$). Lambers–Pendavingh–Spieksma construct such families for all $2^k$ using algebra over $\\mathrm{GF}(2^k)$, and they prove uniqueness up to relabeling only in the smallest nontrivial case $n=8$ (via the Fano plane). The open problem asks whether this algebraic construction is essentially the only one for $n>8$, e.g. $n=16$, or whether inequivalent stable SKCs exist.\n\nAmong the forward citations provided, the only citing work is an operations-research survey that briefly summarizes the existence result and its Galois-field connection but does not contribute new structural, classification, or nonisomorphism results for stable SKCs. Consequently, based on the available forward-citation evidence, the classification/uniqueness question for $n=2^k>8$ remains open. Promising directions suggested by the original paper’s viewpoint include translating stability into incidence/association-scheme language on pairs of players (where $v_T$ induces a hierarchy of partitions by “round of possible meeting”), analyzing automorphism groups of the $\\mathrm{GF}(2^k)$-constructed SKC, and searching for alternative constructions via difference sets, orthogonal arrays, or other finite-geometry designs that could yield inequivalent SKCs for $n=16$ or prove rigidity.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Solution #121 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4399497388_p0/solutions/121.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Roel Lambers, Rudi Pendavingh, Frits Spieksma, [*How to Design a Stable Serial Knockout Competition*](https://doi.org/10.1287/moor.2022.0352), Mathematics of Operations Research, 2024.\n- **Location in paper:** Page 13, end of Section 5.2 (after Theorem 3) and reiterated in Section 7 (Discussion), page 14.\n- **Area:** tournament design\n- **Keywords:** `tournament design`, `serial knockout competition`, `stability`, `finite fields`, `combinatorial designs`, `equivalence classes`\n- **Upstream problem record:** [W4399497388_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4399497388_p0&n=121&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Roel Lambers, Rudi Pendavingh, Frits Spieksma, [*How to Design a Stable Serial Knockout Competition*](https://doi.org/10.1287/moor.2022.0352), Mathematics of Operations Research, 2024.\n2. *Tournament design: A review from an operational research perspective*.\n",
+  "conciseness": "medium",
+  "concisenessLabel": "适中"
+}

@@ -1,0 +1,53 @@
+{
+  "id": 144,
+  "title": "Largest achievable domination factor for feasible self-maximizing polynomial-time shares under additivity",
+  "part": "博弈论与数理经济学",
+  "partKey": "part_08_game_theory_and_mathematical_economics",
+  "file": "open_problems/part_08_game_theory_and_mathematical_economics/144_largest_achievable_domination_factor_for_feasible_self_maximizing_polynomial_time_shares/problem.md",
+  "jsonFile": "open_problems/part_08_game_theory_and_mathematical_economics/144_largest_achievable_domination_factor_for_feasible_self_maximizing_polynomial_time_shares/problem.json",
+  "authors": "Moshe Babaioff, Uriel Feige",
+  "source": "Moshe Babaioff, Uriel Feige, Fair Shares: Feasibility, Domination, and Incentives, Mathematics of Operations Research, 2024.",
+  "keywords": "fair division, indivisible goods, maximin share, truthful reporting, self-maximizing shares, approximation ratio, polynomial time",
+  "verification": "待核验",
+  "type": "complexity",
+  "typeLabel": "复杂度 / 可计算性",
+  "typeTags": [
+    "复杂度 / 可计算性",
+    "界 / 近似 / 最优常数"
+  ],
+  "clarity": {
+    "score": 93,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 20,
+      "目标与判据": 21,
+      "范围与边界": 12,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 20/20",
+      "目标与判据 21/25",
+      "范围与边界 12/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Consider fair division of a finite set of indivisible goods $M$ among $n\\ge 2$ equally entitled agents, with no monetary transfers. Each agent has an additive valuation $v:2^M\\to \\mathbb{R}{\\ge 0}$, meaning there are item values $v(j)\\ge 0$ for $j\\in M$ and $v(S)=\\sum{j\\in S} v(j)$ for all $S\\subseteq M$. An allocation is a partition $A=(A1,\\dots,An)$ of $M$ into $n$ (possibly empty) disjoint bundles.",
+  "statement": "$$ subject to all of the following holding (uniformly for all $n\\ge 2$):",
+  "statementLength": 60,
+  "statementSentences": 1,
+  "statementFormulas": 1,
+  "statementComplexityScore": 13,
+  "statementConnectors": 0,
+  "concisenessBasis": "长度 60、句子 1、公式 1、连接结构 0；本批次复杂度分位点 30/54",
+  "familiarity": "high",
+  "familiarityLabel": "高文献可见度",
+  "familiarityScore": 11,
+  "familiarityBasis": "来源元数据、参考文献 6 条、链接/DOI 4 个",
+  "content": "# Largest achievable domination factor for feasible self-maximizing polynomial-time shares under additivity\n\nThis file contains the open problem on Largest achievable domination factor for feasible self-maximizing polynomial-time shares under additivity.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Largest achievable domination factor for feasible self-maximizing polynomial-time shares under additivity\n\nSource paper authors: Moshe Babaioff, Uriel Feige\n\n### 1. Problem Background\n\nConsider fair division of a finite set of indivisible goods $M$ among $n\\ge 2$ equally entitled agents, with no monetary transfers. Each agent has an additive valuation $v:2^M\\to \\mathbb{R}_{\\ge 0}$, meaning there are item values $v(j)\\ge 0$ for $j\\in M$ and $v(S)=\\sum_{j\\in S} v(j)$ for all $S\\subseteq M$. An allocation is a partition $A=(A_1,\\dots,A_n)$ of $M$ into $n$ (possibly empty) disjoint bundles.\n\nA (fairness) share is a function $s$ mapping a valuation $v$ and an agent count $n$ to a nonnegative value $s(v,n)$. A share $s$ is feasible (for additive valuations) if for every instance $(v_1,\\dots,v_n)$ of additive valuations there exists an allocation $A$ such that $v_i(A_i)\\ge s(v_i,n)$ for all agents $i$.\n\nGiven a share $s$, define its (worst acceptable-bundle) guarantee $\\hat s(v,n)$ as the minimum value (under $v$) among bundles whose value is at least $s(v,n)$:\n$$\n\\hat s(v,n)=\\min\\{v(S): S\\subseteq M,\\ v(S)\\ge s(v,n)\\}.\n$$\nFor a true valuation $v$ and a reported valuation $v'$, define the implied guarantee\n$$\n\\hat s_v(v') = \\min\\{v(S): S\\subseteq M,\\ v'(S)\\ge s(v',n)\\}.\n$$\nThe share $s$ is self-maximizing if truthful reporting maximizes the implied guarantee for every additive $v$: $\\hat s_v(v)\\ge \\hat s_v(v')$ for all reports $v'$.\n\nThe maximin share (MMS) for additive $v$ and $n$ agents is\n$$\n\\mathrm{MMS}_n(v)=\\max_{(B_1,\\dots,B_n)\\text{ partition of }M}\\ \\min_{j\\in[n]} v(B_j).\n$$\nA share $s$ is $\\rho$-dominating (for a fixed $n$, or uniformly over $n$) if it guarantees at least a $\\rho$ fraction of the MMS pointwise:\n$$\n s(v,n)\\ \\ge\\ \\rho\\,\\mathrm{MMS}_n(v)\\qquad \\text{for all additive } v.\n$$\n(Equivalently, it $\\rho$-dominates every feasible share, since $\\mathrm{MMS}$ dominates all feasible shares when defined on a fixed $(M,n)$.)\n\nComputability requirement: $s$ is polynomial-time computable if, given additive item values (or value-query access), one can compute $s(v,n)$ in time polynomial in $|M|$ (and the input encoding).\n\n### 2. Open Problem\n\n**Question 1.1.** Determine\n$$\n\\rho^* = \\sup\\Big\\{\\rho\\in[0,1]: \\exists\\ \\text{a share } s \\text{ for additive valuations such that}\\Big\\}\n\n$$\nsubject to all of the following holding (uniformly for all $n\\ge 2$):\n\n1) (Feasibility) For every $n\\ge 2$ and every additive instance $(v_1,\\dots,v_n)$, there exists an allocation $A$ with $v_i(A_i)\\ge s(v_i,n)$ for all $i$.\n\n2) (Self-maximizing) For every $n\\ge 2$, every additive true valuation $v$, and every additive report $v'$, $\\hat s_v(v)\\ge \\hat s_v(v')$.\n\n3) (Polynomial-time computable) For every $n\\ge 2$ and additive $v$, the value $s(v,n)$ can be computed in polynomial time.\n\n4) ($\\rho$-domination of MMS) For every $n\\ge 2$ and additive $v$, $s(v,n)\\ge \\rho\\,\\mathrm{MMS}_n(v)$.\n\nEquivalently, compute the maximal approximation factor $\\rho^*$ achievable by feasible, self-maximizing, polynomial-time computable shares relative to $\\mathrm{MMS}_n$ for additive valuations.\n\n### 3. Known Results\n\nThe Babaioff--Feige open problem asks for the largest uniform $\\rho^*$ such that there exists a share function $s(v,n)$ for additive valuations that is simultaneously feasible (there is always an allocation meeting all agents' shares), self-maximizing in the implied-guarantee sense $\\hat s_v(v)\\ge \\hat s_v(v')$, polynomial-time computable, and pointwise $\\rho$-dominating the maximin share $\\mathrm{MMS}_n$. In the source paper, Babaioff and Feige introduce the share/contract viewpoint, prove that exact SM-domination is impossible for any class containing additive valuations (via picking-order shares and MMS infeasibility), and then give explicit positive constructions: ordinal maximin shares (self-maximizing by design) and the nested shares $\\mathrm{NS}_{n,3}$, which are feasible, polynomial-time computable, and guarantee $\\frac{2n}{3n-1}$-MMS for all $n$, improving to $4/5$-MMS for $n\\le 4$; for $n=2$ they give a PTAS achieving $(1-\\varepsilon)$-MMS.\n\nSubsequent work in the forward-citation set does not determine $\\rho^*$ in this exact framework. Several papers explore adjacent notions of feasible shares: quantile shares and thinned quantile shares establish constant-quantile feasibility (even universal feasibility for all monotone valuations after thinning), and these benchmarks are also (informally) self-maximizing and efficiently approximable by sampling. However, these works do not provide pointwise lower bounds of the form $s(v,n)\\ge \\rho\\,\\mathrm{MMS}_n(v)$ for all additive $v$, so they do not improve the best known $\\rho$ under the MMS-domination requirement.\n\nOn the incentives side, work on truthful(-in-expectation) mechanisms and on characterizations of deterministic truthful mechanisms highlights strong constraints when one insists on dominant-strategy truthfulness of allocation rules; these results yield poor MMS approximations for broad classes of truthful mechanisms. While conceptually related, they do not translate directly to the implied-guarantee self-maximization condition for shares. Overall, the state of the art remains that constant $\\rho$ is achievable (at least $\\approx 2/3$ uniformly in $n$ via nested shares, and $4/5$ for $n\\le 4$), but the optimal uniform $\\rho^*$ for feasible, self-maximizing, polynomial-time shares that dominate $\\mathrm{MMS}_n$ for additive valuations remains open.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #128 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4401117667_p0/partial_progress/128.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Moshe Babaioff, Uriel Feige, [*Fair Shares: Feasibility, Domination, and Incentives*](https://doi.org/10.1287/moor.2022.0257), Mathematics of Operations Research, 2024.\n- **Location in paper:** Page 7, Section 1.2 (Our Results), end of paragraph discussing [GT20] and Theorem 3; reiterated Page 26, Section 7 (Discussion), final paragraph.\n- **Area:** fair division\n- **Keywords:** `fair division`, `indivisible goods`, `maximin share`, `truthful reporting`, `self-maximizing shares`, `approximation ratio`, `polynomial time`\n- **Upstream problem record:** [W4401117667_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4401117667_p0&n=128&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Moshe Babaioff, Uriel Feige, [*Fair Shares: Feasibility, Domination, and Incentives*](https://doi.org/10.1287/moor.2022.0257), Mathematics of Operations Research, 2024.\n2. [*Fair division via quantile shares*](https://doi.org/10.1145/3618260.3649728).\n3. *Thinned Quantile Shares are Universally Feasible*.\n4. *Truthful-in-Expectation Mechanisms for MMS Approximation*.\n5. *Near-Optimal Best-of-Both-Worlds Fairness for Few Agents*.\n6. *On Truthful Mechanisms without Pareto-efficiency: Characterizations and Fairness*.\n",
+  "conciseness": "short",
+  "concisenessLabel": "简洁"
+}

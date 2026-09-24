@@ -1,0 +1,53 @@
+{
+  "id": 45,
+  "title": "Well-posedness theory for coupled multidimensional quadratic BSDEs in portfolio equilibria",
+  "part": "概率与随机模型",
+  "partKey": "part_06_probability_and_stochastic_models",
+  "file": "open_problems/part_06_probability_and_stochastic_models/45_well_posedness_theory_for_coupled_multidimensional_quadratic_bsdes_in_portfolio_equilibr/problem.md",
+  "jsonFile": "open_problems/part_06_probability_and_stochastic_models/45_well_posedness_theory_for_coupled_multidimensional_quadratic_bsdes_in_portfolio_equilibr/problem.json",
+  "authors": "Zongxia Liang, Jianming Xia, Fengyi Yuan",
+  "source": "Zongxia Liang, Jianming Xia, Fengyi Yuan, Dynamic Portfolio Selection for Nonlinear Law-Dependent Preferences, Mathematics of Operations Research, 2025.",
+  "keywords": "quadratic BSDE, multidimensional BSDE, well-posedness, BMO martingales, coupled systems, portfolio equilibrium",
+  "verification": "待核验",
+  "type": "existence",
+  "typeLabel": "存在性 / 唯一性",
+  "typeTags": [
+    "存在性 / 唯一性"
+  ],
+  "clarity": {
+    "score": 55,
+    "level": "L2",
+    "label": "方向明确",
+    "description": "研究方向和目标可辨认，完整形式化前仍需补充关键条件。",
+    "components": {
+      "问题陈述": 17,
+      "对象与假设": 8,
+      "目标与判据": 11,
+      "范围与边界": 6,
+      "单一性": 13
+    },
+    "reasons": [
+      "问题陈述 17/25",
+      "对象与假设 8/20",
+      "目标与判据 11/25",
+      "范围与边界 6/15",
+      "单一性 13/15",
+      "出现宽泛或并列扩展措辞，需人工确认边界"
+    ]
+  },
+  "summary": "Let $(\\Omega,\\mathcal F,\\mathbb F,\\mathbb P)$ be a filtered probability space supporting a Brownian motion $W$ on $[0,T]$, and consider backward stochastic differential equations (BSDEs) for unknown adapted processes $(Y,Z)$, where $Y=(Y^1,\\dots,Y^m)$ is $\\mathbb R^m$-valued and $Z=(Z^1,\\dots,Z^m)$ with $Z^i\\in\\mathbb R^d$. A (multi-dimensional) quadratic BSDE has the form $$",
+  "statement": "Question 1.1. Develop general existence and uniqueness results for coupled multi-dimensional quadratic BSDE systems with genuinely coupled (cross-term) quadratic generators, beyond special structures such as diagonally quadratic or triangular forms, in a solution class such as $Y\\in L^\\infty$ and $Z",
+  "statementLength": 261,
+  "statementSentences": 2,
+  "statementFormulas": 1,
+  "statementComplexityScore": 50,
+  "statementConnectors": 3,
+  "concisenessBasis": "长度 261、句子 2、公式 1、连接结构 3；本批次复杂度分位点 30/54",
+  "familiarity": "high",
+  "familiarityLabel": "高文献可见度",
+  "familiarityScore": 10,
+  "familiarityBasis": "来源元数据、参考文献 4 条、链接/DOI 4 个",
+  "content": "# Well-posedness theory for coupled multidimensional quadratic BSDEs in portfolio equilibria\n\nThis file contains the open problem on Well-posedness theory for coupled multidimensional quadratic BSDEs in portfolio equilibria.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Well-posedness theory for coupled multidimensional quadratic BSDEs in portfolio equilibria\n\nSource paper authors: Zongxia Liang, Jianming Xia, Fengyi Yuan\n\n### 1. Problem Background\n\nLet\n$(\\Omega,\\mathcal F,\\mathbb F,\\mathbb P)$ be a filtered probability space supporting a Brownian motion $W$ on $[0,T]$, and consider backward stochastic differential equations (BSDEs) for unknown adapted processes $(Y,Z)$, where $Y=(Y^1,\\dots,Y^m)$ is $\\mathbb R^m$-valued and $Z=(Z^1,\\dots,Z^m)$ with $Z^i\\in\\mathbb R^d$. A (multi-dimensional) quadratic BSDE has the form\n$$\n\nY_t = \\xi + \\int_t^T f(s,Y_s,Z_s)\\,ds - \\int_t^T Z_s\\,dW_s,\n\n$$\nwhere the generator $f$ has quadratic growth in $Z$, e.g. $|f(s,y,z)|\\lesssim 1+|z|^2$. In many applications (including equilibrium characterizations in time-inconsistent portfolio selection with nonlinear law-dependent preferences), one obtains *coupled* systems where components $(Y^i,Z^i)$ interact through cross terms in $Z$, yielding generators that are neither diagonally quadratic nor triangular.\n\nA basic mathematical issue is *well-posedness*: existence and uniqueness of a solution $(Y,Z)$ in a natural solution class such as bounded $Y$ and BMO-integrable $Z$ (i.e., $\\int_0^\\cdot Z_s\\,dW_s$ is a BMO martingale). Current general results for multi-dimensional quadratic BSDEs typically require additional structural assumptions (e.g. diagonally quadratic or triangular generators) or smallness conditions on data.\n\n### 2. Open Problem\n\n**Question 1.1.** Develop general existence and uniqueness results for coupled multi-dimensional quadratic BSDE systems with genuinely coupled (cross-term) quadratic generators, beyond special structures such as diagonally quadratic or triangular forms, in a solution class such as $Y\\in L^\\infty$ and $Z$ BMO-integrable.\n\n### 3. Known Results\n\nThe open problem, as formulated in Liang–Xia–Yuan (2023), asks for a general well-posedness theory (existence and uniqueness, typically in $Y\\in L^\\infty$ and $Z$ BMO) for genuinely coupled multidimensional quadratic BSDE systems whose generators contain cross-term quadratic interactions in $Z$ and do not fall into diagonally quadratic or triangular classes. In their weighted-utility example, the equilibrium first-order condition leads to a coupled 2D QBSDE system (equations (6.3)–(6.4)) and the authors obtain solvability only by exploiting special linear–quadratic structure plus a smallness condition expressed via $V(\\Theta)=\\sup_\\tau\\|\\Theta-\\mathbb E_\\tau[\\Theta]\\|_\\infty$ for $\\Theta=\\int_0^T|\\kappa_s|^2ds$, i.e., $\\kappa$ close to deterministic. This highlights that the general coupled case remains outside current theory.\n\nAmong the forward citations provided, the most directly aligned is \"Equilibrium Portfolio Selection under Utility-Variance Analysis of Log Returns in Incomplete Markets\", which produces another explicit genuinely coupled 2D quadratic BSDE system for equilibrium controls and similarly shows that existing multidimensional quadratic BSDE results do not apply in the unconstrained correlated-noise regime. It establishes well-posedness only in regimes where the coupling disappears ($\\rho=0$) or where constraints/projected dynamics bring the system into an AB+BF framework covered by existing results (e.g., Xing–Zitkovi\\'c-type conditions), and otherwise resorts to perturbative approximate equilibria for small correlation. The other two citations provide methodological or contextual background (deterministic integral-equation characterization; linear/1D BSDE equilibrium conditions) but do not advance the general $L^\\infty\\times$BMO well-posedness theory for cross-coupled quadratic generators.\n\nOverall, the problem remains open: current progress is application-driven and relies on special structure (pure linear–quadratic forms, measure-change/BMO norm equivalences) and/or smallness assumptions on data, rather than a general existence/uniqueness theorem for fully coupled multidimensional quadratic BSDEs with cross terms. Promising directions suggested by these works include: identifying new structural conditions beyond diagonal/triangular (e.g., monotonicity/convexity in suitable directions, or Lyapunov-function criteria), developing robust a priori BMO estimates stable under coupling, and extending AB/wAB-type frameworks to handle genuine cross-quadratic interactions without smallness constraints.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #18 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4411801764_p0/partial_progress/18.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Zongxia Liang, Jianming Xia, Fengyi Yuan, [*Dynamic Portfolio Selection for Nonlinear Law-Dependent Preferences*](https://doi.org/10.1287/moor.2023.0345), Mathematics of Operations Research, 2025.\n- **Location in paper:** Page 15, Section 6 (Remark 6.2(a))\n- **Area:** quadratic bsdes\n- **Keywords:** `quadratic BSDE`, `multidimensional BSDE`, `well-posedness`, `BMO martingales`, `coupled systems`, `portfolio equilibrium`\n- **Upstream problem record:** [W4411801764_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4411801764_p0&n=18&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Zongxia Liang, Jianming Xia, Fengyi Yuan, [*Dynamic Portfolio Selection for Nonlinear Law-Dependent Preferences*](https://doi.org/10.1287/moor.2023.0345), Mathematics of Operations Research, 2025.\n2. *Equilibrium Portfolio Selection under Utility-Variance Analysis of Log Returns in Incomplete Markets*.\n3. [*An integral equation in portfolio selection with time-inconsistent preferences*](https://doi.org/10.1137/24M170301X).\n4. *Time-consistent portfolio selection with strictly monotone mean-variance preference*.\n",
+  "conciseness": "medium",
+  "concisenessLabel": "适中"
+}

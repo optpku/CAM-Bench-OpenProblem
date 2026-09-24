@@ -1,0 +1,52 @@
+{
+  "id": 82,
+  "title": "Deciding existence of equilibria in Fisher markets with earning and utility limits",
+  "part": "博弈论与数理经济学",
+  "partKey": "part_08_game_theory_and_mathematical_economics",
+  "file": "open_problems/part_08_game_theory_and_mathematical_economics/82_deciding_existence_of_equilibria_in_fisher_markets_with_earning_and_utility_limits/problem.md",
+  "jsonFile": "open_problems/part_08_game_theory_and_mathematical_economics/82_deciding_existence_of_equilibria_in_fisher_markets_with_earning_and_utility_limits/problem.json",
+  "authors": "Jugal Garg, Martin Hoefer, Kurt Mehlhorn",
+  "source": "Jugal Garg, Martin Hoefer, Kurt Mehlhorn, Satiation in Fisher Markets and Approximation of Nash Social Welfare, Mathematics of Operations Research, 2023.",
+  "keywords": "Fisher markets, market equilibrium, earning caps, utility caps, existence complexity, NP-hardness, polynomial characterization",
+  "verification": "待核验",
+  "type": "existence",
+  "typeLabel": "存在性 / 唯一性",
+  "typeTags": [
+    "存在性 / 唯一性"
+  ],
+  "clarity": {
+    "score": 85,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 16,
+      "目标与判据": 23,
+      "范围与边界": 6,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 16/20",
+      "目标与判据 23/25",
+      "范围与边界 6/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "A (linear) Fisher market with satiation consists of: 1) A set of buyers $B$ and a set of divisible goods $G$, each good $j\\in G$ having unit supply. 2) For each buyer $i\\in B$: a budget $mi\\ge 0$, a utility cap $ci>0$, and per-unit values $u{ij}\\ge 0$ for goods $j\\in G$. 3) For each good $j\\in G$: an earning (income) cap $dj>0$.",
+  "statement": "\\text{(i) } p\\ge 0;\\qquad \\text{(ii) each }xi\\text{ is an MBB and modest demand bundle at }p;\\qquad \\text{(iii) }xj\\le \\min\\Bigl(1,\\frac{dj}{pj}\\Bigr);\\qquad \\text{(iv) } pj\\Bigl(\\min\\Bigl(1,\\frac{dj}{pj}\\Bigr)-xj\\Bigr)=0\\ \\forall j.",
+  "statementLength": 210,
+  "statementSentences": 1,
+  "statementFormulas": 0,
+  "statementComplexityScore": 33,
+  "statementConnectors": 1,
+  "concisenessBasis": "长度 210、句子 1、公式 0、连接结构 1；本批次复杂度分位点 30/54",
+  "familiarity": "medium",
+  "familiarityLabel": "中文献可见度",
+  "familiarityScore": 8,
+  "familiarityBasis": "来源元数据、参考文献 2 条、链接/DOI 2 个",
+  "content": "# Deciding existence of equilibria in Fisher markets with earning and utility limits\n\nThis file contains the open problem on Deciding existence of equilibria in Fisher markets with earning and utility limits.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Deciding existence of equilibria in Fisher markets with earning and utility limits\n\nSource paper authors: Jugal Garg, Martin Hoefer, Kurt Mehlhorn\n\n### 1. Problem Background\n\nA (linear) Fisher market with satiation consists of:\n1) A set of buyers $B$ and a set of divisible goods $G$, each good $j\\in G$ having unit supply.\n2) For each buyer $i\\in B$: a budget $m_i\\ge 0$, a utility cap $c_i>0$, and per-unit values $u_{ij}\\ge 0$ for goods $j\\in G$.\n3) For each good $j\\in G$: an earning (income) cap $d_j>0$.\n\nAn allocation is a matrix $x=(x_{ij})_{i\\in B, j\\in G}$ with $x_{ij}\\in[0,1]$ and $\\sum_{i\\in B} x_{ij}=x_j\\le 1$ for each good $j$. Buyer $i$'s budget-additive utility is\n$$\n\nU_i(x_i)=\\min\\Bigl(c_i,\\;\\sum_{j\\in G} u_{ij}x_{ij}\\Bigr),\\qquad x_i=(x_{ij})_{j\\in G}.\n\n$$\nLet $p=(p_j)_{j\\in G}$ be nonnegative prices. Given prices $p$, define buyer $i$'s maximum bang-per-buck (MBB) ratio as\n$$\n\n\\alpha_i=\\max_{j\\in G: p_j>0}\\frac{u_{ij}}{p_j},\n\n$$\n(with the convention that goods with $p_j=0$ are treated separately). A bundle is MBB (also called thrifty) for buyer $i$ if it assigns positive amount only to goods attaining the maximum ratio $u_{ij}/p_j=\\alpha_i$.\n\nA demand bundle for buyer $i$ at prices $p$ is any $x_i$ that maximizes $U_i(x_i)$ subject to the budget constraint $\\sum_j p_j x_{ij}\\le m_i$. A demand bundle is called modest if it does not overshoot the cap, i.e., $\\sum_j u_{ij}x_{ij}\\le c_i$ (equivalently, if capped then it hits $c_i$ exactly).\n\nFor each good $j$, a seller chooses an effective supply $e_j\\le 1$ to maximize revenue up to its earning cap, i.e., earns $\\min(d_j, p_j e_j)$. A modest supply at prices $p$ is\n$$\n\ne_j=\\min\\Bigl(1,\\frac{d_j}{p_j}\\Bigr)\n\n$$\n(with $e_j=1$ if $p_j=0$ by continuity).\n\nA thrifty and modest equilibrium is a pair $(x,p)$ such that:\n1) $p_j\\ge 0$ for all $j$.\n2) Each buyer $i$ receives a thrifty (MBB) and modest demand bundle at prices $p$.\n3) Each good $j$ uses a modest supply $e_j$ and is not overallocated: $x_j\\le e_j$.\n4) Walras' law holds: $p_j(e_j-x_j)=0$ for all $j$ (so if a good is not fully sold under its modest supply, its price is zero).\n\nThe computational decision problem asks, given integer input data $(u_{ij},m_i,c_i,d_j)$, whether at least one thrifty and modest equilibrium exists.\n\n### 2. Open Problem\n\n**Question 1.1.** Given a Fisher market instance specified by $B,G$ and nonnegative parameters $(u_{ij})$, $(m_i)$, $(c_i)$, and $(d_j)$, determine whether there exists a thrifty and modest equilibrium $(x,p)$ satisfying:\n$$\n\n\\text{(i) } p\\ge 0;\\qquad \\text{(ii) each }x_i\\text{ is an MBB and modest demand bundle at }p;\\qquad \\text{(iii) }x_j\\le \\min\\Bigl(1,\\frac{d_j}{p_j}\\Bigr);\\qquad \\text{(iv) } p_j\\Bigl(\\min\\Bigl(1,\\frac{d_j}{p_j}\\Bigr)-x_j\\Bigr)=0\\ \\forall j.\n\n$$\nEquivalently, decide the existence (and, if desired, compute one) of such an equilibrium for markets with both earning caps $(d_j)$ and utility caps $(c_i)$.\n\n### 3. Known Results\n\nThe open problem from Garg–Hoefer–Mehlhorn asks for a decision procedure for existence of a thrifty and modest equilibrium in linear Fisher markets with both buyer utility caps $c_i$ (budget-additive satiation) and seller earning caps $d_j$. The source paper establishes that equilibrium existence is not guaranteed in general, and identifies the money-clearing condition $\\sum_{i\\in \\hat B} m_i \\le \\sum_{j\\in N(\\hat B)} d_j$ as a sufficient (but not necessary) condition for existence. It further shows nonconvexity of the equilibrium set, provides an FPTAS for approximate equilibria in money-clearing markets via perturbation and a descending-price method, and places exact equilibrium computation (under money clearing) in $\\mathrm{PPAD}\\cap\\mathrm{PLS}$, with polynomial-time solvability when the number of buyers or goods is constant.\n\nAmong the forward citations provided, the thesis “Nash Welfare, Valuated Matroids, and Gross Substitues” contributes related algorithmic tools (auction algorithms for approximate equilibria under weak gross substitutes and spending-restricted variants, including capped utilities in budget-SPLC form). However, it does not resolve the core existence/decidability question for the combined earning+utility cap Fisher model with the specific thrifty/modest equilibrium notion. Consequently, based on the available citation set, the decision problem remains open beyond the sufficient money-clearing regime, and no complete characterization or hardness result is identified here.\n\nPromising directions suggested by the source paper’s techniques include: (i) seeking a necessary-and-sufficient combinatorial condition generalizing money clearing to incorporate utility caps, (ii) proving hardness (e.g., NP-hardness) of existence when money clearing fails, potentially via reductions that exploit nonconvexity and zero-price components, and (iii) leveraging the LCP/Lemke framework to derive certificates of nonexistence or to separate equilibrium from spurious LCP solutions without assuming money clearing.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #57 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W2965273013_p0/partial_progress/57.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Jugal Garg, Martin Hoefer, Kurt Mehlhorn, [*Satiation in Fisher Markets and Approximation of Nash Social Welfare*](https://doi.org/10.1287/moor.2019.0129), Mathematics of Operations Research, 2023.\n- **Location in paper:** Section 5 (Future Directions), page 32.\n- **Area:** fisher market equilibrium\n- **Keywords:** `Fisher markets`, `market equilibrium`, `earning caps`, `utility caps`, `existence complexity`, `NP-hardness`, `polynomial characterization`\n- **Upstream problem record:** [W2965273013_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W2965273013_p0&n=57&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Jugal Garg, Martin Hoefer, Kurt Mehlhorn, [*Satiation in Fisher Markets and Approximation of Nash Social Welfare*](https://doi.org/10.1287/moor.2019.0129), Mathematics of Operations Research, 2023.\n2. *Nash Welfare, Valuated Matroids, and Gross Substitues*.\n",
+  "conciseness": "medium",
+  "concisenessLabel": "适中"
+}

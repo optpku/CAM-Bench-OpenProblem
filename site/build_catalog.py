@@ -18,17 +18,23 @@ PROBLEMS = ROOT / "open_problems"
 SITE = Path(__file__).resolve().parent
 CATALOG_OUT = SITE / "catalog.json"
 
-PARTS = {
-    "part_01_geometry": "几何",
-    "part_02_continuous_optimization": "连续优化",
-    "part_03_combinatorics": "组合数学",
-    "part_04_computational_mathematics": "计算数学",
-    "part_05_decision_making_and_games": "决策与博弈",
-    "part_06_distributed_optimization": "分布式优化",
-    "part_07_discrete_optimization_and_algorithms": "离散优化与算法",
-    "part_08_markets_mechanism_design_and_online_algorithms": "市场、机制设计与在线算法",
-    "part_09_stochastic_models_and_applied_probability": "随机模型与应用概率",
-}
+def load_taxonomy() -> dict[int, dict]:
+    """Read the editorial categories and their stable problem IDs."""
+    parts = json.loads((SITE / "taxonomy.json").read_text(encoding="utf-8"))["parts"]
+    assignments = {}
+    keys = set()
+    for part in parts:
+        if part["key"] in keys:
+            raise ValueError(f"Duplicate taxonomy key: {part['key']}")
+        keys.add(part["key"])
+        for pid in part["problemIds"]:
+            if pid in assignments:
+                raise ValueError(f"Problem {pid} has multiple primary parts")
+            assignments[pid] = part
+    return assignments
+
+
+TAXONOMY = load_taxonomy()
 
 
 def clean_inline(value: str) -> str:
@@ -222,10 +228,6 @@ def parse(path: Path) -> dict:
     text = path.read_text(encoding="utf-8")
     title_match = re.search(r"^#\s+(.+?)\s*$", text, re.M)
     title = clean_inline(title_match.group(1)) if title_match else path.stem
-    # Problem files live in a directory named after the problem, one level
-    # below their thematic part.
-    part_key = path.parent.parent.name
-    part = PARTS.get(part_key, part_key)
     statement = section(text, ("open problem", "open problems", "technical objectives"))
     background = section(text, ("problem background",))
     source_match = re.search(r"\*\*Source paper:\*\*\s*(.+)", text)
@@ -234,6 +236,9 @@ def parse(path: Path) -> dict:
     verification = "待核验" if "Verification status:** Unverified" in text else "专题整理"
     number_match = re.match(r"(\d+)_", path.parent.name)
     pid = int(number_match.group(1)) if number_match else 0
+    category = TAXONOMY[pid]
+    if path.parent.parent.name != category["key"]:
+        raise ValueError(f"Problem {pid} directory does not match its taxonomy part")
     clarity_info = clarity(title, text, statement)
     ptype, tags = problem_type(title, statement)
     display_statement = first_paragraph(statement)
@@ -242,8 +247,8 @@ def parse(path: Path) -> dict:
     return {
         "id": pid,
         "title": title,
-        "part": part,
-        "partKey": part_key,
+        "part": category["label"],
+        "partKey": category["key"],
         "file": str(path.relative_to(ROOT)).replace("\\", "/"),
         "jsonFile": json_file,
         "authors": clean_inline(authors_match.group(1)) if authors_match else "",
@@ -267,9 +272,11 @@ def parse(path: Path) -> dict:
 
 
 def main() -> None:
-    paths = sorted(PROBLEMS.rglob("*.md"), key=lambda p: int(p.parent.name.split("_", 1)[0]))
+    paths = sorted(PROBLEMS.rglob("problem.md"), key=lambda p: int(p.parent.name.split("_", 1)[0]))
     records = [parse(p) for p in paths]
     assert [r["id"] for r in records] == list(range(1, 163)), "problem IDs must be exactly 1..162"
+    if set(TAXONOMY) != {r["id"] for r in records}:
+        raise ValueError("Taxonomy assignments must match the problem collection exactly")
     assign_conciseness(records)
     for path, record in zip(paths, records):
         path.with_name("problem.json").write_text(

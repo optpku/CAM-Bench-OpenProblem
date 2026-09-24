@@ -1,0 +1,55 @@
+{
+  "id": 125,
+  "title": "Extend exchangeable joint-mix optimality for uncertain subsets under general convex costs",
+  "part": "概率与随机模型",
+  "partKey": "part_06_probability_and_stochastic_models",
+  "file": "open_problems/part_06_probability_and_stochastic_models/125_extend_exchangeable_joint_mix_optimality_for_uncertain_subsets_under_general_convex_cost/problem.md",
+  "jsonFile": "open_problems/part_06_probability_and_stochastic_models/125_extend_exchangeable_joint_mix_optimality_for_uncertain_subsets_under_general_convex_cost/problem.json",
+  "authors": "Takaaki Koike, Liyuan Lin, Ruodu Wang",
+  "source": "Takaaki Koike, Liyuan Lin, Ruodu Wang, Joint Mixability and Notions of Negative Dependence, Mathematics of Operations Research, 2024.",
+  "keywords": "joint mixability, negative dependence, multi-marginal optimal transport, robust optimization, convex cost, exchangeability",
+  "verification": "待核验",
+  "type": "characterization",
+  "typeLabel": "刻画 / 等价条件",
+  "typeTags": [
+    "刻画 / 等价条件",
+    "界 / 近似 / 最优常数",
+    "优化模型 / 算子"
+  ],
+  "clarity": {
+    "score": 89,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 20,
+      "目标与判据": 19,
+      "范围与边界": 12,
+      "单一性": 13
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 20/20",
+      "目标与判据 19/25",
+      "范围与边界 12/15",
+      "单一性 13/15",
+      "出现宽泛或并列扩展措辞，需人工确认边界"
+    ]
+  },
+  "summary": "Let $n\\ge 2$ and let $[n]=\\{1,\\dots,n\\}$. Let $F$ be a univariate probability distribution on $\\mathbb{R}$ with finite second moment, and consider random vectors $X=(X1,\\dots,Xn)$ such that $Xi\\sim F$ for all $i\\in[n]$ (identical marginals).",
+  "statement": "Determine whether, for every convex measurable $f:\\mathbb{R}\\to\\mathbb{R}$ (with finite expectations), there exists an exchangeable joint mix $X$ with marginals $F$ that attains the optimum of the robust problem $$",
+  "statementLength": 186,
+  "statementSentences": 1,
+  "statementFormulas": 3,
+  "statementComplexityScore": 35,
+  "statementConnectors": 1,
+  "concisenessBasis": "长度 186、句子 1、公式 3、连接结构 1；本批次复杂度分位点 30/54",
+  "familiarity": "medium",
+  "familiarityLabel": "中文献可见度",
+  "familiarityScore": 8,
+  "familiarityBasis": "来源元数据、参考文献 2 条、链接/DOI 2 个",
+  "content": "# Extend exchangeable joint-mix optimality for uncertain subsets under general convex costs\n\nThis file contains the open problem on Extend exchangeable joint-mix optimality for uncertain subsets under general convex costs.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Extend exchangeable joint-mix optimality for uncertain subsets under general convex costs\n\nSource paper authors: Takaaki Koike, Liyuan Lin, Ruodu Wang\n\n### 1. Problem Background\n\nLet $n\\ge 2$ and let $[n]=\\{1,\\dots,n\\}$. Let $F$ be a univariate probability distribution on $\\mathbb{R}$ with finite second moment, and consider random vectors $X=(X_1,\\dots,X_n)$ such that $X_i\\sim F$ for all $i\\in[n]$ (identical marginals).\n\nFor a subset $K\\subseteq[n]$, define the partial sum $S_K(X)=\\sum_{i\\in K} X_i$, with the convention $S_\\varnothing(X)=0$. Let $f:\\mathbb{R}\\to\\mathbb{R}$ be a convex measurable function such that the relevant expectations are finite.\n\nLet $2^{[n]}$ denote the power set of $[n]$. For a probability measure $\\mu$ on $2^{[n]}$, define the uncertainty-averaged cost functional\n$$\n\nC_f^\\mu(X):=\\sum_{K\\subseteq[n]} \\mathbb{E}\\bigl[f(S_K(X))\\bigr]\\,\\mu(K).\n\n$$\nLet $\\mathcal{M}$ be a nonempty set of probability measures on $2^{[n]}$ (an \"uncertainty set\"). Call $\\mathcal{M}$ symmetric if for every $\\mu\\in\\mathcal{M}$ and every permutation $\\pi$ of $[n]$, the permuted measure $\\mu^\\pi$ defined by $\\mu^\\pi(K)=\\mu(\\pi(K))$ also lies in $\\mathcal{M}$, where $\\pi(K)=\\{\\pi(i): i\\in K\\}$.\n\nThe robust multi-marginal transport problem under subset uncertainty is\n$$\n\n\\inf\\Bigl\\{\\sup_{\\mu\\in\\mathcal{M}} C_f^\\mu(X):\\ X_i\\sim F\\ \\text{for all } i\\in[n]\\Bigr\\}.\n\n$$\nA random vector $X$ is exchangeable if $(X_1,\\dots,X_n)$ is distributionally invariant under permutations of coordinates. A joint mix is a vector with $\\sum_{i=1}^n X_i=c$ almost surely for some constant $c$ (for identical marginals this is tied to complete mixability of $F$).\n\n### 2. Open Problem\n\n**Question 1.1.** Assume $F$ is $n$-completely mixable (so that at least one joint mix with marginals $F$ exists) and assume $\\mathcal{M}$ is symmetric.\n\nDetermine whether, for every convex measurable $f:\\mathbb{R}\\to\\mathbb{R}$ (with finite expectations), there exists an exchangeable joint mix $X$ with marginals $F$ that attains the optimum of the robust problem\n$$\n\n\\inf\\Bigl\\{\\sup_{\\mu\\in\\mathcal{M}} \\sum_{K\\subseteq[n]} \\mathbb{E}\\bigl[f(S_K(X))\\bigr]\\,\\mu(K):\\ X_i\\sim F\\ \\text{for all } i\\in[n]\\Bigr\\}.\n\n$$\nEquivalently: characterize conditions under which some exchangeable joint mix solves the above robust optimization for general convex $f$.\n\n### 3. Known Results\n\nThe open question posed by Koike, Lin, and Wang asks whether, under symmetric subset uncertainty $\\mathcal M$ and assuming $F$ is $n$-completely mixable, one can always find an exchangeable joint mix that solves the robust multi-marginal transport problem $\\inf_X \\sup_{\\mu\\in\\mathcal M} \\sum_{K\\subseteq[n]} \\mathbb E[f(S_K(X))]\\,\\mu(K)$ for every convex measurable $f$. The source paper proves this robust optimality for the quadratic cost $f(x)=x^2$ (Theorem 4) and gives a strong uniqueness statement for max-over-subsets formulations (Theorem 5), showing that the optimizer must be an exchangeable negatively correlated joint mix with equicorrelation matrix $P_n^*$ in the homogeneous case. However, the extension to general convex $f$ remains open and is explicitly listed as Open Question 4 in the paper.\n\nAmong the forward citations provided, \"Extended Convolution Bounds on the Fr\\'{e}chet Problem: Robust Risk Aggregation and Risk Sharing\" develops sharp bounds for robust aggregation of RVaR/quantile-type functionals over Fr\\'{e}chet classes, which is adjacent in spirit to dependence-robust optimization. Nevertheless, it does not treat subset-indexed partial sums $S_K$, nor the maxmin formulation over an uncertainty set $\\mathcal M\\subset \\mathcal P(2^{[n]})$, and it does not establish joint-mix or exchangeability optimality for general convex costs. At present, based on the supplied citation set, there is no paper resolving the general-convex-cost robust subset-uncertainty problem; progress appears limited to the quadratic-cost case and related dependence-extremal tools.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Solution #108 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4391315199_p0/solutions/108.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Takaaki Koike, Liyuan Lin, Ruodu Wang, [*Joint Mixability and Notions of Negative Dependence*](https://doi.org/10.1287/moor.2022.0121), Mathematics of Operations Research, 2024.\n- **Location in paper:** Section 6 (Conclusion), page 19 (in the provided parsed text; labeled page 19/32).\n- **Area:** robust optimal transport\n- **Keywords:** `joint mixability`, `negative dependence`, `multi-marginal optimal transport`, `robust optimization`, `convex cost`, `exchangeability`\n- **Upstream problem record:** [W4391315199_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4391315199_p0&n=108&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Takaaki Koike, Liyuan Lin, Ruodu Wang, [*Joint Mixability and Notions of Negative Dependence*](https://doi.org/10.1287/moor.2022.0121), Mathematics of Operations Research, 2024.\n2. *Extended Convolution Bounds on the Fr\\'{e} chet Problem: Robust Risk Aggregation and Risk Sharing*.\n",
+  "conciseness": "medium",
+  "concisenessLabel": "适中"
+}

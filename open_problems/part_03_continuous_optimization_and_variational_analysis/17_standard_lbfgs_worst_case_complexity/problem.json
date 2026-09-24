@@ -1,0 +1,56 @@
+{
+  "id": 17,
+  "title": "Worst-Case Theory for Standard L-BFGS",
+  "part": "连续优化与变分分析",
+  "partKey": "part_03_continuous_optimization_and_variational_analysis",
+  "file": "open_problems/part_03_continuous_optimization_and_variational_analysis/17_standard_lbfgs_worst_case_complexity/problem.md",
+  "jsonFile": "open_problems/part_03_continuous_optimization_and_variational_analysis/17_standard_lbfgs_worst_case_complexity/problem.json",
+  "authors": "",
+  "source": "",
+  "keywords": "",
+  "verification": "专题整理",
+  "type": "bound",
+  "typeLabel": "界 / 近似 / 最优常数",
+  "typeTags": [
+    "界 / 近似 / 最优常数",
+    "算法 / 机制设计",
+    "证明或反例",
+    "优化模型 / 算子"
+  ],
+  "clarity": {
+    "score": 85,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 16,
+      "目标与判据": 25,
+      "范围与边界": 10,
+      "单一性": 9
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 16/20",
+      "目标与判据 25/25",
+      "范围与边界 10/15",
+      "单一性 9/15",
+      "检测到 3 个子问题，按多目标议题扣分"
+    ]
+  },
+  "summary": "L-BFGS replaces the dense BFGS matrix by an implicit inverse-Hessian approximation formed from only the most recent $m$ curvature pairs $$ (si,yi),\\qquad si=x{i+1}-xi,\\qquad yi=\\nabla f(x{i+1})-\\nabla f(xi). $$ Its two-loop recursion requires $O(md)$ time and memory in dimension $d$, making it one of the most widely used deterministic large-scale optimization methods.",
+  "statement": "The result should apply to the classical algorithm that stores the most recent curvature pairs and uses the standard two-loop recursion, rather than replacing the update directions by a greedy basis-selection rule.",
+  "statementLength": 183,
+  "statementSentences": 1,
+  "statementFormulas": 0,
+  "statementComplexityScore": 30,
+  "statementConnectors": 1,
+  "concisenessBasis": "长度 183、句子 1、公式 0、连接结构 1；本批次复杂度分位点 30/54",
+  "familiarity": "low",
+  "familiarityLabel": "低文献可见度",
+  "familiarityScore": 3,
+  "familiarityBasis": "来源元数据、参考文献 2 条、链接/DOI 1 个",
+  "content": "# Worst-Case Theory for Standard L-BFGS\n\nThis file contains the open problem on whether the classical limited-memory BFGS method is provably better than gradient descent.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Condition-Number Improvement for Classical L-BFGS\n\nContributors: Yang Liu\n\n### 1. Problem Background\n\nL-BFGS replaces the dense BFGS matrix by an implicit inverse-Hessian approximation formed from only the most recent $m$ curvature pairs\n$$\n(s_i,y_i),\\qquad\ns_i=x_{i+1}-x_i,\\qquad\ny_i=\\nabla f(x_{i+1})-\\nabla f(x_i).\n$$\nIts two-loop recursion requires $O(md)$ time and memory in dimension $d$, making it one of the most widely used deterministic large-scale optimization methods.\n\nClassical convergence theory establishes global convergence and, under strong convexity, linear convergence under suitable line-search and curvature assumptions. However, standard worst-case bounds do not clearly certify the practical advantage of L-BFGS over gradient descent. In particular, they do not show a strictly better dependence on the condition number\n$$\n\\kappa=\\frac{L}{\\mu}\n$$\nfor the unmodified, recency-based L-BFGS update.\n\n### 2. Open Problems\n\n**Question 1.1. Strict worst-case improvement over gradient descent.** For $L$-smooth, $\\mu$-strongly convex objectives, can one prove that standard L-BFGS with a fixed memory size $m$ has a worst-case iteration bound with strictly better dependence on $\\kappa$ than gradient descent?\n\nThe result should apply to the classical algorithm that stores the most recent curvature pairs and uses the standard two-loop recursion, rather than replacing the update directions by a greedy basis-selection rule.\n\n**Question 1.2. Necessary structural assumptions.** If no improvement is possible over the full class of smooth strongly convex functions, identify the weakest additional structure under which standard L-BFGS provably improves on gradient descent. Candidate structures include clustered spectra, low effective Hessian rank, slowly varying eigenspaces, or a limited number of distinct eigenvalues.\n\n**Question 1.3. Lower bound and memory tradeoff.** Determine a matching lower bound that depends explicitly on $\\kappa$, the memory size $m$, and dimension $d$. Is there a fixed $m$ for which standard L-BFGS has the same worst-case condition-number dependence as gradient descent, despite being much faster on typical instances?\n\n### 3. Known Results and Scope\n\nThe 2023 Limited-memory Greedy BFGS (LG-BFGS) method has an explicit nonasymptotic superlinear rate under additional conditions, with a memory-dependent contraction analysis. LG-BFGS uses greedy curvature selection and displacement aggregation, so it does not resolve the worst-case complexity of standard recency-based L-BFGS.\n\nSafeguarded, stochastic, greedy, and other modified L-BFGS variants have separate convergence guarantees. They should be distinguished from the classical deterministic method in any resolution of this problem.\n\n### 4. References\n\n1. D. C. Liu and J. Nocedal, **On the Limited Memory BFGS Method for Large Scale Optimization**, *Mathematical Programming*, 45:503--528, 1989.\n2. Z. Gao, A. Mokhtari, and A. Koppel, **Limited-Memory Greedy Quasi-Newton Method with Non-asymptotic Superlinear Convergence Rate**, arXiv:2306.15444, 2023.\n",
+  "conciseness": "short",
+  "concisenessLabel": "简洁"
+}

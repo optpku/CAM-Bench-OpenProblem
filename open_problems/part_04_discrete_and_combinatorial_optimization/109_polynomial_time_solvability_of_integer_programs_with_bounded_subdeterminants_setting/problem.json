@@ -1,0 +1,54 @@
+{
+  "id": 109,
+  "title": "Polynomial-time solvability of integer programs with bounded subdeterminants setting",
+  "part": "离散与组合优化",
+  "partKey": "part_04_discrete_and_combinatorial_optimization",
+  "file": "open_problems/part_04_discrete_and_combinatorial_optimization/109_polynomial_time_solvability_of_integer_programs_with_bounded_subdeterminants_setting/problem.md",
+  "jsonFile": "open_problems/part_04_discrete_and_combinatorial_optimization/109_polynomial_time_solvability_of_integer_programs_with_bounded_subdeterminants_setting/problem.json",
+  "authors": "Martin Nägele, Richard Santiago, Rico Zenklusen",
+  "source": "Martin Nägele, Richard Santiago, Rico Zenklusen, Congruency-Constrained TU Problems Beyond the Bimodular Case, Mathematics of Operations Research, 2023.",
+  "keywords": "integer programming, bounded subdeterminants, delta-modular matrices, totally unimodular matrices, strongly polynomial algorithms",
+  "verification": "待核验",
+  "type": "existence",
+  "typeLabel": "存在性 / 唯一性",
+  "typeTags": [
+    "存在性 / 唯一性",
+    "界 / 近似 / 最优常数",
+    "算法 / 机制设计"
+  ],
+  "clarity": {
+    "score": 79,
+    "level": "L3",
+    "label": "清晰可研究",
+    "description": "核心问题明确，但仍有少量边界、术语或最优性条件需要补齐。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 16,
+      "目标与判据": 17,
+      "范围与边界": 6,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 16/20",
+      "目标与判据 17/25",
+      "范围与边界 6/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "An integer linear program (ILP) is $$ \\min\\{c^\\top x: Ax\\le b,\\ x\\in\\mathbb Z^n\\}, $$ where $A\\in\\mathbb Z^{k\\times n}$, $b\\in\\mathbb Z^k$, and $c\\in\\mathbb Z^n$. For $\\Delta\\in\\mathbb Z{>0}$, a matrix $A\\in\\mathbb Z^{k\\times n}$ is called $\\Delta$-modular if: 1) $A$ has full column rank $n$; and 2) every $n\\times n$ submatrix $B$ of $A$ satisfies $|\\det(B)|\\le \\Delta$. Equivalently, the maximum absolute value of an $n\\times n$ subdeterminant of $A$ is at most $\\Delta$.",
+  "statement": "Question 1.1. Design an algorithm that, for every fixed constant $\\Delta\\in\\mathbb Z{>0}$, solves in time polynomial in the encoding length of $(A,b,c)$ the ILP $$ \\min\\{c^\\top x: Ax\\le b,\\ x\\in\\mathbb Z^n\\}, $$ under the promise that $A\\in\\mathbb Z^{k\\times n}$ is $\\Delta$-modular (i.e., has full c",
+  "statementLength": 256,
+  "statementSentences": 4,
+  "statementFormulas": 5,
+  "statementComplexityScore": 54,
+  "statementConnectors": 0,
+  "concisenessBasis": "长度 256、句子 4、公式 5、连接结构 0；本批次复杂度分位点 30/54",
+  "familiarity": "high",
+  "familiarityLabel": "高文献可见度",
+  "familiarityScore": 12,
+  "familiarityBasis": "来源元数据、参考文献 8 条、链接/DOI 12 个",
+  "content": "# Polynomial-time solvability of integer programs with bounded subdeterminants setting\n\nThis file contains the open problem on Polynomial-time solvability of integer programs with bounded subdeterminants setting.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Polynomial-time solvability of integer programs with bounded subdeterminants setting\n\nSource paper authors: Martin Nägele, Richard Santiago, Rico Zenklusen\n\n### 1. Problem Background\n\nAn integer linear program (ILP) is\n$$\n\\min\\{c^\\top x: Ax\\le b,\\ x\\in\\mathbb Z^n\\},\n$$\nwhere $A\\in\\mathbb Z^{k\\times n}$, $b\\in\\mathbb Z^k$, and $c\\in\\mathbb Z^n$. For $\\Delta\\in\\mathbb Z_{>0}$, a matrix $A\\in\\mathbb Z^{k\\times n}$ is called $\\Delta$-modular if:\n1) $A$ has full column rank $n$; and\n2) every $n\\times n$ submatrix $B$ of $A$ satisfies $|\\det(B)|\\le \\Delta$.\nEquivalently, the maximum absolute value of an $n\\times n$ subdeterminant of $A$ is at most $\\Delta$.\n\nA special and classical case is $\\Delta=1$, where $A$ is totally unimodular (TU): every square submatrix has determinant in $\\{-1,0,1\\}$. In that case, linear optimization over $\\{x\\in\\mathbb R^n: Ax\\le b\\}$ yields an integral optimal solution whenever $b$ is integral.\n\nThe paper studies an important subclass of bounded-subdeterminant ILPs: congruency-constrained TU problems, i.e., TU systems plus one congruency constraint $\\gamma^\\top x\\equiv r\\pmod m$. It proves feasibility can be decided in strongly polynomial randomized time for modulus $m=3$, and more generally for prime $m$ when all but at most two residues are allowed.\n\nDespite this progress, the broad question for general $\\Delta$-modular matrices remains unresolved.\n\n### 2. Open Problem\n\n**Question 1.1.** Design an algorithm that, for every fixed constant $\\Delta\\in\\mathbb Z_{>0}$, solves in time polynomial in the encoding length of $(A,b,c)$ the ILP\n$$\n\\min\\{c^\\top x: Ax\\le b,\\ x\\in\\mathbb Z^n\\},\n$$\nunder the promise that $A\\in\\mathbb Z^{k\\times n}$ is $\\Delta$-modular (i.e., has full column rank and all $n\\times n$ subdeterminants have absolute value at most $\\Delta$).\n\n### 3. Known Results\n\nThe source paper (Nägele–Santiago–Zenklusen) frames the fixed-$\\Delta$ bounded-subdeterminant ILP question as a major open frontier beyond total unimodularity, and develops new machinery in the congruency-constrained TU setting (CCTU/CCTUF and the relaxed-residue variant R-CCTUF). Its decomposition lemma for TU systems, together with flatness and proximity bounds of size $m-|R|$, enables a strongly polynomial randomized feasibility algorithm for modulus $m=3$, and more generally for prime $m$ when all but at most two residues are allowed. This highlights a plausible route to bounded-minor ILPs via reductions to TU plus modular constraints, but such reductions are only known for $\\Delta=2$ (bimodular) and remain unavailable for general $\\Delta>2$.\n\nForward-citing work has expanded the tractable landscape mainly by adding structural assumptions. The strongest algorithmic progress toward the open problem comes from results on totally $\\Delta$-modular matrices that are ‘nearly TU’ in matroidal/graphical senses: the cographic nearly-network case admits strongly polynomial optimization, and related work handles matrices that are two-nonzeros-per-row except for a constant-size perturbation. In parallel, a separate line advances the strictly $\\Delta$-modular regime (full-size minors in $\\{0,\\pm\\Delta\\}$) via reductions to group-constrained TU feasibility and propagation through Seymour decomposition, yielding strongly polynomial randomized feasibility for $\\Delta\\le 4$ (including the first composite case $\\Delta=4$). Extended-formulation constructions further give polynomial-time optimization for strictly $\\Delta$-modular cographic translated cones. These results collectively suggest that combining TU decomposition with modular/group constraints is powerful, but current techniques still require either strict minor structure, cographic/network structure, or cone/translation assumptions.\n\nOn the tools side, improved proximity and flatness bounds in terms of $\\Delta_{n-1}(A)$ and $\\Delta_n(A)$ sharpen the geometric control needed for enumeration or augmentation algorithms, and become dimension-independent in certain restricted minor-value regimes (including some strictly $\\Delta$-modular factorizations $A=TB$). However, for general $\\Delta$-modular matrices these bounds still typically scale with dimension, and no known method turns them into a polynomial-time (or strongly polynomial) algorithm for optimization. Overall, the general fixed-$\\Delta$ $\\Delta$-modular ILP solvability problem remains open; progress continues through (i) identifying reductions from bounded-minor ILPs to TU plus a bounded number of modular/extra constraints, and (ii) extending group-constrained TU methods from feasibility to optimization and from strictly $\\Delta$-modular to general $\\Delta$-modular matrices.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #90 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4386289171_p0/partial_progress/90.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Martin Nägele, Richard Santiago, Rico Zenklusen, [*Congruency-Constrained TU Problems Beyond the Bimodular Case*](https://doi.org/10.1287/moor.2023.1381), Mathematics of Operations Research, 2023.\n- **Location in paper:** Page 2, Section 1 (Introduction)\n- **Area:** bounded subdeterminant ilp\n- **Keywords:** `integer programming`, `bounded subdeterminants`, `delta-modular matrices`, `totally unimodular matrices`, `strongly polynomial algorithms`\n- **Upstream problem record:** [W4386289171_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4386289171_p0&n=90&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Martin Nägele, Richard Santiago, Rico Zenklusen, [*Congruency-Constrained TU Problems Beyond the Bimodular Case*](https://doi.org/10.1287/moor.2023.1381), Mathematics of Operations Research, 2023.\n2. [*Integer programs with nearly totally unimodular matrices: the cographic case*](https://doi.org/10.1137/1.9781611978322.76).\n3. *Advances on strictly Δ -modular IPs*.\n4. [*Totally -Modular IPs with Two Non-zeros in Most Rows*](https://doi.org/10.1007/978-3-031-93112-3_26).\n5. *Extended formulations for the integer hull of strictly Δ-modular cographic polyhedral cones*.\n6. [*Advances on strictly -modular IPs*](https://doi.org/10.1007/s10107-024-02148-2).\n7. [*Improving the Cook et al. proximity bound given integral valued constraints*](https://doi.org/10.1007/978-3-031-06901-7_7).\n8. [*Proximity and flatness bounds for linear integer optimization*](https://doi.org/10.1287/moor.2022.0335).\n",
+  "conciseness": "medium",
+  "concisenessLabel": "适中"
+}

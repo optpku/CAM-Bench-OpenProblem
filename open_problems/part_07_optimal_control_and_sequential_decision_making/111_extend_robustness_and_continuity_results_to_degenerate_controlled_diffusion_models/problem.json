@@ -1,0 +1,53 @@
+{
+  "id": 111,
+  "title": "Extend robustness and continuity results to degenerate controlled diffusion models",
+  "part": "最优控制与序贯决策",
+  "partKey": "part_07_optimal_control_and_sequential_decision_making",
+  "file": "open_problems/part_07_optimal_control_and_sequential_decision_making/111_extend_robustness_and_continuity_results_to_degenerate_controlled_diffusion_models/problem.md",
+  "jsonFile": "open_problems/part_07_optimal_control_and_sequential_decision_making/111_extend_robustness_and_continuity_results_to_degenerate_controlled_diffusion_models/problem.json",
+  "authors": "Somnath Pradhan, Serdar Yüksel",
+  "source": "Somnath Pradhan, Serdar Yüksel, Robustness of Stochastic Optimal Control to Approximate Diffusion Models Under Several Cost Evaluation Criteria, Mathematics of Operations Research, 2023.",
+  "keywords": "controlled diffusions, robustness, model approximation, degenerate diffusion, HJB equations, elliptic regularity",
+  "verification": "待核验",
+  "type": "convergence",
+  "typeLabel": "收敛 / 稳定性",
+  "typeTags": [
+    "收敛 / 稳定性",
+    "界 / 近似 / 最优常数"
+  ],
+  "clarity": {
+    "score": 83,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 16,
+      "目标与判据": 21,
+      "范围与边界": 6,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 16/20",
+      "目标与判据 21/25",
+      "范围与边界 6/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Consider a controlled diffusion process $$ dXt = b(Xt,Ut)\\,dt + \\sigma(Xt)\\,dWt, \\qquad X0=x\\in\\mathbb{R}^d, $$ where $W$ is a $d$-dimensional standard Wiener process, the action space $U$ is a compact metric space, and $Ut$ is an admissible (non-anticipative) control. The running cost is a bounded continuous function $c:\\mathbb{R}^d\\times U\\to\\mathbb{R}+$. For each control policy $\\pi$ (e.g., Markov or stationary Markov controls), one considers standard performance criteria such as:",
+  "statement": "Concretely: under a suitable convergence notion for approximating models $(bn,\\sigman,cn)\\to (b,\\sigma,c)$, determine conditions under which (for one or more of the criteria discounted, ergodic, finite-horizon, or exit-time) the optimal values of the approximate models converge to the optimal value of the true (degenerate) model, and the performance loss from applying an optimal control of the approximate model to the true model vanishes in the limit.",
+  "statementLength": 391,
+  "statementSentences": 1,
+  "statementFormulas": 1,
+  "statementComplexityScore": 64,
+  "statementConnectors": 3,
+  "concisenessBasis": "长度 391、句子 1、公式 1、连接结构 3；本批次复杂度分位点 30/54",
+  "familiarity": "high",
+  "familiarityLabel": "高文献可见度",
+  "familiarityScore": 10,
+  "familiarityBasis": "来源元数据、参考文献 4 条、链接/DOI 4 个",
+  "content": "# Extend robustness and continuity results to degenerate controlled diffusion models\n\nThis file contains the open problem on Extend robustness and continuity results to degenerate controlled diffusion models.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Extend robustness and continuity results to degenerate controlled diffusion models\n\nSource paper authors: Somnath Pradhan, Serdar Yüksel\n\n### 1. Problem Background\n\nConsider a controlled diffusion process\n$$\ndX_t = b(X_t,U_t)\\,dt + \\sigma(X_t)\\,dW_t, \\qquad X_0=x\\in\\mathbb{R}^d,\n$$\nwhere $W$ is a $d$-dimensional standard Wiener process, the action space $U$ is a compact metric space, and $U_t$ is an admissible (non-anticipative) control. The running cost is a bounded continuous function $c:\\mathbb{R}^d\\times U\\to\\mathbb{R}_+$. For each control policy $\\pi$ (e.g., Markov or stationary Markov controls), one considers standard performance criteria such as:\n\n1) Discounted cost for $\\alpha>0$:\n$$\nJ_\\alpha^{\\pi}(x;c)=\\mathbb{E}^{\\pi}_x\\Big[\\int_0^\\infty e^{-\\alpha t} c(X_t,U_t)\\,dt\\Big],\\qquad V_\\alpha(x)=\\inf_{\\pi} J_\\alpha^{\\pi}(x;c).\n$$\n\n2) Ergodic (long-run average) cost:\n$$\n\\mathcal{E}_x(c,\\pi)=\\limsup_{T\\to\\infty}\\frac{1}{T}\\,\\mathbb{E}^{\\pi}_x\\Big[\\int_0^T c(X_t,U_t)\\,dt\\Big],\\qquad \\mathcal{E}^*(c)=\\inf_x\\inf_{\\pi}\\mathcal{E}_x(c,\\pi).\n$$\n\n3) Finite-horizon cost for a horizon $T>0$ and terminal cost $H$:\n$$\nJ_T^{\\pi}(x;c)=\\mathbb{E}^{\\pi}_x\\Big[\\int_0^T c(X_t,U_t)\\,dt + H(X_T)\\Big],\\qquad J_T^*(x;c)=\\inf_{\\pi}J_T^{\\pi}(x;c).\n$$\n\nThe paper studies an approximation setting in which a sequence of models $(b_n,\\sigma_n,c_n)$ converges to $(b,\\sigma,c)$ (in a sense ensuring pointwise convergence in the state and continuous convergence in control actions), with associated state processes\n$$\ndX_t^{(n)} = b_n(X_t^{(n)},U_t)\\,dt + \\sigma_n(X_t^{(n)})\\,dW_t.\n\n$$\nFor each model one has the corresponding optimal values $V_{\\alpha}^{(n)}$, $\\mathcal{E}^{*(n)}(c_n)$, $J_{T}^{*(n)}(x;c_n)$, and one may compare the performance of controls optimized for the approximate model when applied to the true model.\n\nA key standing condition used throughout the paper is uniform nondegeneracy (uniform ellipticity) of the diffusion term: letting $a(x)=\\tfrac12\\sigma(x)\\sigma(x)^\\top$, one assumes that for each radius $R>0$ there exists $C_R>0$ such that\n$$\nz^\\top a(x) z \\ge C_R^{-1}\\,|z|^2 \\qquad \\forall x\\in B_R,\\ \\forall z\\in\\mathbb{R}^d,\n$$\n(and similarly for $a_n$). This nondegeneracy assumption enables strong regularity theory for the associated Hamilton--Jacobi--Bellman (HJB) equations and is central to the continuity/robustness proofs in the paper.\n\nA diffusion is called degenerate if the corresponding covariance matrix $a(x)$ fails to be uniformly positive definite (e.g., is singular in some directions, at some states, or on sets of positive measure).\n\n### 2. Open Problem\n\n**Question 1.1.** Develop an analogue of the paper's continuity and robustness theory for controlled diffusion models when the limiting (true) diffusion is degenerate, i.e., when the uniform nondegeneracy/ellipticity condition on $a(x)=\\tfrac12\\sigma(x)\\sigma(x)^\\top$ is dropped and $a(x)$ may be singular.\n\nConcretely: under a suitable convergence notion for approximating models $(b_n,\\sigma_n,c_n)\\to (b,\\sigma,c)$, determine conditions under which (for one or more of the criteria discounted, ergodic, finite-horizon, or exit-time) the optimal values of the approximate models converge to the optimal value of the true (degenerate) model, and the performance loss from applying an optimal control of the approximate model to the true model vanishes in the limit.\n\n### 3. Known Results\n\nPradhan--Y\\\"uksel (arXiv:2205.05894v2, 2023) develop a PDE-based continuity/robustness theory for controlled diffusions under discounted, ergodic (near-monotone or Lyapunov), finite-horizon, and exit-time criteria. A central technical pillar is local uniform ellipticity (Assumption (A3)), which yields Sobolev/Schauder regularity for HJB equations, compactness of value-function families in $W^{2,p}$, and It\\^o--Krylov representations enabling both value convergence $V^n\\to V$ and asymptotic optimality transfer when applying $n$-optimal controls to the limit model.\n\nForward-citing work to date provides partial progress but does not remove ellipticity. The regime-switching extension proves analogous continuity/robustness results for weakly coupled HJB systems, again under local uniform ellipticity, and thus mainly maps where ellipticity enters and what would need replacement in a degenerate setting. The rough-path robustness paper proves policy-wise continuity and near-optimality transfer for Lipschitz feedback controls under near-Brownian noise perturbations; while it still assumes uniform nondegeneracy to access classical HJB theory for the idealized model, its rough-path continuity arguments are largely independent of ellipticity and suggest a promising tool for establishing continuity of $J^\\pi$ for fixed (regular) feedbacks even when $\\sigma$ is degenerate.\n\nOverall, the open problem remains to develop a full analogue of Pradhan--Y\\\"uksel robustness when the limiting diffusion is degenerate: one needs conditions ensuring existence/approximation of optimal controls and convergence of optimal values without relying on uniformly elliptic PDE regularity or strong Feller properties. Promising directions include (i) viscosity-solution stability for degenerate HJB equations combined with measurable selection/relaxed controls, (ii) hypoelliptic regularity under H\\\"ormander-type conditions when degeneracy is structured, and (iii) probabilistic/MDP discretization approaches (e.g., Wasserstein-regular kernel continuity) that bypass elliptic PDE estimates.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #92 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4387578519_p0/partial_progress/92.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Somnath Pradhan, Serdar Yüksel, [*Robustness of Stochastic Optimal Control to Approximate Diffusion Models Under Several Cost Evaluation Criteria*](https://doi.org/10.1287/moor.2022.0134), Mathematics of Operations Research, 2023.\n- **Location in paper:** Page 31, Section 8 (Conclusion)\n- **Area:** controlled diffusions\n- **Keywords:** `controlled diffusions`, `robustness`, `model approximation`, `degenerate diffusion`, `HJB equations`, `elliptic regularity`\n- **Upstream problem record:** [W4387578519_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4387578519_p0&n=92&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Somnath Pradhan, Serdar Yüksel, [*Robustness of Stochastic Optimal Control to Approximate Diffusion Models Under Several Cost Evaluation Criteria*](https://doi.org/10.1287/moor.2022.0134), Mathematics of Operations Research, 2023.\n2. [*Robustness of optimal controlled diffusions with near-brownian noise via rough paths theory*](https://doi.org/10.1007/s00498-026-00439-x).\n3. *Robustness of optimal control for controlled regime-switching diffusions with incorrect models*.\n4. *Robustness to Model Approximation, Model Learning From Data, and Sample Complexity in Wasserstein Regular MDPs*.\n",
+  "conciseness": "long",
+  "concisenessLabel": "复杂"
+}

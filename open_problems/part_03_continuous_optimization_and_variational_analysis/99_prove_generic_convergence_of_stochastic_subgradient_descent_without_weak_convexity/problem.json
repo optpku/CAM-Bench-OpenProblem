@@ -1,0 +1,55 @@
+{
+  "id": 99,
+  "title": "Prove generic convergence of stochastic subgradient descent without weak convexity",
+  "part": "连续优化与变分分析",
+  "partKey": "part_03_continuous_optimization_and_variational_analysis",
+  "file": "open_problems/part_03_continuous_optimization_and_variational_analysis/99_prove_generic_convergence_of_stochastic_subgradient_descent_without_weak_convexity/problem.md",
+  "jsonFile": "open_problems/part_03_continuous_optimization_and_variational_analysis/99_prove_generic_convergence_of_stochastic_subgradient_descent_without_weak_convexity/problem.json",
+  "authors": "Pascal Bianchi, Walid Hachem, Sholom Schechtman",
+  "source": "Pascal Bianchi, Walid Hachem, Sholom Schechtman, Stochastic Subgradient Descent Escapes Active Strict Saddles on Weakly Convex Functions, Mathematics of Operations Research, 2023.",
+  "keywords": "stochastic subgradient descent, nonsmooth nonconvex optimization, definable functions, active strict saddles, generic convergence, sharp repulsion",
+  "verification": "待核验",
+  "type": "characterization",
+  "typeLabel": "刻画 / 等价条件",
+  "typeTags": [
+    "刻画 / 等价条件",
+    "收敛 / 稳定性",
+    "界 / 近似 / 最优常数",
+    "证明或反例"
+  ],
+  "clarity": {
+    "score": 85,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 14,
+      "目标与判据": 23,
+      "范围与边界": 8,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 14/20",
+      "目标与判据 23/25",
+      "范围与边界 8/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Let $f:\\mathbb{R}^d\\to\\mathbb{R}$ be a locally Lipschitz function, and let $\\partial f(x)$ denote its Clarke subdifferential. Consider stochastic subgradient descent (SGD) $$",
+  "statement": "Equivalently (as suggested by the paper's generic critical-point classification), show that in the non-weakly convex definable setting SGD $\\emph{avoids}$ with probability one both: 1) active strict saddles, and 2) sharply repulsive critical points, so that the only possible limiting Clarke critical points are local minimizers.",
+  "statementLength": 285,
+  "statementSentences": 1,
+  "statementFormulas": 1,
+  "statementComplexityScore": 45,
+  "statementConnectors": 1,
+  "concisenessBasis": "长度 285、句子 1、公式 1、连接结构 1；本批次复杂度分位点 30/54",
+  "familiarity": "high",
+  "familiarityLabel": "高文献可见度",
+  "familiarityScore": 12,
+  "familiarityBasis": "来源元数据、参考文献 8 条、链接/DOI 4 个",
+  "content": "# Prove generic convergence of stochastic subgradient descent without weak convexity\n\nThis file contains the open problem on Prove generic convergence of stochastic subgradient descent without weak convexity.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Prove generic convergence of stochastic subgradient descent without weak convexity\n\nSource paper authors: Pascal Bianchi, Walid Hachem, Sholom Schechtman\n\n### 1. Problem Background\n\nLet $f:\\mathbb{R}^d\\to\\mathbb{R}$ be a locally Lipschitz function, and let $\\partial f(x)$ denote its Clarke subdifferential. Consider stochastic subgradient descent (SGD)\n$$\n\n x_{n+1}=x_n-\\gamma_n v_n+\\gamma_n\\eta_{n+1},\\qquad v_n\\in \\partial f(x_n),\n\n$$\nwhere $(\\gamma_n)$ is a deterministic step-size sequence with $\\gamma_n\\downarrow 0$, $\\sum_n\\gamma_n=\\infty$, and typically $\\sum_n\\gamma_n^2<\\infty$. The noise $(\\eta_{n})$ is adapted to a filtration $(\\mathcal{F}_n)$, satisfies the martingale difference property $\\mathbb{E}[\\eta_{n+1}\\mid \\mathcal{F}_n]=0$, and has bounded conditional moments (e.g., bounded conditional fourth moments).\n\nA point $x^\\star$ is Clarke critical if $0\\in \\partial f(x^\\star)$. In the definable (o-minimal) setting, Clarke critical points admit additional geometric structure via stratifications, and one can define an $C^p$ active manifold $M$ around $x^\\star$ on which $f$ is smooth and off which the subgradients have norm bounded away from $0$. An $\\emph{active strict saddle}$ is a Clarke critical point $x^\\star$ lying on such a manifold $M$ for which the Riemannian Hessian of the restriction $f\\vert_M$ has a negative curvature direction at $x^\\star$. A $\\emph{sharply repulsive critical point}$ (as described in the cited manuscript [37] referenced by the paper) is, generically in the non-weakly convex definable case, a Clarke critical point $x^\\star$ lying on an active manifold $M$ such that $x^\\star$ is a local minimizer of $f\\vert_M$ while nearby subgradients point toward $M$ (intuitively attracting iterates toward $M$ rather than repelling them).\n\nFor definable weakly convex functions, generic perturbations yield that every Clarke critical point is either a local minimizer or an active strict saddle, and the paper proves SGD avoids active strict saddles under suitable noise conditions, implying generic convergence to local minimizers in that setting.\n\n### 2. Open Problem\n\n**Question 1.1.** Establish, for $f$ definable and locally Lipschitz but $\\emph{not assumed weakly convex}$, a generic convergence guarantee for SGD of the form above: namely, prove that under standard Robbins--Monro-type conditions on $(\\gamma_n)$ and suitable nondegenerate noise conditions on $(\\eta_n)$, the iterates $(x_n)$ converge (when bounded) to a local minimizer of $f$ with probability one.\n\nEquivalently (as suggested by the paper's generic critical-point classification), show that in the non-weakly convex definable setting SGD $\\emph{avoids}$ with probability one both:\n1) active strict saddles, and\n2) sharply repulsive critical points,\nso that the only possible limiting Clarke critical points are local minimizers.\n\n### 3. Known Results\n\nThe source paper (Bianchi--Hachem--Schechtman, 2024) establishes that for definable weakly convex locally Lipschitz objectives, SGD with Robbins--Monro stepsizes and sufficiently nondegenerate martingale noise avoids convergence to any active strict saddle. The proof hinges on two geometric ingredients around an active manifold $M$: (i) a Verdier-stratification-based strengthened projection formula controlling how Clarke subgradients project onto tangent spaces of adjacent strata, and (ii) an angle (proximal aiming) condition ensuring iterates contract toward $M$. Once iterates are shown to track the projected dynamics $y_n=P_M(x_n)$, the method reduces to a smooth stochastic approximation on $M$ and invokes a Brandi\\`ere--Duflo/Pemantle-type trap-avoidance argument in the negative-curvature directions of the Riemannian Hessian of $f|_M$.\n\nBeyond weak convexity, the same paper explains why the generic landscape changes: in addition to local minimizers and active strict saddles, one generically encounters \"sharply repulsive critical points\" (local minimizers of $f|_M$ for which nearby subgradients point toward $M$), and it explicitly states that generic convergence of SGD to local minimizers remains open in this regime (Section 5.2 and Remark 4). The most directly relevant forward-citing work is the thesis \"Saddle Avoidance, Asymptotic Normality, and Exponential Acceleration in Nonsmooth Optimization\", which appears to remove weak convexity in the saddle-avoidance part by developing generic regularity conditions for definable/semi-algebraic objectives with active manifolds and proving almost-sure avoidance of active strict saddles for stochastic subgradient-type methods. However, based on the provided citation analysis, it is not confirmed that this thesis fully resolves the additional obstruction posed by sharply repulsive critical points in the non-weakly convex definable setting; it may instead work in a generic Clarke-regular class where such points are excluded or controlled.\n\nSeveral other forward citations contribute tools toward a full resolution. \"On the diameter of subgradient sequences in o-minimal structures\" gives deterministic sequential convergence of bounded Clarke-subgradient iterates with $\\alpha_k\\asymp 1/k$ to a Clarke critical point in the non-weakly-convex definable setting, which could serve as a key compactness/oscillation-control component in a stochastic approximation proof. \"Sufficient conditions for instability of the subgradient method with constant step size\" provides geometric instability criteria near semi-algebraic critical manifolds, conceptually aligned with sharply repulsive behavior, suggesting a route to show such points are not attractors for (stochastic) subgradient dynamics. Finally, works on stratification-based shadowing/rates and on Lyapunov stability for Euler discretizations of differential inclusions offer complementary frameworks for analyzing attraction/repulsion near strata, potentially enabling a unified argument that stochastic perturbations prevent convergence to both negative-curvature saddles on $M$ and to sharply repulsive Clarke critical points when weak convexity is absent.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #75 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4309864804_p0/partial_progress/75.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Pascal Bianchi, Walid Hachem, Sholom Schechtman, [*Stochastic Subgradient Descent Escapes Active Strict Saddles on Weakly Convex Functions*](https://doi.org/10.1287/moor.2021.0194), Mathematics of Operations Research, 2023.\n- **Location in paper:** Section 5.2 (Further Topics), pages 14–16; see also Remark 4 on pages 16–17.\n- **Area:** stochastic subgradient descent\n- **Keywords:** `stochastic subgradient descent`, `nonsmooth nonconvex optimization`, `definable functions`, `active strict saddles`, `generic convergence`, `sharp repulsion`\n- **Upstream problem record:** [W4309864804_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4309864804_p0&n=75&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Pascal Bianchi, Walid Hachem, Sholom Schechtman, [*Stochastic Subgradient Descent Escapes Active Strict Saddles on Weakly Convex Functions*](https://doi.org/10.1287/moor.2021.0194), Mathematics of Operations Research, 2023.\n2. *Saddle Avoidance, Asymptotic Normality, and Exponential Acceleration in Nonsmooth Optimization*.\n3. *On the diameter of subgradient sequences in o-minimal structures*.\n4. [*Sufficient conditions for instability of the subgradient method with constant step size*](https://doi.org/10.1137/22M1535723).\n5. *On convergence rates of subgradient descent on semialgebraic functions*.\n6. *Riemannian stochastic optimization methods avoid strict saddle points*.\n7. *Lyapunov stability of the Euler method*.\n8. *Contributions to non-convex stochastic optimization and reinforcement learning*.\n",
+  "conciseness": "medium",
+  "concisenessLabel": "适中"
+}

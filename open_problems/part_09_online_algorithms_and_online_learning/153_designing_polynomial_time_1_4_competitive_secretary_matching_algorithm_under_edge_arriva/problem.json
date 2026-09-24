@@ -1,0 +1,52 @@
+{
+  "id": 153,
+  "title": "Designing polynomial-time 1/4-competitive secretary matching algorithm under edge arrivals",
+  "part": "在线算法与在线学习",
+  "partKey": "part_09_online_algorithms_and_online_learning",
+  "file": "open_problems/part_09_online_algorithms_and_online_learning/153_designing_polynomial_time_1_4_competitive_secretary_matching_algorithm_under_edge_arriva/problem.md",
+  "jsonFile": "open_problems/part_09_online_algorithms_and_online_learning/153_designing_polynomial_time_1_4_competitive_secretary_matching_algorithm_under_edge_arriva/problem.json",
+  "authors": "Tomer Ezra, Michal Feldman, Nick Gravin, Zhihao Gavin Tang",
+  "source": "Tomer Ezra, Michal Feldman, Nick Gravin, Zhihao Gavin Tang, Tight Bounds for Secretary Matching in General Graphs, Mathematics of Operations Research, 2024.",
+  "keywords": "secretary problem, online matching, edge arrivals, competitive ratio, polynomial-time algorithms, random-order model",
+  "verification": "待核验",
+  "type": "algorithm",
+  "typeLabel": "算法 / 机制设计",
+  "typeTags": [
+    "算法 / 机制设计"
+  ],
+  "clarity": {
+    "score": 73,
+    "level": "L3",
+    "label": "清晰可研究",
+    "description": "核心问题明确，但仍有少量边界、术语或最优性条件需要补齐。",
+    "components": {
+      "问题陈述": 17,
+      "对象与假设": 20,
+      "目标与判据": 15,
+      "范围与边界": 6,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 17/25",
+      "对象与假设 20/20",
+      "目标与判据 15/25",
+      "范围与边界 6/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Consider an undirected weighted graph $G=(V,E)$ with $|E|=m$. Each edge $e\\in E$ has an (adversarial) nonnegative weight $we\\in\\mathbb{R}$ that is unknown until the edge arrives online. In the edge-arrival secretary model, the edges $e1,\\dots,em$ arrive in a uniformly random order. When edge $et=uv$ arrives at time $t$, its weight $w{et}$ is revealed, and the algorithm must immediately and irrevocably decide whether to add $et$ to its matching $\\mu$, subject to feasibility (both endpoints $u,v$ are currently unmatched).",
+  "statement": "Question 1.1. Find a polynomial-time online algorithm $\\mathrm{ALG}$ for the edge-arrival secretary matching model such that for every weighted graph $(G=(V,E),w)$ with $|E|=m$, $$ \\mathbb{E}[w(\\mu)] \\ge \\tfrac{1}{4}\\, w(\\mu^(E)), $$ where $\\mu$ is the matching output by $\\mathrm{ALG}$, and the expe",
+  "statementLength": 261,
+  "statementSentences": 2,
+  "statementFormulas": 6,
+  "statementComplexityScore": 57,
+  "statementConnectors": 3,
+  "concisenessBasis": "长度 261、句子 2、公式 6、连接结构 3；本批次复杂度分位点 30/54",
+  "familiarity": "medium",
+  "familiarityLabel": "中文献可见度",
+  "familiarityScore": 7,
+  "familiarityBasis": "来源元数据、参考文献 1 条、链接/DOI 2 个",
+  "content": "# Designing polynomial-time 1/4-competitive secretary matching algorithm under edge arrivals\n\nThis file contains the open problem on Designing polynomial-time 1/4-competitive secretary matching algorithm under edge arrivals.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Designing polynomial-time 1/4-competitive secretary matching algorithm under edge arrivals\n\nSource paper authors: Tomer Ezra, Michal Feldman, Nick Gravin, Zhihao Gavin Tang\n\n### 1. Problem Background\n\nConsider an undirected weighted graph $G=(V,E)$ with $|E|=m$. Each edge $e\\in E$ has an (adversarial) nonnegative weight $w_e\\in\\mathbb{R}$ that is unknown until the edge arrives online. In the edge-arrival secretary model, the edges $e_1,\\dots,e_m$ arrive in a uniformly random order. When edge $e_t=uv$ arrives at time $t$, its weight $w_{e_t}$ is revealed, and the algorithm must immediately and irrevocably decide whether to add $e_t$ to its matching $\\mu$, subject to feasibility (both endpoints $u,v$ are currently unmatched).\n\nLet $\\mu^*(E)$ denote a maximum-weight matching in $G$ (with respect to $w$), and let $\\mathrm{OPT}=w(\\mu^*(E))=\\sum_{e\\in\\mu^*(E)} w_e$. An online algorithm $\\mathrm{ALG}$ outputs a random matching $\\mu$ and achieves competitive ratio $\\alpha\\in[0,1]$ if for every weighted graph instance $(G,w)$,\n$$\n\\mathbb{E}[w(\\mu)] \\ge \\alpha\\, \\mathrm{OPT},\n$$\nwhere the expectation is over the random arrival order and the algorithm’s internal randomness.\n\nThe paper gives an information-theoretic online algorithm for edge arrivals that achieves $\\alpha=1/4$, but whose implementation appears to require estimating certain conditional availability probabilities that the authors do not know how to compute in polynomial time.\n\n### 2. Open Problem\n\n**Question 1.1.** Find a polynomial-time online algorithm $\\mathrm{ALG}$ for the edge-arrival secretary matching model such that for every weighted graph $(G=(V,E),w)$ with $|E|=m$,\n$$\n\\mathbb{E}[w(\\mu)] \\ge \\tfrac{1}{4}\\, w(\\mu^*(E)),\n$$\nwhere $\\mu$ is the matching output by $\\mathrm{ALG}$, and the expectation is over the uniformly random arrival order of edges and the randomness of $\\mathrm{ALG}$.\n\n### 3. Known Results\n\nNo relevant Scholar-organic forward citations were available for this problem. The forward-citation review therefore cannot identify follow-up work that resolves or materially advances the problem.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #139 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4404717018_p0/partial_progress/139.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Tomer Ezra, Michal Feldman, Nick Gravin, Zhihao Gavin Tang, [*Tight Bounds for Secretary Matching in General Graphs*](https://doi.org/10.1287/moor.2022.0206), Mathematics of Operations Research, 2024.\n- **Location in paper:** Page 6, Section 1.1 (Edge arrival techniques discussion); and reiterated Page 23, Remark after Theorem 5.2.\n- **Area:** online matching\n- **Keywords:** `secretary problem`, `online matching`, `edge arrivals`, `competitive ratio`, `polynomial-time algorithms`, `random-order model`\n- **Upstream problem record:** [W4404717018_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4404717018_p0&n=139&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Tomer Ezra, Michal Feldman, Nick Gravin, Zhihao Gavin Tang, [*Tight Bounds for Secretary Matching in General Graphs*](https://doi.org/10.1287/moor.2022.0206), Mathematics of Operations Research, 2024.\n",
+  "conciseness": "long",
+  "concisenessLabel": "复杂"
+}

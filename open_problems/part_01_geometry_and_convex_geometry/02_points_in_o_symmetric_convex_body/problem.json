@@ -1,0 +1,52 @@
+{
+  "id": 2,
+  "title": "Points in an $o$-symmetric Convex Body",
+  "part": "几何与凸几何",
+  "partKey": "part_01_geometry_and_convex_geometry",
+  "file": "open_problems/part_01_geometry_and_convex_geometry/02_points_in_o_symmetric_convex_body/problem.md",
+  "jsonFile": "open_problems/part_01_geometry_and_convex_geometry/02_points_in_o_symmetric_convex_body/problem.json",
+  "authors": "",
+  "source": "",
+  "keywords": "",
+  "verification": "专题整理",
+  "type": "other",
+  "typeLabel": "开放式研究问题",
+  "typeTags": [
+    "开放式研究问题"
+  ],
+  "clarity": {
+    "score": 80,
+    "level": "L3",
+    "label": "清晰可研究",
+    "description": "核心问题明确，但仍有少量边界、术语或最优性条件需要补齐。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 18,
+      "目标与判据": 15,
+      "范围与边界": 7,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 18/20",
+      "目标与判据 15/25",
+      "范围与边界 7/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "This problem belongs to Minkowski geometry and the study of distance configurations in centrally symmetric convex bodies.",
+  "statement": "Question 1.1. Let $n \\ge 3$. Is it true that for every $k$ satisfying $n+2 \\le k \\le 2n$ and every $o$-symmetric convex body $C$ in $\\mathbb{R}^n$, $C$ contains $k$ points at pairwise distances at least $\\sqrt{2}$ measured in the norm of $C$?",
+  "statementLength": 200,
+  "statementSentences": 4,
+  "statementFormulas": 10,
+  "statementComplexityScore": 57,
+  "statementConnectors": 1,
+  "concisenessBasis": "长度 200、句子 4、公式 10、连接结构 1；本批次复杂度分位点 30/54",
+  "familiarity": "low",
+  "familiarityLabel": "低文献可见度",
+  "familiarityScore": 1,
+  "familiarityBasis": "来源元数据、参考文献 3 条、链接/DOI 0 个",
+  "content": "# Points in an $o$-symmetric Convex Body\n\nThis file contains the open problem on Points in an $o$-symmetric Convex Body.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Points in an $o$-symmetric Convex Body\n\nContributors: Zsolt Langi and Yinyu Ye\n\n### 1. Problem Background\n\nThis problem belongs to **Minkowski geometry** and the study of distance configurations in centrally symmetric convex bodies.\n\nLet $C\\subset \\mathbb{R}^n$ be an $o$-symmetric convex body. Such a body can be used as the unit ball of a norm, denoted by $\\|\\cdot\\|_C$. The problem asks whether, for every $n\\ge 3$, every integer $k$ satisfying $n+2\\le k\\le 2n$, and every $o$-symmetric convex body $C\\subset \\mathbb{R}^n$, the body $C$ contains $k$ points whose pairwise distances, measured in the norm of $C$, are all at least $\\sqrt{2}$. The background comes from spherical code problems. For given integers $n$ and $k$, let $\\delta_n(k)$ denote the largest angular distance $\\delta$ such that there exist $k$ points on the unit sphere $\\mathbb{S}^{n-1}$ with pairwise spherical distances at least $\\delta$. For $n+2\\le k\\le 2n$, the optimal spherical distance is $\\delta_n(k)=\\frac{\\pi}{2}$. Equivalently, in the Euclidean unit ball $B^n$, the largest minimum Euclidean distance among $k$ points is $\\sqrt{2}$. Sources: References [1] and [3].\n\n### 2. Open Problems\n\n**Question 1.1.** Let $n \\ge 3$. Is it true that for every $k$ satisfying $n+2 \\le k \\le 2n$ and every $o$-symmetric convex body $C$ in $\\mathbb{R}^n$, $C$ contains $k$ points at pairwise distances at least $\\sqrt{2}$ measured in the norm of $C$?\n\n### 3. Known Results\n\n#### 3.1 Spherical code result for $n+2\\le k\\le 2n$\n\n**Source:** J. Aczél, *Solution to Problem 35*, Reference [1]; R. A. Rankin, *The closest packing of spherical caps in $n$ dimensions*, Reference [3].\n\nLet $\\delta_n(k)$ denote the largest angular distance $\\delta$ such that there exist $k$ points on the unit sphere $\\mathbb{S}^{n-1}$ with pairwise spherical distances at least $\\delta$. If $n+2\\le k\\le 2n$, then $\\delta_n(k)=\\frac{\\pi}{2}$. Equivalently, if $n+2\\le k\\le 2n$, then the largest minimum Euclidean distance among $k$ points in the Euclidean unit ball $B^n$ is $\\sqrt{2}$.\n\n#### 3.2 Two-dimensional centrally symmetric convex body result\n\n**Source:** P. G. Doyle, J. C. Lagarias, and D. Randall, *Self-packing of centrally symmetric convex bodies in $\\mathbb{R}^2$*, Reference [2].\n\nLet $C\\subset \\mathbb{R}^2$ be an $o$-symmetric plane convex body, and let $\\|\\cdot\\|_C$ be the norm whose unit ball is $C$. Then $C$ contains four points $p_1,p_2,p_3,p_4$ such that, for every $i\\ne j$, $\\|p_i-p_j\\|_C\\ge \\sqrt{2}$.\n\n### 4. References\n\n1. J. Aczél, Solution to Problem 35 (Hungarian), Mat. Lapok 3 (1952), 94-95.\n2. P. G. Doyle, J. C. Lagarias, D. Randall, Self-packing of centrally symmetric convex bodies in $\\mathbb{R}^2$, Discrete Comput. Geom. 8 (1992), 171-189.\n3. R. A. Rankin, The closest packing of spherical caps in $n$ dimensions, Proc. Glasgow Math. Assoc. 2 (1955), 139-144.\n\n---\n",
+  "conciseness": "long",
+  "concisenessLabel": "复杂"
+}

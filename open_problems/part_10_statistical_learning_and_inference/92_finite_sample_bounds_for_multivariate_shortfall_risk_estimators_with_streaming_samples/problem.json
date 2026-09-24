@@ -1,0 +1,53 @@
+{
+  "id": 92,
+  "title": "Finite-sample bounds for multivariate shortfall risk estimators with streaming samples",
+  "part": "统计学习与推断",
+  "partKey": "part_10_statistical_learning_and_inference",
+  "file": "open_problems/part_10_statistical_learning_and_inference/92_finite_sample_bounds_for_multivariate_shortfall_risk_estimators_with_streaming_samples/problem.md",
+  "jsonFile": "open_problems/part_10_statistical_learning_and_inference/92_finite_sample_bounds_for_multivariate_shortfall_risk_estimators_with_streaming_samples/problem.json",
+  "authors": "V. S. Hegde, Arvind S. Menon, L. A. Prashanth, Krishna Jagannathan",
+  "source": "V. S. Hegde, Arvind S. Menon, L. A. Prashanth, Krishna Jagannathan, Online Estimation and Optimization of Utility-Based Shortfall Risk, Mathematics of Operations Research, 2024.",
+  "keywords": "shortfall risk, multivariate risk measures, stochastic approximation, finite-sample bounds, streaming estimation, concentration inequalities",
+  "verification": "待核验",
+  "type": "bound",
+  "typeLabel": "界 / 近似 / 最优常数",
+  "typeTags": [
+    "界 / 近似 / 最优常数"
+  ],
+  "clarity": {
+    "score": 76,
+    "level": "L3",
+    "label": "清晰可研究",
+    "description": "核心问题明确，但仍有少量边界、术语或最优性条件需要补齐。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 14,
+      "目标与判据": 15,
+      "范围与边界": 9,
+      "单一性": 13
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 14/20",
+      "目标与判据 15/25",
+      "范围与边界 9/15",
+      "单一性 13/15",
+      "出现宽泛或并列扩展措辞，需人工确认边界"
+    ]
+  },
+  "summary": "Let $(\\Omega,\\mathcal F,\\mathbb P)$ be a probability space. Fix an integer dimension $d\\ge 2$. Let $X\\in L^\\infty(\\Omega;\\mathbb R^d)$ be a bounded $d$-dimensional random vector representing (componentwise) losses or positions.",
+  "statement": "Concretely, provide explicit bounds (in $n$) on the estimation error of an MSRM estimator $\\widehat{\\mathcal R}{\\lambda,n}$ (or an estimated capital allocation $\\widehat mn\\in\\mathbb R^d$) relative to the target MSRM determined by $\\ell$ and $\\lambda$, analogous in spirit to finite-sample bounds available for the univariate utility-based shortfall risk estimator.",
+  "statementLength": 318,
+  "statementSentences": 1,
+  "statementFormulas": 5,
+  "statementComplexityScore": 57,
+  "statementConnectors": 2,
+  "concisenessBasis": "长度 318、句子 1、公式 5、连接结构 2；本批次复杂度分位点 30/54",
+  "familiarity": "high",
+  "familiarityLabel": "高文献可见度",
+  "familiarityScore": 9,
+  "familiarityBasis": "来源元数据、参考文献 5 条、链接/DOI 2 个",
+  "content": "# Finite-sample bounds for multivariate shortfall risk estimators with streaming samples\n\nThis file contains the open problem on Finite-sample bounds for multivariate shortfall risk estimators with streaming samples.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Finite-sample bounds for multivariate shortfall risk estimators with streaming samples\n\nSource paper authors: V. S. Hegde, Arvind S. Menon, L. A. Prashanth, Krishna Jagannathan\n\n### 1. Problem Background\n\nLet $(\\Omega,\\mathcal F,\\mathbb P)$ be a probability space. Fix an integer dimension $d\\ge 2$. Let $X\\in L^\\infty(\\Omega;\\mathbb R^d)$ be a bounded $d$-dimensional random vector representing (componentwise) losses or positions.\n\nLet $\\ell:\\mathbb R^d\\to\\mathbb R$ be a convex loss/utility-penalty function (sometimes called an aggregation loss), and let $\\lambda\\in\\mathbb R$ be a fixed risk-level parameter (assumed to be in the interior of the range of $\\ell$ under the law of the argument in question).\n\nDefine the acceptance set\n$$\n\n\\mathcal A := \\bigl\\{Y\\in L^\\infty(\\Omega;\\mathbb R^d): \\ \\mathbb E[\\,\\ell(-Y)\\,] \\le \\lambda\\bigr\\}.\n\n$$\n\nA multivariate shortfall risk measure (MSRM) is a multivariate analogue of utility-based shortfall risk, defined via the cash-additivity/translation of the acceptance set: for a given position $X$, one seeks a deterministic capital allocation vector $m\\in\\mathbb R^d$ such that $X+m\\in\\mathcal A$; one may consider the set of admissible allocations\n$$\n\n\\mathcal R_\\lambda(X) := \\{m\\in\\mathbb R^d : \\mathbb E[\\ell(-(X+m))]\\le \\lambda\\},\n\n$$\nand/or a scalarized risk value derived from $\\mathcal R_\\lambda(X)$ (the precise scalarization depends on the MSRM definition).\n\nAssume an online/streaming observation model: samples $\\{X_i\\}_{i\\ge 1}$ are revealed one-at-a-time, where $X_i$ are i.i.d. copies of $X$. An estimator for an MSRM is any measurable mapping $\\widehat{\\mathcal R}_{\\lambda,n}$ (or $\\widehat m_n$) computed from $X_1,\\dots,X_n$. “Finite-sample bounds” refers to non-asymptotic guarantees (e.g., mean-squared error or concentration inequalities) as explicit functions of $n$.\n\n### 2. Open Problem\n\n**Question 1.1.** Develop non-asymptotic (finite-sample) performance guarantees for an online/streaming estimator of a multivariate shortfall risk measure (MSRM) based on i.i.d. samples $X_1,\\dots,X_n$ of a bounded random vector $X\\in\\mathbb R^d$.\n\nConcretely, provide explicit bounds (in $n$) on the estimation error of an MSRM estimator $\\widehat{\\mathcal R}_{\\lambda,n}$ (or an estimated capital allocation $\\widehat m_n\\in\\mathbb R^d$) relative to the target MSRM determined by $\\ell$ and $\\lambda$, analogous in spirit to finite-sample bounds available for the univariate utility-based shortfall risk estimator.\n\n### 3. Known Results\n\nThe source paper (Hegde et al., 2023) develops a stochastic-approximation (SA) root-finding view of univariate utility-based shortfall risk (UBSR), where $\\mathrm{SR}_\\lambda(X)$ is the unique root of $g(t)=\\mathbb E[\\ell(-X-t)]-\\lambda$. Under boundedness and a monotonicity condition on $g$ (via bounds on $-\\ell'$), it proves non-asymptotic mean-squared error rates $\\mathbb E[(t_n-\\mathrm{SR}_\\lambda(X))^2]=O(1/n)$ for stepsize $a_n=c/n$ when the monotonicity parameter is known, and $O(1/n^\\alpha)$ for universal stepsizes $a_n=c/n^\\alpha$, together with high-probability concentration. It also analyzes biased ratio-form gradient estimators for UBSR optimization, again with explicit finite-sample rates.\n\nForward-citing work to date does not resolve the multivariate extension requested in the open problem: finite-sample bounds for streaming estimators of multivariate shortfall risk measures (MSRM) defined by $\\mathcal R_\\lambda(X)=\\{m\\in\\mathbb R^d: \\mathbb E[\\ell(-(X+m))]\\le\\lambda\\}$ with $d\\ge2$ and convex aggregation loss $\\ell:\\mathbb R^d\\to\\mathbb R$. The most relevant partial progress remains in the univariate/scalar setting: (i) learning/regression work provides concentration for SAA estimators of scalar shortfall risk under tail/margin conditions; (ii) risk-sensitive RL work provides $O(1/m)$ MSE bounds for shortfall-risk policy-gradient estimators using double sampling; and (iii) optimization papers develop efficient solvers (e.g., ADMM and semismooth Newton projections) for finite-sample SAA programs. These contributions suggest tools—uniform concentration over $m\\in\\mathbb R^d$, stability of feasible-set estimators, and SA/SGD analyses with biased or ratio estimators—but a complete non-asymptotic streaming theory for MSRM set/allocator estimation appears to remain open.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #68 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W3214544052_p0/partial_progress/68.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** V. S. Hegde, Arvind S. Menon, L. A. Prashanth, Krishna Jagannathan, [*Online Estimation and Optimization of Utility-Based Shortfall Risk*](https://doi.org/10.1287/moor.2022.0266), Mathematics of Operations Research, 2024.\n- **Location in paper:** Page 33, Section 9 (Concluding Remarks and Future Work).\n- **Area:** risk measure estimation\n- **Keywords:** `shortfall risk`, `multivariate risk measures`, `stochastic approximation`, `finite-sample bounds`, `streaming estimation`, `concentration inequalities`\n- **Upstream problem record:** [W3214544052_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W3214544052_p0&n=68&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. V. S. Hegde, Arvind S. Menon, L. A. Prashanth, Krishna Jagannathan, [*Online Estimation and Optimization of Utility-Based Shortfall Risk*](https://doi.org/10.1287/moor.2022.0266), Mathematics of Operations Research, 2024.\n2. *Risk-sensitive reinforcement learning using expectiles, shortfall risk and optimized certainty equivalent risk*.\n3. *Optimizing Shortfall Risk Metric for Learning Regression Models*.\n4. *An Alternating Direction Method of Multipliers for Utility-based Shortfall Risk Portfolio Optimization*.\n5. *Some Studies on Stochastic Optimization based Quantitative Risk Management*.\n",
+  "conciseness": "long",
+  "concisenessLabel": "复杂"
+}

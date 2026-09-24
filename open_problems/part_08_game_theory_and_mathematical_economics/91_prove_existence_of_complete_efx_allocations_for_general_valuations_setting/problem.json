@@ -1,0 +1,54 @@
+{
+  "id": 91,
+  "title": "Prove existence of complete EFX allocations for general valuations setting",
+  "part": "博弈论与数理经济学",
+  "partKey": "part_08_game_theory_and_mathematical_economics",
+  "file": "open_problems/part_08_game_theory_and_mathematical_economics/91_prove_existence_of_complete_efx_allocations_for_general_valuations_setting/problem.md",
+  "jsonFile": "open_problems/part_08_game_theory_and_mathematical_economics/91_prove_existence_of_complete_efx_allocations_for_general_valuations_setting/problem.json",
+  "authors": "Ryoga Mahara",
+  "source": "Ryoga Mahara, Extension of Additive Valuations to General Valuations on the Existence of EFX, Mathematics of Operations Research, 2023.",
+  "keywords": "fair division, indivisible goods, EFX, general valuations, existence theorem, envy-freeness",
+  "verification": "待核验",
+  "type": "existence",
+  "typeLabel": "存在性 / 唯一性",
+  "typeTags": [
+    "存在性 / 唯一性",
+    "证明或反例"
+  ],
+  "clarity": {
+    "score": 86,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 18,
+      "目标与判据": 21,
+      "范围与边界": 9,
+      "单一性": 13
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 18/20",
+      "目标与判据 21/25",
+      "范围与边界 9/15",
+      "单一性 13/15",
+      "出现宽泛或并列扩展措辞，需人工确认边界"
+    ]
+  },
+  "summary": "Let there be a finite set of indivisible items $M$ and a finite set of agents $N=\\{1,\\dots,n\\}$. Each agent $i\\in N$ has a valuation function $vi:2^M\\to \\mathbb{R}{\\ge 0}$ satisfying: 1) Normalization: $vi(\\varnothing)=0$. 2) Monotonicity: if $S\\subseteq T\\subseteq M$, then $vi(S)\\le vi(T)$. An allocation is an $n$-tuple $X=(X1,\\dots,Xn)$ of pairwise-disjoint bundles $Xi\\subseteq M$. It is complete if $\\bigcup{i\\in N} Xi=M$. For agents $i,j\\in N$, agent $i$ \\emph{envies} agent $j$ under allocation $X$ if $vi(Xi) < vi(Xj)$. An allocation $X$ is \\emph{envy-free up to any item (EFX)} if for every pair $i,j\\in N$ and every item $g\\in Xj$, $$",
+  "statement": "\\forall i,j\\in N,\\ \\forall g\\in Xj:\\quad vi(Xi) \\ge vi(Xj\\setminus\\{g\\}).",
+  "statementLength": 65,
+  "statementSentences": 1,
+  "statementFormulas": 0,
+  "statementComplexityScore": 12,
+  "statementConnectors": 0,
+  "concisenessBasis": "长度 65、句子 1、公式 0、连接结构 0；本批次复杂度分位点 30/54",
+  "familiarity": "high",
+  "familiarityLabel": "高文献可见度",
+  "familiarityScore": 11,
+  "familiarityBasis": "来源元数据、参考文献 7 条、链接/DOI 4 个",
+  "content": "# Prove existence of complete EFX allocations for general valuations setting\n\nThis file contains the open problem on Prove existence of complete EFX allocations for general valuations setting.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Prove existence of complete EFX allocations for general valuations setting\n\nSource paper authors: Ryoga Mahara\n\n### 1. Problem Background\n\nLet there be a finite set of indivisible items $M$ and a finite set of agents $N=\\{1,\\dots,n\\}$. Each agent $i\\in N$ has a valuation function $v_i:2^M\\to \\mathbb{R}_{\\ge 0}$ satisfying:\n1) Normalization: $v_i(\\varnothing)=0$.\n2) Monotonicity: if $S\\subseteq T\\subseteq M$, then $v_i(S)\\le v_i(T)$.\nAn allocation is an $n$-tuple $X=(X_1,\\dots,X_n)$ of pairwise-disjoint bundles $X_i\\subseteq M$. It is complete if $\\bigcup_{i\\in N} X_i=M$.\nFor agents $i,j\\in N$, agent $i$ \\emph{envies} agent $j$ under allocation $X$ if $v_i(X_i) < v_i(X_j)$.\nAn allocation $X$ is \\emph{envy-free up to any item (EFX)} if for every pair $i,j\\in N$ and every item $g\\in X_j$,\n$$\n\n v_i(X_i) \\ge v_i(X_j\\setminus\\{g\\}).\n\n$$\nEquivalently, after removing any single item from $j$'s bundle, agent $i$ does not prefer the remainder to her own bundle.\nThe central general-valuation setting imposes no further structure such as additivity, submodularity, or identical valuations beyond normalization and monotonicity.\n\n### 2. Open Problem\n\n**Question 1.1.** Given any numbers of agents $n\\ge 1$, any finite item set $M$, and any collection of normalized, monotone valuation functions $\\{v_i:2^M\\to\\mathbb{R}_{\\ge 0}\\}_{i\\in N}$, determine whether there must exist a complete allocation $X=(X_1,\\dots,X_n)$ of $M$ that is EFX, i.e., satisfies\n$$\n\n\\forall i,j\\in N,\\ \\forall g\\in X_j:\\quad v_i(X_i) \\ge v_i(X_j\\setminus\\{g\\}).\n\n$$\nIn particular, resolve the existence question for general valuations when all goods must be allocated.\n\n### 3. Known Results\n\nMahara (2021) framed the central question for general (normalized, monotone) valuations: whether a complete EFX allocation must always exist. Building on the champion-graph framework of Chaudhury–Garg–Mehlhorn and the “EFX with charity” line, Mahara extended several additive-valuation existence results to general valuations via potential-function arguments (lexicographic and a new partition-leximin potential). In particular, Mahara proved complete EFX existence for two-valuation-type profiles and for the small-excess regime $m\\le n+3$, and improved bounded-charity guarantees to $|U|\\le n-2$ unallocated goods while maintaining that no agent envies the unallocated set.\n\nThe universal existence conjecture for complete EFX under general monotone valuations has since been resolved negatively by the paper titled “A Counterexample to EFX; Agents, Items, Monotone Valuations; via SAT-Solving”, which constructs an explicit instance with $n=3$ agents and $m=8$ goods admitting no complete EFX allocation, and further shows broad families of counterexamples for all $n\\ge 3$ once $m$ is sufficiently larger than $n$ (even for submodular valuations). This pins down the sharpness of Mahara’s positive results in the small-$m$ regime and clarifies that any general-valuation existence theorem must impose additional structure (on valuations, on item-agent incidence, or by allowing charity/approximation).\n\nSubsequent work has therefore focused on delineating maximal domains where complete EFX remains guaranteed and on principled relaxations. On the positive side, complete EFX is shown to exist for substantial structured subclasses of monotone valuations, notably multigraph/bipartite-multigraph valuation models where each good is relevant to at most two agents, and for leveled valuations where value strictly increases with bundle size. Complementarily, relaxations such as epistemic EFX (EEFX) restore unconditional existence for arbitrary monotone valuations, while other lines (e.g., rainbow-cycle-number methods) yield near-optimal $(1-\\varepsilon)$-EFX with bounded charity and additional welfare guarantees. Together, these results map a post-counterexample landscape: exact complete EFX fails in full generality, but remains attainable in rich structured settings and via carefully designed relaxations.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #67 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W3186360956_p0/partial_progress/67.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Ryoga Mahara, [*Extension of Additive Valuations to General Valuations on the Existence of EFX*](https://doi.org/10.1287/moor.2022.0044), Mathematics of Operations Research, 2023.\n- **Location in paper:** Page 2, Introduction (discussion of prior work and open status of EFX existence for general valuations)\n- **Area:** fair division\n- **Keywords:** `fair division`, `indivisible goods`, `EFX`, `general valuations`, `existence theorem`, `envy-freeness`\n- **Upstream problem record:** [W3186360956_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W3186360956_p0&n=67&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Ryoga Mahara, [*Extension of Additive Valuations to General Valuations on the Existence of EFX*](https://doi.org/10.1287/moor.2022.0044), Mathematics of Operations Research, 2023.\n2. *A Counterexample to EFX; Agents, Items, Monotone Valuations; via SAT-Solving*.\n3. [*EFX: a simpler approach and an (almost) optimal guarantee via rainbow cycle number*](https://doi.org/10.1287/opre.2023.0433).\n4. *EFX allocations and orientations on bipartite multi-graphs: A complete picture*.\n5. *On the existence of EFX allocations in multigraphs*.\n6. *Fair and truthful allocations under leveled valuations*.\n7. *Epistemic EFX allocations exist for monotone valuations*.\n",
+  "conciseness": "short",
+  "concisenessLabel": "简洁"
+}

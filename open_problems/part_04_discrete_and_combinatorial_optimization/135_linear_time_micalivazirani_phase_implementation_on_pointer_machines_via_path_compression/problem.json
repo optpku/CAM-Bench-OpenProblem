@@ -1,0 +1,55 @@
+{
+  "id": 135,
+  "title": "Linear-time Micali–Vazirani phase implementation on pointer machines via path compression",
+  "part": "离散与组合优化",
+  "partKey": "part_04_discrete_and_combinatorial_optimization",
+  "file": "open_problems/part_04_discrete_and_combinatorial_optimization/135_linear_time_micalivazirani_phase_implementation_on_pointer_machines_via_path_compression/problem.md",
+  "jsonFile": "open_problems/part_04_discrete_and_combinatorial_optimization/135_linear_time_micalivazirani_phase_implementation_on_pointer_machines_via_path_compression/problem.json",
+  "authors": "Vijay V. Vazirani",
+  "source": "Vijay V. Vazirani, A Theory of Alternating Paths and Blossoms from the Perspective of Minimum Length, Mathematics of Operations Research, 2024.",
+  "keywords": "maximum matching, micali vazirani algorithm, pointer machine, disjoint set union, path compression, amortized analysis",
+  "verification": "待核验",
+  "type": "convergence",
+  "typeLabel": "收敛 / 稳定性",
+  "typeTags": [
+    "收敛 / 稳定性",
+    "界 / 近似 / 最优常数",
+    "算法 / 机制设计",
+    "证明或反例"
+  ],
+  "clarity": {
+    "score": 88,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 20,
+      "目标与判据": 23,
+      "范围与边界": 5,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 20/20",
+      "目标与判据 23/25",
+      "范围与边界 5/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Let $G=(V,E)$ be an undirected graph with $|V|=n$, $|E|=m$, and let $M\\subseteq E$ be a matching. An $M$-alternating path is a simple path whose edges alternate between $M$ and $E\\setminus M$. An $M$-augmenting path is an alternating path whose endpoints are unmatched vertices (with respect to $M$); augmenting along such a path increases $|M|$ by 1.",
+  "statement": "1) Prove or disprove that implementing $\\mathrm{bud}^$ using path compression (as suggested for MV) yields total time $O(m)$ per phase.",
+  "statementLength": 116,
+  "statementSentences": 1,
+  "statementFormulas": 2,
+  "statementComplexityScore": 24,
+  "statementConnectors": 1,
+  "concisenessBasis": "长度 116、句子 1、公式 2、连接结构 1；本批次复杂度分位点 30/54",
+  "familiarity": "medium",
+  "familiarityLabel": "中文献可见度",
+  "familiarityScore": 7,
+  "familiarityBasis": "来源元数据、参考文献 1 条、链接/DOI 2 个",
+  "content": "# Linear-time Micali–Vazirani phase implementation on pointer machines via path compression\n\nThis file contains the open problem on Linear-time Micali–Vazirani phase implementation on pointer machines via path compression.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Linear-time Micali–Vazirani phase implementation on pointer machines via path compression\n\nSource paper authors: Vijay V. Vazirani\n\n### 1. Problem Background\n\nLet $G=(V,E)$ be an undirected graph with $|V|=n$, $|E|=m$, and let $M\\subseteq E$ be a matching. An $M$-alternating path is a simple path whose edges alternate between $M$ and $E\\setminus M$. An $M$-augmenting path is an alternating path whose endpoints are unmatched vertices (with respect to $M$); augmenting along such a path increases $|M|$ by 1.\n\nThe Micali--Vazirani (MV) algorithm finds a maximum-cardinality matching by repeating phases. In one phase it finds a maximal set of vertex-disjoint minimum-length augmenting paths (with respect to the current matching $M$) and augments along all of them. A phase uses a graph-search subroutine called double depth-first search (DDFS) to discover either an augmenting path or a certain contracted structure (petal/blossom). During a phase, the algorithm maintains a dynamically changing parent-like map $\\mathrm{bud}:V\\to V$ that maps each vertex to the current \\\"bud\\\" representing the petal containing it, and the iterated map $\\mathrm{bud}^*(v)$ defined by repeated application of $\\mathrm{bud}$ until reaching a fixed point:\n$$\n\n\\mathrm{bud}^*(v)=\\begin{cases}\n v, & \\text{if }\\mathrm{bud}(v)=v,\\\\\n \\mathrm{bud}^*(\\mathrm{bud}(v)), & \\text{otherwise.}\n\\end{cases}\n\n$$\nComputing $\\mathrm{bud}^*$ is implemented via a disjoint-set union (union--find) data structure, where unions correspond to newly formed petals/blossoms and finds return the current representative $\\mathrm{bud}^*(v)$. On a pointer machine model, standard union--find with path compression runs in $O(\\alpha(m,n))$ amortized time per operation, yielding $O(m\\,\\alpha(m,n))$ time per phase if there are $O(m)$ such operations.\n\nThe paper proves correctness of MV and shows a per-phase time bound $O(m)$ on the RAM model and $O(m\\,\\alpha(m,n))$ on the pointer model when union--find is used to maintain $\\mathrm{bud}^*$. It states that Micali and Vazirani claimed (without proof) that, due to special blossom structure in MV, path compression alone suffices to make the total time spent in maintaining $\\mathrm{bud}^*$ linear per phase on the pointer model, i.e., eliminating the extra $\\alpha(m,n)$ factor. The paper also poses a related question: whether the union--find based MV implementation already runs in linear time per phase because the number/structure of operations is more restricted than in worst-case union--find analysis.\n\n### 2. Open Problem\n\n**Question 1.1.** On the pointer machine model, analyze the total time per phase spent on maintaining and querying $\\mathrm{bud}^*(\\cdot)$ (the iterated-bud representative) in the MV algorithm.\n\n1) Prove or disprove that implementing $\\mathrm{bud}^*$ using path compression (as suggested for MV) yields total time $O(m)$ per phase.\n\nEquivalently (as an alternative formulation also raised in the paper):\n\n2) Prove or disprove that when MV is implemented with Tarjan's disjoint-set union algorithm to support $\\mathrm{bud}^*(\\cdot)$, the total time devoted to disjoint-set operations within one phase is $O(m)$ (so the phase runs in linear time on the pointer model).\n\nThe analysis should use only the sequence/structure of disjoint-set $\\mathrm{find}$/$\\mathrm{union}$ operations generated by an MV phase (including DDFS calls and petal/bud formation) and not assume worst-case union--find bounds a priori.\n\n### 3. Known Results\n\nNo relevant Scholar-organic forward citations were available for this problem. The forward-citation review therefore cannot identify follow-up work that resolves or materially advances the problem.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #119 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4396690120_p0/partial_progress/119.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Vijay V. Vazirani, [*A Theory of Alternating Paths and Blossoms from the Perspective of Minimum Length*](https://doi.org/10.1287/moor.2020.0388), Mathematics of Operations Research, 2024.\n- **Location in paper:** Section 9.3, Remark 9 (page 2044), and Section 10, final open question (page 2046).\n- **Area:** maximum matching algorithms\n- **Keywords:** `maximum matching`, `micali vazirani algorithm`, `pointer machine`, `disjoint set union`, `path compression`, `amortized analysis`\n- **Upstream problem record:** [W4396690120_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4396690120_p0&n=119&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Vijay V. Vazirani, [*A Theory of Alternating Paths and Blossoms from the Perspective of Minimum Length*](https://doi.org/10.1287/moor.2020.0388), Mathematics of Operations Research, 2024.\n",
+  "conciseness": "short",
+  "concisenessLabel": "简洁"
+}

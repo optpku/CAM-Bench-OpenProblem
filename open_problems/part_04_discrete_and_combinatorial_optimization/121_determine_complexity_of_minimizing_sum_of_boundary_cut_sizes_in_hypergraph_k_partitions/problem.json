@@ -1,0 +1,56 @@
+{
+  "id": 121,
+  "title": "Determine complexity of minimizing sum of boundary cut sizes in hypergraph k-partitions",
+  "part": "离散与组合优化",
+  "partKey": "part_04_discrete_and_combinatorial_optimization",
+  "file": "open_problems/part_04_discrete_and_combinatorial_optimization/121_determine_complexity_of_minimizing_sum_of_boundary_cut_sizes_in_hypergraph_k_partitions/problem.md",
+  "jsonFile": "open_problems/part_04_discrete_and_combinatorial_optimization/121_determine_complexity_of_minimizing_sum_of_boundary_cut_sizes_in_hypergraph_k_partitions/problem.json",
+  "authors": "Calvin Beideman, Karthekeyan Chandrasekaran, Weihang Wang",
+  "source": "Calvin Beideman, Karthekeyan Chandrasekaran, Weihang Wang, Counting and Enumerating Optimum Cut Sets for Hypergraph <i>k</i>-Partitioning Problems for Fixed <i>k</i>, Mathematics of Operations Research, 2023.",
+  "keywords": "hypergraph partitioning, k-partition, submodular partitioning, computational complexity, cut function, polynomial-time algorithm",
+  "verification": "待核验",
+  "type": "complexity",
+  "typeLabel": "复杂度 / 可计算性",
+  "typeTags": [
+    "复杂度 / 可计算性",
+    "界 / 近似 / 最优常数",
+    "算法 / 机制设计",
+    "优化模型 / 算子"
+  ],
+  "clarity": {
+    "score": 84,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 18,
+      "目标与判据": 23,
+      "范围与边界": 5,
+      "单一性": 13
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 18/20",
+      "目标与判据 23/25",
+      "范围与边界 5/15",
+      "单一性 13/15",
+      "出现宽泛或并列扩展措辞，需人工确认边界"
+    ]
+  },
+  "summary": "Let $G=(V,E)$ be a (multi-)hypergraph with vertex set $V$ of size $n$ and hyperedge set $E$. Each hyperedge $e\\in E$ is a subset of $V$. (The paper primarily discusses the unweighted case, i.e., each hyperedge has unit cost; the objective below is stated for this setting.)",
+  "statement": "Question 1.1. Given a hypergraph $G=(V,E)$ and a fixed integer $k\\ge 5$, determine the computational complexity of the optimization problem $$ \\min\\left\\{\\sum{i=1}^k |\\delta(Vi)| : (V1,\\dots,Vk) \\text{ is a } k\\text{-partition of } V\\right\\}. $$ In particular, decide whether this problem admits a po",
+  "statementLength": 258,
+  "statementSentences": 3,
+  "statementFormulas": 3,
+  "statementComplexityScore": 58,
+  "statementConnectors": 4,
+  "concisenessBasis": "长度 258、句子 3、公式 3、连接结构 4；本批次复杂度分位点 30/54",
+  "familiarity": "high",
+  "familiarityLabel": "高文献可见度",
+  "familiarityScore": 11,
+  "familiarityBasis": "来源元数据、参考文献 6 条、链接/DOI 12 个",
+  "content": "# Determine complexity of minimizing sum of boundary cut sizes in hypergraph k-partitions\n\nThis file contains the open problem on Determine complexity of minimizing sum of boundary cut sizes in hypergraph k-partitions.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Determine complexity of minimizing sum of boundary cut sizes in hypergraph k-partitions\n\nSource paper authors: Calvin Beideman, Karthekeyan Chandrasekaran, Weihang Wang\n\n### 1. Problem Background\n\nLet $G=(V,E)$ be a (multi-)hypergraph with vertex set $V$ of size $n$ and hyperedge set $E$. Each hyperedge $e\\in E$ is a subset of $V$. (The paper primarily discusses the unweighted case, i.e., each hyperedge has unit cost; the objective below is stated for this setting.)\n\nFor a nonempty proper subset $U\\subset V$, define the cut-set\n$$\n\\delta(U):=\\{e\\in E: e\\cap U\\neq\\emptyset \\text{ and } e\\cap (V\\setminus U)\\neq\\emptyset\\},\n$$\nand its cut value $d(U):=|\\delta(U)|$.\n\nA $k$-partition of $V$ is an ordered tuple $(V_1,\\dots,V_k)$ of pairwise disjoint nonempty subsets whose union is $V$.\n\nFor a $k$-partition $(V_1,\\dots,V_k)$, the paper considers various objectives based on the boundary sizes $|\\delta(V_i)|$. In particular, the variant highlighted in the conclusion asks to minimize the sum of boundary cut values\n$$\n\\sum_{i=1}^k |\\delta(V_i)| = \\sum_{i=1}^k d(V_i).\n$$\n\n### 2. Open Problem\n\n**Question 1.1.** Given a hypergraph $G=(V,E)$ and a fixed integer $k\\ge 5$, determine the computational complexity of the optimization problem\n$$\n\\min\\left\\{\\sum_{i=1}^k |\\delta(V_i)| : (V_1,\\dots,V_k) \\text{ is a } k\\text{-partition of } V\\right\\}.\n$$\nIn particular, decide whether this problem admits a polynomial-time algorithm for fixed $k\\ge 5$ (or whether it is NP-hard) in the unweighted hypergraph setting.\n\n### 3. Known Results\n\nThe objective in the open problem is the minsum boundary variant of hypergraph $k$-partitioning: minimize $\\sum_{i=1}^k d(V_i)$ where $d(U)=|\\delta(U)|$ is the (unweighted) hypergraph cut function. In the notation of the source paper, this is distinct from Hypergraph-$k$-Cut (which minimizes $|\\delta(V_1,\\dots,V_k)|$ counting each crossing hyperedge once) and from Minmax-Hypergraph-$k$-Partition (which minimizes $\\max_i d(V_i)$). The source paper develops powerful terminal-cut structural theorems (notably Theorem 1.4) enabling deterministic enumeration for Hypergraph-$k$-Cut and Minmax-Hypergraph-$k$-Partition for fixed $k$, but it explicitly notes that analogous structure fails for the minsum boundary objective and leaves its complexity for $k\\ge 5$ open.\n\nSubsequent work on submodular partitioning has made partial progress on the minsum side. The strongest direct advance toward the stated objective is the polynomial-time algorithm for minimum 4-partition of a general submodular function, which implies a polynomial-time algorithm for minimum 5-partition when the function is symmetric submodular; since hypergraph cut functions are symmetric submodular, this yields a polynomial-time algorithm for the hypergraph minsum boundary objective at $k=5$. However, no general polynomial-time algorithm is known for fixed $k\\ge 6$, and no NP-hardness is established for fixed $k\\ge 5$ in the unweighted hypergraph setting.\n\nOn the minmax and standard $k$-cut sides, polynomial-time solvability for fixed $k$ is now well developed: minmax symmetric-submodular partitioning admits an $n^{O(k^2)}$-time algorithm, and hypergraph minimum $k$-cut admits deterministic enumeration algorithms for fixed $k$. These results supply techniques (terminal-cut enumeration, contraction/uncrossing structure) that may inform future attacks on the minsum boundary objective, but current literature still treats the fixed-$k$ minsum symmetric-submodular/hypergraph partition problem beyond $k=5$ as open.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #103 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4389673940_p0/partial_progress/103.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Calvin Beideman, Karthekeyan Chandrasekaran, Weihang Wang, [*Counting and Enumerating Optimum Cut Sets for Hypergraph <i>k</i>-Partitioning Problems for Fixed <i>k</i>*](https://doi.org/10.1287/moor.2022.0259), Mathematics of Operations Research, 2023.\n- **Location in paper:** Page 24, Section 7 (Conclusion)\n- **Area:** hypergraph k partitioning\n- **Keywords:** `hypergraph partitioning`, `k-partition`, `submodular partitioning`, `computational complexity`, `cut function`, `polynomial-time algorithm`\n- **Upstream problem record:** [W4389673940_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4389673940_p0&n=103&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Calvin Beideman, Karthekeyan Chandrasekaran, Weihang Wang, [*Counting and Enumerating Optimum Cut Sets for Hypergraph <i>k</i>-Partitioning Problems for Fixed <i>k</i>*](https://doi.org/10.1287/moor.2022.0259), Mathematics of Operations Research, 2023.\n2. [*Min–max partitioning of hypergraphs and symmetric submodular functions*](https://doi.org/10.1007/s00493-023-00021-y).\n3. [*A polynomial time algorithm for finding a minimum 4-partition of a submodular function*](https://doi.org/10.1007/s10107-023-02029-0).\n4. [*Minimum Cut and Minimum k-Cut in Hypergraphs via Branching Contractions*](https://doi.org/10.1145/3570162).\n5. [*Deterministic enumeration of all minimum cut-sets and k-cut-sets in hypergraphs for fixed k*](https://doi.org/10.1007/s10107-023-02013-8).\n6. [*Algorithms for new objectives in graph partitioning and generalizations*](https://arxiv.org/search/?query=Algorithms+for+new+objectives+in+graph+partitioning+and+generalizations).\n",
+  "conciseness": "long",
+  "concisenessLabel": "复杂"
+}

@@ -1,0 +1,52 @@
+{
+  "id": 160,
+  "title": "Achieve doubly-exponential competition complexity using dynamic prices in combinatorial auctions",
+  "part": "博弈论与数理经济学",
+  "partKey": "part_08_game_theory_and_mathematical_economics",
+  "file": "open_problems/part_08_game_theory_and_mathematical_economics/160_achieve_doubly_exponential_competition_complexity_using_dynamic_prices_in_combinatorial/problem.md",
+  "jsonFile": "open_problems/part_08_game_theory_and_mathematical_economics/160_achieve_doubly_exponential_competition_complexity_using_dynamic_prices_in_combinatorial/problem.json",
+  "authors": "Johannes Brustle, José Correa, Paul Dütting, Tomer Ezra, Michal Feldman, Víctor Verdugo",
+  "source": "Johannes Brustle, José Correa, Paul Dütting, Tomer Ezra, Michal Feldman, Víctor Verdugo, The Competition Complexity of Prophet Inequalities, Mathematics of Operations Research, 2025.",
+  "keywords": "competition complexity, prophet inequalities, combinatorial auctions, dynamic posted pricing, XOS valuations, submodular valuations",
+  "verification": "待核验",
+  "type": "complexity",
+  "typeLabel": "复杂度 / 可计算性",
+  "typeTags": [
+    "复杂度 / 可计算性"
+  ],
+  "clarity": {
+    "score": 82,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 14,
+      "目标与判据": 21,
+      "范围与边界": 7,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 14/20",
+      "目标与判据 21/25",
+      "范围与边界 7/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Consider a combinatorial auction with a finite set of items \\,$M$ and \\,$n$ agents arriving online in a known order \\,$1,2,\\dots,n$. Each agent \\,$i\\in[n]$ has a valuation function \\,$vi:2^M\\to\\mathbb{R}{\\ge 0}$, drawn independently from a known distribution \\,$Fi$ over a class of valuations (e.g., XOS or submodular). An online posted-pricing policy posts item prices and agents purchase bundles that maximize their quasilinear utility.",
+  "statement": "$$ (i.e., the number of blocks \\,$k$ needed to guarantee $\\mathbb{E}{v\\sim F^k}[\\mathrm{SW}k]\\ge (1-\\varepsilon)\\,\\mathbb{E}{v\\sim F}[\\mathrm{OPT}1(v)]$ can be taken proportional to \\,$\\log\\log(1/\\varepsilon)$).",
+  "statementLength": 192,
+  "statementSentences": 3,
+  "statementFormulas": 3,
+  "statementComplexityScore": 40,
+  "statementConnectors": 0,
+  "concisenessBasis": "长度 192、句子 3、公式 3、连接结构 0；本批次复杂度分位点 30/54",
+  "familiarity": "high",
+  "familiarityLabel": "高文献可见度",
+  "familiarityScore": 9,
+  "familiarityBasis": "来源元数据、参考文献 3 条、链接/DOI 4 个",
+  "content": "# Achieve doubly-exponential competition complexity using dynamic prices in combinatorial auctions\n\nThis file contains the open problem on Achieve doubly-exponential competition complexity using dynamic prices in combinatorial auctions.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Achieve doubly-exponential competition complexity using dynamic prices in combinatorial auctions\n\nSource paper authors: Johannes Brustle, José Correa, Paul Dütting, Tomer Ezra, Michal Feldman, Víctor Verdugo\n\n### 1. Problem Background\n\nConsider a combinatorial auction with a finite set of items \\,$M$ and \\,$n$ agents arriving online in a known order \\,$1,2,\\dots,n$. Each agent \\,$i\\in[n]$ has a valuation function \\,$v_i:2^M\\to\\mathbb{R}_{\\ge 0}$, drawn independently from a known distribution \\,$F_i$ over a class of valuations (e.g., XOS or submodular). An online posted-pricing policy posts item prices and agents purchase bundles that maximize their quasilinear utility.\n\nA (possibly adaptive) pricing policy specifies, before each agent arrives, a nonnegative price \\,$p_{i,j}\\ge 0$ for each currently unsold item \\,$j\\in M$. Upon arrival, agent \\,$i$ observes current prices and chooses a bundle \\,$T_i\\subseteq M_i$ of currently available items \\,$M_i\\subseteq M$ that maximizes\n$$\n\nT_i \\in \\arg\\max_{T\\subseteq M_i}\\bigl(v_i(T)-\\sum_{j\\in T} p_{i,j}\\bigr).\n\n$$\nTies may be broken arbitrarily. Items purchased are removed from availability.\n\nWe consider a resource-augmentation (repetition) model with \\,$k$ independent copies (“blocks”) of buyers. In block \\,$b\\in[k]$, there is one copy of each agent type \\,$i\\in[n]$ with valuation \\,$v_i^{(b)}\\sim F_i$ independently across \\,$i$ and \\,$b$. The pricing policy observes the sequence of arriving buyers across all \\,$nk$ arrivals and may update prices after each purchase (dynamic prices). Let \\,$\\mathrm{SW}_k$ denote the social welfare achieved by the policy on the \\,$k$-block instance:\n$$\n\n\\mathrm{SW}_k = \\sum_{b=1}^k\\sum_{i=1}^n v_i^{(b)}\\bigl(T_i^{(b)}\\bigr).\n\n$$\nOn a single block (one copy of each agent), define the offline optimal welfare\n$$\n\n\\mathrm{OPT}_1(v)=\\max_{(S_1,\\dots,S_n)\\in\\mathcal{P}(M)}\\sum_{i=1}^n v_i(S_i),\n\n$$\nwhere \\,$\\mathcal{P}(M)$ is the set of partitions of \\,$M$ into \\,$n$ (possibly empty) bundles.\n\nFor \\,$\\varepsilon\\in(0,1)$, the $(1-\\varepsilon)$-competition complexity of a class of pricing policies is the smallest \\,$k$ such that for every such product distribution \\,$F=F_1\\times\\cdots\\times F_n$, there exists a policy in the class whose expected welfare on \\,$k$ blocks is at least \\,$(1-\\varepsilon)$ times the expected offline optimum on one block:\n$$\n\n\\mathbb{E}_{v\\sim F^k}[\\mathrm{SW}_k]\\;\\ge\\;(1-\\varepsilon)\\,\\mathbb{E}_{v\\sim F}[\\mathrm{OPT}_1(v)].\n\n$$\n\n### 2. Open Problem\n\n**Question 1.1.** Determine whether, for submodular or XOS combinatorial auctions with independent (product) valuation distributions \\,$F=\\times_{i=1}^n F_i$, there exists a class of fully dynamic posted-pricing policies whose $(1-\\varepsilon)$-competition complexity scales as\n$$\n\n\\Theta(\\log\\log(1/\\varepsilon))\n\n$$\n(i.e., the number of blocks \\,$k$ needed to guarantee\n$\\mathbb{E}_{v\\sim F^k}[\\mathrm{SW}_k]\\ge (1-\\varepsilon)\\,\\mathbb{E}_{v\\sim F}[\\mathrm{OPT}_1(v)]$\ncan be taken proportional to \\,$\\log\\log(1/\\varepsilon)$).\n\n### 3. Known Results\n\nThe source paper introduces competition complexity as a resource-augmentation lens for online allocation and pricing, and explicitly raises the combinatorial-auction analogue of the doubly-exponential convergence phenomenon known for single-item prophet inequalities. In XOS/submodular combinatorial auctions with product distributions, it proves that block-consistent posted prices (prices fixed within each block but allowed to change between blocks) achieve welfare at least $(1-2^{-k})\\,\\mathbb{E}[\\mathrm{OPT}_1]$, yielding $(1-\\varepsilon)$-competition complexity $O(\\log(1/\\varepsilon))$. It also shows that fully static prices require $k=O(1/\\varepsilon)$ blocks to reach $(1-\\varepsilon)$ of $\\mathbb{E}[\\mathrm{OPT}_1]$. The open question is whether allowing fully dynamic prices (updating after each buyer) can improve this to $k=\\Theta(\\log\\log(1/\\varepsilon))$, matching the single-item block-threshold phenomenon.\n\nThe two forward-citing works provided do not resolve the combinatorial-auction question. They study prophet-inequality variants (correlations; multiple-selection) and develop techniques—especially doubly-exponentially decreasing quantile thresholds and quantile-space duality—that may be useful ingredients in a future dynamic-pricing construction. At present, there is no cited paper establishing $\\Theta(\\log\\log(1/\\varepsilon))$ competition complexity for dynamic posted prices in XOS/submodular combinatorial auctions under product distributions, so the problem remains open.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #147 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4408830023_p0/partial_progress/147.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Johannes Brustle, José Correa, Paul Dütting, Tomer Ezra, Michal Feldman, Víctor Verdugo, [*The Competition Complexity of Prophet Inequalities*](https://doi.org/10.1287/moor.2024.0684), Mathematics of Operations Research, 2025.\n- **Location in paper:** Page 5, Section 1.5 (Extensions)\n- **Area:** online posted pricing\n- **Keywords:** `competition complexity`, `prophet inequalities`, `combinatorial auctions`, `dynamic posted pricing`, `XOS valuations`, `submodular valuations`\n- **Upstream problem record:** [W4408830023_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4408830023_p0&n=147&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Johannes Brustle, José Correa, Paul Dütting, Tomer Ezra, Michal Feldman, Víctor Verdugo, [*The Competition Complexity of Prophet Inequalities*](https://doi.org/10.1287/moor.2024.0684), Mathematics of Operations Research, 2025.\n2. [*The competition complexity of prophet inequalities with correlations*](https://doi.org/10.1145/3736252.3742521).\n3. *Competition Versus Complexity in Multiple-Selection Prophet Inequalities*.\n",
+  "conciseness": "medium",
+  "concisenessLabel": "适中"
+}

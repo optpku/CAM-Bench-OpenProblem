@@ -1,0 +1,57 @@
+{
+  "id": 22,
+  "title": "Convex Polynomial and Semialgebraic Optimization",
+  "part": "数值分析与代数计算",
+  "partKey": "part_05_numerical_analysis_and_algebraic_computation",
+  "file": "open_problems/part_05_numerical_analysis_and_algebraic_computation/22_convex_polynomial_and_semialgebraic_optimization/problem.md",
+  "jsonFile": "open_problems/part_05_numerical_analysis_and_algebraic_computation/22_convex_polynomial_and_semialgebraic_optimization/problem.json",
+  "authors": "",
+  "source": "",
+  "keywords": "",
+  "verification": "专题整理",
+  "type": "characterization",
+  "typeLabel": "刻画 / 等价条件",
+  "typeTags": [
+    "刻画 / 等价条件",
+    "复杂度 / 可计算性",
+    "收敛 / 稳定性",
+    "界 / 近似 / 最优常数"
+  ],
+  "clarity": {
+    "score": 87,
+    "level": "L4",
+    "label": "精确定式",
+    "description": "对象、假设与可判定目标基本齐全，可直接转化为研究任务。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 20,
+      "目标与判据": 23,
+      "范围与边界": 15,
+      "单一性": 4
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 20/20",
+      "目标与判据 23/25",
+      "范围与边界 15/15",
+      "单一性 4/15",
+      "检测到 4 个子问题，按多目标议题扣分",
+      "出现宽泛或并列扩展措辞，需人工确认边界"
+    ]
+  },
+  "summary": "Let $$ f\\in\\mathbb{Q}[x1,\\ldots,xn] $$ be a rational polynomial, and consider $$ f^\\star=\\inf{x\\in K} f(x), $$ where $K$ may be $\\mathbb{R}^n$, a rational polyhedron $$ K=\\{x\\in\\mathbb{R}^n:Ax\\le b\\}, $$ or a more general semialgebraic set.",
+  "statement": "Question 1.1. Exact versus approximate convex polynomial minimization. Under the promise that $f$ is convex, what is the precise complexity of exact minimization, exact optimal-value comparison, and exact minimizer representation? In particular, given a rational convex polynomial $f$, decide whether",
+  "statementLength": 261,
+  "statementSentences": 4,
+  "statementFormulas": 2,
+  "statementComplexityScore": 61,
+  "statementConnectors": 4,
+  "concisenessBasis": "长度 261、句子 4、公式 2、连接结构 4；本批次复杂度分位点 30/54",
+  "familiarity": "low",
+  "familiarityLabel": "低文献可见度",
+  "familiarityScore": 1,
+  "familiarityBasis": "来源元数据、参考文献 3 条、链接/DOI 0 个",
+  "content": "# Convex Polynomial and Semialgebraic Optimization\n\nThis file collects open problems about the complexity of minimizing convex polynomials and related semialgebraic optimization problems. A key distinction is between promise optimization, where the input polynomial is promised to be convex, and the harder task of detecting convexity while optimizing.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Promise Convex Polynomial Optimization\n\nContributors: Jiawang Nie\n\n### 1. Problem Background\n\nLet\n$$\nf\\in\\mathbb{Q}[x_1,\\ldots,x_n]\n$$\nbe a rational polynomial, and consider\n$$\nf^\\star=\\inf_{x\\in K} f(x),\n$$\nwhere $K$ may be $\\mathbb{R}^n$, a rational polyhedron\n$$\nK=\\{x\\in\\mathbb{R}^n:Ax\\le b\\},\n$$\nor a more general semialgebraic set.\n\nThe complexity question depends strongly on the input model. If one is merely promised that $f$ is convex, approximate minimization may be much easier than the problem of first deciding whether an arbitrary polynomial is convex. Convexity detection for quartic polynomials is already NP-hard, and convexity over a box is strongly NP-hard even for cubic polynomials.\n\n### 2. Open Problems\n\n**Question 1.1. Exact versus approximate convex polynomial minimization.** Under the promise that $f$ is convex, what is the precise complexity of exact minimization, exact optimal-value comparison, and exact minimizer representation? In particular, given a rational convex polynomial $f$, decide whether\n$$\nf^\\star\\le 0.\n$$\nDoes this exact decision problem admit polynomial-time certificates comparable to those for linear or quadratic programming, or are algebraic-degree and bit-complexity obstructions unavoidable?\n\n**Question 1.2. Strongly polynomial complexity.** For rational convex polynomial minimization over $\\mathbb{R}^n$ or over a rational polyhedron, is there a strongly polynomial algorithm in an appropriate arithmetic or bit-complexity model? If approximate minimization is weakly polynomial via ellipsoid-type methods, can the dependence on coefficient bit-length be removed?\n\n**Question 1.3. Convex semialgebraic constraints.** Let\n$$\nK=\\{x:g_i(x)\\le 0,\\ i=1,\\ldots,m\\}\n$$\nbe a convex semialgebraic set, and let $f$ be a convex polynomial. What is the complexity of minimizing $f$ over $K$ when convexity of $K$ is promised? Does a Lasserre or sum-of-squares hierarchy yield finite convergence or polynomial-degree certificates under natural regularity assumptions?\n\n**Question 1.4. Certificates for convex polynomial optimality.** Characterize when a rational convex polynomial has short verifiable optimality certificates. Are there broad classes where optimality can be certified by SOS-convexity, KKT certificates, or low-degree Positivstellensatz representations?\n\n### 3. Related Known Facts\n\nConvex quadratic minimization is polynomial-time solvable. In contrast, deciding whether a quartic polynomial is globally convex is NP-hard, and related convexity, strict convexity, strong convexity, quasiconvexity, and pseudoconvexity detection problems are strongly NP-hard in degree four or higher.\n\nFor promise convex polynomial minimization, recent work suggests that approximate minimization over polyhedra may be polynomial-time solvable by ellipsoid methods once suitable solution-radius bounds are available. This makes exact complexity, strongly polynomial complexity, and semialgebraic constraints more natural open directions than a blanket NP-hardness conjecture for the approximate promise version.\n\n### 4. References\n\n1. Amir Ali Ahmadi, Alex Olshevsky, Pablo A. Parrilo, and John N. Tsitsiklis. NP-hardness of deciding convexity of quartic polynomials and related problems.\n2. Amir Ali Ahmadi and Georgina Hall. On the complexity of detecting convexity over a box.\n3. Hesse's Redemption: Efficient Convex Polynomial Programming.\n",
+  "conciseness": "long",
+  "concisenessLabel": "复杂"
+}

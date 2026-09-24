@@ -1,0 +1,56 @@
+{
+  "id": 155,
+  "title": "Designing ADMM methods for nonsmooth Riemannian optimization without Moreau smoothing",
+  "part": "连续优化与变分分析",
+  "partKey": "part_03_continuous_optimization_and_variational_analysis",
+  "file": "open_problems/part_03_continuous_optimization_and_variational_analysis/155_designing_admm_methods_for_nonsmooth_riemannian_optimization_without_moreau_smoothing/problem.md",
+  "jsonFile": "open_problems/part_03_continuous_optimization_and_variational_analysis/155_designing_admm_methods_for_nonsmooth_riemannian_optimization_without_moreau_smoothing/problem.json",
+  "authors": "Jiaxiang Li, Shiqian Ma, Tejes Srivastava",
+  "source": "Jiaxiang Li, Shiqian Ma, Tejes Srivastava, A Riemannian Alternating Direction Method of Multipliers, Mathematics of Operations Research, 2024.",
+  "keywords": "riemannian optimization, admm, nonsmooth optimization, manifold constraints, augmented lagrangian, moreau envelope",
+  "verification": "待核验",
+  "type": "complexity",
+  "typeLabel": "复杂度 / 可计算性",
+  "typeTags": [
+    "复杂度 / 可计算性",
+    "收敛 / 稳定性",
+    "界 / 近似 / 最优常数",
+    "算法 / 机制设计"
+  ],
+  "clarity": {
+    "score": 81,
+    "level": "L3",
+    "label": "清晰可研究",
+    "description": "核心问题明确，但仍有少量边界、术语或最优性条件需要补齐。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 14,
+      "目标与判据": 23,
+      "范围与边界": 6,
+      "单一性": 13
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 14/20",
+      "目标与判据 23/25",
+      "范围与边界 6/15",
+      "单一性 13/15",
+      "出现宽泛或并列扩展措辞，需人工确认边界"
+    ]
+  },
+  "summary": "Let $\\mathcal{M}\\subseteq \\mathbb{R}^n$ be an embedded Riemannian submanifold, and let $A\\in \\mathbb{R}^{m\\times n}$ be a given linear map. Consider the composite constrained optimization problem $$",
+  "statement": "$$ (or equivalently its split form $\\min\\{f(x)+g(y): x\\in\\mathcal{M},\\ Ax-y=0\\}$) without replacing $g$ by its Moreau envelope $g\\gamma$ or any other smoothing, and establish rigorous convergence guarantees (for example, convergence to an appropriate first-order stationary notion and/or an iteration-complexity bound).",
+  "statementLength": 281,
+  "statementSentences": 1,
+  "statementFormulas": 3,
+  "statementComplexityScore": 55,
+  "statementConnectors": 5,
+  "concisenessBasis": "长度 281、句子 1、公式 3、连接结构 5；本批次复杂度分位点 30/54",
+  "familiarity": "high",
+  "familiarityLabel": "高文献可见度",
+  "familiarityScore": 11,
+  "familiarityBasis": "来源元数据、参考文献 7 条、链接/DOI 8 个",
+  "content": "# Designing ADMM methods for nonsmooth Riemannian optimization without Moreau smoothing\n\nThis file contains the open problem on Designing ADMM methods for nonsmooth Riemannian optimization without Moreau smoothing.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Designing ADMM methods for nonsmooth Riemannian optimization without Moreau smoothing\n\nSource paper authors: Jiaxiang Li, Shiqian Ma, Tejes Srivastava\n\n### 1. Problem Background\n\nLet $\\mathcal{M}\\subseteq \\mathbb{R}^n$ be an embedded Riemannian submanifold, and let $A\\in \\mathbb{R}^{m\\times n}$ be a given linear map. Consider the composite constrained optimization problem\n$$\n\n\\min_{x\\in \\mathcal{M}}\\; F(x) := f(x)+ g(Ax),\n\n$$\nwhere:\n1) $f:\\mathbb{R}^n\\to\\mathbb{R}$ is smooth (continuously differentiable) in the ambient Euclidean space (and may be nonconvex).\n2) $g:\\mathbb{R}^m\\to\\mathbb{R}\\cup\\{+\\infty\\}$ is convex but possibly nonsmooth in the ambient Euclidean space.\nA standard variable-splitting reformulation introduces $y\\in\\mathbb{R}^m$ and imposes the linear constraint $Ax-y=0$:\n$$\n\n\\min_{x\\in \\mathcal{M},\\; y\\in\\mathbb{R}^m}\\; f(x)+g(y)\\quad \\text{s.t. } Ax-y=0.\n\n$$\nAn (Euclidean) augmented Lagrangian for this splitting is\n$$\n\n\\mathcal{L}_\\rho(x,y;\\lambda)= f(x)+g(y)+\\langle \\lambda, Ax-y\\rangle+\\frac{\\rho}{2}\\|Ax-y\\|^2,\n\n$$\nwith multiplier $\\lambda\\in\\mathbb{R}^m$ and penalty parameter $\\rho>0$.\n\nIn the paper, the proposed RADMM replaces $g$ by a smoothed surrogate using the Moreau envelope with parameter $\\gamma>0$:\n$$\n\n g_\\gamma(z):= \\min_{y\\in\\mathbb{R}^m}\\Big\\{g(y)+\\frac{1}{2\\gamma}\\|y-z\\|^2\\Big\\},\n\n$$\nand then applies an ADMM-like scheme to the smoothed problem. The open question asks for an ADMM design for the original (unsmoothed) problem above, i.e., without introducing $g_\\gamma$ (or equivalently without the additional quadratic smoothing term used to obtain a smooth surrogate of $g$).\n\n### 2. Open Problem\n\n**Question 1.1.** Construct and analyze an ADMM-type algorithm that directly solves\n$$\n\n\\min_{x\\in \\mathcal{M}}\\; f(x)+g(Ax)\n\n$$\n(or equivalently its split form $\\min\\{f(x)+g(y): x\\in\\mathcal{M},\\ Ax-y=0\\}$) without replacing $g$ by its Moreau envelope $g_\\gamma$ or any other smoothing, and establish rigorous convergence guarantees (for example, convergence to an appropriate first-order stationary notion and/or an iteration-complexity bound).\n\n### 3. Known Results\n\nLi–Ma–Srivastava (2024) introduced RADMM for the split formulation $\\min\\{f(x)+g(y): x\\in\\mathcal M,\\ Ax-y=0\\}$ but crucially relied on Moreau-envelope smoothing $g_\\gamma$ to obtain a smooth surrogate and then performed a Riemannian gradient step on the augmented Lagrangian, yielding an $O(\\varepsilon^{-4})$ iteration bound for their $\\varepsilon$-stationarity notion. The open question in that paper asked whether one can design an ADMM-type method that keeps the original convex nonsmooth $g$ intact (i.e., uses a genuine proximal $y$-update) while still controlling multiplier behavior and tangent-space variation to obtain rigorous convergence guarantees.\n\nThis question has been answered affirmatively by the paper \"Adaptive Riemannian ADMM for nonsmooth optimization: Optimal complexity without smoothing\", which provides an unsmoothed Riemannian ADMM for $\\min_{x\\in\\mathcal M} f(x)+g(Ax)$ (via splitting $Ax=y$) and proves nonasymptotic KKT residual bounds. Its key technical innovation is an adaptive choice of penalty $\\rho_k$ and dual stepsize (together with a decaying primal stepsize) that yields control of $\\|\\lambda^{k+1}-\\lambda^k\\|$ in terms of primal differences and enables a Lyapunov-type descent argument without appealing to the smoothness of $g_\\gamma$. The resulting complexity $O(\\varepsilon^{-3})$ to reach an $\\varepsilon$-approximate KKT point matches the natural target for first-order methods in this nonconvex–nonsmooth manifold setting and improves over the $O(\\varepsilon^{-4})$ rate of the smoothed RADMM analysis.\n\nSubsequent and parallel developments broaden the landscape. \"A Single-loop Stochastic Riemannian ADMM for Nonsmooth Optimization\" extends the unsmoothed ADMM idea to stochastic objectives $\\mathbb E[f(x,\\xi)]$, retaining proximal handling of $g$ and achieving $\\tilde O(\\varepsilon^{-3})$ complexity for $\\varepsilon$-KKT points. On the other hand, augmented-Lagrangian and primal–dual alternatives provide complementary theory: \"Oracle Complexities of Augmented Lagrangian Methods for Nonsmooth Composite Optimization on a Compact Submanifold\" gives sharp oracle complexities for manifold ALM schemes but still introduces a Moreau envelope implicitly by eliminating the split variable, while \"A Riemannian alternating descent ascent algorithmic framework for nonconvex-linear minimax problems on Riemannian manifolds\" solves the same composite objective through a Fenchel-type minimax formulation with $O(\\varepsilon^{-3})$ complexity without smoothing $g$. Together, these works indicate that the main remaining gaps are relaxing compactness/Lipschitz assumptions (e.g., noncompact $\\mathcal M$, non-Lipschitz $g$ such as indicators), improving constants and practical adaptivity, and establishing last-iterate guarantees or faster rates under additional geometry (e.g., geodesic convexity, error bounds, or KŁ properties).\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #142 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4405624370_p0/partial_progress/142.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Jiaxiang Li, Shiqian Ma, Tejes Srivastava, [*A Riemannian Alternating Direction Method of Multipliers*](https://doi.org/10.1287/moor.2023.0068), Mathematics of Operations Research, 2024.\n- **Location in paper:** Page 20, Section 5 (Conclusion)\n- **Area:** manifold admm\n- **Keywords:** `riemannian optimization`, `admm`, `nonsmooth optimization`, `manifold constraints`, `augmented lagrangian`, `moreau envelope`\n- **Upstream problem record:** [W4405624370_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4405624370_p0&n=142&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Jiaxiang Li, Shiqian Ma, Tejes Srivastava, [*A Riemannian Alternating Direction Method of Multipliers*](https://doi.org/10.1287/moor.2023.0068), Mathematics of Operations Research, 2024.\n2. *Adaptive Riemannian ADMM for nonsmooth optimization: Optimal complexity without smoothing*.\n3. *A Single-loop Stochastic Riemannian ADMM for Nonsmooth Optimization*.\n4. [*Oracle Complexities of Augmented Lagrangian Methods for Nonsmooth Composite Optimization on a Compact Submanifold*](https://doi.org/10.1287/moor.2024.0498).\n5. [*A Riemannian alternating descent ascent algorithmic framework for nonconvex-linear minimax problems on Riemannian manifolds*](https://doi.org/10.1287/moor.2025.1055).\n6. *A new inexact manifold proximal linear algorithm with adaptive stopping criteria*.\n7. [*Non-convex Pose Graph Optimization in SLAM via Proximal Linearized Riemannian ADMM: X. Chen et al.*](https://doi.org/10.1007/s10957-025-02759-5).\n",
+  "conciseness": "long",
+  "concisenessLabel": "复杂"
+}

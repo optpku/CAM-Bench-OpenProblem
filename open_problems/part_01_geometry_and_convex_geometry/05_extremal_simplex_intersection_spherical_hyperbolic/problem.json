@@ -1,0 +1,52 @@
+{
+  "id": 5,
+  "title": "Extremal Simplex Intersection in Spherical and Hyperbolic Space",
+  "part": "几何与凸几何",
+  "partKey": "part_01_geometry_and_convex_geometry",
+  "file": "open_problems/part_01_geometry_and_convex_geometry/05_extremal_simplex_intersection_spherical_hyperbolic/problem.md",
+  "jsonFile": "open_problems/part_01_geometry_and_convex_geometry/05_extremal_simplex_intersection_spherical_hyperbolic/problem.json",
+  "authors": "",
+  "source": "",
+  "keywords": "",
+  "verification": "专题整理",
+  "type": "other",
+  "typeLabel": "开放式研究问题",
+  "typeTags": [
+    "开放式研究问题"
+  ],
+  "clarity": {
+    "score": 62,
+    "level": "L2",
+    "label": "方向明确",
+    "description": "研究方向和目标可辨认，完整形式化前仍需补充关键条件。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 10,
+      "目标与判据": 7,
+      "范围与边界": 5,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 10/20",
+      "目标与判据 7/25",
+      "范围与边界 5/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "In Euclidean space $\\mathbb{E}^d$, the maximum volume of the intersection of a fixed ball and a variable simplex of given volume $V$ is attained when the simplex is regular and concentric with the ball. This follows easily by Steiner symmetrization. Apart from the two-dimensional case, it is open whether the same extremal statement remains true in spherical and hyperbolic spaces.",
+  "statement": "Equivalently, in spherical or hyperbolic space, among all simplices of given volume, is the volume of the intersection with a fixed ball maximized by the regular simplex concentric with the ball?",
+  "statementLength": 165,
+  "statementSentences": 1,
+  "statementFormulas": 0,
+  "statementComplexityScore": 30,
+  "statementConnectors": 2,
+  "concisenessBasis": "长度 165、句子 1、公式 0、连接结构 2；本批次复杂度分位点 30/54",
+  "familiarity": "low",
+  "familiarityLabel": "低文献可见度",
+  "familiarityScore": 1,
+  "familiarityBasis": "来源元数据、参考文献 2 条、链接/DOI 0 个",
+  "content": "# Extremal Simplex Intersection in Spherical and Hyperbolic Space\n\nThis file contains the open problem on Extremal Simplex Intersection in Spherical and Hyperbolic Space.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Extremal Simplex Intersection in Spherical and Hyperbolic Space\n\nContributors: Gábor Fejes Tóth and Yinyu Ye\n\n### 1. Problem Background\nIn Euclidean space $\\mathbb{E}^d$, the maximum volume of the intersection of a fixed ball and a variable simplex of given volume $V$ is attained when the simplex is regular and concentric with the ball. This follows easily by Steiner symmetrization. Apart from the two-dimensional case, it is open whether the same extremal statement remains true in spherical and hyperbolic spaces.\n\nIf true, the statement would imply several regularity results and conjectures for spherical and hyperbolic simplices, including the regularity of maximum-volume inscribed simplices and the conjectured regularity of minimum-volume circumscribed simplices.\n\n### 2. Open Problems\n**Question 1.1.** Does the Euclidean extremal statement above remain true in spherical and hyperbolic space?\n\nEquivalently, in spherical or hyperbolic space, among all simplices of given volume, is the volume of the intersection with a fixed ball maximized by the regular simplex concentric with the ball?\n\n### 3. Known Results\n#### 3.1 Spherical case\n\n**Source:** K. Böröczky, *On an extremum property of the regular simplex in $S^d$* [1].\n\nLet $B$ be a geodesic ball in the spherical space $S^d$. Among all $d$-simplices inscribed in $B$, the simplex of maximum volume is regular.\n\n#### 3.2 Hyperbolic case\n\n**Source:** N. Peyerimhoff, *Simplices of maximal volume or minimal total edge length in hyperbolic space* [2].\n\nLet $B$ be a closed geodesic ball in the hyperbolic space $H^d$. Among all $d$-simplices contained in $B$, the simplex of maximum volume is regular.\n\n### 4. References\n1. K. Böröczky, On an extremum property of the regular simplex in $S^d$, Intuitive Geometry (Siófok, 1985), 117-121, Colloq. Math. Soc. János Bolyai, 48, North-Holland, Amsterdam, 1987; MR0910705.\n2. N. Peyerimhoff, Simplices of maximal volume or minimal total edge length in hyperbolic space, J. London Math. Soc. (2) 66 (2002), no. 3, 753-768; MR1934304.\n",
+  "conciseness": "short",
+  "concisenessLabel": "简洁"
+}

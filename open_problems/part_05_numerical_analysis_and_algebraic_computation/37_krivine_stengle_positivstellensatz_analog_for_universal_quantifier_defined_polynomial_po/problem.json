@@ -1,0 +1,53 @@
+{
+  "id": 37,
+  "title": "Krivine-Stengle Positivstellensatz analog for universal-quantifier-defined polynomial positivity sets",
+  "part": "数值分析与代数计算",
+  "partKey": "part_05_numerical_analysis_and_algebraic_computation",
+  "file": "open_problems/part_05_numerical_analysis_and_algebraic_computation/37_krivine_stengle_positivstellensatz_analog_for_universal_quantifier_defined_polynomial_po/problem.md",
+  "jsonFile": "open_problems/part_05_numerical_analysis_and_algebraic_computation/37_krivine_stengle_positivstellensatz_analog_for_universal_quantifier_defined_polynomial_po/problem.json",
+  "authors": "Xiaomeng Hu, Igor Klep, Jiawang Nie",
+  "source": "Xiaomeng Hu, Igor Klep, Jiawang Nie, Positivstellensätze and Moment Problems with Universal Quantifiers, Mathematics of Operations Research, 2025.",
+  "keywords": "positivstellensatz, krivine-stengle, universal quantifiers, preorderings, semi-infinite constraints, sum of squares",
+  "verification": "待核验",
+  "type": "characterization",
+  "typeLabel": "刻画 / 等价条件",
+  "typeTags": [
+    "刻画 / 等价条件",
+    "证明或反例"
+  ],
+  "clarity": {
+    "score": 80,
+    "level": "L3",
+    "label": "清晰可研究",
+    "description": "核心问题明确，但仍有少量边界、术语或最优性条件需要补齐。",
+    "components": {
+      "问题陈述": 25,
+      "对象与假设": 14,
+      "目标与判据": 21,
+      "范围与边界": 5,
+      "单一性": 15
+    },
+    "reasons": [
+      "问题陈述 25/25",
+      "对象与假设 14/20",
+      "目标与判据 21/25",
+      "范围与边界 5/15",
+      "单一性 15/15"
+    ]
+  },
+  "summary": "Let $x=(x1,\\dots,xn)$ and $y=(y1,\\dots,ym)$ be real variables. Let $Q\\subseteq\\mathbb{R}^m$ be a closed set, and let $g=(g1,\\dots,gs)$ be polynomials $gj\\in\\mathbb{R}[x,y]$. Define the feasible set $$",
+  "statement": "K=\\{x\\in\\mathbb{R}^n: g1(x,y)\\ge 0,\\dots,gs(x,y)\\ge 0\\ \\forall y\\in Q\\},",
+  "statementLength": 66,
+  "statementSentences": 1,
+  "statementFormulas": 0,
+  "statementComplexityScore": 12,
+  "statementConnectors": 0,
+  "concisenessBasis": "长度 66、句子 1、公式 0、连接结构 0；本批次复杂度分位点 30/54",
+  "familiarity": "high",
+  "familiarityLabel": "高文献可见度",
+  "familiarityScore": 11,
+  "familiarityBasis": "来源元数据、参考文献 6 条、链接/DOI 6 个",
+  "content": "# Krivine-Stengle Positivstellensatz analog for universal-quantifier-defined polynomial positivity sets\n\nThis file contains the open problem on Krivine-Stengle Positivstellensatz analog for universal-quantifier-defined polynomial positivity sets.\n\n---\n\n<a id=\"problem-1\"></a>\n\n## 1. Krivine-Stengle Positivstellensatz analog for universal-quantifier-defined polynomial positivity sets\n\nSource paper authors: Xiaomeng Hu, Igor Klep, Jiawang Nie\n\n### 1. Problem Background\n\nLet $x=(x_1,\\dots,x_n)$ and $y=(y_1,\\dots,y_m)$ be real variables. Let $Q\\subseteq\\mathbb{R}^m$ be a closed set, and let $g=(g_1,\\dots,g_s)$ be polynomials $g_j\\in\\mathbb{R}[x,y]$. Define the feasible set\n$$\n\nK:=\\{x\\in\\mathbb{R}^n: g_1(x,y)\\ge 0,\\dots,g_s(x,y)\\ge 0\\ \\forall y\\in Q\\}.\n\n$$\nFix a finite nonnegative Borel measure $\\nu$ on $\\mathbb{R}^m$ with $\\mathrm{supp}(\\nu)=Q$ that satisfies the multivariate Carleman condition\n$$\n\n\\sum_{d=0}^\\infty \\Big(\\int y_j^{2d}\\,d\\nu(y)\\Big)^{-\\frac{1}{2d}}=\\infty,\\qquad j=1,\\dots,m.\n\n$$\nFor $g_0:=1$, define the associated quadratic module (a convex cone in $\\mathbb{R}[x]$)\n$$\n\n\\mathrm{QM}[g,\\nu]:=\\left\\{\\sum_{j=0}^s \\int \\tau_j(x,y)\\, g_j(x,y)\\, d\\nu(y):\\ \\tau_j\\in\\Sigma^2[x,y]\\right\\},\n\n$$\nwhere $\\Sigma^2[x,y]$ denotes the cone of sum-of-squares polynomials in $(x,y)$.\nA classical (quantifier-free) Krivine--Stengle Positivstellensatz gives algebraic certificates for polynomial inequalities on semialgebraic sets, including non-compact and empty-set certificates, typically using preorderings and denominators.\nIn the present setting, the constraint description uses a universal quantifier $\\forall y\\in Q$, and $Q$ may be non-semialgebraic, so $K$ may be non-semialgebraic as well.\n\n### 2. Open Problem\n\n**Question 1.1.** Develop an analogue, for sets $K\\subseteq\\mathbb{R}^n$ of the form\n$$\n\nK=\\{x\\in\\mathbb{R}^n: g_1(x,y)\\ge 0,\\dots,g_s(x,y)\\ge 0\\ \\forall y\\in Q\\},\n\n$$\nof the Krivine--Stengle Positivstellensatz: namely, give a certificate (in terms of algebraic data derived from $g$, the universal quantifier over $Q$, and possibly an auxiliary measure $\\nu$ with $\\mathrm{supp}(\\nu)=Q$) characterizing when a polynomial $f\\in\\mathbb{R}[x]$ is nonnegative on $K$, and in particular provide a corresponding algebraic infeasibility certificate characterizing when $K=\\emptyset$, without assuming an archimedean (compactness) condition on the underlying positivity cone.\n\n### 3. Known Results\n\nThe source paper (Hu–Klep–Nie, 2024) establishes a Putinar/Jacobi-type Positivstellensatz for universally quantified constraint sets $K=\\{x: g_j(x,y)\\ge0\\ \\forall y\\in Q\\}$ using the integral quadratic module $\\mathrm{QM}[g,\\nu]$ built from SOS multipliers $\\tau_j(x,y)$ integrated against a Carleman-determinate measure $\\nu$ with $\\mathrm{supp}(\\nu)=Q$. In the Archimedean case, strict positivity $f>0$ on $K$ implies $f\\in \\mathrm{QM}[g,\\nu]$, and emptiness is characterized by $-1\\in \\mathrm{QM}[g,\\nu]$. In the non-Archimedean case they obtain a perturbation result: $f\\ge0$ on $K$ iff for all $\\varepsilon>0$ there exists $r$ with $f+\\varepsilon\\Omega_r\\in \\mathrm{QM}[g,\\nu]$, where $\\Omega_r$ is an explicit high-degree positive polynomial.\n\nThe open problem asks for a genuine Krivine–Stengle analogue in this quantified setting, i.e., a denominator/preordering-style certificate for nonnegativity and especially an algebraic infeasibility certificate for $K=\\emptyset$ without Archimedean assumptions. Among the forward citations provided, the closest partial progress is \"Positivstellens\\\" atze for polynomial matrices with universal quantifiers\", which extends the $\\mathrm{QM}[\\cdot,\\nu]$ methodology to polynomial matrix inequalities and proves several non-Archimedean positivity certificates with explicit multipliers/denominators (e.g., $\\|x\\|^{2N}$, $(e^\\top x)^N$, or $\\theta^{N_\\varepsilon}$) under additional structural hypotheses such as homogeneity or restriction to $\\mathbb R_+^n$. The remaining citing works are primarily algorithmic or complexity-oriented: they develop KKT-based or Moment–SOS methods for semi-infinite/robust problems with structured parameter sets (polyhedral or semialgebraic) or provide degree bounds for matrix Putinar-type certificates. None supplies a full Krivine–Stengle-type Positivstellensatz (with denominators and an emptiness certificate) for general universally quantified scalar constraints over possibly non-semialgebraic $Q$.\n\nThus, based on the provided forward-citation set, the problem remains open. Promising directions suggested by partial results include: (i) importing homogenization/Putinar–Vasilescu and P\\'olya-type multiplier techniques to the integral quadratic module $\\mathrm{QM}[g,\\nu]$; (ii) identifying structural conditions on $g$ and $Q$ under which a denominator certificate $p(x)f\\in \\mathrm{QM}[g,\\nu]$ (or a preordering analogue) holds; and (iii) developing a quantified analogue of Krivine–Stengle infeasibility certificates, potentially via moment-duality and determinacy (Carleman) combined with homogenization for unbounded $K$.\n\n#### 3.1 Upstream solution and partial-progress records\n\n- [Partial progress #7 (PDF)](https://pranav-nuti.github.io/open-problems-in-or/data/llm_math_export/solution_progress/W4410155359_p0/partial_progress/7.pdf)\n\n### 4. Source and Verification\n\n- **Source paper:** Xiaomeng Hu, Igor Klep, Jiawang Nie, [*Positivstellensätze and Moment Problems with Universal Quantifiers*](https://doi.org/10.1287/moor.2024.0402), Mathematics of Operations Research, 2025.\n- **Location in paper:** Section 7 (Conclusions and Discussions), page 26.\n- **Area:** positivstellensatz certificates\n- **Keywords:** `positivstellensatz`, `krivine-stengle`, `universal quantifiers`, `preorderings`, `semi-infinite constraints`, `sum of squares`\n- **Upstream problem record:** [W4410155359_p0](https://pranav-nuti.github.io/open-problems-in-or/problem.html?id=W4410155359_p0&n=7&journal=Mathematics+of+Operations+Research)\n- **Verification status:** Unverified. Generated from the paper text only and not independently verified as still open.\n\nThis entry was imported from the Open Problems in Operations Research collection. Its inclusion does not independently confirm that the problem is correctly stated or remains unresolved.\n\n### 5. References\n\n1. Xiaomeng Hu, Igor Klep, Jiawang Nie, [*Positivstellensätze and Moment Problems with Universal Quantifiers*](https://doi.org/10.1287/moor.2024.0402), Mathematics of Operations Research, 2025.\n2. *Positivstellens\" atze for polynomial matrices with universal quantifiers*.\n3. [*A Global Approach for Generalized Semi-Infinite Programs with Polyhedral Parameter Sets: X. Hu, J. Nie, S. Zhong*](https://doi.org/10.1007/s10957-025-02807-0).\n4. *Moment-SOS Relaxation Methods for Generalized Semi-Infinite Programs*.\n5. *Lagrange multiplier expressions for matrix polynomial optimization and tight relaxations*.\n6. [*On the complexity of matrix Putinar's Positivstellensätz*](https://doi.org/10.1137/24M1675461).\n",
+  "conciseness": "short",
+  "concisenessLabel": "简洁"
+}
