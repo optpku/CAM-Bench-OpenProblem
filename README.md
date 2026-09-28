@@ -47,7 +47,7 @@ Individual problem contributors and source-paper authors are credited in the ind
 
 ## Contributors
 
-- Wentao Long, School of Mathematical Sciences, Fudan University, China 
+- Wentao Long, Department of Mathematics, Fudan University, China 
 - Chenyi Li, School of Mathematical Sciences, Peking University, China 
 - Zaiwen Wen, Beijing International Center for Mathematical Research, Peking University, China 
 
