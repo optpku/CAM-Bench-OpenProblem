@@ -1,18 +1,18 @@
 # Open Problems in Mathematics
 
-This project collects open problems in mathematics, with an emphasis on optimization, computation, and operations research. The current collection contains **162 problem write-ups across 10 thematic parts**, with problem statements, background, known results, and references.
+This project collects open problems in mathematics, with an emphasis on optimization, numerical computation, and operations research. The current collection contains **162 problems across 10 thematic parts**, with problem statements, background, known results, and references.
 
 Start with the **[Open Problems Index](open_problems_index.md)** for the complete list of problems and summaries.
 
 ## The Collection
 
-Each problem has a dedicated directory under [`open_problems/`](open_problems/), containing a Markdown write-up (`problem.md`) and a companion JSON record (`problem.json`). Some write-ups contain multiple related questions.
+Each problem has a directory under [`open_problems/`](open_problems/), containing a Markdown write-up (`problem.md`) and a companion JSON record (`problem.json`). Some write-ups contain multiple related questions.
 
-The repository also includes a [browser catalog](site/) with Chinese/English interface switching, search, filtering, and per-problem clarity score breakdowns, and a separate collection of [22 named conjectures and famous open problems](site/named_conjectures.json). These 22 records are not counted among the 162 problem write-ups.
+The repository also includes a [browser catalog](site/) with Chinese/English interface switching, search, filtering, and per-problem clarity score breakdowns.
 
 ## Thematic Parts
 
-The collection is organized into ten research areas. Specialized subjects, including distributed optimization, sit within these broader areas; mathematical scopes may overlap.
+The collection is organized into ten research areas.
 
 | Part | Topic | Entries | Scope |
 | --- | --- | ---: | --- |
